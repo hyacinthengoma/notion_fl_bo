@@ -15,6 +15,7 @@ export default function Index() {
           alt="Vercel + Notion"
         />
         <h1>My Notion Blog</h1>
+        <h1>CABINET FLORENCE BABEAU</h1>
         <h2>
           Blazing Fast Notion Blog with Next.js'{' '}
           <ExtLink
