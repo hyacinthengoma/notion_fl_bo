@@ -6,13 +6,11 @@ export default function Home() {
         <>
             <Header></Header>
 
-            <video autoPlay loop muted playsInline className='absolute w-full h-full object-cover' style={{ width: "400px", height:"400px" }}>
-                <source src="./notion-blog/public/pexels-pavel-danilyuk-8061612.mp4" type='video/mp4; codecs=vp9'/>
-            </video>
+<div>
+<video autoPlay loop muted playsInline className='absolute w-full h-full object-cover' src={"/pexels-pavel-danilyuk-8061612.mp4"} style={{ width: "100%", height:"50%" }}/>
+<h1>MAÎTRE FLORENCE BABEAU </h1>
 
-
-            <video autoPlay loop muted playsInline src={"/pexels-pavel-danilyuk-8061612.mp4"} style={{ width: "100%", height:"100vh" }} />
-
+</div>
 
             <div className={sharedStyles.layout}>
                 <h1>Accueil</h1>
