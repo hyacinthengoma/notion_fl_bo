@@ -1,4 +1,5 @@
 import '../styles/global.css'
+//import '../styles/cabinet.css'
 import 'katex/dist/katex.css'
 import Footer from '../components/footer'
 

@@ -1,0 +1,16 @@
+.cabinet p {
+    position: absolute;
+}
+
+.subtitle{
+position: absolute;
+color:white;
+font-size: 14px;
+padding-left: 1rem;
+padding-top: 5rem;
+}
+
+.titre h1, .titre p {
+    z-index: 2;
+}
+
