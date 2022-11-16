@@ -7,6 +7,7 @@ export default function Home() {
         <>
             <Header></Header>
 
+
 <div className={cabinetStyles.layout + " " + cabinetStyles.titre}>
     <h1 className={"title"}>MAÎTRE FLORENCE BABEAU </h1>
     <p className={cabinetStyles.subtitle}>Avocat en droit du travail et de la sécurité sociale</p>
