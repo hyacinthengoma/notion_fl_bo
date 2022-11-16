@@ -76,7 +76,7 @@ const Index = ({ posts = [], preview }) => {
                     <span className={blogStyles.draftBadge}>Draft</span>
                   )}
                   <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                    <a>{post.Page}</a>
+                    {post.Page}
                   </Link>
                 </span>
               </h3>
