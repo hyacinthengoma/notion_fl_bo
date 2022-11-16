@@ -96,21 +96,21 @@ export default function Header() {
                             </a>
                             <ul className="p-2 bg-gray-100">
                                 <li tabIndex="1">
-                                    <a>
+                                    <Link href="/Expertise/Droit-du-travail">
                                         Droit du travail
                                         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                              viewBox="0 0 24 24">
                                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
                                         </svg>
-                                    </a>
+                                    </Link>
                                     <ul className="p-2 bg-gray-100">
                                         <li>
-                                            <Link href="/Expertise/Droit-du-travail/conseils">
+                                            <Link href="/images/Expertise/Droit-du-travail/conseils">
                                                 - Conseils
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/Expertise/Droit-du-travail/contentieux">
+                                            <Link href="/images/Expertise/Droit-du-travail/contentieux">
                                                 - Contentieux
                                             </Link>
                                         </li>
@@ -126,12 +126,12 @@ export default function Header() {
                                     </a>
                                     <ul className="p-2 bg-gray-100">
                                         <li>
-                                            <Link href="/Expertise/Droit-de-la-securite-sociale/conseils">
+                                            <Link href="/images/Expertise/Droit-de-la-securite-sociale/conseils">
                                                 - Conseils
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/Expertise/Droit-de-la-securite-sociale/contentieux">
+                                            <Link href="/images/Expertise/Droit-de-la-securite-sociale/contentieux">
                                                 - Contentieux
                                             </Link>
                                         </li>
