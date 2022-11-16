@@ -48,6 +48,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
           `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`
         )
         const json = await res.json()
+        // @ts-ignore
         properties.html = json.html.split('<script')[0]
         post.hasTweet = true
       } catch (_) {
