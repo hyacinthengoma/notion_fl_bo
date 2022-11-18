@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
 export default function Header() {
+    // @ts-ignore
     // @ts-ignore
     // @ts-ignore
     // @ts-ignore
@@ -18,6 +20,7 @@ export default function Header() {
                 <meta name="twitter:image" content={ogImageUrl} />
                 <link href="https://cdn.jsdelivr.net/npm/daisyui@2.40.1/dist/full.css" rel="stylesheet" type="text/css" />
                 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+                <script src="https://use.fontawesome.com/46cabe336c.js"></script>
             </Head>
             <nav className="navbar bg-gray-100 text-blue-500">
                 <div className="navbar-start">
@@ -34,13 +37,13 @@ export default function Header() {
                                 <Link href="/le-cabinet">Le cabinet</Link>
                             </li>
                             <li tabIndex="0">
-                                <a className="justify-between">
+                                <Link href="/Expertise" className="justify-between">
                                     Expertise
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                          viewBox="0 0 24 24">
                                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
                                     </svg>
-                                </a>
+                                </Link>
                                 <ul className="p-2 bg-gray-100">
                                     <li>
                                         <a>Droit du travail</a>
@@ -78,7 +81,9 @@ export default function Header() {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Cabinet Babeau</a>
+                    <Link href="/le-cabinet">
+                        <Image src="/images/logo.png" alt="logo-babeau" width="200" height="200"></Image>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -86,13 +91,13 @@ export default function Header() {
                             <Link href="/le-cabinet">Le cabinet</Link>
                         </li>
                         <li tabIndex="0">
-                            <a>
+                            <Link href="/Expertise">
                                 Expertise
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                      viewBox="0 0 24 24">
                                     <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
                                 </svg>
-                            </a>
+                            </Link>
                             <ul className="p-2 bg-gray-100">
                                 <li tabIndex="1">
                                     <Link href="/Expertise/Droit-du-travail">
@@ -139,13 +144,13 @@ export default function Header() {
                             </ul>
                         </li>
                         <li tabIndex="1">
-                            <a>
+                            <Link href="/Comment-ca-marche">
                                 Comment ça marche ?
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                      viewBox="0 0 24 24">
                                     <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
                                 </svg>
-                            </a>
+                            </Link>
                             <ul className="p-2 bg-gray-100">
                                 <li>
                                     <Link href="/Comment-ca-marche/honoraires">Honoraires</Link>
