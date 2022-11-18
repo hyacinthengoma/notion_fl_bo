@@ -15,7 +15,7 @@ export default function Home() {
             <video className={cabinetStyles.video} autoPlay loop muted playsInline src={"/pexels-pavel-danilyuk-8061612.mp4"} style={{ width: "100%", height:"50%" }}/>
 
             <div className={cabinetStyles.layout}>
-                <h1>Accueil</h1>
+
             </div>
         </>
     );
