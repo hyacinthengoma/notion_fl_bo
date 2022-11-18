@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
 export default function Header() {
