@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import cabinetStyles from "../styles/cabinet.module.css";
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
 export default function Header() {
@@ -21,8 +22,9 @@ export default function Header() {
                 <link href="https://cdn.jsdelivr.net/npm/daisyui@2.40.1/dist/full.css" rel="stylesheet" type="text/css" />
                 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
                 <script src="https://use.fontawesome.com/46cabe336c.js"></script>
+                <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
             </Head>
-            <nav className="navbar bg-gray-100 text-blue-500">
+            <nav className={"navbar text-white " + cabinetStyles.navcolor}>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -82,7 +84,7 @@ export default function Header() {
                         </ul>
                     </div>
                     <Link href="/le-cabinet">
-                        <Image src="/images/logo.png" alt="logo-babeau" width="200" height="200"></Image>
+                        <Image src="/images/logo-babeau.png" alt="logo-babeau" width="500" height="500"></Image>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">

@@ -14,9 +14,46 @@ padding-top: 5rem;
     z-index: 2;
 }
 
-
-.footer {
-    background-color: #65151d;
+.layout {
+    background-color: #f0ece4;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
+.layout h2 {
+    text-decoration: underline;
+    font-size: 2rem;
+}
 
+.footer {
+    background-color: #64141D;
+}
+
+.navcolor {
+    background-color: #64141D;
+    font-family: 'Poppins';font-size: 16px;
+}
+
+.navcolor ul {
+    background-color: #64141D;
+}
+
+.flexpresentation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.flexpresentation > div {
+    max-width: 33%;
+}
+
+.button {
+    background-color: #64141D;
+    text-decoration: underline;
+    color: white;
+    padding: 1rem;
+}
