@@ -14,7 +14,7 @@ padding-top: 5rem;
     z-index: 2;
 }
 
-.layout {
+.layoutVideo {
     background-color: #f0ece4;
     padding-right: 15px;
     padding-left: 15px;
@@ -22,8 +22,14 @@ padding-top: 5rem;
     margin-left: auto;
 }
 
+.layout {
+    background-color: #f0ece4;
+    padding: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .layout h2 {
-    text-decoration: underline;
     font-size: 2rem;
 }
 

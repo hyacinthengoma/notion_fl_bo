@@ -34,7 +34,7 @@ export default function Header() {
                             </svg>
                         </label>
                         <ul tabIndex="0"
-                            className="menu menu-compact dropdown-content mt-2 p-2 shadow bg-gray-100 w-52">
+                            className="menu dropdown-content mt-2 -ml-2 p-4 shadow bg-gray-100 w-52">
                             <li>
                                 <Link href="/le-cabinet">Le cabinet</Link>
                             </li>
@@ -84,7 +84,7 @@ export default function Header() {
                         </ul>
                     </div>
                     <Link href="/le-cabinet">
-                        <Image src="/images/logo-babeau.png" alt="logo-babeau" width="500" height="500"></Image>
+                        <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"150"} height="500" className={"mx-20"}></Image>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
