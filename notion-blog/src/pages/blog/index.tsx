@@ -12,6 +12,7 @@ import {
 import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
+import Image from "next/image";
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -51,16 +52,17 @@ const Index = ({ posts = [], preview }) => {
   return (
     <>
         <Header/>
-        <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
+        <div>
             <div>
-                <h1>TEST</h1>
+                <h1 className={"absolute font-bold text-white text-5xl top-1/3 left-1/2 -translate-x-1/2 transform"}>ACTUALITES</h1>
+                <Image src={"/images/blog/img-blog.png"} alt={"img-blog"} width={"1920"} height={"1080"}></Image>
             </div>
-            <div>
+            <div className={`${sharedStyles.layout} ${blogStyles.blogIndex} py-16`}>
                 <h2 className={"text-center text-black font-bold text-2xl my-5"}>DERNIERES ACTUALITES</h2>
-                <div className={"grid grid-cols-1 md:grid-cols-4 gap-4 content-center"}>
+                <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
                     {posts.map((post) => {
                         return(
-                                <div className="card card-compact w-96 bg-gray-100 shadow-xl rounded-none mx-auto" key={post.Slug}>
+                                <div className="card card-compact w-80 bg-gray-100 shadow-xl rounded-none mx-auto" key={post.Slug}>
                                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
                                     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                                     <div className="card-body">
@@ -80,9 +82,8 @@ const Index = ({ posts = [], preview }) => {
                                     </div>
                                     </Link>
                                 </div>
-
                         )
-                    })};
+                    })}
                 </div>
             </div>
         </div>
