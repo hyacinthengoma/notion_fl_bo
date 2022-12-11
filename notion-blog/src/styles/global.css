@@ -280,7 +280,7 @@ mark {
   max-width: calc(100vw - var(--gap-double));
 }
 
-h1 {
+/*h1 {
   margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
   font-size: 2.25rem;
   font-weight: 800;
@@ -288,7 +288,7 @@ h1 {
   position: absolute;
   color: white;
   padding-left: 1rem;
-}
+}*/
 
 h2 {
   font-weight: 300;
