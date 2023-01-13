@@ -1,5 +1,6 @@
 import Header from "../components/header";
 import sharedStyles from "../styles/shared.module.css";
+import Head from "next/head";
 
 export default function Actualites() {
     return (
