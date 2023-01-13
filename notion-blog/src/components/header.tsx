@@ -27,14 +27,14 @@ export default function Header() {
             <nav className={"navbar text-white " + cabinetStyles.navcolor}>
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <label tabIndex="0" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        <label tabIndex="0" className="btn btn-ghost xl:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16"/>
                             </svg>
                         </label>
                         <ul tabIndex="0"
-                            className="menu menu-compact dropdown-content mt-2 p-2 shadow bg-gray-100 w-52">
+                            className="menu dropdown-content mt-2 -ml-2 p-4 shadow bg-gray-100 w-52">
                             <li>
                                 <Link href="/le-cabinet">Le cabinet</Link>
                             </li>
@@ -83,11 +83,14 @@ export default function Header() {
                             </li>
                         </ul>
                     </div>
-                    <Link href="/le-cabinet">
-                        <Image src="/images/logo-babeau.png" alt="logo-babeau" width="500" height="500"></Image>
+                    <Link href="/le-cabinet" className={"hidden xl:flex"}>
+                        <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"150"} height="500" className={"mx-20"}></Image>
                     </Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <Link href="/le-cabinet" className={"navbar-end xl:hidden"}>
+                    <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"150"} height="500" className={"mx-20"}></Image>
+                </Link>
+                <div className="navbar-center hidden xl:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li>
                             <Link href="/le-cabinet">Le cabinet</Link>

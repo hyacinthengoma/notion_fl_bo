@@ -12,6 +12,7 @@ import {
 import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
+import Image from "next/image";
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -50,53 +51,42 @@ export async function getStaticProps({ preview }) {
 const Index = ({ posts = [], preview }) => {
   return (
     <>
-      <Header titlePre="Blog" />
-      {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
-            <b>Note:</b>
-            {` `}Viewing in preview mode{' '}
-            <Link href={`/api/clear-preview`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
-            </Link>
-          </div>
-        </div>
-      )}
-      <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
-        <h1>My Notion Blog</h1>
-        {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>There are no posts yet</p>
-        )}
-        {posts.map((post) => {
-          return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
-              <h3>
-                <span className={blogStyles.titleContainer}>
-                  {!post.Published && (
-                    <span className={blogStyles.draftBadge}>Draft</span>
-                  )}
-                  <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                    {post.Page}
-                  </Link>
-                </span>
-              </h3>
-              {post.Authors.length > 0 && (
-                <div className="authors">By: {post.Authors.join(' ')}</div>
-              )}
-              {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
-              )}
-              <p>
-                {(!post.preview || post.preview.length === 0) &&
-                  'No preview available'}
-                {(post.preview || []).map((block, idx) =>
-                  textBlock(block, true, `${post.Slug}${idx}`)
-                )}
-              </p>
+        <Header/>
+        <div>
+            <div>
+                <h1 className={"absolute font-bold text-white text-5xl top-1/3 left-1/2 -translate-x-1/2 transform"}>ACTUALITES</h1>
+                <Image src={"/images/blog/img-blog.png"} alt={"img-blog"} width={"1920"} height={"1080"}></Image>
             </div>
-          )
-        })}
-      </div>
+            <div className={`${sharedStyles.layout} ${blogStyles.blogIndex} py-16`}>
+                <h2 className={"text-center text-black font-bold text-2xl my-5"}>DERNIERES ACTUALITES</h2>
+                <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
+                    {posts.map((post) => {
+                        return(
+                                <div className="card card-compact w-80 bg-gray-100 shadow-xl rounded-none mx-auto" key={post.Slug}>
+                                    <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+                                    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title text-black">{post.Page}</h2>
+                                        <p>
+                                            {(!post.preview || post.preview.length === 0) &&
+                                                'Pas de résumé disponible'}
+                                            {(post.preview || []).map((block, idx) =>
+                                                textBlock(block, true, `${post.Slug}${idx}`)
+                                            )}
+                                        </p>
+                                        <p>
+                                            {post.Date && (
+                                                <p className="posted">Publié le : {getDateStr(post.Date)}</p>
+                                            )}
+                                        </p>
+                                    </div>
+                                    </Link>
+                                </div>
+                        )
+                    })}
+                </div>
+            </div>
+        </div>
     </>
   )
 }
