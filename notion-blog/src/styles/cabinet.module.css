@@ -61,5 +61,6 @@ padding-top: 5rem;
     background-color: #64141D;
     text-decoration: underline;
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
