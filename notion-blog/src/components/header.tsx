@@ -2,12 +2,49 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import cabinetStyles from "../styles/cabinet.module.css";
+import React, {useEffect} from "react";
+import Script from "next/script";
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
 export default function Header() {
-    // @ts-ignore
-    // @ts-ignore
-    // @ts-ignore
+    useEffect(() => {
+        const burger = document.querySelectorAll('.navbar-burger');
+        const menu = document.querySelectorAll('.navbar-menu');
+
+        if (burger.length && menu.length) {
+            for (var i = 0; i < burger.length; i++) {
+                burger[i].addEventListener('click', function() {
+                    for (var j = 0; j < menu.length; j++) {
+                        menu[j].classList.toggle('hidden');
+                    }
+                });
+            }
+        }
+
+        //TODO : Revoir les dropdown expertise
+        const close = document.querySelectorAll('.navbar-close');
+        const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+        if (close.length) {
+            for (var i = 0; i < close.length; i++) {
+                close[i].addEventListener('click', function() {
+                    for (var j = 0; j < menu.length; j++) {
+                        menu[j].classList.toggle('hidden');
+                    }
+                });
+            }
+        }
+
+        if (backdrop.length) {
+            for (var i = 0; i < backdrop.length; i++) {
+                backdrop[i].addEventListener('click', function() {
+                    for (var j = 0; j < menu.length; j++) {
+                        menu[j].classList.toggle('hidden');
+                    }
+                });
+            }
+        }
+    });
     // @ts-ignore
     return (
         <header>
@@ -21,162 +58,92 @@ export default function Header() {
                 <meta name="twitter:image" content={ogImageUrl} />
                 <link href="https://cdn.jsdelivr.net/npm/daisyui@2.40.1/dist/full.css" rel="stylesheet" type="text/css" />
                 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-                <script src="https://use.fontawesome.com/46cabe336c.js"></script>
+                <Script src="https://use.fontawesome.com/46cabe336c.js"></Script>
                 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
             </Head>
-            <nav className={"navbar text-white " + cabinetStyles.navcolor}>
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <label tabIndex="0" className="btn btn-ghost xl:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24"
+            <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-50">
+                <Link className="text-3xl font-bold leading-none" href="/le-cabinet">
+                    <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"200"} height="500" className={"mx-20"}/>
+                </Link>
+                <div className="lg:hidden">
+                    <button className="navbar-burger flex items-center text-white p-3">
+                        <svg className="block h-8 w-8 fill-current" viewBox="0 0 20 20"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <title>Mobile menu</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+                    <li>
+                        <Link className="text-sm text-white font-bold hover:text-gray-300" href="le-cabinet">ACCUEIL</Link>
+                    </li>
+                    <li>
+                        <Link className="text-sm text-white font-bold hover:text-gray-300 mb-64 drop" href="/Expertise">EXPERTISE</Link>
+                    </li>
+                    <li>
+                        <Link className="text-sm text-white font-bold hover:text-gray-300" href="/Comment-ca-marche/honoraires">HONORAIRES</Link>
+                    </li>
+                    <li>
+                        <Link className="text-sm text-white font-bold hover:text-gray-300" href="/blog/index">ACTUALITÉS SOCIALES</Link>
+                    </li>
+                    <li>
+                        <Link className="text-sm text-white font-bold hover:text-gray-300" href="#">FLORENCE BABEAU</Link>
+                    </li>
+                    <li>
+                        <Link className="text-sm text-white font-bold hover:text-gray-300" href="/contact">CONTACT</Link>
+                    </li>
+                </ul>
+            </nav>
+            <div className="navbar-menu relative z-50 hidden">
+                <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+                <nav
+                    className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-900 overflow-y-auto">
+                    <div className="flex items-center mb-8">
+                        <a className="mr-auto text-3xl font-bold leading-none" href="index.php?page=home">
+                            <img src="/images/logo-babeau.png" className="h-16" alt="waw-logo"/>
+                        </a>
+                        <button className="navbar-close">
+                            <svg className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                        </label>
-                        <ul tabIndex="0"
-                            className="menu dropdown-content mt-2 -ml-2 p-4 shadow bg-gray-100 w-52">
-                            <li>
-                                <Link href="/le-cabinet">Le cabinet</Link>
+                        </button>
+                    </div>
+                    <div>
+                        <ul>
+                            <li className="mb-1">
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/Expertise">ACCUEIL</Link>
                             </li>
-                            <li tabIndex="0">
-                                <Link href="/Expertise" className="justify-between">
-                                    Expertise
-                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                         viewBox="0 0 24 24">
-                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-                                    </svg>
-                                </Link>
-                                <ul className="p-2 bg-gray-100">
-                                    <li>
-                                        <a>Droit du travail</a>
-                                    </li>
-                                    <li>
-                                        <a>Droit de la <br/> sécurité sociale</a>
-                                    </li>
-                                </ul>
+                            <li className="mb-1">
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
+                                      href="/Comment-ca-marche/honoraires">EXPERTISE</Link>
                             </li>
-                            <li tabIndex="0">
-                                <a className="justify-between">
-                                    Comment ça marche ?
-                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                         viewBox="0 0 24 24">
-                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-                                    </svg>
-                                </a>
-                                <ul className="p-2 bg-gray-100">
-                                    <li>
-                                        <Link href="/Comment-ca-marche/honoraires">Honoraires</Link>
-                                    </li>
-                                </ul>
+                            <li className="mb-1">
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
+                                      href="index.php?page=home">HONORAIRES</Link>
                             </li>
-                            <li>
-                                <Link href="/actualites">Actualités</Link>
+                            <li className="mb-1">
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
+                                      href="#">FLORENCE BABEAU</Link>
                             </li>
-                            <li>
-                                <Link href="/documentation">Documentation</Link>
-                            </li>
-                            <li>
-                                <Link href="/blog">Blog</Link>
-                            </li>
-                            <li>
-                                <Link href="/contact">Contact</Link>
+                            <li className="mb-1">
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
+                                      href="/contact">CONTACT</Link>
                             </li>
                         </ul>
                     </div>
-                    <Link href="/le-cabinet" className={"hidden xl:flex"}>
-                        <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"150"} height="500" className={"mx-20"}></Image>
-                    </Link>
-                </div>
-                <Link href="/le-cabinet" className={"navbar-end xl:hidden"}>
-                    <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"150"} height="500" className={"mx-20"}></Image>
-                </Link>
-                <div className="navbar-center hidden xl:flex">
-                    <ul className="menu menu-horizontal p-0">
-                        <li>
-                            <Link href="/le-cabinet">Le cabinet</Link>
-                        </li>
-                        <li tabIndex="0">
-                            <Link href="/Expertise">
-                                Expertise
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                     viewBox="0 0 24 24">
-                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
-                                </svg>
-                            </Link>
-                            <ul className="p-2 bg-gray-100">
-                                <li tabIndex="1">
-                                    <Link href="/Expertise/Droit-du-travail">
-                                        Droit du travail
-                                        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                             viewBox="0 0 24 24">
-                                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
-                                        </svg>
-                                    </Link>
-                                    <ul className="p-2 bg-gray-100">
-                                        <li>
-                                            <Link href="/images/Expertise/Droit-du-travail/conseils">
-                                                - Conseils
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/images/Expertise/Droit-du-travail/contentieux">
-                                                - Contentieux
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li tabIndex="1">
-                                    <Link href="/Expertise/Droit-de-la-securite-sociale">
-                                        Droit de la sécurité sociale
-                                        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                             viewBox="0 0 24 24">
-                                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
-                                        </svg>
-                                    </Link>
-                                    <ul className="p-2 bg-gray-100">
-                                        <li>
-                                            <Link href="/images/Expertise/Droit-de-la-securite-sociale/conseils">
-                                                - Conseils
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/images/Expertise/Droit-de-la-securite-sociale/contentieux">
-                                                - Contentieux
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li tabIndex="1">
-                            <Link href="/Comment-ca-marche">
-                                Comment ça marche ?
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                     viewBox="0 0 24 24">
-                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
-                                </svg>
-                            </Link>
-                            <ul className="p-2 bg-gray-100">
-                                <li>
-                                    <Link href="/Comment-ca-marche/honoraires">Honoraires</Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <Link href="/actualites">Actualités</Link>
-                        </li>
-                        <li>
-                            <Link href="/documentation">Documentation</Link>
-                        </li>
-                        <li>
-                            <Link href="/blog">Blog</Link>
-                        </li>
-                        <li>
-                            <Link href="/contact">Contact</Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                    <div className="mt-auto">
+                        <div className="pt-6">
+                        </div>
+                        <p className="my-4 text-xs text-center text-gray-400">
+                            <span>Copyright © 2021</span>
+                        </p>
+                    </div>
+                </nav>
+            </div>
         </header>
     );
 }
