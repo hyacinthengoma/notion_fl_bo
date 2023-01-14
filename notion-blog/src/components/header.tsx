@@ -49,13 +49,13 @@ export default function Header() {
     return (
         <header className={"relative pb-28"}>
             <Head>
-                <link href="https://cdn.jsdelivr.net/npm/daisyui@2.40.1/dist/full.css" rel="stylesheet" type="text/css" />
-                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+                <script src="https://cdn.tailwindcss.com"></script>
+                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.0/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
                 <Script src="https://use.fontawesome.com/46cabe336c.js"></Script>
                 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
             </Head>
             <div className={""}>
-                <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-50">
+                <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100]">
                     <Link className="text-3xl font-bold leading-none" href="/le-cabinet">
                         <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"200"} height="500" className={"lg:mx-20"}/>
                     </Link>

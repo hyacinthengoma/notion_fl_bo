@@ -7,7 +7,7 @@ export default function FlorenceBabeau() {
         <div>
             <Header></Header>
             <div className={"relative w-full"}>
-                <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center"}>
+                <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>FLORENCE BABEAU</h1>
                 </div>
                 <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"}></img>
@@ -30,7 +30,7 @@ export default function FlorenceBabeau() {
             </div>
             <div className={"bg-white flex justify-center w-full md:pt-36 py-20"}>
                 <div className={"w-5/6"}>
-                    <div className={"flex flex-col md:flex-row"}>
+                    <div className={"flex flex-col md:flex-row md:h-96"}>
                         <div className={"w-full md:w-1/2 order-2 md:order-1"}>
                             <iframe className={"h-96 w-full md:h-full rounded"} src="https://www.youtube.com/embed/tgbNymZ7vqY">
                             </iframe>
@@ -45,7 +45,7 @@ export default function FlorenceBabeau() {
                             </div>
                         </div>
                     </div>
-                    <div className={"flex flex-col md:flex-row mt-6"}>
+                    <div className={"flex flex-col md:flex-row mt-6 md:h-96"}>
                         <div className={"w-full md:w-1/2 order-2"}>
                             <iframe className={"h-96 w-full md:h-full rounded"} src="https://www.youtube.com/embed/tgbNymZ7vqY">
                             </iframe>
