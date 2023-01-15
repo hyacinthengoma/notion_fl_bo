@@ -52,7 +52,7 @@ The table should have the following properties:
 
 ![Example Blog Posts Table](./assets/table-view.png)
 
-## Getting Blog Index and Token
+## Getting Blog Indexeee and Token
 
 To get your blog index value, open Notion and Navigate to the Notion page with the table you created above. While on this page you should be able to get the page id from either:
 

@@ -56,7 +56,7 @@ export default function Header() {
             </Head>
             <div className={""}>
                 <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100]">
-                    <Link className="text-3xl font-bold leading-none" href="/le-cabinet">
+                    <Link className="text-3xl font-bold leading-none" href="/index">
                         <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"200"} height="500" className={"lg:mx-20"}/>
                     </Link>
                     <div className="lg:hidden">
@@ -70,7 +70,7 @@ export default function Header() {
                     </div>
                     <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
                         <li>
-                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="le-cabinet">ACCUEIL</Link>
+                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="index">ACCUEIL</Link>
                         </li>
                         <li>
                             <Link className="text-sm text-white font-bold hover:text-gray-300 mb-64 drop" href="/Expertise">EXPERTISE</Link>
