@@ -13,6 +13,7 @@ import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import Image from "next/image";
+import BesoinAvocat from "../../components/Besoin-avocat";
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -51,42 +52,57 @@ export async function getStaticProps({ preview }) {
 const Index = ({ posts = [], preview }) => {
   return (
     <>
-        <Header/>
+        <Header></Header>
         <div>
-            <div>
-                <h1 className={"absolute font-bold text-white text-5xl top-1/3 left-1/2 -translate-x-1/2 transform"}>ACTUALITES</h1>
-                <Image src={"/images/blog/img-blog.png"} alt={"img-blog"} width={"1920"} height={"1080"}></Image>
+            <div className={"relative w-full"}>
+                <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
+                    <h1 className={"text-white text-2xl md:text-4xl font-bold"}>BLOG</h1>
+                </div>
+                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/blog/img-blog.png"} alt={"image-banniere"}></img>
             </div>
-            <div className={`${sharedStyles.layout} ${blogStyles.blogIndex} py-16`}>
-                <h2 className={"text-center text-black font-bold text-2xl my-5"}>DERNIERES ACTUALITES</h2>
-                <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
-                    {posts.map((post) => {
-                        return(
+            <div className={"bg-white flex justify-center w-full py-36"}>
+                <div className={"w-5/6"}>
+                    <div className={"w-full flex flex-col lg:flex-row justify-center py-16"}>
+                        <div className={"w-full lg:w-1/2"}>
+                            <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/blog/img-blog.png"} alt={"image-banniere"}></img>
+                        </div>
+                        <div className={"w-full lg:w-1/2"}>
+                            <h2 className={"text-black font-bold text-2xl text-center"}>Retrouvez les actualités de notre cabinet</h2>
+                            <p className={"text-black text-center"}>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
+                        {posts.map((post) => {
+                            return(
                                 <div className="card card-compact w-80 bg-gray-100 shadow-xl rounded-none mx-auto" key={post.Slug}>
                                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                                    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                                    <div className="card-body">
-                                        <h2 className="card-title text-black">{post.Page}</h2>
-                                        <p>
-                                            {(!post.preview || post.preview.length === 0) &&
-                                                'Pas de résumé disponible'}
-                                            {(post.preview || []).map((block, idx) =>
-                                                textBlock(block, true, `${post.Slug}${idx}`)
-                                            )}
-                                        </p>
-                                        <p>
-                                            {post.Date && (
-                                                <p className="posted">Publié le : {getDateStr(post.Date)}</p>
-                                            )}
-                                        </p>
-                                    </div>
+                                        <div className={"max-w-sm mx-auto bg-white rounded-md overflow-hidden shadow-lg"}>
+                                            <img src={"https://placeimg.com/400/225/arch"} alt={"img-placeholder"} />
+                                            <div className={"px-6 py-4"}>
+                                                <h2 className="font-bold text-black text-xl mb-2">{post.Page}</h2>
+                                                <p className={"text-gray-700 text-base"}>
+                                                    {(!post.preview || post.preview.length === 0) &&
+                                                        'Pas de résumé disponible'}
+                                                    {(post.preview || []).map((block, idx) =>
+                                                        textBlock(block, true, `${post.Slug}${idx}`)
+                                                    )}
+                                                </p>
+                                                <p className={"text-gray-700 text-base"}>
+                                                    {post.Date && (
+                                                        <p className="posted">Publié le : {getDateStr(post.Date)}</p>
+                                                    )}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </Link>
                                 </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         </div>
+        <BesoinAvocat></BesoinAvocat>
     </>
   )
 }
