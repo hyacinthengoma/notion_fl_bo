@@ -90,7 +90,7 @@ export default function Header() {
                     </ul>
                 </nav>
             </div>
-            <div className="navbar-menu relative z-50 hidden">
+            <div className="navbar-menu relative z-[100] hidden">
                 <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
                 <nav
                     className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-900 overflow-y-auto">
