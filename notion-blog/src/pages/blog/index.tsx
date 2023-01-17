@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Header from '../../components/header'
 
+import { NOTION_TOKEN, API_ENDPOINT } from './server-constants'
+
 import blogStyles from '../../styles/blog.module.css'
 import sharedStyles from '../../styles/shared.module.css'
 
@@ -12,6 +14,7 @@ import {
 import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
+import getNotionAsset from '../../lib/notion/getNotionAssetUrls'
 import Image from "next/image";
 import BesoinAvocat from "../../components/Besoin-avocat";
 
@@ -74,11 +77,11 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
                         {posts.map((post) => {
                             return(
-                                <div className="card card-compact w-80 bg-gray-100 shadow-xl rounded-none mx-auto" key={post.Slug}>
+                                <div className="card-compact w-80 bg-gray-100 shadow-xl rounded-none mx-auto" key={post.Slug}>
                                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
                                         <div className={"max-w-sm mx-auto bg-white rounded-md overflow-hidden shadow-lg"}>
-                                            <img src={"https://placeimg.com/400/225/arch"} alt={"img-placeholder"} />
-                                            <div className={"px-6 py-4"}>
+                                            <img src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                            <div className={"px-6 py-5"}>
                                                 <h2 className="font-bold text-black text-xl mb-2">{post.Page}</h2>
                                                 <p className={"text-gray-700 text-base"}>
                                                     {(!post.preview || post.preview.length === 0) &&
