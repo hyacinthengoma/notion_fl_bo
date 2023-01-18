@@ -89,12 +89,16 @@ const Index = ({ posts = [], preview }) => {
                             <p className={"text-black text-center"}>Lorem Ipsum</p>
                         </div>
                     </div>
-                    <label htmlFor="tri">Afficher les articles par catégorie :</label>
-                    <select className={""} id={"tri"} name={"tri"}>
-                        <option value={""}></option>
-                        <option value={"Droit du travail"}>Droit du travail</option>
-                        <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
-                    </select>
+                    <div className={"justify-center w-full flex"}>
+                        <div className={"bg-red-900 py-2 px-4 my-5"}>
+                            <label className={"text-white text-xl"} htmlFor="tri">Afficher les articles par catégorie :</label>
+                            <select className={"border ml-3"} id={"tri"} name={"tri"}>
+                                <option value={""}></option>
+                                <option value={"Droit du travail"}>Droit du travail</option>
+                                <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
+                            </select>
+                        </div>
+                    </div>
                     <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
                         {posts.map((post) => {
                             return(
