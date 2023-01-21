@@ -53,6 +53,7 @@ export default function Header() {
                 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.0/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
                 <Script src="https://use.fontawesome.com/46cabe336c.js"></Script>
                 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
+                <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
             </Head>
             <div className={""}>
                 <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100] shadow-lg">
