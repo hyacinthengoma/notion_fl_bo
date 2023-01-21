@@ -84,9 +84,9 @@ const Index = ({ posts = [], preview }) => {
                         <div className={"w-full lg:w-1/2"}>
                             <img className={"h-full w-full rounded-lg "} src={"/images/Actualites-sociales/image-actualites.png"} alt={"image-banniere"}></img>
                         </div>
-                        <div className={"w-full lg:w-1/2"}>
-                            <h2 className={"text-black font-bold text-2xl text-center"}>Retrouvez les actualités de notre cabinet</h2>
-                            <p className={"text-black text-center"}>Lorem Ipsum</p>
+                        <div className={"w-full lg:w-1/2 mt-10"}>
+                            <h2 className={"text-black font-bold text-3xl text-center"}>Retrouvez les actualités de notre cabinet</h2>
+                            <p className={"text-black text-left"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
                         </div>
                     </div>
                     <div className={"justify-center w-full flex"}>
