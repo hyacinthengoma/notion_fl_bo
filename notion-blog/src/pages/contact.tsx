@@ -136,38 +136,51 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className={"relative flex w-full justify-center bg-gray-800 py-20"}>
-          <form className={"w-5/6"}>
-            <h1 className={"text-white text-2xl md:text-4xl font-bold text-center"}>FORMULAIRE DE CONTACT</h1>
-            <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-              <input type={"text"} className={"border w-full py-2"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom"} required={true}/>
-              <input type={"text"} className={"border w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom"}/>
-            </div>
-            <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-              <input type={"text"} className={"border w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone"}/>
-              <input type={"text"} className={"border w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal"}/>
-            </div>
-            <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-              <input type={"text"} className={"border w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email"}/>
-              <input type={"text"} className={"border w-full py-2"} onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"} placeholder={"Raison sociale"}/>
-            </div>
-            <div className={"flex justify-center my-5"}>
-              <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border w-full py-2"}>
-                <option value={""}>Type de service</option>
-                <option value={"Droit du travail"}>Droit du travail</option>
-                <option value={"Droit social"}>Droit social</option>
-                <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
-                <option value={"Droit de la famille"}>Droit de la famille</option>
-              </select>
-            </div>
-            <div className={"flex justify-center my-5"}>
-              <textarea className={"border w-full py-2"} name={"Message"} id={"Message"} onChange={(e) => {setMessage(e.target.value)}} placeholder={"Message..."}></textarea>
-            </div>
-            <div className={"w-full flex justify-center"}>
-              <Link href={""} type={"submit"} id={"ButtonSubmit"} onClick={(e) => {handleSubmit(e)}} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>ENVOYER LE MESSAGE</Link>
-            </div>
-          </form>
+      <div className={"flex w-full justify-center bg-gray-800 py-20"}>
+        <div className={"flex flex-col lg:flex-row w-4/5 justify-center shadow"}>
+          <div className={"w-full lg:w-1/2 bg-white"}>
+            <form className={"p-14"}>
+              <h2 className={"text-black font-semibold text-2xl"}>Demande de contact</h2>
+              <h3 className={"text-gray-600 text-xl"}>Merci de remplir les champs ci-dessous</h3>
+              <h1 className={"text-white text-2xl md:text-4xl font-bold text-center"}>FORMULAIRE DE CONTACT</h1>
+              <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom"} required={true}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom"}/>
+              </div>
+              <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone"}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal"}/>
+              </div>
+              <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email"}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"} placeholder={"Raison sociale"}/>
+              </div>
+              <div className={"flex justify-center my-5"}>
+                <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border-b focus:outline-none focus:border-red-900 border-black p-4 w-full py-2"}>
+                  <option value={""}>Type de service</option>
+                  <option value={"Droit du travail"}>Droit du travail</option>
+                  <option value={"Droit social"}>Droit social</option>
+                  <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
+                  <option value={"Droit de la famille"}>Droit de la famille</option>
+                </select>
+              </div>
+              <div className={"flex justify-center my-5"}>
+                <textarea className={"border border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} name={"Message"} id={"Message"} onChange={(e) => {setMessage(e.target.value)}} placeholder={"Message..."}></textarea>
+              </div>
+              <div className={"w-full flex justify-center"}>
+                <Link href={""} type={"submit"} id={"ButtonSubmit"} onClick={(e) => {handleSubmit(e)}} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>ENVOYER LE MESSAGE</Link>
+              </div>
+            </form>
+          </div>
+          <div className={"w-full lg:w-1/2"}>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.921862125881!2d-0.5822976486370732!3d44.863885481215846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55286b9ee92b21%3A0x1694739e2dc975af!2sCabinet%20Avocat%20Florence%20Babeau!5e0!3m2!1sfr!2sfr!4v1673651475903!5m2!1sfr!2sfr"
+                loading="lazy"
+                className={"w-full h-96 lg:h-full"}
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
+      </div>
     </>
   )
 }

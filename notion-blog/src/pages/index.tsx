@@ -151,9 +151,9 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"flex flex-col lg:flex-row justify-center gap-16"}>
                         {lastPosts.map((post) => {
                             return(
-                                <div className="w-80 bg-gray-100 shadow-xl mx-auto hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
+                                <div className="w-96 mx-auto hover:scale-110 duration-500 article relative" key={post.Slug} type={post.Type}>
                                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                                        <div className={"max-w-sm mx-auto bg-white overflow-hidden shadow-lg"}>
+                                        <div className={"max-w-lg mx-auto bg-white overflow-hidden shadow-lg rounded-lg"}>
                                             {post.Illustration ?
                                                 <img className={"object-fill h-44 w-full"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
                                                 : <img className={"object-fill h-44 w-full"} src={"https://placeimg.com/400/225/arch"} />
@@ -169,18 +169,29 @@ const Index = ({ posts = [], preview }) => {
                                                 </div>
                                                 <div>
                                                     {post.Date && (
-                                                        <p className="posted text-gray-700 text-base">Publié le : {getDateStr(post.Date)}</p>
+                                                        <p className="text-sm mt-3 text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
                                                     )}
                                                 </div>
+                                                <button
+                                                    className="mt-6 py-2 px-4 bg-red-900 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">Consulter cet article
+                                                </button>
                                             </div>
+                                        </div>
+                                        <div className="absolute top-0 rounded-tr-lg right-0 py-2 px-4 bg-white text-black shadow-lg">
+                                            {(!post.Type || post.Type.length === 0) &&
+                                                <span className="text-md">Aucun type</span>
+                                            }
+                                            {(post.Type) && (
+                                                <span className="text-md">{post.Type}</span>
+                                            )}
                                         </div>
                                     </Link>
                                 </div>
                             )
                         })}
                     </div>
-                    <div className={"flex justify-center mt-6"}>
-                        <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Consulter l'ensemble de mes actualités</Link>
+                    <div className={"flex justify-center mt-20"}>
+                        <Link href={"/blog"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Consulter l'ensemble de mes actualités</Link>
                     </div>
                 </div>
             </div>

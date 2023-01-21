@@ -17,7 +17,7 @@ import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionAsset from '../../lib/notion/getNotionAssetUrls'
 import Image from "next/image";
 import BesoinAvocat from "../../components/Besoin-avocat";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -75,12 +75,13 @@ const Index = ({ posts = [], preview }) => {
             <div className={"relative w-full"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>BLOG</h1>
+                    <p className={"text-white text-xl md:text-2xl mb-8"}>Retrouvez les actualités de mon cabinet</p>
                 </div>
-                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/Actualites-sociales/banniere.png"} alt={"image-banniere"}></img>
+                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/Actualites-sociales/blog-banniere.png"} alt={"image-banniere"}></img>
             </div>
-            <div className={"bg-white flex justify-center w-full py-36"}>
+            <div className={"bg-zinc-100 flex justify-center w-full py-1"}>
                 <div className={"w-5/6"}>
-                    <div className={"w-full flex flex-col lg:flex-row justify-center py-16"}>
+                    {/**<div className={"w-full flex flex-col lg:flex-row justify-center py-16"}>
                         <div className={"w-full lg:w-1/2"}>
                             <img className={"h-full w-full rounded-lg "} src={"/images/Actualites-sociales/image-actualites.png"} alt={"image-banniere"}></img>
                         </div>
@@ -88,9 +89,9 @@ const Index = ({ posts = [], preview }) => {
                             <h2 className={"text-black font-bold text-3xl text-center"}>Retrouvez les actualités de notre cabinet</h2>
                             <p className={"text-black text-left"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
                         </div>
-                    </div>
+                    </div>*/}
                     <div className={"justify-center w-full flex"}>
-                        <div className={"bg-red-900 py-2 px-4 my-5"}>
+                        <div className={"bg-red-900 py-2 px-4 my-10"}>
                             <label className={"text-white text-xl"} htmlFor="tri">Afficher les articles par catégorie :</label>
                             <select className={"border ml-3"} id={"tri"} name={"tri"}>
                                 <option value={""}></option>
@@ -99,33 +100,51 @@ const Index = ({ posts = [], preview }) => {
                             </select>
                         </div>
                     </div>
-                    <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
+                    <div className="flex flex-wrap -mx-1 lg:-mx-4">
                         {posts.map((post) => {
                             return(
-                                <div className="w-80 bg-gray-100 shadow-xl mx-auto hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
-                                    <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                                        <div className={"max-w-sm mx-auto bg-white overflow-hidden shadow-lg"}>
-                                            {post.Illustration ?
-                                                <img className={"object-fill h-44 w-full"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                                : <img className={"object-fill h-44 w-full"} src={"https://placeimg.com/400/225/arch"} />
-                                            }
-                                            <div className={"px-6 py-5"}>
-                                                <h2 className="font-bold text-black text-xl mb-2">{post.Page}</h2>
+                                <div className="my-4 px-1 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+                                    <article className="overflow-hidden border shadow-lg hover:shadow-xl hover:scale-105 ease-in duration-200 mx-4 rounded-lg">
+                                        <div className="relative">
+                                            <div className="absolute ml-4 rounded-tr-lg right-0 py-2 px-4 bg-white text-black shadow-lg">
                                                 <div>
-                                                    {(!post.Preview || post.Preview.length === 0) &&
-                                                        <p className={"text-gray-700 text-base"}>Pas de résumé disponible</p>}
-                                                    {(post.Preview) && (
-                                                        <p className={"text-gray-700 text-base"}>{(post.Preview)}</p>
-                                                    )}
-                                                </div>
-                                                <div>
-                                                    {post.Date && (
-                                                        <p className="posted text-gray-700 text-base">Publié le : {getDateStr(post.Date)}</p>
+                                                    {(!post.Type || post.Type.length === 0) &&
+                                                        <span className="text-md">Aucun type</span>
+                                                    }
+                                                    {(post.Type) && (
+                                                        <span className="text-md">{post.Type}</span>
                                                     )}
                                                 </div>
                                             </div>
                                         </div>
-                                    </Link>
+                                        {post.Illustration ?
+                                            <img className={"block h-[230px] w-full object-cover\""} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                            : <img className={"block h-[230px] w-full object-cover\""} src={"https://placeimg.com/400/225/arch"} />
+                                        }
+                                        <header className="leading-tight bg-white p-2 md:p-4 h-44">
+                                            <h1 className="text-lg">
+                                                {post.Page}
+                                            </h1>
+                                            <div>
+                                                {(!post.Preview || post.Preview.length === 0) &&
+                                                    <p className={"text-gray-700 text-base"}>Pas de résumé disponible</p>}
+                                                {(post.Preview) && (
+                                                    <p className={"text-gray-700 text-base"}>{(post.Preview)}</p>
+                                                )}
+                                            </div>
+
+                                        </header>
+                                        <footer className="flex flex-col items-center bg-white justify-between leading-none p-4">
+                                            <div>
+                                                {post.Date && (
+                                                    <p className="text-sm mt-3 text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
+                                                )}
+                                            </div>
+                                            <button
+                                                className="mt-6 py-2 px-4 bg-red-900 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">Consulter cet article
+                                            </button>
+                                        </footer>
+                                    </article>
                                 </div>
                             )
                         })}

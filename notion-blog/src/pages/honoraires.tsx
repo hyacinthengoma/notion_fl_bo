@@ -13,72 +13,69 @@ export default function Honoraires() {
             <div className={"relative w-full"}>
                 <div className={"absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>HONORAIRES</h1>
-                    <p className={"text-white text-xl md:text-2xl mb-8"}>Découvrez les honoraires des mes principaux actes.
+                    <p className={"text-white text-xl md:text-2xl mb-8"}>Découvrez les honoraires des mes principaux actes.<br/>
                         N’hésitez surtout pas à me contacter pour une étude approfondie de votre dossier</p>
                     <div className={"w-full"}>
                         <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Prenez rendez-vous</Link>
                     </div>
                 </div>
-                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/comment-ca-marche/2-guys-1-girl.png"} alt={"image-banniere"}></img>
+                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"}></img>
             </div>
             <div className={"bg-white flex justify-center w-full py-36"}>
                 <div className={"w-5/6"}>
-                    <div className={"flex flex-col lg:flex-row gap-8"}>
-                        <div className={"max-w-full mx-auto overflow-hidden bg-white shadow-lg border"}>
+                    <div className={"flex flex-col lg:flex-row"}>
+                        <div className={"w-1/4 mx-auto overflow-hidden bg-white shadow-2xl rounded-lg border hover:scale-110 duration-500"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
-                                <p className={"uppercase underline text-white font-semibold text-xl"}>CONSULTATION TELEPHONIQUE</p>
-                                <p className={"uppercase text-white font-semibold text-xl"}>Durée 30 min</p>
-                                <p className={"uppercase text-white"}>ICONE</p>
-                                <p className={"uppercase text-white font-bold text-3xl"}>60€</p>
+                                <p className={"uppercase text-white font-bold text-2xl"}>CONSULTATION <br/>TELEPHONIQUE</p>
+                                <p className={"uppercase text-white font-semibold text-lg mt-5"}>Durée : 30 min</p>
+                                <p className={"uppercase text-white font-bold text-3xl mt-5"}>60€</p>
                                 <div className={"w-full mt-5"}>
-                                    <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>DEMANDER UN RAPPEL</Link>
+                                    <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold "}>DEMANDER UN RAPPEL</Link>
                                 </div>
                             </div>
                             <div className="px-6 py-4">
                                 <h2 className="font-bold text-black text-xl mb-2"></h2>
-                                <p className="text-gray-700 text-base">
-                                    Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous. Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté.
+                                <p className="text-gray-700 text-left break-words">
+                                    Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous.<br/> Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté.
                                 </p>
                             </div>
                         </div>
-                        <div className={"max-w-full mx-auto overflow-hidden bg-white shadow-lg border lg:transform lg:-translate-y-16"}>
+                        <div className={"w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg lg:transform lg:-translate-y-16 hover:scale-110 duration-500"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
-                                <p className={"uppercase underline text-white font-semibold text-xl"}>CONSULTATION ÉCRITE</p>
-                                <p className={"uppercase text-white font-semibold text-xl"}>Etude de votre dossier + possibilité d’ajout d’une pièce jointe</p>
-                                <p className={"uppercase text-white"}>ICONE</p>
-                                <p className={"uppercase text-white font-bold text-3xl"}>150€</p>
+                                <p className={"uppercase text-white font-semibold text-2xl"}>CONSULTATION <br/>ÉCRITE</p>
+                                <p className={"text-white font-semibold text-lg mt-5"}>Etude de votre dossier + <br/> possibilité d’ajout d’une pièce jointe</p>
+                                <p className={"uppercase text-white font-bold text-3xl mt-5"}>150€</p>
                                 <div className={"w-full mt-5"}>
                                     <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>CONSULTER PAR ÉCRIT</Link>
                                 </div>
                             </div>
                             <div className="px-6 py-4">
                                 <h2 className="font-bold text-black text-xl mb-2"></h2>
-                                <p className="text-gray-700 text-base">
-                                    Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous. Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté.
+                                <p className="text-gray-700 text-left break-words">
+                                    Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous.<br/> Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté.
                                 </p>
                             </div>
                         </div>
-                        <div className={"max-w-full mx-auto overflow-hidden bg-white shadow-lg border"}>
+                        <div className={"w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg hover:scale-110 duration-500"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
-                                <p className={"uppercase underline text-white font-semibold text-xl"}>RENDEZ-VOUS AU CABINET</p>
-                                <p className={"uppercase text-white font-semibold text-xl"}>Durée : 60 min</p>
-                                <p className={"uppercase text-white"}>ICONE</p>
-                                <p className={"uppercase text-white font-bold text-3xl"}>50€</p>
+                                <p className={"uppercase text-white font-semibold text-2xl"}>RENDEZ-VOUS <br/>AU CABINET</p>
+                                <p className={"uppercase text-white font-semibold text-lg mt-5"}>Durée : 60 min</p>
+                                <p className={"uppercase text-white font-bold text-3xl mt-5"}>50€</p>
                                 <div className={"w-full mt-5"}>
                                     <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Prendre rendez-vous</Link>
                                 </div>
                             </div>
                             <div className="px-6 py-4">
                                 <h2 className="font-bold text-black text-xl mb-2"></h2>
-                                <p className="text-gray-700 text-base">
-                                    Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous. Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté.
+                                <p className="text-gray-700 text-base break-words">
+                                    Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous.<br/> Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className={"bg-gray-800 flex justify-center w-full py-20"}>
+            {/**<div className={"bg-gray-800 flex justify-center w-full py-20"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-3xl uppercase mb-6 text-center"}>COMMENT çA MARCHE ?</h2>
                 </div>
@@ -129,7 +126,7 @@ export default function Honoraires() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*/}
             <BesoinAvocat></BesoinAvocat>
         </>
     );
