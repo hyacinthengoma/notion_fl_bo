@@ -137,13 +137,21 @@ const RenderPost = ({ post, redirect, preview }) => {
       </div>
     )
   }
-
+console.log(post)
   return (
     <>
       <Header></Header>
+      <div className={"relative w-full"}>
+        <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
+          <h1 className={"text-white text-2xl md:text-4xl font-bold"}>{post.Page || ''}</h1>
+        </div>
+        {post.Illustration ?
+            <img className={"brightness-50 h-96 w-full object-cover"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+            : <img className={"brightness-50 h-96 w-full object-cover"} src={"https://placeimg.com/400/225/arch"} />
+        }
+      </div>
       <div className={"w-full flex bg-white justify-center py-20"}>
         <div className={"w-4/5 justify-center"}>
-          <h1 className={"font-bold text-5xl text-center"}>{post.Page || ''}</h1>
           {(post.content || []).map((block, blockIdx) => {
             const { value } = block
             const { type, properties, id, parent_id } = value
