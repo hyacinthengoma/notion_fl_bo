@@ -55,7 +55,7 @@ export default function Header() {
                 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
             </Head>
             <div className={""}>
-                <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100]">
+                <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100] shadow-lg">
                     <Link className="text-3xl font-bold leading-none" href="/index">
                         <Image src="/images/logo-babeau.png" alt="logo-babeau" width={"200"} height="500" className={"lg:mx-20"}/>
                     </Link>
@@ -70,19 +70,19 @@ export default function Header() {
                     </div>
                     <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-12">
                         <li>
-                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="index">ACCUEIL</Link>
+                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-bold hover:text-gray-300 mb-64 drop" href="/Expertise">EXPERTISE</Link>
+                            <Link className="text-sm text-white font-bold hover:text-gray-300 mb-64 drop" href="#">EXPERTISE</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="/Comment-ca-marche/honoraires">HONORAIRES</Link>
+                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="/blog/index">ACTUALITÉS SOCIALES</Link>
+                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="/blog">ACTUALITÉS SOCIALES</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="#">FLORENCE BABEAU</Link>
+                            <Link className="text-sm text-white font-bold hover:text-gray-300" href="/florence-babeau">FLORENCE BABEAU</Link>
                         </li>
                         <li>
                             <Link className="text-sm text-white font-bold hover:text-gray-300" href="/contact">CONTACT</Link>
@@ -110,19 +110,19 @@ export default function Header() {
                     <div>
                         <ul>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/Expertise">ACCUEIL</Link>
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/">ACCUEIL</Link>
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
-                                      href="/Comment-ca-marche/honoraires">EXPERTISE</Link>
+                                      href="#">EXPERTISE</Link>
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
-                                      href="index.php?page=home">HONORAIRES</Link>
+                                      href="/honoraires">HONORAIRES</Link>
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
-                                      href="#">FLORENCE BABEAU</Link>
+                                      href="/florence-babeau">FLORENCE BABEAU</Link>
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"

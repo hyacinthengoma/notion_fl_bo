@@ -1,10 +1,10 @@
-import Header from "../../components/header";
-import sharedStyles from "../../styles/shared.module.css";
-import BesoinAvocat from "../../components/Besoin-avocat";
+import Header from "../components/header";
+import sharedStyles from "../styles/shared.module.css";
+import BesoinAvocat from "../components/Besoin-avocat";
 import Image from "next/image";
 import Link from "next/link";
-import {textBlock} from "../../lib/notion/renderers";
-import {getDateStr} from "../../lib/blog-helpers";
+import {textBlock} from "../lib/notion/renderers";
+import {getDateStr} from "../lib/blog-helpers";
 
 export default function Honoraires() {
     return (

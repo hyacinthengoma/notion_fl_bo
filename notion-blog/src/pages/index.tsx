@@ -55,7 +55,7 @@ const Index = ({ posts = [], preview }) => {
                 <title>Accueil</title>
             </Head>
             <div className={"relative"}>
-                <div className={"absolute mt-16 ml-16"}>
+                <div className={"absolute mt-16 ml-16 z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>MAÎTRE FLORENCE BABEAU</h1>
                     <p className={"text-white text-xl md:text-2xl"}>Avocat en droit du travail et de la sécurité sociale</p>
                 </div>
@@ -125,26 +125,31 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"flex flex-col lg:flex-row justify-center gap-16"}>
                         {lastPosts.map((post) => {
                             return(
-                                <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                                    <div className={"max-w-sm mx-auto rounded-md overflow-hidden bg-white shadow-lg"}>
-                                        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-                                        <div className="px-6 py-4">
-                                            <h2 className="font-bold text-black text-xl mb-2">{post.Page}</h2>
-                                            <p className="text-gray-700 text-base">
-                                                {(!post.preview || post.preview.length === 0) &&
-                                                    'Pas de résumé disponible'}
-                                                {(post.preview || []).map((block, idx) =>
-                                                    textBlock(block, true, `${post.Slug}${idx}`)
-                                                )}
-                                            </p>
-                                            <p className="text-gray-700 text-base">
-                                                {post.Date && (
-                                                    <p className="posted">Publié le : {getDateStr(post.Date)}</p>
-                                                )}
-                                            </p>
+                                <div className="w-80 bg-gray-100 shadow-xl mx-auto hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
+                                    <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+                                        <div className={"max-w-sm mx-auto bg-white overflow-hidden shadow-lg"}>
+                                            {post.Illustration ?
+                                                <img className={"object-fill h-44 w-full"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                                : <img className={"object-fill h-44 w-full"} src={"https://placeimg.com/400/225/arch"} />
+                                            }
+                                            <div className={"px-6 py-5"}>
+                                                <h2 className="font-bold text-black text-xl mb-2">{post.Page}</h2>
+                                                <div>
+                                                    {(!post.Preview || post.Preview.length === 0) &&
+                                                        <p className={"text-gray-700 text-base"}>Pas de résumé disponible</p>}
+                                                    {(post.Preview) && (
+                                                        <p className={"text-gray-700 text-base"}>{(post.Preview)}</p>
+                                                    )}
+                                                </div>
+                                                <div>
+                                                    {post.Date && (
+                                                        <p className="posted text-gray-700 text-base">Publié le : {getDateStr(post.Date)}</p>
+                                                    )}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Link>
+                                    </Link>
+                                </div>
                             )
                         })}
                     </div>

@@ -30,7 +30,7 @@ const contacts = [
   {
     Comp: Envelope,
     alt: 'envelope icon',
-    link: 'mailto:jj@jjsweb.site?subject=Notion Blog',
+    link: 'mailto:jj@jjsweb.site?subject=Notion blog',
   },
 ]
 

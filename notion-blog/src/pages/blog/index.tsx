@@ -76,13 +76,13 @@ const Index = ({ posts = [], preview }) => {
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>BLOG</h1>
                 </div>
-                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/blog/img-blog.png"} alt={"image-banniere"}></img>
+                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/Actualites-sociales/banniere.png"} alt={"image-banniere"}></img>
             </div>
             <div className={"bg-white flex justify-center w-full py-36"}>
                 <div className={"w-5/6"}>
                     <div className={"w-full flex flex-col lg:flex-row justify-center py-16"}>
                         <div className={"w-full lg:w-1/2"}>
-                            <img className={"h-full w-full rounded-lg "} src={"/images/blog/image-actualites.png"} alt={"image-banniere"}></img>
+                            <img className={"h-full w-full rounded-lg "} src={"/images/Actualites-sociales/image-actualites.png"} alt={"image-banniere"}></img>
                         </div>
                         <div className={"w-full lg:w-1/2"}>
                             <h2 className={"text-black font-bold text-2xl text-center"}>Retrouvez les actualités de notre cabinet</h2>
@@ -102,27 +102,27 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 content-center"}>
                         {posts.map((post) => {
                             return(
-                                <div className="w-80 bg-gray-100 shadow-xl rounded-none mx-auto hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
+                                <div className="w-80 bg-gray-100 shadow-xl mx-auto hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
                                     <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                                        <div className={"max-w-sm mx-auto bg-white rounded-md overflow-hidden shadow-lg"}>
+                                        <div className={"max-w-sm mx-auto bg-white overflow-hidden shadow-lg"}>
                                             {post.Illustration ?
                                                 <img className={"object-fill h-44 w-full"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
                                                 : <img className={"object-fill h-44 w-full"} src={"https://placeimg.com/400/225/arch"} />
                                             }
                                             <div className={"px-6 py-5"}>
                                                 <h2 className="font-bold text-black text-xl mb-2">{post.Page}</h2>
-                                                <p className={"text-gray-700 text-base"}>
+                                                <div>
                                                     {(!post.Preview || post.Preview.length === 0) &&
-                                                        'Pas de résumé disponible'}
+                                                        <p className={"text-gray-700 text-base"}>Pas de résumé disponible</p>}
                                                     {(post.Preview) && (
-                                                        <p>{(post.Preview)}</p>
+                                                        <p className={"text-gray-700 text-base"}>{(post.Preview)}</p>
                                                     )}
-                                                </p>
-                                                <p className={"text-gray-700 text-base"}>
+                                                </div>
+                                                <div>
                                                     {post.Date && (
-                                                        <p className="posted">Publié le : {getDateStr(post.Date)}</p>
+                                                        <p className="posted text-gray-700 text-base">Publié le : {getDateStr(post.Date)}</p>
                                                     )}
-                                                </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </Link>
