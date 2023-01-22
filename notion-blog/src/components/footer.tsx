@@ -59,51 +59,51 @@ export default function Footer() {
             </span>
                         </a>
                         <div className="mt-6 lg:max-w-sm">
-                            <p className="text-sm text-gray-800">
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque laudantium, totam rem aperiam.
+                            <p className="text-sm text-white">
+                                2 Rue Claude Boucher<br/>
+                                33300 Bordeaux<br/>
+                                <a
+                                    href="tel:05 57 10 28 24">05 57 10 28 24</a><br/>
+
                             </p>
-                            <p className="mt-4 text-sm text-gray-800">
-                                Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                                beatae vitae dicta sunt explicabo.
+                            <p className="mt-4 text-sm text-white">
+                                Lun – Ven 09:00-17:00
                             </p>
                         </div>
                     </div>
                     <div className="space-y-2 text-sm text-start">
-                        <p className="text-base font-bold tracking-wide text-gray-900">
-                            Contacts
+                        <p className="text-base font-bold tracking-wide text-white">
+                            <u>Pages</u>
                         </p>
-                        <div className="flex">
-                            <p className="mr-1 text-gray-800">Téléphone:</p>
-                            <a
-                                href="tel:05 57 10 28 24"
-                                aria-label="Our phone"
-                                title="Our phone"
-                                className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
-                            >
-                                05 57 10 28 24
-                            </a>
+                        <div className="flex mt-5">
+                            <p className="mr-1 text-white">Accueil</p>
                         </div>
-                        <div className="flex">
-                            <p className="mr-1 text-gray-800">Adresse: </p>
-                            <a
-                                href="https://www.google.com/maps/place/51+Rue+Claude+Boucher,+33300+Bordeaux/@44.8638071,-0.5806085,17z/data=!3m1!4b1!4m5!3m4!1s0xd55286b90949d07:0x73e8abbe83c65abd!8m2!3d44.8638071!4d-0.5784198"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Our address"
-                                title="Our address"
-                                className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
-                            >
-                                2 Rue Claude Boucher
-                                33300 Bordeaux
-                            </a>
+                        <div className="flex mt-5">
+                            <p className="mr-1 text-white">Expertises</p>
                         </div>
+                        <div className="flex mt-5">
+                            <p className="mr-1 text-white">Honoraires</p>
+                        </div>
+                        <div className="flex mt-5">
+                            <p className="mr-1 text-white">Actualités sociales</p>
+                        </div>
+                        <div className="flex mt-5">
+                            <p className="mr-1 text-white">Florence Babeau</p>
+                        </div>
+                        <div className="flex mt-5">
+                            <p className="mr-1 text-white">Contact</p>
+                        </div>
+
                     </div>
                     <div className={"text-start"}>
-          <span className="text-base font-bold tracking-wide text-gray-900">
-            Réseau social
+          <span className="text-base font-bold tracking-wide text-white">
+              <u>Réseau social</u>
           </span>
-                        <div className="flex items-center mt-1 space-x-3">
+                        <p className="mt-4 text-sm text-white">
+                            Vous pouvez également me suivre sur LinkedIn
+                        </p>
+                        <div className="flex items-center mt-1 space-x-3 mt-5">
+                            {/*
                             <a
                                 href="/"
                                 className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
@@ -129,22 +129,34 @@ export default function Footer() {
                                     <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z" />
                                 </svg>
                             </a>
+                            */}
+                            <a
+                                href="/"
+                                className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                            >
+                                <img className={"brightness-50 object-cover w-[1.7rem]"} src={"/images/linkedin.png"} alt={"linkedIn"}></img>
+
+                            </a>
                         </div>
-                        <p className="mt-4 text-sm text-gray-500">
-                            Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken
-                            spare ribs salami.
-                        </p>
+
+                            {/*  <div><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.921862125881!2d-0.5822976486370732!3d44.863885481215846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55286b9ee92b21%3A0x1694739e2dc975af!2sCabinet%20Avocat%20Florence%20Babeau!5e0!3m2!1sfr!2sfr!4v1673651475903!5m2!1sfr!2sfr"
+                                loading="lazy"
+                                className={"w-full h-96 lg:h-full"}
+                                referrerPolicy="no-referrer-when-downgrade"></iframe>   </div>
+                                */}
+
                     </div>
                 </div>
                 <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-white    ">
                         © Copyright 2023 Lorem Inc. All rights reserved.
                     </p>
                     <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
                         <li>
                             <a
                                 href="/"
-                                className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                                className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Blog
                             </a>
@@ -152,7 +164,7 @@ export default function Footer() {
                         <li>
                             <a
                                 href="/"
-                                className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                                className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Mentions légales
                             </a>
@@ -160,9 +172,9 @@ export default function Footer() {
                         <li>
                             <a
                                 href="/"
-                                className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                                className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
-                                Terms &amp; Conditions
+                                Politique de confidentialité
                             </a>
                         </li>
                     </ul>
