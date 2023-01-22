@@ -55,7 +55,7 @@ const Index = ({ posts = [], preview }) => {
             <Head>
                 <title>Accueil</title>
             </Head>
-            <div className={"relative"}>
+            <div className={"relative h-[90vh]"}>
                 <div className={"absolute mt-40 ml-16 z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>MAÎTRE FLORENCE BABEAU</h1>
                     <div className={"ml-6 pt-4"}>
@@ -87,13 +87,13 @@ const Index = ({ posts = [], preview }) => {
                 <img className={"brightness-75 h-[100vh] w-full object-cover"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere"}></img>
             </div>
             <div className={"absolute flex justify-center w-full"}>
-                <div className={"w-5/6 bg-white flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20"}>
+                <div className={"w-2/3 bg-white flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-bold text-3xl"}>
                             28
                         </p>
                         <p className={"text-black text-center text-2xl"}>
-                            Années d'exercice
+                            Années <br/>d'exercice
                         </p>
                     </div>
                     <div className={"flex flex-col"}>
@@ -101,7 +101,7 @@ const Index = ({ posts = [], preview }) => {
                             98%
                         </p>
                         <p className={"text-black text-center text-2xl"}>
-                            de clients satisfaits
+                            de clients <br/>satisfaits
                         </p>
                     </div>
                     <div className={"flex flex-col"}>
@@ -109,7 +109,7 @@ const Index = ({ posts = [], preview }) => {
                             2
                         </p>
                         <p className={"text-black text-center text-2xl"}>
-                            Grands domaines de compétences
+                            Grands domaines <br/> de compétences
                         </p>
                     </div>
                     <div className={"flex flex-col"}>
@@ -117,28 +117,31 @@ const Index = ({ posts = [], preview }) => {
                             3000+
                         </p>
                         <p className={"text-black text-center text-2xl"}>
-                            Dossiers traités
+                            Dossiers <br/> traités
                         </p>
                     </div>
                 </div>
             </div>
 
             <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-36 pb-20 pl-4 pr-5"}>
-                <div className={"w-5/6"}>
+                <div className={"w-5/6 mt-[10vh]"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row"}>
                         <div className={"w-full lg:w-1/2"}>
                             <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
                             </iframe>
-                        </div>
+                            <div className={"text-end"}>
+                                 <button href={"/Expertise"} className={"bg-red-900 text-white mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Consulter mes expertises</button>
+                            </div>
+                            </div>
                         <div className={"w-full lg:w-1/2 flex flex-col gap-y-8 text-justify"}>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Florence Babeau</p>
-                                <p className={"mt-2"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Famille, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
+                                <p className={"mt-2 text-base"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Famille, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
                             </div>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Mon parcours</p>
-                                <p className={"mt-2"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
+                                <p className={"mt-2 text-base"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
                         </div>
 
