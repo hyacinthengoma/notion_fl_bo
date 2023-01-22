@@ -75,12 +75,34 @@
 .postPreview h3,
 .post h1 {
   margin-bottom: 0;
-  text-align: center;
 }
 
 .post h1 {
-  margin-top: 0;
+  margin-top: 1rem;
   font-weight: bold;
+  font-size: 3rem;
+}
+
+.post h2 {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.post ol {
+  margin-top: 1rem;
+  list-style-type: decimal;
+  margin-left: 2rem;
+}
+
+.post ul {
+  margin-top: 1rem;
+  list-style-type: circle;
+  margin-left: 2rem;
+}
+
+.post p {
+  margin-top: 1rem;
 }
 
 .post :global(h2),
@@ -126,7 +148,6 @@
 }
 
 .post {
-  max-width: calc(600px + 10%);
   margin: 0 auto;
   padding: 5%;
 }

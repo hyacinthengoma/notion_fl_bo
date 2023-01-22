@@ -127,11 +127,11 @@ const Index = ({ posts = [], preview }) => {
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row"}>
-                        <div className={"w-1/2"}>
-                            <iframe className={"w-full h-80"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
+                        <div className={"w-full lg:w-1/2"}>
+                            <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
                             </iframe>
                         </div>
-                        <div className={"w-1/2 flex flex-col gap-y-8 text-justify"}>
+                        <div className={"w-full lg:w-1/2 flex flex-col gap-y-8 text-justify"}>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Florence Babeau</p>
                                 <p className={"mt-2"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Famille, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
@@ -148,41 +148,26 @@ const Index = ({ posts = [], preview }) => {
             <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-[2rem] uppercase mb-6"}>Mes dernières actualités</h2>
-                    <div className={"flex flex-col lg:flex-row justify-center gap-16"}>
+                    <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch"}>
                         {lastPosts.map((post) => {
                             return(
-                                <div className="w-96 mx-auto hover:scale-110 duration-500 article relative" key={post.Slug} type={post.Type}>
-                                    <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                                        <div className={"max-w-lg mx-auto bg-white overflow-hidden shadow-lg rounded-lg"}>
+                                <div className="w-4/6 sm:w-4/6 lg:w-1/3 bg-gray-100 border border-gray-200 rounded-lg shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
+                                    <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
+                                        <div>
                                             {post.Illustration ?
-                                                <img className={"object-fill h-44 w-full"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                                : <img className={"object-fill h-44 w-full"} src={"https://placeimg.com/400/225/arch"} />
+                                                <img className={"object-cover h-44 w-full rounded-lg shadow-lg"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                                : <img className={"object-cover h-44 w-full rounded-lg shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
                                             }
-                                            <div className={"px-6 py-5"}>
-                                                <h2 className="font-bold text-black text-xl mb-2">{post.Page}</h2>
-                                                <div>
-                                                    {(!post.Preview || post.Preview.length === 0) &&
-                                                        <p className={"text-gray-700 text-base"}>Pas de résumé disponible</p>}
-                                                    {(post.Preview) && (
-                                                        <p className={"text-gray-700 text-base"}>{(post.Preview)}</p>
-                                                    )}
-                                                </div>
-                                                <div>
-                                                    {post.Date && (
-                                                        <p className="text-sm mt-3 text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
-                                                    )}
-                                                </div>
-                                                <button
-                                                    className="mt-6 py-2 px-4 bg-red-900 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">Consulter cet article
-                                                </button>
-                                            </div>
                                         </div>
-                                        <div className="absolute top-0 rounded-tr-lg right-0 py-2 px-4 bg-white text-black shadow-lg">
-                                            {(!post.Type || post.Type.length === 0) &&
-                                                <span className="text-md">Aucun type</span>
-                                            }
-                                            {(post.Type) && (
-                                                <span className="text-md">{post.Type}</span>
+                                        <div className="p-5">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{post.Page}</h5>
+                                            {(!post.Preview || post.Preview.length === 0) &&
+                                                <p className={"mb-3 font-normal text-gray-700"}>Pas de résumé disponible</p>}
+                                            {(post.Preview) && (
+                                                <p className={"mb-3 font-normal text-gray-700"}>{(post.Preview)}</p>
+                                            )}
+                                            {post.Date && (
+                                                <p className="text-sm mt-auto text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
                                             )}
                                         </div>
                                     </Link>

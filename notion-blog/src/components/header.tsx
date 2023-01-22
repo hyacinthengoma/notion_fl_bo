@@ -99,8 +99,24 @@ export default function Header() {
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
-                        <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop" href="#">EXPERTISE</Link>
+                        <li className={"group"}>
+                            <Link className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop" href={""}>EXPERTISE</Link>
+                            <ul className="absolute hidden bg-red-900 text-gray-700 pt-10 pb-1 group-hover:block">
+                                <li className="">
+                                    <Link
+                                        className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-semibold whitespace-no-wrap"
+                                        href="/Expertise/Droit-travail"
+                                    >Droit du travail</Link
+                                    >
+                                </li>
+                                <li className="">
+                                    <Link
+                                        className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-semibold whitespace-no-wrap"
+                                        href="/Expertise/Droit-securite-sociale"
+                                    >Droit de la sécurité sociale</Link
+                                    >
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/honoraires">HONORAIRES</Link>

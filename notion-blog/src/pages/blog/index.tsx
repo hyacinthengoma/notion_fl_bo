@@ -79,7 +79,7 @@ const Index = ({ posts = [], preview }) => {
                 </div>
                 <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/Actualites-sociales/blog-banniere.png"} alt={"image-banniere"}></img>
             </div>
-            <div className={"bg-zinc-100 flex justify-center w-full py-1"}>
+            <div className={"bg-zinc-100 flex justify-center w-full py-1 pb-10"}>
                 <div className={"w-5/6"}>
                     {/**<div className={"w-full flex flex-col lg:flex-row justify-center py-16"}>
                         <div className={"w-full lg:w-1/2"}>
@@ -100,51 +100,29 @@ const Index = ({ posts = [], preview }) => {
                             </select>
                         </div>
                     </div>
-                    <div className="flex flex-wrap -mx-1 lg:-mx-4">
+                    <div className="grid grid-cols-4 gap-8">
                         {posts.map((post) => {
                             return(
-                                <div className="my-4 px-1 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
-                                    <article className="overflow-hidden border shadow-lg hover:shadow-xl hover:scale-105 ease-in duration-200 mx-4 rounded-lg">
-                                        <div className="relative">
-                                            <div className="absolute ml-4 rounded-tr-lg right-0 py-2 px-4 bg-white text-black shadow-lg">
-                                                <div>
-                                                    {(!post.Type || post.Type.length === 0) &&
-                                                        <span className="text-md">Aucun type</span>
-                                                    }
-                                                    {(post.Type) && (
-                                                        <span className="text-md">{post.Type}</span>
-                                                    )}
-                                                </div>
-                                            </div>
+                                <div className="w-full bg-gray-100 border border-gray-200 rounded-lg shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
+                                    <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
+                                        <div>
+                                            {post.Illustration ?
+                                                <img className={"object-cover h-44 w-full rounded-lg shadow-lg"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                                : <img className={"object-cover h-44 w-full rounded-lg shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
+                                            }
                                         </div>
-                                        {post.Illustration ?
-                                            <img className={"block h-[230px] w-full object-cover\""} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                            : <img className={"block h-[230px] w-full object-cover\""} src={"https://placeimg.com/400/225/arch"} />
-                                        }
-                                        <header className="leading-tight bg-white p-2 md:p-4 h-44">
-                                            <h1 className="text-lg">
-                                                {post.Page}
-                                            </h1>
-                                            <div>
-                                                {(!post.Preview || post.Preview.length === 0) &&
-                                                    <p className={"text-gray-700 text-base"}>Pas de résumé disponible</p>}
-                                                {(post.Preview) && (
-                                                    <p className={"text-gray-700 text-base"}>{(post.Preview)}</p>
-                                                )}
-                                            </div>
-
-                                        </header>
-                                        <footer className="flex flex-col items-center bg-white justify-between leading-none p-4">
-                                            <div>
-                                                {post.Date && (
-                                                    <p className="text-sm mt-3 text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
-                                                )}
-                                            </div>
-                                            <button
-                                                className="mt-6 py-2 px-4 bg-red-900 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">Consulter cet article
-                                            </button>
-                                        </footer>
-                                    </article>
+                                        <div className="p-5">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{post.Page}</h5>
+                                            {(!post.Preview || post.Preview.length === 0) &&
+                                                <p className={"mb-3 font-normal text-gray-700"}>Pas de résumé disponible</p>}
+                                            {(post.Preview) && (
+                                                <p className={"mb-3 font-normal text-gray-700"}>{(post.Preview)}</p>
+                                            )}
+                                            {post.Date && (
+                                                <p className="text-sm mt-auto text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
+                                            )}
+                                        </div>
+                                    </Link>
                                 </div>
                             )
                         })}
