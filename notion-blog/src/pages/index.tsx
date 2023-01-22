@@ -78,7 +78,7 @@ const Index = ({ posts = [], preview }) => {
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                               d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
                                     </svg>
-                                    <span>MES EXPERTISES</span>
+                                    <span>Contactez-moi</span>
                                 </Link>
                             </div>
                         </div>
@@ -154,12 +154,12 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch"}>
                         {lastPosts.map((post) => {
                             return(
-                                <div className="w-4/6 sm:w-4/6 lg:w-1/3 bg-gray-100 border border-gray-200 rounded-lg shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
+                                <div className="w-4/6 sm:w-4/6 lg:w-1/3 bg-gray-100 border border-gray-200 rounded-sm shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
                                     <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
                                         <div>
                                             {post.Illustration ?
-                                                <img className={"object-cover h-44 w-full rounded-lg shadow-lg"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                                : <img className={"object-cover h-44 w-full rounded-lg shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
+                                                <img className={"object-cover h-44 w-full rounded-sm shadow-sm"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                                : <img className={"object-cover h-44 w-full rounded-sm shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
                                             }
                                         </div>
                                         <div className="p-5">
