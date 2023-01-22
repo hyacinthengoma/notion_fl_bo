@@ -13,6 +13,7 @@ import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import BesoinAvocat from "../../components/Besoin-avocat";
+import {LinkedinIcon, LinkedinShareButton} from "react-share";
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -137,7 +138,7 @@ const RenderPost = ({ post, redirect, preview }) => {
       </div>
     )
   }
-console.log(post)
+  const {asPath} = useRouter();
   return (
     <>
       <Header></Header>
@@ -463,6 +464,9 @@ console.log(post)
             }
             return toRender
           })}
+          <LinkedinShareButton url={asPath}>
+            <LinkedinIcon size={32} round />
+          </LinkedinShareButton>
         </div>
       </div>
       <BesoinAvocat></BesoinAvocat>
