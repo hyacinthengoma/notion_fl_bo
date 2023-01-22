@@ -105,7 +105,7 @@ export default function Header() {
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
                         <li className={"group"}>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop" href={""}>EXPERTISE</Link>
+                            <Link className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none" href={""}>EXPERTISES</Link>
                             <ul className="absolute hidden bg-red-900 text-gray-700 pt-10 pb-1 group-hover:block">
                                 <li className="">
                                     <Link

@@ -126,7 +126,7 @@ const Index = ({ posts = [], preview }) => {
             <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-36 pb-20 pl-4 pr-5"}>
                 <div className={"w-5/6 mt-[10vh]"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Qui suis-je ?</h2>
-                    <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row"}>
+                    <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
                             <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
                             </iframe>
@@ -151,7 +151,7 @@ const Index = ({ posts = [], preview }) => {
             <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-[2rem] uppercase mb-6"}>Mes dernières actualités</h2>
-                    <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch"}>
+                    <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch mt-10"}>
                         {lastPosts.map((post) => {
                             return(
                                 <div className="w-4/6 sm:w-4/6 lg:w-1/3 bg-gray-100 border border-gray-200 rounded-sm shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
