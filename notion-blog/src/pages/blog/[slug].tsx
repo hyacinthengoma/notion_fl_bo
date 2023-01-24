@@ -74,7 +74,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
 // Return our list of blog posts to prerender
 export async function getStaticPaths() {
   const postsTable = await getBlogIndex()
-  // we fallback for any unpublished posts to save build time
+  // we fall back for any unpublished posts to save build time
   // for actually published ones
   return {
     paths: Object.keys(postsTable)

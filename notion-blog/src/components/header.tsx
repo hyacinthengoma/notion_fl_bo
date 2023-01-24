@@ -54,14 +54,14 @@ export default function Header() {
                 <Script src="https://use.fontawesome.com/46cabe336c.js"></Script>
                 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+                <link rel="preconnect" href="https://fonts.gstatic.com"/>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
                 <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.6.2/dist/flowbite.min.css"/>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
             </Head>
             <div className={""}>
                 <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100] shadow-lg">
-                    <Link className="text-3xl font-bold leading-none lg:mx-20" href="/index">
+                    <Link className="text-3xl font-bold leading-none lg:mx-20" href="/">
                         <svg id="Groupe_7" data-name="Groupe 7" xmlns="http://www.w3.org/2000/svg" width="232.691" height="57.908" viewBox="0 0 232.691 57.908">
                             <g id="Groupe_49">
                                 <g id="Groupe_17">
@@ -143,9 +143,9 @@ export default function Header() {
                 <nav
                     className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-900 overflow-y-auto">
                     <div className="flex items-center mb-8">
-                        <a className="mr-auto text-3xl font-bold leading-none" href="index.php?page=home">
+                        <Link className="mr-auto text-3xl font-bold leading-none" href="/">
                             <img src="/images/logo-babeau.png" className="h-16" alt="waw-logo"/>
-                        </a>
+                        </Link>
                         <button className="navbar-close">
                             <svg className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -158,23 +158,39 @@ export default function Header() {
                     <div>
                         <ul>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/">ACCUEIL</Link>
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/">
+                                    ACCUEIL
+                                </Link>
+                            </li>
+                            <li className="mb-1">
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/Expertise/Droit-travail">
+                                    Expertise - Droit du travail
+                                </Link>
+                            </li>
+                            <li className="mb-1">
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/Expertise/Droit-securite-sociale">
+                                    Expertise - Droit de la sécurité sociale
+                                </Link>
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
-                                      href="#">EXPERTISE</Link>
+                                      href="/honoraires">HONORAIRES
+                                </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
-                                      href="/honoraires">HONORAIRES</Link>
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/blog">
+                                    ACTUALITÉS SOCIALES
+                                </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
-                                      href="/florence-babeau">FLORENCE BABEAU</Link>
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/florence-babeau">
+                                    FLORENCE BABEAU
+                                </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
-                                      href="/contact">CONTACT</Link>
+                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/contact">
+                                    CONTACT
+                                </Link>
                             </li>
                         </ul>
                     </div>

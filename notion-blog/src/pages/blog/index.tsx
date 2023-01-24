@@ -100,7 +100,7 @@ const Index = ({ posts = [], preview }) => {
                             </select>
                         </div>
                     </div>
-                    <div className="grid grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {posts.map((post) => {
                             return(
                                 <div className="w-full bg-gray-100 border border-gray-200 rounded-lg shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>

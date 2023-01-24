@@ -62,7 +62,7 @@ const Index = ({ posts = [], preview }) => {
                         <p className={"text-white text-xl md:text-2xl"}>Avocat en droit du travail et de la sécurité sociale</p>
                         <div className={"flex"}>
                             <div className={"pt-16 pr-2"}>
-                                <Link href={""} className="bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5">
+                                <Link href={""} className="bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -72,7 +72,7 @@ const Index = ({ posts = [], preview }) => {
                                 </Link>
                             </div>
                             <div className={"pt-16 pl-2"}>
-                                <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5"}>
+                                <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -130,10 +130,7 @@ const Index = ({ posts = [], preview }) => {
                         <div className={"w-full lg:w-1/2"}>
                             <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
                             </iframe>
-                            <div className={"text-end"}>
-                                 <button href={"/Expertise"} className={"bg-red-900 text-white mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Consulter mes expertises</button>
-                            </div>
-                            </div>
+                        </div>
                         <div className={"w-full lg:w-1/2 flex flex-col gap-y-8 text-justify"}>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Florence Babeau</p>
@@ -144,7 +141,12 @@ const Index = ({ posts = [], preview }) => {
                                 <p className={"mt-2 text-base"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
                         </div>
-
+                    </div>
+                    <div className={"text-center mt-10 hover:scale-105 duration-500"}>
+                        <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Expertise - Droit du travail</Link>
+                    </div>
+                    <div className={"text-center mt-10 hover:scale-105 duration-500"}>
+                        <Link href={"/Expertise/Droit-securite-sociale"} className={"bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Expertise - Droit de la sécurité sociale</Link>
                     </div>
                 </div>
             </div>
@@ -179,7 +181,7 @@ const Index = ({ posts = [], preview }) => {
                         })}
                     </div>
                     <div className={"flex justify-center mt-20"}>
-                        <Link href={"/blog"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Consulter l'ensemble de mes actualités</Link>
+                        <Link href={"/blog"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
                     </div>
                 </div>
             </div>
