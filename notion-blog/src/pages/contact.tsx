@@ -71,8 +71,6 @@ export default function Contact() {
         setSelectTypeService('')
         setMessage('')
       }
-
-
     })
   }
 
@@ -90,7 +88,7 @@ export default function Contact() {
           <div className={"grid grid-cols-2 lg:grid-cols-3 text-center"}>
             <div className={"flex flex-col items-center gap-y-5"}>
               <div className={"text-black"}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                      stroke="currentColor" className="w-8 h-8">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
                   <path strokeLinecap="round" strokeLinejoin="round"
@@ -109,7 +107,7 @@ export default function Contact() {
                 </svg>
               </div>
               <p className={"text-[1rem] text-black font-bold"}>TÉLÉPHONE</p>
-              <p className={"text-[1rem]"}>06 00 00 00 00</p>
+              <p className={"text-[1rem]"}>05 57 10 28 24</p>
             </div>
             <div className={"flex flex-col items-center gap-y-5"}>
               <div>
@@ -133,20 +131,20 @@ export default function Contact() {
               <h3 className={"text-gray-600 text-xl"}>Merci de remplir les champs ci-dessous</h3>
               <h1 className={"text-white text-2xl md:text-4xl font-bold text-center"}>FORMULAIRE DE CONTACT</h1>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom"} required={true}/>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom"}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom*"} required={true}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom*"} required={true}/>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone"}/>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal"}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal*"} required={true}/>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email"}/>
+                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email*"} required={true}/>
                 <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"} placeholder={"Raison sociale"}/>
               </div>
               <div className={"flex justify-center my-5"}>
-                <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border-b focus:outline-none focus:border-red-900 border-black p-4 w-full py-2"}>
-                  <option value={""}>Type de service</option>
+                <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border-b focus:outline-none focus:border-red-900 border-black p-4 w-full py-2"} required={true}>
+                  <option value={""}>Type de service*</option>
                   <option value={"Droit du travail"}>Droit du travail</option>
                   <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
                 </select>
