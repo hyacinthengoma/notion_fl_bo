@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function CommentCaMarcheHome() {
     return (
         <div className={"bg-white"}>
-            <Header></Header>
             <div>
                 <Image className="w-full" src="/images/comment-ca-marche/2-guys-1-girl.png" width={10000} height={10000} alt="homme-serieux-juridique-couple-chauve"></Image>
             </div>

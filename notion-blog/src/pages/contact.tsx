@@ -76,7 +76,6 @@ export default function Contact() {
 
   return (
     <>
-      <Header></Header>
       <div className={"relative w-full"}>
         <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
           <h1 className={"text-white text-2xl md:text-4xl font-bold"}>CONTACT</h1>

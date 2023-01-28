@@ -6,6 +6,8 @@ import { Poppins } from '@next/font/google';
 import NextNProgress from "nextjs-progressbar";
 import {useEffect} from "react";
 import Loader from "../components/loader";
+import Header from "../components/header";
+import BackToTop from "../components/BackToTop";
 
 const poppins = Poppins({
     weight: ['400', '700'],
@@ -25,8 +27,10 @@ export default function MyApp({ Component, pageProps }) {
     return (
         <>
             <NextNProgress height={6} color="#4338C9"></NextNProgress>
-          <Component {...pageProps} />
-          <Footer />
+            <Header></Header>
+            <Component {...pageProps} />
+            <BackToTop></BackToTop>
+            <Footer />
         </>
       )
 }

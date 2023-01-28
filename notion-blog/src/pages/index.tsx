@@ -51,7 +51,6 @@ const Index = ({ posts = [], preview }) => {
     const lastPosts = posts.slice(-3);
     return (
         <>
-            <Header></Header>
             <Head>
                 <title>Accueil</title>
             </Head>
