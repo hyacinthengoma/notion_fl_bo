@@ -22,7 +22,13 @@ export default function MyApp({ Component, pageProps }) {
             const loader = document.getElementById('globalLoader');
             if (loader)
                 setTimeout(() => {
-                    loader.style.display = 'none';
+                    loader.style.transition = 'all 1s ease-in-out';
+                    loader.style.transform = 'translate(-50%, 100%)';
+                    //loader.style.transform = 'translateY(100%)';
+                    //loader.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 1000);
                 }, 3000);
         }
     }, []);
