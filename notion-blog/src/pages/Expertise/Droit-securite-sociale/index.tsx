@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Header from "../../../components/header";
 import Link from "next/link";
-import Recommandation from "../../../components/recommandation";
+import Recommendation from "../../../components/recommendation";
 import BesoinAvocat from "../../../components/Besoin-avocat";
 
 export default function HomeDroitSecuSociale() {
@@ -11,7 +11,7 @@ export default function HomeDroitSecuSociale() {
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>DROIT DE LA SÉCURITÉ SOCIALE</h1>
                 </div>
-                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"}></img>
+                <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"w-full flex justify-center bg-white py-20"}>
                 <div className={"w-5/6 text-justify"}>

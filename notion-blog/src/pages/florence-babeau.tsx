@@ -1,6 +1,7 @@
 import Header from "../components/header";
 import BesoinAvocat from "../components/Besoin-avocat";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FlorenceBabeau() {
     return(
@@ -9,7 +10,7 @@ export default function FlorenceBabeau() {
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>FLORENCE BABEAU</h1>
                 </div>
-                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/FlorenceBabeau/fb-banniere.png"} alt={"image-banniere"}></img>
+                <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/FlorenceBabeau/fb-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white flex justify-center w-full pt-36"}>
                 <div className={"w-5/6"}>

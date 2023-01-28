@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import sharedStyles from '../styles/shared.module.css'
 import contactStyles from '../styles/contact.module.css'
+import Image from "next/image";
 
 import GitHub from '../components/svgs/github'
 import Twitter from '../components/svgs/twitter'
@@ -80,7 +81,7 @@ export default function Contact() {
         <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
           <h1 className={"text-white text-2xl md:text-4xl font-bold"}>CONTACT</h1>
         </div>
-        <img className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/Contact/banniere.png"} alt={"image-banniere"}></img>
+        <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/Contact/banniere.png"} alt={"image-banniere-contact"} width={"1920"} height={"1080"}/>
       </div>
       <div className={"bg-white flex justify-center w-full py-8"}>
         <div className={"w-5/6"}>

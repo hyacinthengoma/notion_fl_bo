@@ -17,7 +17,7 @@ export default function Honoraires() {
                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Prenez rendez-vous</Link>
 
                 </div>
-                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"}></img>
+                <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white flex justify-center w-full py-36"}>
                 <div className={"w-5/6"}>

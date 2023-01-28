@@ -1,11 +1,11 @@
 //Custom components
 import Header from "../components/header";
-import Recommandation from "../components/recommandation";
+import Recommendation from "../components/recommendation";
 import BesoinAvocat from "../components/Besoin-avocat";
 
 import Link from "next/link";
 import Head from "next/head";
-
+import Image from "next/image";
 //Notion libs
 import { getBlogLink, getDateStr, postIsPublished } from '../lib/blog-helpers';
 import { textBlock } from '../lib/notion/renderers';
@@ -83,7 +83,7 @@ const Index = ({ posts = [], preview }) => {
                         </div>
                     </div>
                 </div>
-                <img className={"brightness-75 h-[100vh] w-full object-cover"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere"}></img>
+                <Image className={"brightness-75 h-[100vh] w-full object-cover"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"absolute flex justify-center w-full"}>
                 <div className={"w-2/3 bg-white flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20"}>
@@ -184,7 +184,7 @@ const Index = ({ posts = [], preview }) => {
                     </div>
                 </div>
             </div>
-            <Recommandation></Recommandation>
+            <Recommendation></Recommendation>
             <BesoinAvocat></BesoinAvocat>
         </>
     );

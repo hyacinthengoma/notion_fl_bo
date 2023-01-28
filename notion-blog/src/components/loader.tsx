@@ -17,6 +17,7 @@ display: block;
     height: 100%;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 4px 2em 10px;
 }
 .loader {
  --clr: #3498db;

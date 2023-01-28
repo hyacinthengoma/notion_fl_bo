@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export default function BesoinAvocat() {
     return (
@@ -12,7 +13,7 @@ export default function BesoinAvocat() {
                     <span>PRENDRE CONTACT</span>
                 </Link>
             </div>
-            <img className={"brightness-50 h-[600px] w-full object-cover"} src={"/images/BesoinAvocat/besoin-avocat-banniere.png"} alt={"image-banniere"}></img>
+            <Image className={"brightness-50 h-[600px] w-full object-cover"} src={"/images/BesoinAvocat/besoin-avocat-banniere.png"} alt={"image-banniere-besoin-avocat"} width={"600"} height={"600"}></Image>
         </div>
     );
 }

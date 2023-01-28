@@ -66,7 +66,7 @@ const Index = ({ posts = [], preview }) => {
                     <h1 className={"text-white text-2xl md:text-4xl font-bold"}>BLOG</h1>
                     <p className={"text-white text-xl md:text-2xl mb-8"}>Retrouvez les actualités de mon cabinet</p>
                 </div>
-                <img className={"brightness-50 h-96 w-full object-cover"} src={"/images/Actualites-sociales/blog-banniere.png"} alt={"image-banniere"}></img>
+                <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/Actualites-sociales/blog-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-zinc-100 flex justify-center w-full py-1 pb-10"}>
                 <div className={"w-5/6"}>

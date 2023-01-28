@@ -1,4 +1,6 @@
-export default function Recommandation() {
+import Image from "next/image";
+
+export default function Recommendation() {
     return (
         <div className={"bg-gray-50 py-16"}>
             <div className={"flex justify-center w-full"}>
@@ -12,9 +14,12 @@ export default function Recommandation() {
                                     <div className="flex flex-wrap justify-center">
                                         <div className="w-full flex justify-center">
                                             <div className="relative">
-                                                <img
-                                                    src="https://lh3.googleusercontent.com/a-/AD5-WCkLgwAmhTsj_Z66U6foDb0esTARCqIvm1RWn5GR=w500-h500"
-                                                    className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
+                                                <Image
+                                                    src="/images/Recommendations/ViolaineHubert.jpg"
+                                                    className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
+                                                    width={"500"}
+                                                    height={"500"}
+                                                    alt={"avatar-nicolas-duburch-avis"}/>
                                             </div>
                                         </div>
                                         <div className="w-full text-center mt-20">
@@ -53,9 +58,12 @@ export default function Recommandation() {
                                     <div className="flex flex-wrap justify-center">
                                         <div className="w-full flex justify-center">
                                             <div className="relative">
-                                                <img
-                                                    src="https://lh3.googleusercontent.com/a-/AD5-WCmxamnHAOE0ymjmQybuMALDHGkMB3lSiK1lwNYyjw=w500-h500"
-                                                    className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
+                                                <Image
+                                                    src="/images/Recommendations/NicolasDuburch.jpg"
+                                                    className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
+                                                    width={"500"}
+                                                    height={"500"}
+                                                    alt={"avatar-nicolas-duburch-avis"}/>
                                             </div>
                                         </div>
                                         <div className="w-full text-center mt-20">
@@ -91,9 +99,12 @@ export default function Recommandation() {
                                     <div className="flex flex-wrap justify-center">
                                         <div className="w-full flex justify-center">
                                             <div className="relative">
-                                                <img
-                                                    src="https://lh3.googleusercontent.com/a/AEdFTp6-tWaPjP91rtJAuYcYFEeEkl3mBCIsW-keQqhi=w500-h500"
-                                                    className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
+                                                <Image
+                                                    src="/images/Recommendations/PierreGarnier.png"
+                                                    className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
+                                                    width={"500"}
+                                                    height={"500"}
+                                                    alt={"avatar-pierre-garnier-avis"}/>
                                             </div>
                                         </div>
                                         <div className="w-full text-center mt-20">
