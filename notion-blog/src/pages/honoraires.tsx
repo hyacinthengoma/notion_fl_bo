@@ -22,7 +22,7 @@ export default function Honoraires() {
             <div className={"bg-white flex justify-center w-full py-36"}>
                 <div className={"w-5/6"}>
                     <div className={"flex flex-col lg:flex-row"}>
-                        <div className={"w-1/4 mx-auto overflow-hidden bg-white shadow-2xl rounded-lg border hover:scale-110 duration-500"}>
+                        <div className={"w-[40rem] lg:w-1/4 mx-auto overflow-hidden bg-white shadow-2xl rounded-lg border hover:scale-110 duration-500"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
                                 <p className={"uppercase text-white font-bold text-2xl"}>CONSULTATION <br/>TELEPHONIQUE</p>
                                 <p className={"uppercase text-white font-semibold text-lg mt-5"}>Durée : 30 min</p>
@@ -38,7 +38,7 @@ export default function Honoraires() {
                                 </p>
                             </div>
                         </div>
-                        <div className={"w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg lg:transform lg:-translate-y-16 hover:scale-110 duration-500"}>
+                        <div className={"w-[40rem] lg:w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg lg:transform lg:-translate-y-16 hover:scale-110 duration-500 sm:w-1/4"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
                                 <p className={"uppercase text-white font-semibold text-2xl"}>CONSULTATION <br/>ÉCRITE</p>
                                 <p className={"text-white font-semibold text-lg mt-5"}>Etude de votre dossier + <br/> possibilité d’ajout d’une pièce jointe</p>
@@ -54,7 +54,7 @@ export default function Honoraires() {
                                 </p>
                             </div>
                         </div>
-                        <div className={"w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg hover:scale-110 duration-500"}>
+                        <div className={"w-[40rem] lg:w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg hover:scale-110 duration-500"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
                                 <p className={"uppercase text-white font-semibold text-2xl"}>RENDEZ-VOUS <br/>AU CABINET</p>
                                 <p className={"uppercase text-white font-semibold text-lg mt-5"}>Durée : 60 min</p>
