@@ -28,7 +28,7 @@ export default function Honoraires() {
                                 <p className={"uppercase text-white font-semibold text-lg mt-5"}>Durée : 30 min</p>
                                 <p className={"uppercase text-white font-bold text-3xl mt-5"}>60€</p>
                                 <div className={"w-full mt-5"}>
-                                    <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold "}>DEMANDER UN RAPPEL</Link>
+                                    <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold "}>DEMANDER UN RAPPEL</Link>
                                 </div>
                             </div>
                             <div className="px-6 py-4">
@@ -44,7 +44,7 @@ export default function Honoraires() {
                                 <p className={"text-white font-semibold text-lg mt-5"}>Etude de votre dossier + <br/> possibilité d’ajout d’une pièce jointe</p>
                                 <p className={"uppercase text-white font-bold text-3xl mt-5"}>150€</p>
                                 <div className={"w-full mt-5"}>
-                                    <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>CONSULTER PAR ÉCRIT</Link>
+                                    <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>CONSULTER PAR ÉCRIT</Link>
                                 </div>
                             </div>
                             <div className="px-6 py-4">
@@ -60,7 +60,7 @@ export default function Honoraires() {
                                 <p className={"uppercase text-white font-semibold text-lg mt-5"}>Durée : 60 min</p>
                                 <p className={"uppercase text-white font-bold text-3xl mt-5"}>50€</p>
                                 <div className={"w-full mt-5"}>
-                                    <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Prendre rendez-vous</Link>
+                                    <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>Prendre rendez-vous</Link>
                                 </div>
                             </div>
                             <div className="px-6 py-4">
