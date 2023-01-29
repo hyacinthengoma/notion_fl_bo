@@ -55,10 +55,10 @@ const Index = ({ posts = [], preview }) => {
                 <title>Accueil</title>
             </Head>
             <div className={"relative h-[90vh]"}>
-                <div className={"absolute w-100 mt-40 w-100 sm:ml-16 z-50"}>
+                <div className={"absolute w-[100%] mt-96 sm:ml-16 sm:mt-40 sm:w-max z-50"}>
                     <h1 className={"text-white text-center text-2xl md:text-4xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
                     <div className={"sm:ml-6 pt-4"}>
-                        <p className={"text-white text-center text-xl md:text-2xl "}>Avocat en droit du travail et de la sécurité sociale</p>
+                        <p className={"text-white px-32 text-center text-xl md:text-2xl sm:px-0"}>Avocat en droit du travail et de la sécurité sociale</p>
                         <div className={"block sm:flex"}>
                             <div className={"pt-16 pr-2 flex sm:flex justify-center"}>
                                 <Link href={""} className="bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500">
@@ -83,10 +83,10 @@ const Index = ({ posts = [], preview }) => {
                         </div>
                     </div>
                 </div>
-                <Image className={"brightness-75 h-[100vh] w-full object-cover"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
+                <Image className={"brightness-75 h-[94.4vh] w-full object-cover object-[-960px] sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"absolute flex justify-center w-full"}>
-                <div className={"bg-white -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20 sm:mt-32 mt-0 w-2/3"}>
+                <div className={"bg-white -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20 sm:-mt-16 mt-0 w-2/3"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-bold text-3xl"}>
                             28
@@ -123,8 +123,8 @@ const Index = ({ posts = [], preview }) => {
             </div>
 
             <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-36 pb-20 pl-4 pr-5"}>
-                <div className={"w-5/6 mt-[10vh]"}>
-                    <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[10vh]"}>Qui suis-je ?</h2>
+                <div className={"w-5/6 mt-[10vh] sm:mt-[0vh]"}>
+                    <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[3vh]"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
                             <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
