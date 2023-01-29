@@ -48,12 +48,21 @@ const Index = ({ posts = [], preview }) => {
 
     useEffect(() => {
         var categories = document.getElementsByClassName('categorie');
+        var clickCounter=0;
 
         var listeCateg = []
         Array.prototype.forEach.call(categories, function(element) {
             element.addEventListener('click', function(currentCateg){
+                element.style.background= '#991B1B';
+                element.style.color= 'white';
+                clickCounter++;
+                if (clickCounter%2 ==0) {
+                    element.style.background= '#FDA5A5';
+                }
+
                 if(!listeCateg.includes(currentCateg.target.innerText))
                     listeCateg.push(currentCateg.target.innerText);
+
                 else
                     listeCateg = listeCateg.filter(e => e !== currentCateg.target.innerText);
 
