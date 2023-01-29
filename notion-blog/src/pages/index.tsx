@@ -100,7 +100,7 @@ const Index = ({ posts = [], preview }) => {
                             98%
                         </p>
                         <p className={"text-black text-center text-2xl"}>
-                            de clients <br/>satisfaits
+                            de clients <br/>satisfait
                         </p>
                     </div>
                     <div className={"flex flex-col"}>
