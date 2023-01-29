@@ -52,10 +52,15 @@ const Index = ({ posts = [], preview }) => {
         var listeCateg = []
         Array.prototype.forEach.call(categories, function(element) {
             element.addEventListener('click', function(currentCateg){
-                if(!listeCateg.includes(currentCateg.target.innerText))
+                if(!listeCateg.includes(currentCateg.target.innerText)){
                     listeCateg.push(currentCateg.target.innerText);
-                else
+                    currentCateg.target.classList.remove('bg-red-300', 'text-black', 'hover:bg-red-900', 'hover:text-white');
+                    currentCateg.target.classList.add('bg-red-900', 'text-white', 'hover:bg-red-300', 'hover:text-black');
+                }else{
                     listeCateg = listeCateg.filter(e => e !== currentCateg.target.innerText);
+                    currentCateg.target.classList.add('bg-red-300', 'text-black', 'hover:bg-red-900', 'hover:text-white');
+                    currentCateg.target.classList.remove('bg-red-900', 'text-white', 'hover:bg-red-300', 'hover:text-black');
+                }
 
                 var articles = document.getElementsByClassName('article');
                 Array.prototype.forEach.call(articles, function(currentArticle){
@@ -63,6 +68,10 @@ const Index = ({ posts = [], preview }) => {
                         currentArticle.classList.remove('hidden');
                     }else{
                         currentArticle.classList.add('hidden');
+                    }
+
+                    if(listeCateg.length === 0){
+                        currentArticle.classList.remove('hidden');
                     }
                 })
             })
@@ -86,10 +95,10 @@ const Index = ({ posts = [], preview }) => {
             </div>
             <div className={"bg-gray-100 flex justify-center w-full py-1 pb-10"}>
                 <div className={"w-5/6"}>
-                    <div className={"flex flex-row gap-x-4 my-10"}>
+                    <div className={"flex flex-row flex-wrap gap-4 gap-x-4 my-10"}>
                         {uniqueTypes.map((Type:string) => {
                             return (
-                                <p className={"categorie bg-red-300 py-2 px-4 rounded text-black cursor-pointer flex gap-2 border border-red-900 hover:bg-red-900 hover:text-white hover:scale-105 hover:transition duration-500"}>
+                                <p className={"categorie shrink-0 bg-red-300 py-2 px-4 rounded text-black cursor-pointer flex gap-2 border border-red-900 hover:bg-red-900 hover:text-white hover:scale-105 hover:transition duration-500"}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
