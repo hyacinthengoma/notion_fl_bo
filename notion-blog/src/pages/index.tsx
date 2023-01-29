@@ -55,12 +55,12 @@ const Index = ({ posts = [], preview }) => {
                 <title>Accueil</title>
             </Head>
             <div className={"relative h-[90vh]"}>
-                <div className={"absolute mt-40 ml-16 z-50"}>
-                    <h1 className={"text-white text-2xl md:text-4xl font-bold"}>MAÎTRE FLORENCE BABEAU</h1>
-                    <div className={"ml-6 pt-4"}>
-                        <p className={"text-white text-xl md:text-2xl"}>Avocat en droit du travail et de la sécurité sociale</p>
-                        <div className={"flex"}>
-                            <div className={"pt-16 pr-2"}>
+                <div className={"absolute w-100 mt-40 w-100 sm:ml-16 z-50"}>
+                    <h1 className={"text-white text-center text-2xl md:text-4xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
+                    <div className={"sm:ml-6 pt-4"}>
+                        <p className={"text-white text-center text-xl md:text-2xl "}>Avocat en droit du travail et de la sécurité sociale</p>
+                        <div className={"block sm:flex"}>
+                            <div className={"pt-16 pr-2 flex sm:flex justify-center"}>
                                 <Link href={""} className="bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -70,7 +70,7 @@ const Index = ({ posts = [], preview }) => {
                                     <span>05 57 10 28 24</span>
                                 </Link>
                             </div>
-                            <div className={"pt-16 pl-2"}>
+                            <div className={"pt-5 sm:pt-16 sm:ml-2 flex justify-center"}>
                                 <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -86,7 +86,7 @@ const Index = ({ posts = [], preview }) => {
                 <Image className={"brightness-75 h-[100vh] w-full object-cover"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"absolute flex justify-center w-full"}>
-                <div className={"w-2/3 bg-white flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20"}>
+                <div className={"bg-white -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20 sm:mt-32 mt-0 w-2/3"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-bold text-3xl"}>
                             28
@@ -124,7 +124,7 @@ const Index = ({ posts = [], preview }) => {
 
             <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-36 pb-20 pl-4 pr-5"}>
                 <div className={"w-5/6 mt-[10vh]"}>
-                    <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Qui suis-je ?</h2>
+                    <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[10vh]"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
                             <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
@@ -142,20 +142,20 @@ const Index = ({ posts = [], preview }) => {
                         </div>
                     </div>
                     <div className={"text-center mt-10 hover:scale-105 duration-500"}>
-                        <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Expertise - Droit du travail</Link>
+                        <Link href={"/Expertise/Droit-travail"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Expertise - Droit du travail</Link>
                     </div>
                     <div className={"text-center mt-10 hover:scale-105 duration-500"}>
-                        <Link href={"/Expertise/Droit-securite-sociale"} className={"bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Expertise - Droit de la sécurité sociale</Link>
+                        <Link href={"/Expertise/Droit-securite-sociale"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Expertise - Droit de la sécurité sociale</Link>
                     </div>
                 </div>
             </div>
             <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-[2rem] uppercase mb-6"}>Mes dernières actualités</h2>
-                    <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch mt-10"}>
+                    <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch mt-10 sm:gap-32"}>
                         {lastPosts.map((post) => {
                             return(
-                                <div className="w-4/6 sm:w-4/6 lg:w-1/3 bg-gray-100 border border-gray-200 rounded-sm shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
+                                <div className="w-4/6 sm:w-4/6 lg:w-2/4 bg-gray-100 border border-gray-200 rounded-sm shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
                                     <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
                                         <div>
                                             {post.Illustration ?
@@ -180,7 +180,7 @@ const Index = ({ posts = [], preview }) => {
                         })}
                     </div>
                     <div className={"flex justify-center mt-20"}>
-                        <Link href={"/blog"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
+                        <Link href={"/blog"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
                     </div>
                 </div>
             </div>
