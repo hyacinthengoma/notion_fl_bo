@@ -100,7 +100,7 @@ export default function Header() {
                             </svg>
                         </button>
                     </div>
-                    <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-12">
+                    <ul className="hidden lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-12">
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
