@@ -53,18 +53,21 @@ const Index = ({ posts = [], preview }) => {
         var listeCateg = []
         Array.prototype.forEach.call(categories, function(element) {
             element.addEventListener('click', function(currentCateg){
-                element.style.background= '#991B1B';
-                element.style.color= 'white';
-                clickCounter++;
+                /**clickCounter++;
                 if (clickCounter%2 ==0) {
                     element.style.background= '#FDA5A5';
-                }
+                }*/
 
                 if(!listeCateg.includes(currentCateg.target.innerText))
+                {
                     listeCateg.push(currentCateg.target.innerText);
-
-                else
+                    currentCateg.target.classList.remove('bg-red-300', 'text-black', 'hover:bg-red-900', 'hover:text-white');
+                    currentCateg.target.classList.add('bg-red-900', 'text-white', 'hover:bg-red-300', 'hover:text-black');
+                }else{
                     listeCateg = listeCateg.filter(e => e !== currentCateg.target.innerText);
+                    currentCateg.target.classList.remove('bg-red-900', 'text-white', 'hover:bg-red-300', 'hover:text-black');
+                    currentCateg.target.classList.add('bg-red-300', 'text-black', 'hover:bg-red-900', 'hover:text-white');
+                }
 
                 var articles = document.getElementsByClassName('article');
                 Array.prototype.forEach.call(articles, function(currentArticle){
@@ -72,6 +75,10 @@ const Index = ({ posts = [], preview }) => {
                         currentArticle.classList.remove('hidden');
                     }else{
                         currentArticle.classList.add('hidden');
+                    }
+
+                    if(listeCateg.length === 0){
+                        currentArticle.classList.remove('hidden');
                     }
                 })
             })
@@ -119,7 +126,7 @@ const Index = ({ posts = [], preview }) => {
                             </select>
                         </div>*/}
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
                         {posts.map((post) => {
                             return(
                                 <div className="w-full bg-gray-100 border border-gray-200 rounded-sm shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
