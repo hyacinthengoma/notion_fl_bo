@@ -1,11 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
-import cabinetStyles from "../styles/cabinet.module.css";
 import React, {useEffect} from "react";
 import Script from "next/script";
-const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
-
 export default function Header() {
     useEffect(() => {
         const burger = document.querySelectorAll('.navbar-burger');
