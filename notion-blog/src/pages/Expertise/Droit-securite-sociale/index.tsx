@@ -13,7 +13,7 @@ export default function HomeDroitSecuSociale() {
                 </div>
                 <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"w-full flex justify-center bg-white py-20"}>
+            {/**<div className={"w-full flex justify-center bg-white py-20"}>
                 <div className={"w-5/6 text-justify"}>
                     <h2 className={"font-bold text-black text-xl uppercase mb-6"}>Contrat de travail et relations individuelles</h2>
                     <p className={"font-regular text-gray-700 text-lg mb-6"}>C’est la première mission de notre Cabinet : encadrer vos recrutements, et la rédaction ou la modification du contrat de travail selon la législation en vigueur. En outre, au regard des conséquences financières (et sur l’environnement de travail) qu’un litige peut engendrer, recourir à un avocat spécialisé en droit du travail pour préparer et/ou négocier la fin d’une relation de travail s’avère indispensable.</p>
@@ -31,11 +31,10 @@ export default function HomeDroitSecuSociale() {
                     <p className={"font-regular text-gray-700 text-lg mb-6"}>C’est la première mission de notre Cabinet : encadrer vos recrutements, et la rédaction ou la modification du contrat de travail selon la législation en vigueur. En outre, au regard des conséquences financières (et sur l’environnement de travail) qu’un litige peut engendrer, recourir à un avocat spécialisé en droit du travail pour préparer et/ou négocier la fin d’une relation de travail s’avère indispensable.</p>
                     <p className={"font-regular text-gray-800 text-xl mb-6"}>Le Cabinet Babeau est le partenaire de nombreuses entreprises de toutes tailles. Nous vous accompagnons dans la résolution de toutes les problématiques liées au droit du travail (rupture conventionnelle, sanction disciplinaire, licenciement, modification du contrat de travail, congés payés, rémunération variable, mobilité…).</p>
                 </div>
-            </div>
-            <BesoinAvocat></BesoinAvocat>
-            {/**<div className={"w-full flex bg-white"}>
-                <div className={"flex justify-center mt-10"}>
-                    <div className={"flex flex-col items-center gap-y-5"}>
+            </div>*/}
+            <div className={"w-full justify-center flex py-10 bg-white"}>
+                <div className={"flex w-4/5 justify-center"}>
+                    <div className={"flex flex-col items-center gap-y-10"}>
                         <div className={"relative w-4/5 overflow-hidden"}>
                             <input type={"checkbox"} className={"absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer peer"}/>
                             <div className={"bg-red-900 h-12 w-full pl-5 flex items-center"}>
@@ -148,7 +147,8 @@ export default function HomeDroitSecuSociale() {
                         <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>prenez rendez-vous</Link>
                     </div>
                 </div>
-            </div>*/}
+            </div>
+            <BesoinAvocat></BesoinAvocat>
         </>
     );
 }

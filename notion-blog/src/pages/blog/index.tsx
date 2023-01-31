@@ -97,7 +97,7 @@ const Index = ({ posts = [], preview }) => {
             </div>
             <div className={"bg-gray-100 flex justify-center w-full py-1 pb-10"}>
                 <div className={"w-5/6"}>
-                    <div className={"flex flex-row gap-x-4 my-10"}>
+                    <div className={"flex flex-row flex-wrap justify-center gap-4 my-10"}>
                         {uniqueTypes.map((Type:string) => {
                             return (
                                 <div>
