@@ -143,7 +143,6 @@ export default function HomeDroitSecuSociale() {
                                 </div>
                             </div>
                         </div>
-                        <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8  rounded-md hover:bg-red-800 hover:text-white uppercase font-bold"}>prenez rendez-vous</Link>
                     </div>
                 </div>
             </div>
