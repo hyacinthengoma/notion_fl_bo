@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React, {useEffect} from "react";
 import Script from "next/script";
+import Image from "next/image";
 export default function Header() {
     useEffect(() => {
         const burger = document.querySelectorAll('.navbar-burger');
@@ -52,11 +53,9 @@ export default function Header() {
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com"/>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
-                <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.6.2/dist/flowbite.min.css"/>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
             </Head>
             <div className={""}>
-                <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100] shadow-lg">
+                <nav className="px-8 py-4 gap-4 flex justify-between w-full items-center bg-red-900 fixed z-[100] shadow-lg">
                     <Link className="text-3xl font-bold leading-none" href="/">
                         <svg id="Groupe_7" data-name="Groupe 7" xmlns="http://www.w3.org/2000/svg" width="232.691" height="57.908" viewBox="0 0 232.691 57.908">
                             <g id="Groupe_49">
@@ -96,7 +95,7 @@ export default function Header() {
                             </svg>
                         </button>
                     </div>
-                    <ul className="hidden lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-12">
+                    <ul className="hidden lg:flex lg:flex lg:items-center lg:w-auto lg:space-x-12">
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
@@ -130,6 +129,11 @@ export default function Header() {
                         </li>
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/contact">CONTACT</Link>
+                        </li>
+                        <li >
+                            <Link href={"https://www.linkedin.com/in/florence-babeau-1a7b07166/"} >
+                                <Image src={"/images/linkedin_5.png"} alt={"linkedin"} height={"30"} width={"30"}></Image>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

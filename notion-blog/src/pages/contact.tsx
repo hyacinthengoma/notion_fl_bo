@@ -35,6 +35,12 @@ const contacts = [
   },
 ]
 
+function setResult(result:boolean){
+  useEffect(() => {
+    console.log(result);
+  });
+}
+
 export default function Contact() {
   const [Nom, setNom] = useState('')
   const [Prenom, setPrenom] = useState('')
@@ -45,10 +51,8 @@ export default function Contact() {
   const [SelectTypeService, setSelectTypeService] = useState('')
   const [Message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
-  const [messageRetour, setMessageRetour] = useState('')
 
   const handleSubmit = (e) => {
-    console.log('porut');
     e.preventDefault()
 
     let data = {
@@ -73,9 +77,9 @@ export default function Contact() {
         setRS('')
         setSelectTypeService('')
         setMessage('')
-        setMessageRetour('Votre message à bien été envoyé')
+        setResult(true);
       }else{
-        setMessageRetour('Votre message à pas bien été envoyé')
+        setResult(false);
       }
     })
   }
@@ -83,6 +87,8 @@ export default function Contact() {
   useEffect(() => {
     let checkbox = document.getElementById('rgpd_checkbox');
     let buttonSubmit = document.getElementById('ButtonSubmit');
+
+    buttonSubmit.disabled = true;
 
     checkbox.addEventListener('click', function(element){
       if(checkbox.checked){
