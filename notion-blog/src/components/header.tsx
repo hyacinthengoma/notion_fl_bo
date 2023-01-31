@@ -61,7 +61,7 @@ export default function Header() {
             </Head>
             <div className={""}>
                 <nav className="px-4 py-4 flex justify-between w-full items-center bg-red-900 fixed z-[100] shadow-lg">
-                    <Link className="text-3xl font-bold leading-none lg:mx-20" href="/">
+                    <Link className="text-3xl font-bold leading-none" href="/">
                         <svg id="Groupe_7" data-name="Groupe 7" xmlns="http://www.w3.org/2000/svg" width="232.691" height="57.908" viewBox="0 0 232.691 57.908">
                             <g id="Groupe_49">
                                 <g id="Groupe_17">

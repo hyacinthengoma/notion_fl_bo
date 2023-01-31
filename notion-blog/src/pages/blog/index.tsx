@@ -53,11 +53,6 @@ const Index = ({ posts = [], preview }) => {
         var listeCateg = []
         Array.prototype.forEach.call(categories, function(element) {
             element.addEventListener('click', function(currentCateg){
-                /**clickCounter++;
-                if (clickCounter%2 ==0) {
-                    element.style.background= '#FDA5A5';
-                }*/
-
                 if(!listeCateg.includes(currentCateg.target.innerText))
                 {
                     listeCateg.push(currentCateg.target.innerText);
@@ -117,16 +112,6 @@ const Index = ({ posts = [], preview }) => {
                                 </div>
                             );
                         })}
-                    </div>
-                    <div className={"justify-center w-full flex"}>
-                        {/**<div className={"py-2 px-4 my-10"}>
-                            {/**<label className={"text-white text-xl"} htmlFor="tri">Afficher les articles par catégorie :</label>
-                            <select className={"border block px-3 py-1.5"} id={"tri"} name={"tri"}>
-                                <option value={""}>Trier par catégorie</option>
-                                <option value={"Droit du travail"}>Droit du travail</option>
-                                <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
-                            </select>
-                        </div>*/}
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
                         {posts.map((post) => {
