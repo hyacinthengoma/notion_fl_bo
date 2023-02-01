@@ -7,6 +7,17 @@ export default function Header() {
     useEffect(() => {
         const burger = document.querySelectorAll('.navbar-burger');
         const menu = document.querySelectorAll('.navbar-menu');
+        const navbar = document.getElementById('navbar');
+
+        window.onscroll = function() {scrollNavbarFunction()};
+
+        function scrollNavbarFunction() {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                navbar.classList.add('bg-orange-700')
+            } else {
+                navbar.classList.remove('bg-orange-700')
+            }
+        }
 
         if (burger.length && menu.length) {
             for (var i = 0; i < burger.length; i++) {
@@ -44,7 +55,7 @@ export default function Header() {
     });
     // @ts-ignore
     return (
-        <header className={"relative pb-20"}>
+        <header className={"relative"}>
             <Head>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.0/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
@@ -55,7 +66,7 @@ export default function Header() {
                 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
             </Head>
             <div className={""}>
-                <nav className="px-8 py-4 gap-4 flex justify-between w-full items-center bg-red-900 fixed z-[100] shadow-lg">
+                <nav className="px-8 py-4 gap-4 flex justify-between w-full items-center fixed z-[100] shadow-lg" id={"navbar"}>
                     <Link className="text-3xl font-bold leading-none" href="/">
                         <svg id="Groupe_7" data-name="Groupe 7" xmlns="http://www.w3.org/2000/svg" width="232.691" height="57.908" viewBox="0 0 232.691 57.908">
                             <g id="Groupe_49">

@@ -61,7 +61,7 @@ const Index = ({ posts = [], preview }) => {
                         <p className={"text-white px-32 text-center text-xl md:text-2xl sm:px-0"}>Avocat en droit du travail et de la sécurité sociale</p>
                         <div className={"block sm:flex"}>
                             <div className={"pt-16 pr-2 flex sm:flex justify-center"}>
-                                <Link href={""} className="bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500">
+                                <Link href={""} className="bg-orange-700 text-white py-3 px-8 shadow-lg rounded-md hover:bg-orange-600 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -71,7 +71,7 @@ const Index = ({ posts = [], preview }) => {
                                 </Link>
                             </div>
                             <div className={"pt-5 sm:pt-16 sm:ml-2 flex justify-center"}>
-                                <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
+                                <Link href={""} className={"bg-orange-700 text-white py-3 px-8 shadow-lg rounded-md hover:bg-orange-600 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -83,39 +83,39 @@ const Index = ({ posts = [], preview }) => {
                         </div>
                     </div>
                 </div>
-                <Image className={"brightness-75 h-[94.4vh] w-full object-cover object-[-960px] sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
+                <Image className={"brightness-75 h-[100vh] w-full object-cover object-[-960px] sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"absolute flex justify-center w-full"}>
                 <div className={"bg-white -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20 sm:-mt-16 mt-0 w-2/3"}>
                     <div className={"flex flex-col"}>
-                        <p className={"text-black text-center font-bold text-3xl"}>
+                        <p className={"text-black text-center font-black text-4xl"}>
                             28
                         </p>
-                        <p className={"text-black text-center text-2xl"}>
+                        <p className={"text-black text-center text-xl"}>
                             Années <br/>d'exercice
                         </p>
                     </div>
                     <div className={"flex flex-col"}>
-                        <p className={"text-black text-center font-bold text-3xl"}>
+                        <p className={"text-black text-center font-black text-4xl"}>
                             98%
                         </p>
-                        <p className={"text-black text-center text-2xl"}>
+                        <p className={"text-black text-center text-xl"}>
                             de clients <br/>satisfait
                         </p>
                     </div>
                     <div className={"flex flex-col"}>
-                        <p className={"text-black text-center font-bold text-3xl"}>
+                        <p className={"text-black text-center font-black text-4xl"}>
                             2
                         </p>
-                        <p className={"text-black text-center text-2xl"}>
+                        <p className={"text-black text-center text-xl"}>
                             Grands domaines <br/> de compétences
                         </p>
                     </div>
                     <div className={"flex flex-col"}>
-                        <p className={"text-black text-center font-bold text-3xl"}>
+                        <p className={"text-black text-center font-black text-4xl"}>
                             3000+
                         </p>
-                        <p className={"text-black text-center text-2xl"}>
+                        <p className={"text-black text-center text-xl"}>
                             Dossiers <br/> traités
                         </p>
                     </div>
