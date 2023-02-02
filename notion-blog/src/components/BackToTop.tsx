@@ -4,7 +4,20 @@ export default function BackToTop() {
     useEffect(() => {
         let backToTop = document.getElementById('backToTop');
 
-        window.onscroll = function() {scrollFunction()};
+        const navbar = document.getElementById('navbar');
+
+        window.onscroll = function() {
+            scrollFunction()
+            scrollNavbarFunction()
+        };
+
+        function scrollNavbarFunction() {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                navbar.classList.add('bg-orange-700')
+            } else {
+                navbar.classList.remove('bg-orange-700')
+            }
+        }
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

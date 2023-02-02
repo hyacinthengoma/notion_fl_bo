@@ -7,18 +7,7 @@ export default function Header() {
     useEffect(() => {
         const burger = document.querySelectorAll('.navbar-burger');
         const menu = document.querySelectorAll('.navbar-menu');
-        const navbar = document.getElementById('navbar');
-
-        window.onscroll = function() {scrollNavbarFunction()};
-
-        function scrollNavbarFunction() {
-            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-                navbar.classList.add('bg-orange-700')
-            } else {
-                navbar.classList.remove('bg-orange-700')
-            }
-        }
-
+        
         if (burger.length && menu.length) {
             for (var i = 0; i < burger.length; i++) {
                 burger[i].addEventListener('click', function() {

@@ -15,7 +15,6 @@ export default function Honoraires() {
                     <p className={"text-white text-xl md:text-2xl mb-8"}>Découvrez les honoraires des mes principaux actes.<br/>
                         N’hésitez surtout pas à me contacter pour une étude approfondie de votre dossier</p>
                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Prenez rendez-vous</Link>
-
                 </div>
                 <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
