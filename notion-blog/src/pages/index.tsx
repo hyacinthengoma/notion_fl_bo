@@ -130,23 +130,28 @@ const Index = ({ posts = [], preview }) => {
                             <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
                             </iframe>
                         </div>
-                        <div className={"w-full lg:w-1/2 flex flex-col gap-y-8 text-justify"}>
+                        <div className={"w-full lg:w-1/2 flex flex-col text-justify"}>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Florence Babeau</p>
-                                <p className={"mt-2 text-base"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Famille, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
+                                <p className={"mt-2 text-base mb-8"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Famille, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
                             </div>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Mon parcours</p>
                                 <p className={"mt-2 text-base"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
+                            <div className={'flex mx-auto'}>
+                                <div className={"text-center mt-10 hover:scale-105 duration-500 mr-5"}>
+                                    <Link href={"/Expertise/Droit-travail"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit du travail</Link>
+                                </div>
+                                <div className={"text-center mt-10 hover:scale-105 duration-500 "}>
+                                    <Link href={"/Expertise/Droit-securite-sociale"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit de la sécurité sociale</Link>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div className={"text-center mt-10 hover:scale-105 duration-500"}>
-                        <Link href={"/Expertise/Droit-travail"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Expertise - Droit du travail</Link>
-                    </div>
-                    <div className={"text-center mt-10 hover:scale-105 duration-500"}>
-                        <Link href={"/Expertise/Droit-securite-sociale"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Expertise - Droit de la sécurité sociale</Link>
-                    </div>
+
+
                 </div>
             </div>
             <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
