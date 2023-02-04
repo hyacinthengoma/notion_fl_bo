@@ -29,7 +29,7 @@ export default function MyApp({ Component, pageProps }) {
                     setTimeout(() => {
                         loader.style.display = 'none';
                     }, 1000);
-                }, 3000);
+                }, 1500);
         }
     }, []);
     return (

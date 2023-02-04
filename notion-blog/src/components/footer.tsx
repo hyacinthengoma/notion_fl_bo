@@ -76,22 +76,25 @@ export default function Footer() {
                             <u>Pages</u>
                         </p>
                         <div className="flex mt-5">
-                            <p className="mr-1 text-white">Accueil</p>
+                            <Link href={"/"} className="mr-1 text-white">Accueil</Link>
                         </div>
                         <div className="flex mt-5">
-                            <p className="mr-1 text-white">Expertises</p>
+                            <Link href={"/Expertise/Droit-travail"} className="mr-1 text-white">Expertises - Droit du travail</Link>
                         </div>
                         <div className="flex mt-5">
-                            <p className="mr-1 text-white">Honoraires</p>
+                            <Link href={"/Expertise/Droit-securite-sociale"} className="mr-1 text-white">Expertises - Droit de la sécurité sociale</Link>
                         </div>
                         <div className="flex mt-5">
-                            <p className="mr-1 text-white">Actualités sociales</p>
+                            <Link href={"/honoraires"} className="mr-1 text-white">Honoraires</Link>
                         </div>
                         <div className="flex mt-5">
-                            <p className="mr-1 text-white">Florence Babeau</p>
+                            <Link href={"/blog"} className="mr-1 text-white">Actualités sociales</Link>
                         </div>
                         <div className="flex mt-5">
-                            <p className="mr-1 text-white">Contact</p>
+                            <Link href={"/florence-babeau"} className="mr-1 text-white">Florence Babeau</Link>
+                        </div>
+                        <div className="flex mt-5">
+                            <Link href={"/contact"} className="mr-1 text-white">Contact</Link>
                         </div>
 
                     </div>
@@ -130,13 +133,13 @@ export default function Footer() {
                                 </svg>
                             </a>
                             */}
-                            <a
-                                href="/"
+                            <Link
+                                href="https://www.linkedin.com/in/florence-babeau-1a7b07166/"
                                 className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 <img className={"brightness-50 object-cover w-[1.7rem]"} src={"/images/linkedin.png"} alt={"linkedIn"}></img>
 
-                            </a>
+                            </Link>
                         </div>
 
                             {/*  <div><iframe
@@ -155,19 +158,19 @@ export default function Footer() {
                     <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
                         <li>
                             <a
-                                href="/"
+                                href="blog/index"
                                 className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Blog
                             </a>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                href="mention_legales"
                                 className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Mentions légales
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a

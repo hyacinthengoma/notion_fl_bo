@@ -15,7 +15,6 @@ export default function Honoraires() {
                     <p className={"text-white text-xl md:text-2xl mb-8"}>Découvrez les honoraires des mes principaux actes.<br/>
                         N’hésitez surtout pas à me contacter pour une étude approfondie de votre dossier</p>
                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Prenez rendez-vous</Link>
-
                 </div>
                 <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
@@ -38,7 +37,7 @@ export default function Honoraires() {
                                 </p>
                             </div>
                         </div>
-                        <div className={"w-[40rem] lg:w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg lg:transform lg:-translate-y-16 hover:scale-110 duration-500 sm:w-1/4"}>
+                        <div className={"w-[40rem] mt-10 lg:w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg lg:transform lg:-translate-y-16 hover:scale-110 duration-500"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
                                 <p className={"uppercase text-white font-semibold text-2xl"}>CONSULTATION <br/>ÉCRITE</p>
                                 <p className={"text-white font-semibold text-lg mt-5"}>Etude de votre dossier + <br/> possibilité d’ajout d’une pièce jointe</p>
@@ -54,7 +53,7 @@ export default function Honoraires() {
                                 </p>
                             </div>
                         </div>
-                        <div className={"w-[40rem] lg:w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg hover:scale-110 duration-500"}>
+                        <div className={"w-[40rem] mt-10 lg:w-1/4 mx-auto overflow-hidden bg-white shadow-2xl border rounded-lg hover:scale-110 duration-500"}>
                             <div className={"bg-gray-800 py-14 flex flex-col text-center"}>
                                 <p className={"uppercase text-white font-semibold text-2xl"}>RENDEZ-VOUS <br/>AU CABINET</p>
                                 <p className={"uppercase text-white font-semibold text-lg mt-5"}>Durée : 60 min</p>

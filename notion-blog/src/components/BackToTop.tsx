@@ -4,7 +4,20 @@ export default function BackToTop() {
     useEffect(() => {
         let backToTop = document.getElementById('backToTop');
 
-        window.onscroll = function() {scrollFunction()};
+        const navbar = document.getElementById('navbar');
+
+        window.onscroll = function() {
+            scrollFunction()
+            scrollNavbarFunction()
+        };
+
+        function scrollNavbarFunction() {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                navbar.classList.add('bg-orange-700')
+            } else {
+                navbar.classList.remove('bg-orange-700')
+            }
+        }
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -23,11 +36,13 @@ export default function BackToTop() {
         function topFunction() {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            document.body.style.scrollBehavior = "smooth"
+            document.documentElement.style.scrollBehavior = "smooth"
         }
     });
     return (
         <>
-            <button className={"hidden fixed top-3/4 z-50 px-10 py-5 bg-red-500 shadow right-0"} id={"backToTop"}>
+            <button className={"hidden fixed text-white shadow-xl rounded-l-lg top-3/4 z-50 px-10 py-5 bg-red-900 hover:bg-red-800 shadow right-0"} id={"backToTop"}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
                 </svg>

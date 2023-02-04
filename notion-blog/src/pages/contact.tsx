@@ -1,6 +1,6 @@
 import Header from '../components/header'
 import ExtLink from '../components/ext-link'
-import { useState } from "react";
+import {useEffect, useState} from "react";
 
 import sharedStyles from '../styles/shared.module.css'
 import contactStyles from '../styles/contact.module.css'
@@ -53,6 +53,8 @@ export default function Contact() {
       Nom, Prenom, Telephone, CP, Email, RS, SelectTypeService, Message
     }
 
+
+
     fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -74,6 +76,44 @@ export default function Contact() {
       }
     })
   }
+
+  useEffect(() => {
+    let checkbox = document.getElementById('rgpd_checkbox');
+    let buttonSubmit = document.getElementById('ButtonSubmit');
+
+    buttonSubmit.disabled = true;
+
+    checkbox.addEventListener('click', function(element){
+      var validFields = true;
+      if(checkbox.checked){
+        //On regarde si tout les champs requis sont valides
+        document.querySelectorAll('[required]').forEach(function(currentField){
+          currentField.previousSibling.textContent = "";
+          if(!currentField.value){
+            validFields = false;
+            currentField.previousSibling.textContent = "Ce champs est requis"
+          }
+        })
+
+        //Si c'est pas valide, on empeche la checkbox d'être validé, sinon on valide
+        if(!validFields){
+          checkbox.checked = false;
+          console.log('false');
+        }else{
+          buttonSubmit.disabled = false;
+          buttonSubmit.classList.remove('cursor-no-drop')
+          buttonSubmit.classList.remove('bg-red-900', 'hover:bg-red-800')
+          buttonSubmit.classList.add('bg-green-600', 'hover:bg-green-500')
+        }
+      }else{
+        buttonSubmit.disabled = true;
+        buttonSubmit.classList.add('cursor-no-drop')
+        buttonSubmit.classList.add('bg-red-900', 'hover:bg-red-800')
+        buttonSubmit.classList.remove('bg-green-600', 'hover:bg-green-500')
+      }
+
+    })
+  })
 
   return (
     <>
@@ -126,43 +166,75 @@ export default function Contact() {
       <div className={"flex w-full justify-center bg-gray-800 py-20"}>
         <div className={"flex flex-col lg:flex-row w-4/5 justify-center shadow"}>
           <div className={"w-full lg:w-1/2 bg-white"}>
-            <form className={"p-14"}>
+            <form className={"p-14"} onSubmit={"return false"}>
               <h2 className={"text-black font-semibold text-2xl"}>Demande de contact</h2>
               <h3 className={"text-gray-600 text-xl"}>Merci de remplir les champs ci-dessous</h3>
               <h1 className={"text-white text-2xl md:text-4xl font-bold text-center"}>FORMULAIRE DE CONTACT</h1>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom*"} required={true}/>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom*"} required={true}/>
+                <div className={"w-full"}>
+                  <label htmlFor={"Nom"} className={""}>Nom *</label>
+                  <p className={"text-red-500"}></p>
+                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2 peer"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom*"} required={true}/>
+                </div>
+                <div className={"w-full"}>
+                  <label htmlFor={"Prenom"} className={""}>Prenom *</label>
+                  <p className={"text-red-500"}></p>
+                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom*"} required={true}/>
+                </div>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal*"} required={true}/>
+                <div className={"w-full"}>
+                  <label htmlFor={"Telephone"} className={""}>Téléphone *</label>
+                  <p className={"text-red-500"}></p>
+                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
+                </div>
+                <div className={"w-full"}>
+                  <label htmlFor={"CP"} className={""}>Code Postal *</label>
+                  <p className={"text-red-500"}></p>
+                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal*"} required={true}/>
+                </div>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email*"} required={true}/>
-                <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"} placeholder={"Raison sociale"}/>
+                <div className={"w-full"}>
+                  <label htmlFor={"Email"} className={""}>Email *</label>
+                  <p className={"text-red-500"}></p>
+                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email*"} required={true}/>
+                </div>
+                <div className={"w-full"}>
+                  <label htmlFor={"RS"} className={""}>Raison sociale</label>
+                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"} placeholder={"Raison sociale"}/>
+                </div>
               </div>
               <div className={"flex justify-center my-5"}>
+                <p className={"text-red-500"}></p>
                 <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border-b focus:outline-none focus:border-red-900 border-black p-4 w-full py-2"} required={true}>
                   <option value={""}>Type de service*</option>
                   <option value={"Droit du travail"}>Droit du travail</option>
                   <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
                 </select>
               </div>
+              <label htmlFor={"RS"} className={"my-5"}>Message :</label>
               <div className={"flex justify-center my-5"}>
                 <textarea className={"border border-black h-[17vh] focus:outline-none focus:border-red-900 p-4 w-full py-2"} name={"Message"} id={"Message"} onChange={(e) => {setMessage(e.target.value)}} placeholder={"Message..."}></textarea>
               </div>
+              <div className={"flex justify-center my-5"}>
+                <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                    type="checkbox" value="" id="rgpd_checkbox"/>
+                  <label className="form-check-label text-sm inline-block text-gray-800" htmlFor="rgpd_checkbox">
+                    J'accepte que mes données soit collectées afin de traiter ma demande
+                  </label>
+              </div>
               <div className={"w-full flex justify-center"}>
-                <Link href={""} type={"submit"} id={"ButtonSubmit"} onClick={(e) => {handleSubmit(e)}} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-sm hover:bg-red-800 hover:text-white uppercase font-bold"}>ENVOYER LE MESSAGE</Link>
+                <button type={"submit"} id={"ButtonSubmit"} onClick={(e) => {handleSubmit(e)}} className={"cursor-no-drop bg-red-900 text-white py-3 px-8 shadow-lg rounded-sm hover:bg-red-800 hover:text-white uppercase font-bold disabled:hover:bg-red-900"}>ENVOYER LE MESSAGE</button>
               </div>
             </form>
           </div>
           <div className={"w-full lg:w-1/2"}>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.921862125881!2d-0.5822976486370732!3d44.863885481215846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55286b9ee92b21%3A0x1694739e2dc975af!2sCabinet%20Avocat%20Florence%20Babeau!5e0!3m2!1sfr!2sfr!4v1673651475903!5m2!1sfr!2sfr"
                 loading="lazy"
                 className={"w-full h-96 lg:h-full"}
-                referrerPolicy="no-referrer-when-downgrade"></iframe>
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.3359252214431763%2C45.698933708601665%2C-0.3323847055435181%2C45.70058596257178&amp;layer=mapnik&amp;marker=45.699759841689826%2C-0.33415496349334717"></iframe>
           </div>
         </div>
       </div>
