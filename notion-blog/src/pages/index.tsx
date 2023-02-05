@@ -163,15 +163,20 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch mt-10 sm:gap-32"}>
                         {lastPosts.map((post) => {
                             return(
-                                <div className="w-4/6 sm:w-4/6 lg:w-2/4 bg-gray-100 border border-gray-200 rounded-md-md shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
+                                <div className="w-full bg-gray-100 border border-gray-200 rounded-md shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
                                     <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
-                                        <div>
+                                        <div className={"w-full flex justify-center"}>
                                             {post.Illustration ?
-                                                <img className={"object-cover h-44 w-full rounded-md-md shadow-sm"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                                : <img className={"object-cover h-44 w-full rounded-md shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
+                                                <img className={"object-cover h-44 w-[95%] my-4 rounded-md shadow-lg"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                                : <img className={"object-cover h-44 w-[95%] m-4 rounded-md shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
                                             }
                                         </div>
                                         <div className="p-5">
+                                            {(!post.Type || post.Type.length === 0) &&
+                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-md border border-red-900 text-gray-700"}>Aucune catégorie</p>}
+                                            {(post.Type) && (
+                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-md border border-red-900 text-gray-700"}>{(post.Type)}</p>
+                                            )}
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{post.Page}</h5>
                                             {(!post.Preview || post.Preview.length === 0) &&
                                                 <p className={"mb-3 font-normal text-gray-700"}>Pas de résumé disponible</p>}
