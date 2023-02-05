@@ -13,9 +13,11 @@ export default function BackToTop() {
 
         function scrollNavbarFunction() {
             if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-                navbar.classList.add('bg-orange-800')
+                navbar.classList.add('bg-red-900')
+                navbar.classList.remove('bg-red-800/10')
             } else {
-                navbar.classList.remove('bg-orange-800')
+                navbar.classList.remove('bg-red-900')
+                navbar.classList.add('bg-red-800/10')
             }
         }
 

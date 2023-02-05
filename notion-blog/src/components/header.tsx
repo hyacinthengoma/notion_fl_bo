@@ -55,7 +55,7 @@ export default function Header() {
                 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
             </Head>
             <div className={""}>
-                <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-orange-900/10 flex justify-between w-full items-center fixed z-[100] shadow-lg transition-all duration-500" id={"navbar"}>
+                <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-red-800/10 flex justify-between w-full items-center fixed z-[100] shadow-lg transition-all duration-500" id={"navbar"}>
                     <Link className="text-3xl font-bold leading-none" href="/">
                         <Image src={'/images/logo_florence.png'} width={'250'} height={'50'} alt={''}></Image>
                     </Link>
