@@ -73,10 +73,10 @@ export default function Header() {
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">DROIT DU TRAVAIL</Link>
+                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/Expertise/Droit-travail">DROIT DU TRAVAIL</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">DROIT DE LA SECURITE SOCIALE</Link>
+                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/Expertise/Droit-securite-sociale">DROIT DE LA SECURITE SOCIALE</Link>
                         </li>
                         {/**<li className={"group"}>
                             <Link
