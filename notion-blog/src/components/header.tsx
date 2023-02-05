@@ -7,7 +7,7 @@ export default function Header() {
     useEffect(() => {
         const burger = document.querySelectorAll('.navbar-burger');
         const menu = document.querySelectorAll('.navbar-menu');
-        
+
         if (burger.length && menu.length) {
             for (var i = 0; i < burger.length; i++) {
                 burger[i].addEventListener('click', function() {
@@ -55,7 +55,7 @@ export default function Header() {
                 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
             </Head>
             <div className={""}>
-                <nav className="px-8 py-4 gap-4 flex justify-between w-full items-center fixed z-[100] shadow-lg" id={"navbar"}>
+                <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-orange-900/10 flex justify-between w-full items-center fixed z-[100] shadow-lg transition-all duration-500" id={"navbar"}>
                     <Link className="text-3xl font-bold leading-none" href="/">
                         <Image src={'/images/logo_florence.png'} width={'250'} height={'50'} alt={''}></Image>
                     </Link>
@@ -72,9 +72,17 @@ export default function Header() {
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
-                        <li className={"group"}>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none" href={""}>EXPERTISES</Link>
-                            <ul className="absolute hidden bg-red-900 text-gray-700 pt-10 pb-1 group-hover:block">
+                        <li>
+                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">DROIT DU TRAVAIL</Link>
+                        </li>
+                        <li>
+                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">DROIT DE LA SECURITE SOCIALE</Link>
+                        </li>
+                        {/**<li className={"group"}>
+                            <Link
+                                className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none"
+                                href={""}>EXPERTISES</Link>
+                            <ul className="absolute hidden backdrop-blur-sm bg-white/10 text-gray-700 pt-10 pb-1 group-hover:block">
                                 <li className="">
                                     <Link
                                         className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-semibold whitespace-no-wrap"
@@ -90,7 +98,7 @@ export default function Header() {
                                     >
                                 </li>
                             </ul>
-                        </li>
+                        </li>*/}
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
                         </li>
@@ -114,7 +122,7 @@ export default function Header() {
             <div className="navbar-menu relative z-[100] hidden">
                 <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
                 <nav
-                    className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-900 overflow-y-auto">
+                    className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-orange-800 overflow-y-auto">
                     <div className="flex items-center mb-8">
                         <Link className="mr-auto text-3xl font-bold leading-none" href="/">
                             <img src="/images/logo-babeau.png" className="h-16" alt="waw-logo"/>

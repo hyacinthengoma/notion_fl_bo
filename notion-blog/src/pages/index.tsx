@@ -127,8 +127,11 @@ const Index = ({ posts = [], preview }) => {
                     <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[3vh]"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
-                            <iframe className={"w-full h-80 rounded-lg"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
-                            </iframe>
+                            <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded"}>
+                            </video>
+                            {/**<iframe className={"w-full h-80 rounded-lg"}
+                                     src="https://www.youtube.com/embed/KBPtg6yr3YE">
+                            </iframe>*/}
                         </div>
                         <div className={"w-full lg:w-1/2 flex flex-col text-justify"}>
                             <div>

@@ -2,6 +2,7 @@ import Header from "../components/header";
 import BesoinAvocat from "../components/Besoin-avocat";
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 
 export default function FlorenceBabeau() {
     return(
@@ -24,8 +25,12 @@ export default function FlorenceBabeau() {
                 <div className={"w-5/6"}>
                     <div className={"flex flex-col md:flex-row md:h-96"}>
                         <div className={"w-full md:w-1/2 order-2 md:order-1"}>
-                            <iframe className={"h-96 w-full md:h-full rounded"} src="https://www.youtube.com/embed/KBPtg6yr3YE">
-                            </iframe>
+                            <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"h-96 md:h-full rounded"}>
+
+                            </video>
+                            {/**<iframe className={"h-96 w-full md:h-full rounded"}
+                                     src="https://www.youtube.com/embed/KBPtg6yr3YE">
+                            </iframe>*/}
                         </div>
                         <div className={"w-full md:w-1/2 my-auto order-1 md:order-2 py-20 md:py-0"}>
                             <div className={"w-4/5 flex flex-col mx-auto"}>
