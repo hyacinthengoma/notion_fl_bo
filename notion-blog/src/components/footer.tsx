@@ -12,7 +12,7 @@ export default function Footer() {
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.921862125881!2d-0.5822976486370732!3d44.863885481215846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55286b9ee92b21%3A0x1694739e2dc975af!2sCabinet%20Avocat%20Florence%20Babeau!5e0!3m2!1sfr!2sfr!4v1673651475903!5m2!1sfr!2sfr"
                     loading="lazy"
-                    className={"w-full h-60 rounded-lg shadow-lg"}
+                    className={"w-full h-60 rounded-md shadow-lg"}
                     referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>*/}

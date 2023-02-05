@@ -86,7 +86,7 @@ const Index = ({ posts = [], preview }) => {
                 <Image className={"brightness-75 h-[100vh] w-full object-cover object-[-960px] sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"absolute flex justify-center w-full"}>
-                <div className={"bg-white -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-sm transform -translate-y-20 sm:-mt-16 mt-0 w-2/3"}>
+                <div className={"bg-white -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-md transform -translate-y-20 sm:-mt-16 mt-0 w-2/3"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
                             28
@@ -127,9 +127,9 @@ const Index = ({ posts = [], preview }) => {
                     <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[3vh]"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
-                            <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded"}>
+                            <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}>
                             </video>
-                            {/**<iframe className={"w-full h-80 rounded-lg"}
+                            {/**<iframe className={"w-full h-80 rounded-md"}
                                      src="https://www.youtube.com/embed/KBPtg6yr3YE">
                             </iframe>*/}
                         </div>
@@ -163,12 +163,12 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch mt-10 sm:gap-32"}>
                         {lastPosts.map((post) => {
                             return(
-                                <div className="w-4/6 sm:w-4/6 lg:w-2/4 bg-gray-100 border border-gray-200 rounded-sm shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
+                                <div className="w-4/6 sm:w-4/6 lg:w-2/4 bg-gray-100 border border-gray-200 rounded-md-md shadow hover:scale-110 duration-500" key={post.Slug} type={post.Type}>
                                     <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
                                         <div>
                                             {post.Illustration ?
-                                                <img className={"object-cover h-44 w-full rounded-sm shadow-sm"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                                : <img className={"object-cover h-44 w-full rounded-sm shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
+                                                <img className={"object-cover h-44 w-full rounded-md-md shadow-sm"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                                : <img className={"object-cover h-44 w-full rounded-md shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
                                             }
                                         </div>
                                         <div className="p-5">

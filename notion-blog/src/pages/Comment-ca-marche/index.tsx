@@ -27,7 +27,7 @@ export default function CommentCaMarcheHome() {
                     </div>
                 </div>
                 <div className={"mx-auto"}>
-                    <div className="card w-96  shadow-xl rounded-none mt-5">
+                    <div className="card w-96 shadow-xl rounded-none mt-5">
                         <figure>
                             <div className={"bg-gray-600 w-96 py-10"}>
                                 <h1 className={"font-bold text-white underline text-center"}>CONSULTATION ÉCRITE</h1>
@@ -45,7 +45,7 @@ export default function CommentCaMarcheHome() {
                     </div>
                 </div>
                 <div className={"mx-auto"}>
-                    <div className="card w-96  shadow-xl rounded-none mt-5">
+                    <div className="card w-96 shadow-xl rounded-none mt-5">
                         <figure>
                             <div className={"bg-gray-600 w-96 py-10"}>
                                 <h1 className={"font-bold text-white underline text-center"}>RENDEZ-VOUS AU CABINET</h1>

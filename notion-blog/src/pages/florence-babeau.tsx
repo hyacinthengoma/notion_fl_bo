@@ -25,7 +25,7 @@ export default function FlorenceBabeau() {
                 <div className={"w-5/6"}>
                     <div className={"flex flex-col md:flex-row md:h-96"}>
                         <div className={"w-full md:w-1/2 order-2 md:order-1"}>
-                            <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"h-96 md:h-full rounded"}>
+                            <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"h-96 md:h-full rounded-md"}>
 
                             </video>
                             {/**<iframe className={"h-96 w-full md:h-full rounded"}

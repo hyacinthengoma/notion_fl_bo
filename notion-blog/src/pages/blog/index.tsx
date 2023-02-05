@@ -101,7 +101,7 @@ const Index = ({ posts = [], preview }) => {
                         {uniqueTypes.map((Type:string) => {
                             return (
                                 <div>
-                                    <p className={"categorie bg-red-300 py-2 px-4 rounded text-black cursor-pointer flex gap-2 border border-red-900 hover:bg-red-900 hover:text-white hover:scale-105 hover:transition duration-500"}>
+                                    <p className={"categorie bg-red-300 py-2 px-4 rounded-md text-black cursor-pointer flex gap-2 border border-red-900 hover:bg-red-900 hover:text-white hover:scale-105 hover:transition duration-500"}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                         </svg>
@@ -116,19 +116,19 @@ const Index = ({ posts = [], preview }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
                         {posts.map((post) => {
                             return(
-                                <div className="w-full bg-gray-100 border border-gray-200 rounded-sm shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
+                                <div className="w-full bg-gray-100 border border-gray-200 rounded-md shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
                                     <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
                                         <div className={"w-full flex justify-center"}>
                                             {post.Illustration ?
-                                                <img className={"object-cover h-44 w-full m-4 rounded-lg shadow-lg"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                                : <img className={"object-cover h-44 w-full m-4 rounded-lg shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
+                                                <img className={"object-cover h-44 w-[95%] my-4 rounded-md shadow-lg"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
+                                                : <img className={"object-cover h-44 w-[95%] m-4 rounded-md shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
                                             }
                                         </div>
                                         <div className="p-5">
                                             {(!post.Type || post.Type.length === 0) &&
-                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-lg border border-red-900 text-gray-700"}>Aucune catégorie</p>}
+                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-md border border-red-900 text-gray-700"}>Aucune catégorie</p>}
                                             {(post.Type) && (
-                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-lg border border-red-900 text-gray-700"}>{(post.Type)}</p>
+                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-md border border-red-900 text-gray-700"}>{(post.Type)}</p>
                                             )}
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{post.Page}</h5>
                                             {(!post.Preview || post.Preview.length === 0) &&
