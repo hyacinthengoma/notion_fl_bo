@@ -142,11 +142,11 @@ const Index = ({ posts = [], preview }) => {
                                 <p className={"font-semibold text-xl text-black"}>Mon parcours</p>
                                 <p className={"mt-2 text-base"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
-                            <div className={'flex mx-auto'}>
-                                <div className={"text-center mt-10 hover:scale-105 duration-500 mr-5"}>
+                            <div className={'flex flex-col'}>
+                                <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
                                     <Link href={"/Expertise/Droit-travail"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit du travail</Link>
                                 </div>
-                                <div className={"text-center mt-10 hover:scale-105 duration-500 "}>
+                                <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
                                     <Link href={"/Expertise/Droit-securite-sociale"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit de la sécurité sociale</Link>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@ const Index = ({ posts = [], preview }) => {
             <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-[2rem] uppercase mb-6"}>Mes dernières actualités</h2>
-                    <div className={"flex flex-col lg:flex-row justify-center gap-16 items-center lg:items-stretch mt-10 sm:gap-32"}>
+                    <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
                         {lastPosts.map((post) => {
                             return(
                                 <div className="w-full bg-gray-100 border border-gray-200 rounded-md shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
@@ -183,8 +183,9 @@ const Index = ({ posts = [], preview }) => {
                                             {(post.Preview) && (
                                                 <p className={"mb-3 font-normal text-gray-700"}>{(post.Preview)}</p>
                                             )}
+                                            <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"border-b border-red-900 text-black w-fit mb-3 px-2 mb-3 hover:text-white hover:bg-red-800"}>Lire cet article</Link>
                                             {post.Date && (
-                                                <p className="text-sm mt-auto text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
+                                                <p className="text-xs mt-3 text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
                                             )}
                                         </div>
                                     </Link>

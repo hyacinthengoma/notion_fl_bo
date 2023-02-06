@@ -136,8 +136,9 @@ const Index = ({ posts = [], preview }) => {
                                             {(post.Preview) && (
                                                 <p className={"mb-3 font-normal text-gray-700"}>{(post.Preview)}</p>
                                             )}
+                                            <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"border-b border-red-900 text-black w-fit mb-3 px-2 mb-3 hover:text-white hover:bg-red-800"}>Lire cet article</Link>
                                             {post.Date && (
-                                                <p className="text-sm mt-auto text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
+                                                <p className="text-xs mt-3 text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
                                             )}
                                         </div>
                                     </Link>
