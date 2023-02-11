@@ -116,33 +116,47 @@ const Index = ({ posts = [], preview }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
                         {posts.map((post) => {
                             return(
-                                <div className="w-full bg-gray-100 border border-gray-200 rounded-md shadow-lg hover:scale-110 duration-500 article" key={post.Slug} type={post.Type}>
-                                    <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)}>
-                                        <div className={"w-full flex justify-center"}>
-                                            {post.Illustration ?
-                                                <img className={"object-cover h-44 w-[95%] my-4 rounded-md shadow-lg"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-                                                : <img className={"object-cover h-44 w-[95%] m-4 rounded-md shadow-lg"} src={"https://placeimg.com/400/225/arch"} />
-                                            }
+                                <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 article"} key={post.Slug} type={post.Type}>
+                                    <div
+                                        className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
+                                        {post.Illustration ?
+                                            <img
+                                                src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`}
+                                                loading="lazy" alt="Photo by Lorenzo Herrera"
+                                                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
+                                            :
+                                            <img
+                                                src={"https://placeimg.com/400/225/arch"}
+                                                loading="lazy" alt="Photo by Lorenzo Herrera"
+                                                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
+                                        }
+
+                                    </div>
+
+                                    <div className="flex flex-col flex-1 p-4 sm:p-6">
+                                        <h2 className="text-gray-800 text-lg font-semibold mb-2">
+                                            <div
+                                                className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">{post.Page}</div>
+                                        </h2>
+
+                                        {(!post.Preview || post.Preview.length === 0) &&
+                                            <p className={"text-gray-500 mb-8"}>Pas de résumé disponible</p>}
+                                        {(post.Preview) && (
+                                            <p className={"text-gray-500 mb-8"}>{(post.Preview)}</p>
+                                        )}
+                                        <div className="flex justify-between items-end mt-auto">
+                                            <div className="flex items-center gap-2">
+                                                <div>
+                                                    <span className="block text-red-800">{(post.Type)}</span>
+                                                    <span className="block text-gray-400 text-sm">{getDateStr(post.Date)}</span>
+                                                </div>
+                                            </div>
+
+                                            <span
+                                                className="text-black text-sm border border-red-900 rounded px-2 py-1">Lire l'article</span>
                                         </div>
-                                        <div className="p-5">
-                                            {(!post.Type || post.Type.length === 0) &&
-                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-md border border-red-900 text-gray-700"}>Aucune catégorie</p>}
-                                            {(post.Type) && (
-                                                <p className={"mb-3 font-light text-sm bg-red-100 w-fit p-1 rounded-md border border-red-900 text-gray-700"}>{(post.Type)}</p>
-                                            )}
-                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{post.Page}</h5>
-                                            {(!post.Preview || post.Preview.length === 0) &&
-                                                <p className={"mb-3 font-normal text-gray-700"}>Pas de résumé disponible</p>}
-                                            {(post.Preview) && (
-                                                <p className={"mb-3 font-normal text-gray-700"}>{(post.Preview)}</p>
-                                            )}
-                                            <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"border-b border-red-900 text-black w-fit mb-3 px-2 mb-3 hover:text-white hover:bg-red-800"}>Lire cet article</Link>
-                                            {post.Date && (
-                                                <p className="text-xs mt-3 text-gray-700 font-regular">Publié le : {getDateStr(post.Date)}</p>
-                                            )}
-                                        </div>
-                                    </Link>
-                                </div>
+                                    </div>
+                                </Link>
                             )
                         })}
                     </div>
