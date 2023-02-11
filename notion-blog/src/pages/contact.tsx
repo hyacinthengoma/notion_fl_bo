@@ -85,7 +85,7 @@ export default function Contact() {
 
     checkbox.addEventListener('click', function(element){
       var validFields = true;
-      if(checkbox.checked){
+      /*if(checkbox.checked){
         //On regarde si tout les champs requis sont valides
         document.querySelectorAll('[required]').forEach(function(currentField){
           currentField.previousSibling.textContent = "";
@@ -110,7 +110,7 @@ export default function Contact() {
         buttonSubmit.classList.add('cursor-no-drop')
         buttonSubmit.classList.add('bg-red-900', 'hover:bg-red-800')
         buttonSubmit.classList.remove('bg-green-600', 'hover:bg-green-500')
-      }
+      }*/
 
     })
   })
@@ -173,31 +173,26 @@ export default function Contact() {
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
                 <div className={"w-full"}>
                   <label htmlFor={"Nom"} className={""}>Nom *</label>
-                  <p className={"text-red-500"}></p>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2 peer"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom*"} required={true}/>
                 </div>
                 <div className={"w-full"}>
                   <label htmlFor={"Prenom"} className={""}>Prenom *</label>
-                  <p className={"text-red-500"}></p>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom*"} required={true}/>
                 </div>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
                 <div className={"w-full"}>
                   <label htmlFor={"Telephone"} className={""}>Téléphone *</label>
-                  <p className={"text-red-500"}></p>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
                 </div>
                 <div className={"w-full"}>
                   <label htmlFor={"CP"} className={""}>Code Postal *</label>
-                  <p className={"text-red-500"}></p>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal*"} required={true}/>
                 </div>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
                 <div className={"w-full"}>
                   <label htmlFor={"Email"} className={""}>Email *</label>
-                  <p className={"text-red-500"}></p>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email*"} required={true}/>
                 </div>
                 <div className={"w-full"}>
@@ -206,7 +201,6 @@ export default function Contact() {
                 </div>
               </div>
               <div className={"flex justify-center my-5"}>
-                <p className={"text-red-500"}></p>
                 <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border-b focus:outline-none focus:border-red-900 border-black p-4 w-full py-2"} required={true}>
                   <option value={""}>Type de service*</option>
                   <option value={"Droit du travail"}>Droit du travail</option>

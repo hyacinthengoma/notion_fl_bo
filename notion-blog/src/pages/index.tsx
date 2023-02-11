@@ -60,18 +60,8 @@ const Index = ({ posts = [], preview }) => {
                     <div className={"sm:ml-6 pt-4"}>
                         <p className={"text-white px-32 text-center text-xl md:text-2xl sm:px-0"}>Avocat en droit du travail et de la sécurité sociale</p>
                         <div className={"block sm:flex"}>
-                            <div className={"pt-16 pr-2 flex sm:flex justify-center"}>
-                                <Link href={""} className="bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round"
-                                              d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
-                                    </svg>
-                                    <span>05 57 10 28 24</span>
-                                </Link>
-                            </div>
                             <div className={"pt-5 sm:pt-16 sm:ml-2 flex justify-center"}>
-                                <Link href={""} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
+                                <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -83,10 +73,16 @@ const Index = ({ posts = [], preview }) => {
                         </div>
                     </div>
                 </div>
+                <div className={"absolute z-50 w-10 h-16 -ml-5 -mt-8 border-lg translate-y-full translate-x-1/2 left-1/2 top-full"}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-white">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+
+                </div>
                 <Image className={"brightness-75 h-[100vh] w-full object-cover object-[-960px] sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"absolute flex justify-center w-full"}>
-                <div className={"bg-white -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-md transform -translate-y-20 sm:-mt-16 mt-0 w-2/3"}>
+            <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-60 pb-20 pl-4 pr-5"}>
+                <div className={"bg-white border -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-2/3"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
                             28
@@ -121,8 +117,7 @@ const Index = ({ posts = [], preview }) => {
                     </div>
                 </div>
             </div>
-
-            <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-36 pb-20 pl-4 pr-5"}>
+            <div className={"bg-gray-100 flex justify-center w-full pb-20 pl-4 pr-5"}>
                 <div className={"w-5/6 mt-[10vh] sm:mt-[0vh]"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[3vh]"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
@@ -149,8 +144,6 @@ const Index = ({ posts = [], preview }) => {
 
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
