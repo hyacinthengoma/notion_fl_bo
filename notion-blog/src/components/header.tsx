@@ -78,11 +78,11 @@ export default function Header() {
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/Expertise/Droit-securite-sociale">DROIT DE LA SECURITE SOCIALE</Link>
                         </li>
-                        {/**<li className={"group"}>
+                        <li className={"group"}>
                             <Link
                                 className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none"
                                 href={""}>EXPERTISES</Link>
-                            <ul className="absolute hidden backdrop-blur-sm bg-white/10 text-gray-700 pt-10 pb-1 group-hover:block">
+                            <ul className="absolute hidden backdrop-blur-md bg-[#1B110F]/10 text-gray-700 pt-10 pb-1 group-hover:block">
                                 <li className="">
                                     <Link
                                         className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-semibold whitespace-no-wrap"
@@ -98,7 +98,7 @@ export default function Header() {
                                     >
                                 </li>
                             </ul>
-                        </li>*/}
+                        </li>
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
                         </li>
