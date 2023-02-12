@@ -13,7 +13,7 @@ export default function FlorenceBabeau() {
                 </div>
                 <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/fb-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"bg-white flex justify-center w-full h-[80vh] pt-36"}>
+            <div className={"bg-white flex justify-center w-full h-[70vh] pt-36"}>
                 <div className={"w-5/6"}>
                     <div className={"flex flex-col md:flex-row md:h-96"}>
                         <div className={"w-full md:w-1/2 order-2 md:order-1"}>

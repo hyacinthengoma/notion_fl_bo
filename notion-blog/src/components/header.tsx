@@ -72,12 +72,14 @@ export default function Header() {
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
+                        {/**
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/Expertise/Droit-travail">DROIT DU TRAVAIL</Link>
                         </li>
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/Expertise/Droit-securite-sociale">DROIT DE LA SECURITE SOCIALE</Link>
                         </li>
+                        */}
                         <li className={"group"}>
                             <Link
                                 className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none"
