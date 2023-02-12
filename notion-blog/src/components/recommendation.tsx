@@ -1,8 +1,22 @@
 import Image from "next/image";
-
+import React, { useState } from "react";
 export default function Recommendation() {
+
+        const [showText, setShowText] = useState(false);
+        const [showSecondText, setSecondShowText] = useState(false);
+        const [showThirdText, setThirdShowText] = useState(false);
+        const [buttonText1, setButtonText1] = useState("Lire la suite");
+        const [buttonText2, setButtonText2] = useState("Lire la suite");
+        const [buttonText3, setButtonText3] = useState("Lire la suite");
     return (
-        <div className={"bg-gray-50 py-16"}>
+   <div className={"bg-gray-50 py-16"}>
+       {/**
+            <button onClick={() => setShowText(!showText)}>Toggle Text</button>
+                <p style={{ display: showText ? "block" : "none" }}>
+                    This is some text that can be shown or hidden.
+                </p>
+        */}
+
             <div className={"flex justify-center w-full"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-16"}>ILS RECOMMANDENT LE CABINET</h2>
@@ -41,10 +55,17 @@ export default function Recommendation() {
                                     <div className="mt-6 py-6 border-t border-slate-200 text-center h-auto ">
                                         <div className="flex flex-wrap justify-center">
                                             <div className="w-full px-4">
-                                                <p className="font-light leading-relaxed text-slate-600 mb-4 text-left">Professionnalisme, écoute, réactivité, précision.<br/>
+                                                <p id="text" className="font-light leading-relaxed text-slate-600 mb-4 text-left">Professionnalisme, écoute, réactivité, précision.<br/>
                                                     Nous travaillons de manière régulière avec Maître Babeau. <br/>
-                                                    Nous apprécions la qualité de nos échanges, ses conseils toujours précis, sa disponibilité, et sa réactivité dans le suivi des dossiers.<br/>
-                                                    Elle a une approche personnelle et pédagogique avec pour but de nous accompagner de manière constructive et pérenne.</p>
+                                                    <span style={{ display: showText ? "block" : "none" }}>
+                                                        Nous apprécions la qualité de nos échanges, ses conseils toujours précis, sa disponibilité, et sa réactivité dans le suivi des dossiers.<br/>
+                                                        Elle a une approche personnelle et pédagogique avec pour but de nous accompagner de manière constructive et pérenne.
+                                                    </span>
+                                                    <div className={"text-end"}>
+                                                      <button onClick={() => {setShowText(!showText); setButtonText1(buttonText1 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}><u>{buttonText1}</u></button>
+                                                    </div>
+                                                </p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -85,7 +106,16 @@ export default function Recommendation() {
                                     <div className="mt-6 py-6 border-t border-slate-200 text-center h-auto">
                                         <div className="flex flex-wrap justify-center">
                                             <div className="w-full px-4">
-                                                <p className="font-light leading-relaxed text-slate-600 mb-4 text-left">Nous travaillons ensemble depuis plus d'une 10aine d'année. Me Babeau a pu nous accompagner sur des dossiers délicats, toujours avec écoute, professionnalisme et réactivité.<br/> Nous n'hésitons pas à recommander son cabinet auprès de nos propres clients.</p>
+                                                <p className="font-light leading-relaxed text-slate-600 mb-4 text-left">Nous travaillons ensemble depuis plus d'une 10aine d'année. Me Babeau a pu nous accompagner sur des dossiers délicats, toujours avec écoute,
+                                                    <span style={{ display: showSecondText ? "block" : "none" }}>
+                                                         professionnalisme et réactivité.<br/> Nous n'hésitons pas à recommander son cabinet auprès de nos propres clients.
+                                                    </span>
+                                                    <div className={"text-end"}>
+                                                        <button onClick={() => {setSecondShowText(!showSecondText); setButtonText2(buttonText2 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}><u>{
+                                                            buttonText2
+                                                        }</u></button>
+                                                    </div>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -126,8 +156,15 @@ export default function Recommendation() {
                                         <div className="flex flex-wrap justify-center">
                                             <div className="w-full px-4">
                                                 <p className="font-light leading-relaxed text-slate-600 mb-4 text-left">Très bonne expérience lors de notre collaboration avec Maitre BABEAU.<br/>
-                                                    Notre structure ayant fait appel aux services de Maitre BABEAU a plusieurs reprises ces derniers mois, nous pouvons attester de son professionnalisme et de la qualité de ses conseils au travers des différentes situations rencontrées.<br/>
+                                                    Notre structure ayant fait appel aux services de Maitre BABEAU a plusieurs
+                                                    <span style={{ display: showThirdText ? "block" : "none" }}>
+                                                   reprises ces derniers mois, nous pouvons attester de son professionnalisme et de la qualité de ses conseils au travers des différentes situations rencontrées.<br/>
                                                     De plus, la réactivité de Madame BABEAU fait d'elle une professionnelle indispensable.
+                                                    </span>
+                                                    <div className={"text-end"}>
+                                                        <button onClick={() => {setThirdShowText(!showThirdText);setButtonText3(buttonText3 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}><u>{buttonText3}</u></button>
+                                                    </div>
+
                                                 </p>
                                             </div>
                                         </div>

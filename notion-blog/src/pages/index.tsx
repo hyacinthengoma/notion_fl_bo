@@ -61,18 +61,20 @@ const Index = ({ posts = [], preview }) => {
                             <span className={"ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
                             <br/>
                             <span className={"ml-6"}>mais une obligation."</span></p>
-                        <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
-                        <p className={"text-white px-32 text-xl md:text-2xl sm:px-0"}>Avocat en droit du travail et de la sécurité sociale</p>
-                        <div className={"block sm:flex"}>
-                            <div className={"flex justify-center"}>
-                                <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round"
-                                              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
-                                    </svg>
-                                    <span>Contactez-moi</span>
-                                </Link>
+                        <div>
+                            <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
+                            <p className={"text-white px-32 text-xl md:text-2xl sm:px-0"}>Avocat en droit du travail et de la sécurité sociale</p>
+                            <div className={"block sm:flex"}>
+                                <div className={"flex justify-center"}>
+                                    <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
+                                                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                                        </svg>
+                                        <span>Contactez-moi</span>
+                                    </Link>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -137,14 +139,17 @@ const Index = ({ posts = [], preview }) => {
                                 <p className={"font-semibold text-xl text-black"}>Mon parcours</p>
                                 <p className={"mt-2 text-base"}>Titulaire d’un DEA de <a className={"text-red-900 font-bold underline"} href={""}>Droit Social</a> et <a className={"text-red-900 font-bold underline"} href={""}>Droit du Travail</a>, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
-                            {/**<div className={'flex flex-col'}>
+                            <div className={'flex flex-col flex-end'}>
+
                                 <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
                                     <Link href={"/Expertise/Droit-travail"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit du travail</Link>
                                 </div>
+                                {/**
                                 <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
                                     <Link href={"/Expertise/Droit-securite-sociale"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit de la sécurité sociale</Link>
                                 </div>
-                            </div>*/}
+                                 */}
+                            </div>
 
                         </div>
                     </div>
