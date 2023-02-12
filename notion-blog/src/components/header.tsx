@@ -55,7 +55,7 @@ export default function Header() {
                 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
             </Head>
             <div className={""}>
-                <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-red-800/10 flex justify-between w-full items-center fixed z-[100] shadow-lg transition-all duration-500" id={"navbar"}>
+                <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-[#1B110F]/10 flex justify-between w-full items-center fixed z-[100] shadow-lg transition-all duration-500" id={"navbar"}>
                     <Link className="text-3xl font-bold leading-none" href="/">
                         <Image src={'/images/logo_florence.png'} width={'250'} height={'50'} alt={''}></Image>
                     </Link>
@@ -78,7 +78,7 @@ export default function Header() {
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/Expertise/Droit-securite-sociale">DROIT DE LA SECURITE SOCIALE</Link>
                         </li>
-                        <li className={"group"}>
+                        {/**<li className={"group"}>
                             <Link
                                 className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none"
                                 href={""}>EXPERTISES</Link>
@@ -98,7 +98,7 @@ export default function Header() {
                                     >
                                 </li>
                             </ul>
-                        </li>
+                        </li>*/}
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
                         </li>
