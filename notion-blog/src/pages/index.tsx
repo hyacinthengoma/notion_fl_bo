@@ -54,13 +54,17 @@ const Index = ({ posts = [], preview }) => {
             <Head>
                 <title>Accueil</title>
             </Head>
-            <div className={"relative h-[90vh]"}>
-                <div className={"absolute w-[100%] mt-96 sm:ml-16 sm:mt-40 sm:w-max z-50"}>
-                    <h1 className={"text-white text-center text-2xl md:text-4xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
-                    <div className={"sm:ml-6 pt-4"}>
-                        <p className={"text-white px-32 text-center text-xl md:text-2xl sm:px-0"}>Avocat en droit du travail et de la sécurité sociale</p>
+            <div className={"relative h-[90vh] w-full"}>
+                <div className={"w-5/6 absolute z-50 top-1/4 left-36"}>
+                    <div className={"flex flex-col gap-6"}>
+                        <p className={"text-white text-xl md:text-4xl sm:px-0 italic font-thin mb-16 border-l-4"}>
+                            <span className={"ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
+                            <br/>
+                            <span className={"ml-6"}>mais une obligation."</span></p>
+                        <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
+                        <p className={"text-white px-32 text-xl md:text-2xl sm:px-0"}>Avocat en droit du travail et de la sécurité sociale</p>
                         <div className={"block sm:flex"}>
-                            <div className={"pt-5 sm:pt-16 sm:ml-2 flex justify-center"}>
+                            <div className={"flex justify-center"}>
                                 <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -131,16 +135,16 @@ const Index = ({ posts = [], preview }) => {
                             </div>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Mon parcours</p>
-                                <p className={"mt-2 text-base"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
+                                <p className={"mt-2 text-base"}>Titulaire d’un DEA de <a className={"text-red-900 font-bold underline"} href={""}>Droit Social</a> et <a className={"text-red-900 font-bold underline"} href={""}>Droit du Travail</a>, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
-                            <div className={'flex flex-col'}>
+                            {/**<div className={'flex flex-col'}>
                                 <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
                                     <Link href={"/Expertise/Droit-travail"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit du travail</Link>
                                 </div>
                                 <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
                                     <Link href={"/Expertise/Droit-securite-sociale"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit de la sécurité sociale</Link>
                                 </div>
-                            </div>
+                            </div>*/}
 
                         </div>
                     </div>

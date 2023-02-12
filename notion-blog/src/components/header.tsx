@@ -78,7 +78,7 @@ export default function Header() {
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/Expertise/Droit-securite-sociale">DROIT DE LA SECURITE SOCIALE</Link>
                         </li>
-                        {/**<li className={"group"}>
+                        <li className={"group"}>
                             <Link
                                 className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none"
                                 href={""}>EXPERTISES</Link>
@@ -98,7 +98,7 @@ export default function Header() {
                                     >
                                 </li>
                             </ul>
-                        </li>*/}
+                        </li>
                         <li>
                             <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
                         </li>

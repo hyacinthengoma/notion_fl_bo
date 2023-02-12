@@ -9,9 +9,9 @@ export default function HomeDroitSecuSociale() {
         <>
             <div className={"relative w-full"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
-                    <h1 className={"text-white text-2xl md:text-4xl font-bold"}>DROIT DE LA SÉCURITÉ SOCIALE</h1>
+                    <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>DROIT DE LA SÉCURITÉ SOCIALE</h1>
                 </div>
-                <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
+                <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             {/**<div className={"w-full flex justify-center bg-white py-20"}>
                 <div className={"w-5/6 text-justify"}>

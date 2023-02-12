@@ -13,7 +13,14 @@ import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import BesoinAvocat from "../../components/Besoin-avocat";
-import {LinkedinIcon, LinkedinShareButton} from "react-share";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton
+} from "react-share";
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -463,9 +470,20 @@ const RenderPost = ({ post, redirect, preview }) => {
             }
             return toRender
           })}
-          <LinkedinShareButton url={asPath}>
-            <LinkedinIcon size={32} round />
-          </LinkedinShareButton>
+          <hr className={"mt-10 border-black"}/>
+          <div className={"flex flex-row gap-4"}>
+            <p>Partager cet article sur : </p>
+            <LinkedinShareButton url={asPath}>
+              <LinkedinIcon size={32} round />
+            </LinkedinShareButton>
+            <TwitterShareButton url={asPath}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            <FacebookShareButton url={asPath}>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+          </div>
+
         </div>
       </div>
       <BesoinAvocat></BesoinAvocat>

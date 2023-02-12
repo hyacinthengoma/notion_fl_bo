@@ -5,18 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import {textBlock} from "../lib/notion/renderers";
 import {getDateStr} from "../lib/blog-helpers";
+import Recommendation from "../components/recommendation";
 
 export default function Honoraires() {
     return (
         <>
             <div className={"relative w-full"}>
                 <div className={"absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
-                    <h1 className={"text-white text-2xl md:text-4xl font-bold"}>HONORAIRES</h1>
-                    <p className={"text-white text-xl md:text-2xl mb-8"}>Découvrez les honoraires des mes principaux actes.<br/>
-                        N’hésitez surtout pas à me contacter pour une étude approfondie de votre dossier</p>
-                    <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Prenez rendez-vous</Link>
+                    <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>HONORAIRES</h1>
                 </div>
-                <Image className={"brightness-50 h-[30vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
+                <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white flex justify-center w-full py-36"}>
                 <div className={"w-5/6"}>
@@ -124,6 +122,7 @@ export default function Honoraires() {
                     </div>
                 </div>
             </div>*/}
+            <Recommendation></Recommendation>
             <BesoinAvocat></BesoinAvocat>
         </>
     );
