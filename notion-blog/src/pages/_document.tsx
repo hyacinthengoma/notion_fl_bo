@@ -14,7 +14,7 @@ class MyDocument extends Document {
                 </head>
                 <body>
                 <div id={'globalLoader'}>
-                    <Image src={"/images/logo-babeau2.svg"} alt={""} height={"500"} width={"500"} className={"bg-red-900 p-4 animate-bounce my-5"}></Image>
+                    <Image src={"/images/logo-babeau2.svg"} alt={""} height={"500"} width={"500"} className={"bg-red-900 p-4 my-5"}></Image>
                     <div className="loader">
                         <div/>
                         <div/>
