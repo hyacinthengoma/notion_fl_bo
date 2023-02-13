@@ -1,13 +1,15 @@
 import Image from "next/image";
 import React, { useState } from "react";
 export default function Recommendation() {
-
+    {/**constante d'affichage du texte*/}
         const [showText, setShowText] = useState(false);
         const [showSecondText, setSecondShowText] = useState(false);
         const [showThirdText, setThirdShowText] = useState(false);
+    {/**constante pour changer Lire la suite en réduire le texte et vis versa*/}
         const [buttonText1, setButtonText1] = useState("Lire la suite");
         const [buttonText2, setButtonText2] = useState("Lire la suite");
         const [buttonText3, setButtonText3] = useState("Lire la suite");
+        const limit = 100;
     return (
    <div className={"bg-gray-50 py-16"}>
        {/**
@@ -62,7 +64,7 @@ export default function Recommendation() {
                                                         Elle a une approche personnelle et pédagogique avec pour but de nous accompagner de manière constructive et pérenne.
                                                     </span>
                                                     <div className={"text-end"}>
-                                                      <button onClick={() => {setShowText(!showText); setButtonText1(buttonText1 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}><u>{buttonText1}</u></button>
+                                                      <button onClick={() => {setShowText(!showText); setButtonText1(buttonText1 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}>{buttonText1}</button>
                                                     </div>
                                                 </p>
 
@@ -111,9 +113,9 @@ export default function Recommendation() {
                                                          professionnalisme et réactivité.<br/> Nous n'hésitons pas à recommander son cabinet auprès de nos propres clients.
                                                     </span>
                                                     <div className={"text-end"}>
-                                                        <button onClick={() => {setSecondShowText(!showSecondText); setButtonText2(buttonText2 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}><u>{
+                                                        <button onClick={() => {setSecondShowText(!showSecondText); setButtonText2(buttonText2 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}>{
                                                             buttonText2
-                                                        }</u></button>
+                                                        }</button>
                                                     </div>
                                                 </p>
                                             </div>
@@ -162,7 +164,7 @@ export default function Recommendation() {
                                                     De plus, la réactivité de Madame BABEAU fait d'elle une professionnelle indispensable.
                                                     </span>
                                                     <div className={"text-end"}>
-                                                        <button onClick={() => {setThirdShowText(!showThirdText);setButtonText3(buttonText3 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}><u>{buttonText3}</u></button>
+                                                        <button onClick={() => {setThirdShowText(!showThirdText);setButtonText3(buttonText3 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1 "}>{buttonText3}</button>
                                                     </div>
 
                                                 </p>

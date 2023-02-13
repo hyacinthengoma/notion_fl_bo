@@ -26,7 +26,7 @@ export default function FlorenceBabeau() {
                         </div>
                         <div className={"w-full md:w-1/2 my-auto order-1 md:order-2 py-20 md:py-0"}>
                             <div className={"w-4/5 flex flex-col mx-auto"}>
-                                <h2 className={"font-bold text-black text-2xl uppercase text-center"}>ADN DE L'ENTREPRISE</h2>
+                                <h2 className={"font-bold text-black text-2xl uppercase text-start"}>ADN DE L'ENTREPRISE</h2>
                                 <p className={"text-black text-center text-justify break-words my-5"}>L’ADN du cabinet c’est son approche holistique de chaque affaire, qui est appréhendée dans sa globalité et en prenant en considération ses différentes dimensions économiques, sociales et humaines.</p>
                                 <p className={"text-black text-center text-justify break-words my-5"}>La complémentarité entres les activités en conseil et de contentieux permet de faire un juste diagnostic du dossier, une bonne évaluation des risques et de proposer les solutions les plus adaptées.</p>
                                 <div className={"w-full flex justify-center"}>
