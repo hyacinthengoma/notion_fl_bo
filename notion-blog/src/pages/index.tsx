@@ -55,15 +55,15 @@ const Index = ({ posts = [], preview }) => {
                 <title>Accueil</title>
             </Head>
             <div className={"relative h-[90vh] w-full"}>
-                <div className={"w-5/6 absolute z-50 top-1/4 lg:left-36"}>
+                <div className={"lg:w-5/6 w-full absolute z-50 top-1/4 lg:left-36"}>
                     <div className={"flex flex-col gap-6"}>
-                        <p className={"text-white text-xl md:text-4xl sm:px-0 italic font-thin mb-16 border-l-4"}>
-                            <span className={"ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
+                        <p className={"text-white text-center lg:text-left text-xl md:text-4xl sm:px-0 italic font-thin mb-16 lg:border-l-4"}>
+                            <span className={"lg:ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
                             <br/>
-                            <span className={"ml-6"}>mais une obligation."</span></p>
+                            <span className={"lg:ml-6"}>mais une obligation."</span></p>
                         <div>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
-                            <p className={"text-white lg:px-32 text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
+                            <p className={"text-white text-center lg:text-left text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
                                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
