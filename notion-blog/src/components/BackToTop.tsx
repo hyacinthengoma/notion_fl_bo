@@ -5,7 +5,7 @@ export default function BackToTop() {
         let backToTop = document.getElementById('backToTop');
 
         const navbar = document.getElementById('navbar');
-
+        const navhover = document.getElementById('navhover');
         window.onscroll = function() {
             scrollFunction()
             scrollNavbarFunction()
@@ -13,11 +13,13 @@ export default function BackToTop() {
 
         function scrollNavbarFunction() {
             if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-                navbar.classList.add('bg-red-900')
-                navbar.classList.remove('bg-[#1B110F]/10')
+                navbar.classList.add('bg-red-900');
+                navbar.classList.remove('bg-[#1B110F]/10');
+                navhover.classList.add('bg-red-900');
             } else {
-                navbar.classList.remove('bg-red-900')
-                navbar.classList.add('bg-[#1B110F]/10')
+                navbar.classList.remove('bg-red-900');
+                navbar.classList.add('bg-[#1B110F]/10');
+                navhover.classList.remove('bg-red-900');
             }
         }
 

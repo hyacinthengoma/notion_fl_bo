@@ -76,7 +76,7 @@ export default function Header() {
                             <Link
                                 className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none"
                                 href={""}>EXPERTISES</Link>
-                            <ul className="absolute hidden backdrop-filter-none text-gray-700 pt-10 pb-1 group-hover:block">
+                            <ul className="absolute hidden backdrop-filter-none text-gray-700 pt-10 pb-1 group-hover:block" id={"navhover"}>
                                 <li className="">
                                     <Link
                                         className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-semibold whitespace-no-wrap bg-[#1b110f0d] -mt-[0.9rem]"
