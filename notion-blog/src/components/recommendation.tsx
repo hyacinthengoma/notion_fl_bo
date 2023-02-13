@@ -12,13 +12,6 @@ export default function Recommendation() {
         const limit = 100;
     return (
    <div className={"bg-gray-50 py-16"}>
-       {/**
-            <button onClick={() => setShowText(!showText)}>Toggle Text</button>
-                <p style={{ display: showText ? "block" : "none" }}>
-                    This is some text that can be shown or hidden.
-                </p>
-        */}
-
             <div className={"flex justify-center w-full"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-16"}>ILS RECOMMANDENT LE CABINET</h2>
@@ -43,7 +36,6 @@ export default function Recommendation() {
                                                 <div className="p-3 text-center">
                                                     <span
                                                         className="text-xl font-bold block uppercase tracking-wide text-orange-500">★★★★★</span>
-                                                    {/**<span className="text-sm text-slate-400">Followers</span>*/}
                                                 </div>
                                             </div>
                                         </div>
@@ -63,11 +55,10 @@ export default function Recommendation() {
                                                         Nous apprécions la qualité de nos échanges, ses conseils toujours précis, sa disponibilité, et sa réactivité dans le suivi des dossiers.<br/>
                                                         Elle a une approche personnelle et pédagogique avec pour but de nous accompagner de manière constructive et pérenne.
                                                     </span>
-                                                    <div className={"text-end"}>
-                                                      <button onClick={() => {setShowText(!showText); setButtonText1(buttonText1 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}>{buttonText1}</button>
-                                                    </div>
                                                 </p>
-
+                                                <div className={"text-end"}>
+                                                    <button onClick={() => {setShowText(!showText); setButtonText1(buttonText1 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}>{buttonText1}</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -112,12 +103,12 @@ export default function Recommendation() {
                                                     <span style={{ display: showSecondText ? "block" : "none" }}>
                                                          professionnalisme et réactivité.<br/> Nous n'hésitons pas à recommander son cabinet auprès de nos propres clients.
                                                     </span>
-                                                    <div className={"text-end"}>
-                                                        <button onClick={() => {setSecondShowText(!showSecondText); setButtonText2(buttonText2 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}>{
-                                                            buttonText2
-                                                        }</button>
-                                                    </div>
                                                 </p>
+                                                <div className={"text-end"}>
+                                                    <button onClick={() => {setSecondShowText(!showSecondText); setButtonText2(buttonText2 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1"}>{
+                                                        buttonText2
+                                                    }</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -163,11 +154,10 @@ export default function Recommendation() {
                                                    reprises ces derniers mois, nous pouvons attester de son professionnalisme et de la qualité de ses conseils au travers des différentes situations rencontrées.<br/>
                                                     De plus, la réactivité de Madame BABEAU fait d'elle une professionnelle indispensable.
                                                     </span>
-                                                    <div className={"text-end"}>
-                                                        <button onClick={() => {setThirdShowText(!showThirdText);setButtonText3(buttonText3 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1 "}>{buttonText3}</button>
-                                                    </div>
-
                                                 </p>
+                                                <div className={"text-end"}>
+                                                    <button onClick={() => {setThirdShowText(!showThirdText);setButtonText3(buttonText3 === "Lire la suite" ? "Réduire le texte" : "Lire la suite"); }} className={"text-black text-sm border border-red-900 rounded px-2 my-5 py-1 "}>{buttonText3}</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
