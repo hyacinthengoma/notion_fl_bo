@@ -55,7 +55,7 @@ const Index = ({ posts = [], preview }) => {
                 <title>Accueil</title>
             </Head>
             <div className={"relative h-[90vh] w-full"}>
-                <div className={"w-5/6 absolute z-50 top-1/4 left-36"}>
+                <div className={"w-5/6 absolute z-50 top-1/4 lg:left-36"}>
                     <div className={"flex flex-col gap-6"}>
                         <p className={"text-white text-xl md:text-4xl sm:px-0 italic font-thin mb-16 border-l-4"}>
                             <span className={"ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
@@ -63,7 +63,7 @@ const Index = ({ posts = [], preview }) => {
                             <span className={"ml-6"}>mais une obligation."</span></p>
                         <div>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
-                            <p className={"text-white px-32 text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
+                            <p className={"text-white lg:px-32 text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
                                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
@@ -85,7 +85,7 @@ const Index = ({ posts = [], preview }) => {
                     </svg>
 
                 </div>
-                <Image className={"brightness-75 h-[100vh] w-full object-cover object-[-960px] sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
+                <Image className={"brightness-75 h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-60 pb-20 pl-4 pr-5"}>
                 <div className={"bg-white border -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-2/3"}>
