@@ -10,16 +10,11 @@ import { getBlogLink, getDateStr, postIsPublished } from '../lib/blog-helpers';
 import getNotionUsers from '../lib/notion/getNotionUsers';
 import getBlogIndex from '../lib/notion/getBlogIndex';
 import React from "react";
-
-import { getDatabase } from "../lib/notion";
-
-export const databaseId = process.env.ACCUEIL_DATABASE_ID
-
+import getAccueilIndex from "../lib/notion/getAccueilIndex";
 export async function getStaticProps({ preview }) {
     const postsTable = await getBlogIndex()
-    console.log(databaseId)
-    const database = await getDatabase(databaseId)
-
+    const accueilTable = await getAccueilIndex();
+    console.log(accueilTable)
     const authorsToGet: Set<string> = new Set()
     const posts: any[] = Object.keys(postsTable)
         .map((slug) => {
@@ -46,14 +41,12 @@ export async function getStaticProps({ preview }) {
         props: {
             preview: preview || false,
             posts,
-            test: database,
         },
-        revalidate: 1,
+        revalidate: 10,
     }
 }
 
-const Index = ({ posts = [], test}) => {
-    console.log(test);
+const Index = ({ posts = []}) => {
     const lastPosts = posts.slice(-3);
     return (
         <>
