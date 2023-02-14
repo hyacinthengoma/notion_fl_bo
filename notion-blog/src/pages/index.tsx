@@ -11,10 +11,11 @@ import getNotionUsers from '../lib/notion/getNotionUsers';
 import getBlogIndex from '../lib/notion/getBlogIndex';
 import React from "react";
 import getAccueilIndex from "../lib/notion/getAccueilIndex";
+
 export async function getStaticProps({ preview }) {
     const postsTable = await getBlogIndex()
     const accueilTable = await getAccueilIndex();
-    console.log(accueilTable)
+
     const authorsToGet: Set<string> = new Set()
     const posts: any[] = Object.keys(postsTable)
         .map((slug) => {
@@ -41,12 +42,14 @@ export async function getStaticProps({ preview }) {
         props: {
             preview: preview || false,
             posts,
+            accueil: accueilTable
         },
-        revalidate: 10,
+        revalidate: 1000,
     }
 }
 
-const Index = ({ posts = []}) => {
+const Index = ({ posts = [], accueil}) => {
+    console.log(accueil.citation.description)
     const lastPosts = posts.slice(-3);
     return (
         <>
@@ -57,9 +60,8 @@ const Index = ({ posts = []}) => {
                 <div className={"w-5/6 absolute z-50 top-1/4 lg:left-36"}>
                     <div className={"flex flex-col gap-6"}>
                         <p className={"text-white text-xl md:text-4xl sm:px-0 italic font-thin mb-16 border-l-4"}>
-                            <span className={"ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
-                            <br/>
-                            <span className={"ml-6"}>mais une obligation."</span></p>
+                            <span className={"ml-6"}>"{ accueil.citation.description }"</span>
+                        </p>
                         <div>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
                             <p className={"text-white lg:px-32 text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
@@ -90,7 +92,7 @@ const Index = ({ posts = []}) => {
                 <div className={"bg-white border -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-2/3"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
-                            28
+                            { accueil.annee_exercice.description }
                         </p>
                         <p className={"text-black text-center text-xl"}>
                             Années <br/>d'exercice
@@ -98,7 +100,7 @@ const Index = ({ posts = []}) => {
                     </div>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
-                            98%
+                            { accueil.clients_satisfait.description }
                         </p>
                         <p className={"text-black text-center text-xl"}>
                             de clients <br/>satisfait
@@ -106,7 +108,7 @@ const Index = ({ posts = []}) => {
                     </div>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
-                            2
+                            { accueil.domaines_competences.description }
                         </p>
                         <p className={"text-black text-center text-xl"}>
                             Grands domaines <br/> de compétences
@@ -114,7 +116,7 @@ const Index = ({ posts = []}) => {
                     </div>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
-                            3000+
+                            { accueil.dossiers_traites.description }
                         </p>
                         <p className={"text-black text-center text-xl"}>
                             Dossiers <br/> traités

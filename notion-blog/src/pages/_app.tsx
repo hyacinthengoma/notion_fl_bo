@@ -8,6 +8,7 @@ import {useEffect} from "react";
 import Loader from "../components/loader";
 import Header from "../components/header";
 import BackToTop from "../components/BackToTop";
+import getAccueilIndex from "../lib/notion/getAccueilIndex";
 
 const poppins = Poppins({
     weight: ['400', '700'],
