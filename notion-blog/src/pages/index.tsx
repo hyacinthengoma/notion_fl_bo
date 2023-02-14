@@ -17,6 +17,7 @@ export const databaseId = process.env.ACCUEIL_DATABASE_ID
 
 export async function getStaticProps({ preview }) {
     const postsTable = await getBlogIndex()
+    console.log(databaseId)
     const database = await getDatabase(databaseId)
 
     const authorsToGet: Set<string> = new Set()
@@ -45,12 +46,14 @@ export async function getStaticProps({ preview }) {
         props: {
             preview: preview || false,
             posts,
+            test: database,
         },
-        revalidate: 10,
+        revalidate: 1,
     }
 }
 
-const Index = ({ posts = []}) => {
+const Index = ({ posts = [], test}) => {
+    console.log(test);
     const lastPosts = posts.slice(-3);
     return (
         <>
