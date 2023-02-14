@@ -1,20 +1,23 @@
 //Custom components
-import Header from "../components/header";
 import Recommendation from "../components/recommendation";
 import BesoinAvocat from "../components/Besoin-avocat";
-
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+
 //Notion libs
 import { getBlogLink, getDateStr, postIsPublished } from '../lib/blog-helpers';
-import { textBlock } from '../lib/notion/renderers';
 import getNotionUsers from '../lib/notion/getNotionUsers';
 import getBlogIndex from '../lib/notion/getBlogIndex';
 import React from "react";
 
+import { getDatabase } from "../lib/notion";
+
+export const databaseId = process.env.ACCUEIL_DATABASE_ID
+
 export async function getStaticProps({ preview }) {
     const postsTable = await getBlogIndex()
+    const database = await getDatabase(databaseId)
 
     const authorsToGet: Set<string> = new Set()
     const posts: any[] = Object.keys(postsTable)
@@ -47,7 +50,7 @@ export async function getStaticProps({ preview }) {
     }
 }
 
-const Index = ({ posts = [], preview }) => {
+const Index = ({ posts = []}) => {
     const lastPosts = posts.slice(-3);
     return (
         <>
@@ -57,10 +60,10 @@ const Index = ({ posts = [], preview }) => {
             <div className={"relative h-[90vh] w-full"}>
                 <div className={"lg:w-5/6 w-full absolute z-50 top-1/4 lg:left-36"}>
                     <div className={"flex flex-col gap-6"}>
-                        <p className={"text-white text-center lg:text-left text-xl md:text-4xl sm:px-0 italic font-thin mb-16 lg:border-l-4"}>
-                            <span className={"lg:ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
+                        <p className={"text-white text-center lg:text-left notion-blog text-xl md:text-4xl sm:px-0 italic font-thin mb-16 lg:border-l-4"}>
+                            {/**<span className={"lg:ml-6"}>"Jouir de ses droits n’est pas un bénéfice,</span>
                             <br/>
-                            <span className={"lg:ml-6"}>mais une obligation."</span></p>
+                            <span className={"lg:ml-6"}>mais une obligation."</span>*/}</p>
                         <div>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
                             <p className={"text-white text-center lg:text-left text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>

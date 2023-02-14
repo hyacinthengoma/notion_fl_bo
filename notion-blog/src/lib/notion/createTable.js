@@ -2,7 +2,7 @@
 const { v4: uuid } = require('uuid')
 const fetch = require('node-fetch')
 const {
-  BLOG_INDEX_ID: pageId,
+  ACCUEIL_DATABASE_ID: pageId,
   NOTION_TOKEN,
   API_ENDPOINT,
 } = require('./server-constants')
