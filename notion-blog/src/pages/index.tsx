@@ -64,7 +64,7 @@ const Index = ({ posts = [], accueil}) => {
                         </p>
                         <div>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
-                            <p className={"text-white lg:px-32 text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
+                            <p className={"text-white  text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
                                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
