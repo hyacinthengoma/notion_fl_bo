@@ -49,7 +49,6 @@ export async function getStaticProps({ preview }) {
 }
 
 const Index = ({ posts = [], accueil}) => {
-    console.log(accueil.citation.description)
     const lastPosts = posts.slice(-3);
     return (
         <>
@@ -75,7 +74,7 @@ const Index = ({ posts = [], accueil}) => {
                                         </svg>
                                         <span>Contactez-moi</span>
                                     </Link>
-                        </div>
+                                </div>
                             </div>
                         </div>
                     </div>

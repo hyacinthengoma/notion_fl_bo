@@ -11,7 +11,7 @@ import getPageData from '../../lib/notion/getPageData'
 import React, { CSSProperties, useEffect } from 'react'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
-import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
+import {getBlogLink, getDateStr, postIsPublished} from '../../lib/blog-helpers'
 import BesoinAvocat from "../../components/Besoin-avocat";
 import {
   FacebookIcon,
@@ -66,6 +66,17 @@ export async function getStaticProps({ params: { slug }, preview }) {
     }
   }
 
+  const posts: any[] = Object.keys(postsTable)
+      .map((slug) => {
+        const post = postsTable[slug]
+        // remove draft posts in production
+        if (!preview && !postIsPublished(post)) {
+          return null
+        }
+        return post
+      })
+      .filter(Boolean)
+
   const { users } = await getNotionUsers(post.Authors || [])
   post.Authors = Object.keys(users).map((id) => users[id].full_name)
 
@@ -73,6 +84,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
     props: {
       post,
       preview: preview || false,
+      posts,
     },
     revalidate: 10,
   }
@@ -93,7 +105,10 @@ export async function getStaticPaths() {
 
 const listTypes = new Set(['bulleted_list', 'numbered_list'])
 
-const RenderPost = ({ post, redirect, preview }) => {
+const RenderPost = ({ post, redirect, preview, posts }) => {
+
+  const lastPosts = posts.slice(-3);
+
   const router = useRouter()
 
   let listTagName: string | null = null
@@ -483,7 +498,61 @@ const RenderPost = ({ post, redirect, preview }) => {
               <FacebookIcon size={32} round />
             </FacebookShareButton>
           </div>
+        </div>
+      </div>
+      <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
+        <div className={"w-5/6"}>
+          <h2 className={"font-bold text-white text-[2rem] uppercase mb-6"}>Ces articles pourrait vous intéresser</h2>
+          <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
+            {lastPosts.map((post) => {
+              return(
+                  <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 article"}>
+                    <div
+                        className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
+                      {post.Illustration ?
+                          <img
+                              src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`}
+                              loading="lazy" alt="Photo by Lorenzo Herrera"
+                              className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
+                          :
+                          <img
+                              src={"https://placeimg.com/400/225/arch"}
+                              loading="lazy" alt="Photo by Lorenzo Herrera"
+                              className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
+                      }
 
+                    </div>
+
+                    <div className="flex flex-col flex-1 p-4 sm:p-6">
+                      <h2 className="text-gray-800 text-lg font-semibold mb-2">
+                        <div
+                            className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">{post.Page}</div>
+                      </h2>
+
+                      {(!post.Preview || post.Preview.length === 0) &&
+                          <p className={"text-gray-500 mb-8"}>Pas de résumé disponible</p>}
+                      {(post.Preview) && (
+                          <p className={"text-gray-500 mb-8"}>{(post.Preview)}</p>
+                      )}
+                      <div className="flex justify-between items-end mt-auto">
+                        <div className="flex items-center gap-2">
+                          <div>
+                            <span className="block text-red-800">{(post.Type)}</span>
+                            <span className="block text-gray-400 text-sm">{getDateStr(post.Date)}</span>
+                          </div>
+                        </div>
+
+                        <span
+                            className="text-black text-sm border border-red-900 rounded px-2 py-1">Lire l'article</span>
+                      </div>
+                    </div>
+                  </Link>
+              )
+            })}
+          </div>
+          <div className={"flex justify-center mt-20"}>
+            <Link href={"/blog"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
+          </div>
         </div>
       </div>
       <BesoinAvocat></BesoinAvocat>
