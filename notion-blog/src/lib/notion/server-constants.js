@@ -22,6 +22,7 @@ const BLOG_INDEX_CACHE = path.resolve('.blog_index_data')
 const ACCUEIL_INDEX_ID = normalizeId(process.env.ACCUEIL_INDEX_ID)
 const DROIT_TRAVAIL_INDEX_ID = normalizeId(process.env.DROIT_TRAVAIL_INDEX_ID)
 const DROIT_SOCIAL_INDEX_ID = normalizeId(process.env.DROIT_SOCIAL_INDEX_ID)
+const HONORAIRES_INDEX_ID = normalizeId(process.env.HONORAIRES_INDEX_ID)
 
 module.exports = {
   NOTION_TOKEN,
@@ -31,5 +32,6 @@ module.exports = {
   ACCUEIL_INDEX_ID,
   DROIT_TRAVAIL_INDEX_ID,
   DROIT_SOCIAL_INDEX_ID,
+  HONORAIRES_INDEX_ID,
   normalizeId,
 }

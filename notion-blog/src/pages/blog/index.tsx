@@ -40,7 +40,7 @@ export async function getStaticProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    revalidate: 3600,
+    revalidate: 10,
   }
 }
 
@@ -97,6 +97,7 @@ const Index = ({ posts = [], preview }) => {
             <div className={"bg-gray-100 flex justify-center w-full py-1 pb-10"}>
                 <div className={"w-5/6"}>
                     <div className={"flex flex-row flex-wrap justify-center gap-4 my-10"}>
+                        ngfhgho
                         {uniqueTypes.map((Type:string) => {
                             return (
                                 <div>

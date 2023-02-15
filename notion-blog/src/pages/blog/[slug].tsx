@@ -107,7 +107,17 @@ const listTypes = new Set(['bulleted_list', 'numbered_list'])
 
 const RenderPost = ({ post, redirect, preview, posts }) => {
 
-  const lastPosts = posts.slice(-3);
+  let lastPosts = [];
+
+  posts.map((currentPost) => {
+    if(currentPost.Type === post.Type){
+      lastPosts.push(currentPost);
+    }
+  })
+
+  lastPosts.slice(-3);
+
+  console.log(lastPosts)
 
   const router = useRouter()
 

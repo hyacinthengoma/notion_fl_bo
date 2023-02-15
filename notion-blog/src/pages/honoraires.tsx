@@ -4,11 +4,37 @@ import BesoinAvocat from "../components/Besoin-avocat";
 import Image from "next/image";
 import Link from "next/link";
 import {textBlock} from "../lib/notion/renderers";
-import {getDateStr} from "../lib/blog-helpers";
+import {getDateStr, postIsPublished} from "../lib/blog-helpers";
 import Recommendation from "../components/recommendation";
 import React from "react";
+import getBlogIndex from "../lib/notion/getBlogIndex";
+import getAccueilIndex from "../lib/notion/getAccueilIndex";
+import getNotionUsers from "../lib/notion/getNotionUsers";
+import getHonoraireIndex from "../lib/notion/getHonoraireIndex";
 
-export default function Honoraires() {
+export async function getStaticProps({ preview }) {
+    const postsTable = await getBlogIndex()
+    const honorairesTable = await getHonoraireIndex();
+
+    const authorsToGet: Set<string> = new Set()
+    const honoraires: any[] = Object.keys(postsTable)
+        .map((slug) => {
+            const honoraires = honorairesTable[slug]
+            return honoraires
+        })
+        .filter(Boolean)
+
+    return {
+        props: {
+            preview: preview || false,
+            honoraires,
+        },
+        revalidate: 1000,
+    }
+}
+
+
+export default function Honoraires({honoraires}) {
     return (
         <>
             <div className={"relative w-full"}>
