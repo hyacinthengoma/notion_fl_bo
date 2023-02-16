@@ -11,10 +11,14 @@ import getNotionUsers from '../lib/notion/getNotionUsers';
 import getBlogIndex from '../lib/notion/getBlogIndex';
 import React from "react";
 import getAccueilIndex from "../lib/notion/getAccueilIndex";
+import getCompetencesDroitSocialIndex from "../lib/notion/getCompetencesDroitSocialIndex";
+import getCompetencesDroitTravailIndex from "../lib/notion/getCompetencesDroitTravailIndex";
 
 export async function getStaticProps({ preview }) {
-    const postsTable = await getBlogIndex()
+    const postsTable = await getBlogIndex();
     const accueilTable = await getAccueilIndex();
+    const competencesSocialTable = await getCompetencesDroitSocialIndex();
+    const competencesTravailTable = await getCompetencesDroitTravailIndex();
 
     const authorsToGet: Set<string> = new Set()
     const posts: any[] = Object.keys(postsTable)
@@ -32,6 +36,16 @@ export async function getStaticProps({ preview }) {
         })
         .filter(Boolean)
 
+    const competencesSocial = Object.keys(competencesSocialTable).map((slug) => {
+        const competenceS = competencesSocialTable[slug]
+        return competenceS
+    })
+
+    const competencesTravail = Object.keys(competencesTravailTable).map((slug) => {
+        const competenceT = competencesTravailTable[slug]
+        return competenceT
+    })
+
     const { users } = await getNotionUsers([...authorsToGet])
 
     posts.map((post) => {
@@ -42,13 +56,15 @@ export async function getStaticProps({ preview }) {
         props: {
             preview: preview || false,
             posts,
-            accueil: accueilTable
+            accueil: accueilTable,
+            competencesSocial,
+            competencesTravail
         },
         revalidate: 1000,
     }
 }
 
-const Index = ({ posts = [], accueil}) => {
+const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) => {
     const lastPosts = posts.slice(-3);
     return (
         <>
@@ -87,8 +103,8 @@ const Index = ({ posts = [], accueil}) => {
                 </div>
                 <Image className={"brightness-75 h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"bg-gray-100 flex justify-center w-full pt-96 md:pt-60 pb-20 pl-4 pr-5"}>
-                <div className={"bg-white border -mt-40 flex flex-col gap-8 md:flex-row justify-between shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-2/3"}>
+            <div className={"bg-gray-100 flex justify-center w-full pt-40 md:pt-60 lg:pt-72 pb-20 pl-4 pr-5"}>
+                <div className={"bg-white border lg:-mt-40 gap-16 grid grid-cols-2 lg:grid-cols-4 shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-2/3"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
                             { accueil.annee_exercice.description }
@@ -123,6 +139,39 @@ const Index = ({ posts = [], accueil}) => {
                     </div>
                 </div>
             </div>
+            <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
+                <div className={"w-5/6"}>
+                    <h2 className={"font-bold text-white text-[2rem] uppercase mb-6"}>Mes expertises</h2>
+                    <div className={"flex flex-col lg:flex-row w-full gap-8"}>
+                        <div className={"w-full lg:w-1/2"}>
+                            <h2 className={"text-center text-white text-2xl font-bold"}>Droit du travail</h2>
+                            {competencesTravail.map((currentCompetences) => {
+                                return(
+                                    <p className={"text-white my-5 text-lg"}>
+                                        - {currentCompetences.description}
+                                    </p>
+                                );
+                            })}
+                            <div className={"flex justify-center mt-20"}>
+                                <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit de la sécurité sociale</Link>
+                            </div>
+                        </div>
+                        <div className={"w-full lg:w-1/2"}>
+                            <h2 className={"text-center text-white text-2xl font-bold"}>Droit de la sécurité sociale</h2>
+                            {competencesSocial.map((currentCompetences) => {
+                                return(
+                                    <p className={"text-white my-5 text-lg"}>
+                                        - {currentCompetences.description}
+                                    </p>
+                                );
+                            })}
+                            <div className={"flex justify-center mt-20"}>
+                                <Link href={"/Expertise/Droit-securite-sociale"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit du travail</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className={"bg-gray-100 flex justify-center w-full pb-20 pl-4 pr-5"}>
                 <div className={"w-5/6 mt-[10vh] sm:mt-[0vh]"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[3vh]"}>Qui suis-je ?</h2>
@@ -144,13 +193,7 @@ const Index = ({ posts = [], accueil}) => {
                                 <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
                                     <Link href={"/Expertise/Droit-travail"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit du travail</Link>
                                 </div>
-                                {/**
-                                <div className={"text-center mt-10 hover:scale-105 duration-500 mr-auto"}>
-                                    <Link href={"/Expertise/Droit-securite-sociale"} className={"text-sm bg-red-900 text-white mt-10 text-center mt-[3vh] py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500 sm:text-base"}>Droit de la sécurité sociale</Link>
-                                </div>
-                                 */}
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -1,14 +1,10 @@
 import Link from 'next/link'
-import Header from '../../components/header'
-
 import { getBlogLink, getDateStr, postIsPublished } from '../../lib/blog-helpers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
-import getNotionAsset from '../../lib/notion/getNotionAssetUrls'
 import Image from "next/image";
 import BesoinAvocat from "../../components/Besoin-avocat";
 import React, {useEffect, useState} from "react";
-import {array} from "prop-types";
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -96,8 +92,8 @@ const Index = ({ posts = [], preview }) => {
             </div>
             <div className={"bg-gray-100 flex justify-center w-full py-1 pb-10"}>
                 <div className={"w-5/6"}>
-                    <div className={"flex flex-row flex-wrap justify-center gap-4 my-10"}>
-                        ngfhgho
+                    <div className={"flex flex-row flex-wrap justify-start gap-4 my-10"}>
+                        <p className={"text-black text-2xl py-2"}>Trier par : </p>
                         {uniqueTypes.map((Type:string) => {
                             return (
                                 <div>
@@ -144,6 +140,7 @@ const Index = ({ posts = [], preview }) => {
                                         {(post.Preview) && (
                                             <p className={"text-gray-500 mb-8"}>{(post.Preview)}</p>
                                         )}
+
                                         <div className="flex justify-between items-end mt-auto">
                                             <div className="flex items-center gap-2">
                                                 <div>

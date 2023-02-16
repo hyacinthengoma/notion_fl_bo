@@ -228,7 +228,7 @@ export default function Contact() {
                 loading="lazy"
                 className={"w-full h-96 lg:h-full"}
                 referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.3359252214431763%2C45.698933708601665%2C-0.3323847055435181%2C45.70058596257178&amp;layer=mapnik&amp;marker=45.699759841689826%2C-0.33415496349334717"></iframe>
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.5811086297035218%2C44.86322475044171%2C-0.5785980820655824%2C44.8645384165023&amp;layer=mapnik&amp;marker=44.863881587219105%2C-0.579853355884552"></iframe>
           </div>
         </div>
       </div>
