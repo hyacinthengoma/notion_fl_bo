@@ -45,7 +45,7 @@ export default function Honoraires({honoraires}) {
                             return(
                                 <div className="flex flex-col overflow-hidden border-2 rounded-md border-red-900 shadow-lg hover:scale-105 duration-500">
                                     <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4">
-                                        <p className="text-lg font-medium uppercase">{currentHonoraire.Slug.replace('-', ' ')}</p>
+                                        <p className="text-lg font-medium uppercase">{currentHonoraire.Slug.replace(/-/g, ' ')}</p>
                                         <p className="text-5xl font-bold">{currentHonoraire.prix}€ TTC
 
                                         </p>

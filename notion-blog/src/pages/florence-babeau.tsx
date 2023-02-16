@@ -20,9 +20,6 @@ export default function FlorenceBabeau() {
                             <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"h-96 md:h-full rounded-md"}>
 
                             </video>
-                            {/**<iframe className={"h-96 w-full md:h-full rounded"}
-                                     src="https://www.youtube.com/embed/KBPtg6yr3YE">
-                            </iframe>*/}
                         </div>
                         <div className={"w-full md:w-1/2 my-auto order-1 md:order-2 py-20 md:py-0"}>
                             <div className={"w-4/5 flex flex-col mx-auto"}>
