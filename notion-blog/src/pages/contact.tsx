@@ -1,16 +1,26 @@
-import Header from '../components/header'
-import ExtLink from '../components/ext-link'
 import {useEffect, useState} from "react";
 
-import sharedStyles from '../styles/shared.module.css'
-import contactStyles from '../styles/contact.module.css'
 import Image from "next/image";
 
 import GitHub from '../components/svgs/github'
 import Twitter from '../components/svgs/twitter'
 import Envelope from '../components/svgs/envelope'
 import LinkedIn from '../components/svgs/linkedin'
+import {subtle} from "crypto";
 import Link from "next/link";
+//import fetch from "node-fetch";
+
+let sentMessage = false
+
+function setMessageState (state:boolean){
+  sentMessage = state
+}
+
+function getMessageState() {
+  return sentMessage
+}
+
+
 
 const contacts = [
   {
@@ -44,16 +54,21 @@ export default function Contact() {
   const [RS, setRS] = useState('')
   const [SelectTypeService, setSelectTypeService] = useState('')
   const [Message, setMessage] = useState('')
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(0)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const [formValid, setFormValid] = useState(false)
+
+  function validateForm(){
+
+  }
+
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
 
     let data = {
       Nom, Prenom, Telephone, CP, Email, RS, SelectTypeService, Message
     }
-
-
 
     fetch('/api/contact', {
       method: 'POST',
@@ -63,8 +78,8 @@ export default function Contact() {
       },
       body: JSON.stringify(data)
     }).then((res) => {
+      console.log('lol')
       if(res.status === 200){
-        setSubmitted(true)
         setNom('')
         setPrenom('')
         setTelephone('')
@@ -73,8 +88,14 @@ export default function Contact() {
         setRS('')
         setSelectTypeService('')
         setMessage('')
+        setSubmitted(1)
+      }else{
+        setSubmitted(2)
       }
+    }).catch(error => {
+      console.log(error)
     })
+
   }
 
   useEffect(() => {
@@ -85,20 +106,19 @@ export default function Contact() {
 
     checkbox.addEventListener('click', function(element){
       var validFields = true;
-      /*if(checkbox.checked){
+      if(checkbox.checked){
         //On regarde si tout les champs requis sont valides
-        document.querySelectorAll('[required]').forEach(function(currentField){
+       /* document.querySelectorAll('[required]').forEach(function(currentField){
           currentField.previousSibling.textContent = "";
           if(!currentField.value){
             validFields = false;
             currentField.previousSibling.textContent = "Ce champs est requis"
           }
-        })
+        })*/
 
         //Si c'est pas valide, on empeche la checkbox d'être validé, sinon on valide
         if(!validFields){
           checkbox.checked = false;
-          console.log('false');
         }else{
           buttonSubmit.disabled = false;
           buttonSubmit.classList.remove('cursor-no-drop')
@@ -110,8 +130,7 @@ export default function Contact() {
         buttonSubmit.classList.add('cursor-no-drop')
         buttonSubmit.classList.add('bg-red-900', 'hover:bg-red-800')
         buttonSubmit.classList.remove('bg-green-600', 'hover:bg-green-500')
-      }*/
-
+      }
     })
   })
 
@@ -166,7 +185,7 @@ export default function Contact() {
       <div className={"flex w-full justify-center bg-gray-800 py-20"}>
         <div className={"flex flex-col lg:flex-row w-4/5 justify-center shadow"}>
           <div className={"w-full lg:w-1/2 bg-white"}>
-            <form className={"p-14"} onSubmit={"return false"}>
+            <form className={"p-14"}>
               <h2 className={"text-black font-semibold text-2xl"}>Demande de contact</h2>
               <h3 className={"text-gray-600 text-xl"}>Merci de remplir les champs ci-dessous</h3>
               <h1 className={"text-white text-2xl md:text-4xl font-bold text-center"}>FORMULAIRE DE CONTACT</h1>
@@ -183,17 +202,17 @@ export default function Contact() {
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
                 <div className={"w-full"}>
                   <label htmlFor={"Telephone"} className={""}>Téléphone *</label>
-                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
+                  <input type={"number"} maxLength={10} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
                 </div>
                 <div className={"w-full"}>
                   <label htmlFor={"CP"} className={""}>Code Postal *</label>
-                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal*"} required={true}/>
+                  <input type={"number"} maxLength={5} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal*"} required={true}/>
                 </div>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
                 <div className={"w-full"}>
                   <label htmlFor={"Email"} className={""}>Email *</label>
-                  <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email*"} required={true}/>
+                  <input type={"email"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email*"} required={true}/>
                 </div>
                 <div className={"w-full"}>
                   <label htmlFor={"RS"} className={""}>Raison sociale</label>
@@ -215,11 +234,30 @@ export default function Contact() {
                 <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-md bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                     type="checkbox" value="" id="rgpd_checkbox"/>
                   <label className="form-check-label text-sm inline-block text-gray-800" htmlFor="rgpd_checkbox">
-                    J'accepte que mes données soit collectées afin de traiter ma demande
+                    J’accepte la <Link href={""}>politique de confidentialité</Link>
                   </label>
               </div>
               <div className={"w-full flex justify-center"}>
                 <button type={"submit"} id={"ButtonSubmit"} onClick={(e) => {handleSubmit(e)}} className={"cursor-no-drop bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold disabled:hover:bg-red-900"}>ENVOYER LE MESSAGE</button>
+              </div>
+              <div className={"mt-2"}>
+                {submitted == 0 && <p></p>}
+                {submitted == 1 &&
+                    <p className={"text-green-600 text-lg text-center flex justify-center"}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+
+                      Votre message a bien été envoyé
+                    </p>
+                }
+                {submitted == 2 &&
+                    <p className={"text-red-600 text-lg text-center flex justify-center"}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                      </svg>
+                      Erreur lors de l'envoi du message
+                    </p>}
               </div>
             </form>
           </div>

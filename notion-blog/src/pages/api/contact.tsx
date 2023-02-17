@@ -11,18 +11,27 @@ export default function(req, res) {
         },
         secure: true
     })
+
     const mailData = {
         from: `${req.body.Email}`,
         to: 'alexandre.petit33440@gmail.com',
         subject: `${req.body.SelectTypeService}`,
         text: req.body.Message,
-        html: `<div>${req.body.Message}</div>`
+        html: `<div>
+                Nom : ${req.body.Nom}<br/>
+                Prenom : ${req.body.Prenom}<br/>
+                Téléphone : ${req.body.Telephone}<br/>
+                Code Postal : ${req.body.CP}<br/>
+                Email : ${req.body.Email}<br/>
+                Objet : ${req.body.SelectTypeService}<br/>
+                ${req.body.Message}<br/>
+               </div>`
     }
 
     transporter.sendMail(mailData, function(err, info){
         if(err)
-            console.log(err)
+            res.status(500).json({ message: 'Internal server error' })
         else
-            console.log(info)
+            res.status(200).json({ message: 'Email sent successfully' });
     })
 }
