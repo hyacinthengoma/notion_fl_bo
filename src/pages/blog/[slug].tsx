@@ -184,7 +184,7 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
             : <img className={"brightness-50 h-96 w-full object-cover"} src={"https://placeimg.com/400/225/arch"} />
         }
       </div>
-      <div className={"w-full flex bg-white justify-center py-20 " + blogStyles.post}>
+      <div className={"w-full flex bg-white justify-center py-20 blog-post " + blogStyles.post}>
         <div className={"w-4/5 justify-center"}>
           {post.content.map((block, blockIdx) => {
             const { value } = block

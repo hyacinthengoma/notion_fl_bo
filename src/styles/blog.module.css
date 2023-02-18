@@ -172,10 +172,10 @@
   margin-top: 0;
 }
 
-a {
+.blog-post a {
   color: #0070f3 !important;
 }
-a:hover {
+.blog-post a:hover {
   color: #3291ff !important;
 }
 
