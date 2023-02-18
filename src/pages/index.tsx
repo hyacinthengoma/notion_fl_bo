@@ -14,7 +14,7 @@ import getAccueilIndex from "../lib/notion/getAccueilIndex";
 import getCompetencesDroitSocialIndex from "../lib/notion/getCompetencesDroitSocialIndex";
 import getCompetencesDroitTravailIndex from "../lib/notion/getCompetencesDroitTravailIndex";
 
-export async function getStaticProps({ preview }) {
+export async function getServerSideProps({ preview }) {
     const postsTable = await getBlogIndex();
     const accueilTable = await getAccueilIndex();
     const competencesSocialTable = await getCompetencesDroitSocialIndex();
@@ -60,7 +60,6 @@ export async function getStaticProps({ preview }) {
             competencesSocial,
             competencesTravail
         },
-        revalidate: 10,
     }
 }
 
@@ -73,14 +72,14 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <meta name={"description"} content={"Cabinet Avocat Bordeaux Florence Babeau spécialisé en droit du Travail, droit Social et droit de la Sécurité Sociale ainsi qu'en droit de la Famille."}/>
             </Head>
             <div className={"relative h-[90vh] w-full"}>
-                <div className={"w-5/6 absolute z-50 top-1/4 lg:left-36"}>
+                <div className={"absolute z-50 top-1/4 sm:left-20 sm:left-[5vw]"}>
                     <div className={"flex flex-col gap-6"}>
-                        <p className={"text-white text-xl md:text-4xl sm:px-0 italic font-thin mb-16 border-l-4"}>
-                            <span className={"ml-6"}>"{ accueil.citation.description }"</span>
+                        <p className={"text-white text-center sm:text-start text-xl md:text-4xl sm:px-0 italic font-thin mb-16"}>
+                            <span className={""}>"{ accueil.citation.description }"</span>
                         </p>
                         <div>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
-                            <p className={"text-white  text-xl md:text-[1.4rem] sm:px-0 pt-2"}>Avocat en droit du travail et de la sécurité sociale</p>
+                            <p className={"text-white text-center text-xl md:text-[1.4rem] sm:px-0 pt-2 sm:text-start"}>Avocat en droit du travail et de la sécurité sociale</p>
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
                                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
@@ -96,16 +95,16 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </div>
                     </div>
                 </div>
-                <div className={"absolute z-50 w-10 h-16 -ml-5 -mt-8 border-lg translate-y-full translate-x-1/2 left-1/2 top-full"}>
+                <div className={"absolute z-50 w-10 h-16 -mt-8 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-white">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
 
                 </div>
-                <Image className={"brightness-75 h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
+                <Image loading={"eager"} className={"brightness-75 h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-gray-100 flex justify-center w-full pt-40 md:pt-60 lg:pt-72 pb-20 pl-4 pr-5"}>
-                <div className={"bg-white border lg:-mt-40 gap-16 grid grid-cols-2 lg:grid-cols-4 shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-2/3"}>
+                <div className={"bg-white border lg:-mt-40 gap-16 grid grid-cols-1 lg:grid-cols-4 shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-5/6"}>
                     <div className={"flex flex-col"}>
                         <p className={"text-black text-center font-black text-4xl"}>
                             { accueil.annee_exercice.description }
@@ -143,27 +142,27 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <div className={"bg-gray-100 flex justify-center w-full pb-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Mes expertises</h2>
-                    <div className={"flex flex-col lg:flex-row w-full gap-8"}>
+                    <div className={"flex flex-col lg:flex-row w-full gap-8 mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
                             <h2 className={"text-center text-black text-2xl font-bold"}>Droit du travail</h2>
                             <p className={"mt-2 text-base"}>{ accueil.droit_travail.description }</p>
-                            <div className={"flex justify-center mt-20"}>
+                            <div className={"flex justify-center mt-10"}>
                                 <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit du travail</Link>
                             </div>
                         </div>
                         <div className={"w-full lg:w-1/2"}>
                             <h2 className={"text-center text-black text-2xl font-bold"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-base"}>{ accueil.droit_social.description }</p>
-                            <div className={"flex justify-center mt-20"}>
+                            <div className={"flex justify-center mt-10"}>
                                 <Link href={"/Expertise/Droit-securite-sociale"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit de la sécurité sociale</Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className={"bg-gray-100 flex justify-center w-full pb-20 pl-4 pr-5"}>
-                <div className={"w-5/6 mt-[10vh] sm:mt-[0vh]"}>
-                    <h2 className={"font-bold text-black text-[2rem] uppercase mt-44 mb-6 sm:mt-[3vh]"}>Qui suis-je ?</h2>
+            <div className={"bg-gray-100 flex gap-5 justify-center w-full pb-20 pl-4 pr-5"}>
+                <div className={"w-5/6"}>
+                    <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Qui suis-je ?</h2>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
                             <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}></video>
@@ -175,7 +174,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             </div>
                             <div>
                                 <p className={"font-semibold text-xl text-black"}>Mon parcours</p>
-                                <p className={"mt-2 text-base"}>Titulaire d’un DEA de <a className={"text-red-900 font-bold underline"} href={""}>Droit Social</a> et <a className={"text-red-900 font-bold underline"} href={""}>Droit du Travail</a>, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
+                                <p className={"mt-2 text-base"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
                         </div>
                     </div>

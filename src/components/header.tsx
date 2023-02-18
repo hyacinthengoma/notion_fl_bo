@@ -4,7 +4,7 @@ import React, {useEffect} from "react";
 import Script from "next/script";
 import Image from "next/image";
 export default function Header() {
-    useEffect(() => {
+    /*useEffect(() => {
         const burger = document.querySelectorAll('.navbar-burger');
         const menu = document.querySelectorAll('.navbar-menu');
 
@@ -41,7 +41,7 @@ export default function Header() {
                 });
             }
         }
-    });
+    });*/
     // @ts-ignore
     return (
         <header className={"relative"}>
