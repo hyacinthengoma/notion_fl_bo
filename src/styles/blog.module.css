@@ -172,6 +172,13 @@
   margin-top: 0;
 }
 
+a {
+  color: #0070f3 !important;
+}
+a:hover {
+  color: #3291ff !important;
+}
+
 .bookmark {
   width: 100%;
   max-width: 100%;

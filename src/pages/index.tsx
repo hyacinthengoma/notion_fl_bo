@@ -60,7 +60,7 @@ export async function getStaticProps({ preview }) {
             competencesSocial,
             competencesTravail
         },
-        revalidate: 1000,
+        revalidate: 10,
     }
 }
 
