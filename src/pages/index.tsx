@@ -14,7 +14,7 @@ import getAccueilIndex from "../lib/notion/getAccueilIndex";
 import getCompetencesDroitSocialIndex from "../lib/notion/getCompetencesDroitSocialIndex";
 import getCompetencesDroitTravailIndex from "../lib/notion/getCompetencesDroitTravailIndex";
 
-export async function getServerSideProps({ preview }) {
+export async function getStaticProps({ preview }) {
     const postsTable = await getBlogIndex();
     const accueilTable = await getAccueilIndex();
     const competencesSocialTable = await getCompetencesDroitSocialIndex();
