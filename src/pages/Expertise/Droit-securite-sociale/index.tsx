@@ -4,7 +4,7 @@ import getDroitSocialIndex from "../../../lib/notion/getDroitSocialIndex";
 import Head from "next/head";
 import React from "react";
 
-export async function getServerSideProps({ preview }) {
+export async function getStaticProps({ preview }) {
     const droitSocialTable = await getDroitSocialIndex();
 
     const droitSocial: any[] = Object.keys(droitSocialTable)
@@ -19,7 +19,7 @@ export async function getServerSideProps({ preview }) {
             preview: preview || false,
             droitSocial,
         },
-        //revalidate: 1000,
+        revalidate: 10,
     }
 }
 

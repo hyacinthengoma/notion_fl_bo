@@ -4,7 +4,7 @@ import getDroitTravailIndex from "../../../lib/notion/getDroitTravailIndex";
 import Head from "next/head";
 import React from "react";
 
-export async function getServerSideProps({ preview }) {
+export async function getStaticProps({ preview }) {
     const droitTravailTable = await getDroitTravailIndex();
 
     const droitTravail: any[] = Object.keys(droitTravailTable)
@@ -19,7 +19,7 @@ export async function getServerSideProps({ preview }) {
             preview: preview || false,
             droitTravail,
         },
-        //revalidate: 1000,
+        revalidate: 10,
     }
 }
 

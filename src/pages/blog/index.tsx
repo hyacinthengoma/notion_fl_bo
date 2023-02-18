@@ -7,7 +7,7 @@ import BesoinAvocat from "../../components/Besoin-avocat";
 import React, {useEffect, useState} from "react";
 import Head from "next/head";
 
-export async function getServerSideProps({ preview }) {
+export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
@@ -37,7 +37,7 @@ export async function getServerSideProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    //revalidate: 10,
+    revalidate: 10,
   }
 }
 
