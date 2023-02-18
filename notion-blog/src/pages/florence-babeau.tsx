@@ -21,7 +21,7 @@ export default function FlorenceBabeau() {
                 <div className={"w-5/6"}>
                     <div className={"flex flex-col md:flex-row md:h-96"}>
                         <div className={"w-full md:w-1/2 order-2 md:order-1"}>
-                            <video controls src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"h-96 md:h-full rounded-md"}>
+                            <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"h-96 md:h-full rounded-md"}>
 
                             </video>
                         </div>

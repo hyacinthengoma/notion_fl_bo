@@ -3,11 +3,17 @@ import Loader from '../components/loader';
 import Image from "next/image";
 
 class MyDocument extends Document {
+    static async getInitialProps(ctx) {
+        const initialProps = await Document.getInitialProps(ctx);
+        return {...initialProps};
+    }
     render() {
         return (
             <Html>
                 <Head/>
                 <head>
+                    <meta name="robots" content="noindex, nofollow" />
+                    <meta httpEquiv="X-Robots-Tag" content="noindex, nofollow" />
                     <style>
                         {Loader}
                     </style>
