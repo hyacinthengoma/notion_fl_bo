@@ -249,12 +249,19 @@ figure {
   color: #999;
 }
 
+nav a {
+  color: white !important;
+}
+
+nav a:hover {
+  color: #dedede !important;
+}
+
 a {
-  color: #0070f3;
-  text-decoration: none;
+  color: #0070f3 !important;
 }
 a:hover {
-  color: #3291ff;
+  color: #3291ff !important;
 }
 
 .links {
@@ -371,9 +378,6 @@ footer span:nth-child(3) {
   color: #777777;
 }
 
-footer span:nth-child(3) a {
-  color: inherit;
-}
 #__next > header > nav > div.navbar-center.hidden.lg\:flex{
   z-index: 9999999 !important;
 }
