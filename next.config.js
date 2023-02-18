@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+
 const {
   NOTION_TOKEN,
   BLOG_INDEX_ID,
@@ -10,6 +11,7 @@ try {
 } catch (_) {
   /* non fatal */
 }
+
 try {
   fs.unlinkSync(path.resolve('.blog_index_data_previews'))
 } catch (_) {
@@ -42,6 +44,9 @@ if (!BLOG_INDEX_ID) {
 }
 
 module.exports = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack(cfg, { dev, isServer }) {
     // only compile build-rss in production server build
     if (dev || !isServer) return cfg
@@ -49,15 +54,21 @@ module.exports = {
     // we're in build mode so enable shared caching for Notion data
     process.env.USE_CACHE = 'true'
 
+    if (!isServer) {
+      // set 'fs' to an empty module on the client to prevent this error on build --> Error: Can't resolve 'fs'
+      cfg.node = {
+        fs: 'empty'
+      }
+    }
+
     const originalEntry = cfg.entry
+
     cfg.entry = async () => {
       const entries = { ...(await originalEntry()) }
       entries['build-rss.js'] = './src/lib/build-rss.ts'
       return entries
     }
+
     return cfg
-  },
-  typescript: {
-    ignoreBuildErrors: true,
   }
 }

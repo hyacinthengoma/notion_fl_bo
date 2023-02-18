@@ -1,14 +1,11 @@
 import '../styles/global.css'
-//import '../styles/cabinet.css'
 import 'katex/dist/katex.css'
 import Footer from '../components/footer'
 import { Poppins } from '@next/font/google';
 import NextNProgress from "nextjs-progressbar";
 import {useEffect} from "react";
-import Loader from "../components/loader";
 import Header from "../components/header";
 import BackToTop from "../components/BackToTop";
-import getAccueilIndex from "../lib/notion/getAccueilIndex";
 
 const poppins = Poppins({
     weight: ['400', '700'],

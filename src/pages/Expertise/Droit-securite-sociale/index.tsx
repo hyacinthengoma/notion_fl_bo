@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Header from "../../../components/header";
-import Link from "next/link";
-import Recommendation from "../../../components/recommendation";
 import BesoinAvocat from "../../../components/Besoin-avocat";
 import getDroitSocialIndex from "../../../lib/notion/getDroitSocialIndex";
 import Head from "next/head";

@@ -1,15 +1,11 @@
 import React, {useEffect, useState} from "react";
-
 import Image from "next/image";
-
 import GitHub from '../components/svgs/github'
 import Twitter from '../components/svgs/twitter'
 import Envelope from '../components/svgs/envelope'
 import LinkedIn from '../components/svgs/linkedin'
-import {subtle} from "crypto";
 import Link from "next/link";
 import Head from "next/head";
-//import fetch from "node-fetch";
 
 let sentMessage = false
 
