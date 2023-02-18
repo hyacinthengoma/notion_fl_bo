@@ -21,7 +21,7 @@ export async function getServerSideProps({ preview }) {
             preview: preview || false,
             honoraires,
         },
-        revalidate: 10,
+        //revalidate: 10,
     }
 }
 

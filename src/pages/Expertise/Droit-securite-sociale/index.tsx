@@ -19,7 +19,7 @@ export async function getServerSideProps({ preview }) {
             preview: preview || false,
             droitSocial,
         },
-        revalidate: 1000,
+        //revalidate: 1000,
     }
 }
 

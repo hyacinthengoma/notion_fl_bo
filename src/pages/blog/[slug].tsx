@@ -86,7 +86,7 @@ export async function getServerSideProps({ params: { slug }, preview }) {
       preview: preview || false,
       posts,
     },
-    revalidate: 10,
+    //revalidate: 10,
   }
 }
 

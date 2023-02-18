@@ -37,7 +37,7 @@ export async function getServerSideProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    revalidate: 10,
+    //revalidate: 10,
   }
 }
 
