@@ -60,6 +60,7 @@ export async function getServerSideProps({ preview }) {
             competencesSocial,
             competencesTravail
         },
+        revalidate: 10
     }
 }
 

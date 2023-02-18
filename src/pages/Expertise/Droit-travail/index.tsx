@@ -45,9 +45,9 @@ export default function HomeDroitTravail({ droitTravail }) {
                         {droitTravail.map((currentDroit, index) => {
                             if(index === 0){
                                 return(
-                                    <div className={"relative w-4/5 overflow-hidden"}>
-                                        <input type={"checkbox"} className={"absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer peer"}/>
-                                        <div className={"bg-white h-12 w-full pl-5 flex items-center peer-hover:underline"}>
+                                    <div className={"relative w-5/6 overflow-hidden"}>
+                                        <input type={"checkbox"} className={"absolute top-0 inset-x-0 w-full h-full opacity-0 z-10 cursor-pointer peer"}/>
+                                        <div className={"bg-white w-full pr-10 flex items-center peer-hover:underline"}>
                                             <h2 className={"lg:text-xl text-base text-red-900 font-semibold text-red-900"}>{capitalizeFirstLetter(currentDroit.Slug.replace(/-/g, ' '))}</h2>
                                         </div>
                                         <div className={"absolute top-3 right-3 text-red-900 transition-transform duration-500 rotate-0 peer-checked:rotate-180"}>
@@ -57,7 +57,7 @@ export default function HomeDroitTravail({ droitTravail }) {
 
                                         </div>
                                         <div className={"bg-white  overflow-hidden transition-all duration-500 max-h-full peer-checked:max-h-0"}>
-                                            <div className={"p-4"}>
+                                            <div className={"pt-4"}>
                                                 <p>{ currentDroit.Texte }</p>
                                             </div>
                                         </div>
@@ -65,9 +65,9 @@ export default function HomeDroitTravail({ droitTravail }) {
                                 );
                             }else{
                                 return(
-                                    <div className={"relative w-4/5 overflow-hidden"}>
-                                        <input type={"checkbox"} className={"absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer peer"}/>
-                                        <div className={"bg-white h-12 w-full pl-5 flex items-center peer-hover:underline"}>
+                                    <div className={"relative w-5/6 overflow-hidden"}>
+                                        <input type={"checkbox"} className={"absolute top-0 inset-x-0 w-full h-full opacity-0 z-10 cursor-pointer peer"}/>
+                                        <div className={"bg-white w-full pr-10 flex items-center peer-hover:underline"}>
                                             <h2 className={"lg:text-xl text-base font-semibold text-red-900"}>{capitalizeFirstLetter(currentDroit.Slug.replace(/-/g, ' '))}</h2>
                                         </div>
                                         <div className={"absolute top-3 right-3 text-red-900 transition-transform duration-500 rotate-0 peer-checked:rotate-180"}>
@@ -78,7 +78,7 @@ export default function HomeDroitTravail({ droitTravail }) {
                                             </svg>
                                         </div>
                                         <div className={"bg-white overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-full"}>
-                                            <div className={"p-4"}>
+                                            <div className={"pt-4"}>
                                                 <p>{ currentDroit.Texte }</p>
                                             </div>
                                         </div>
