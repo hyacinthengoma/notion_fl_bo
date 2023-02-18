@@ -109,11 +109,12 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
 
   let lastPosts = [];
 
-  posts.map((currentPost) => {
+  /**posts.map((currentPost) => {
     if(currentPost.Type === post.Type){
       lastPosts.push(currentPost);
+      lastPosts.push(currentPost);
     }
-  })
+  })*/
 
   lastPosts.slice(-3);
 
@@ -185,7 +186,7 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
       </div>
       <div className={"w-full flex bg-white justify-center py-20 " + blogStyles.post}>
         <div className={"w-4/5 justify-center"}>
-          {(post.content || []).map((block, blockIdx) => {
+          {post.content.map((block, blockIdx) => {
             const { value } = block
             const { type, properties, id, parent_id } = value
             const isLast = blockIdx === post.content.length - 1
@@ -196,6 +197,7 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
               listTagName = components[type === 'bulleted_list' ? 'ul' : 'ol']
               listLastId = `list${id}`
 
+              // @ts-ignore
               listMap[id] = {
                 key: id,
                 nested: [],
@@ -241,6 +243,7 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
             }
 
             const renderHeading = (Type: string | React.ComponentType) => {
+              // @ts-ignore
               toRender.push(
                   <Heading key={id}>
                     <Type key={id}>{textBlock(properties.title, true, id)}</Type>

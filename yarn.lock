@@ -2464,6 +2464,13 @@
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
 
+"next-transpile-modules@^10.0.0":
+  "integrity" "sha512-FyeJ++Lm2Fq31gbThiRCrJlYpIY9QaI7A3TjuhQLzOix8ChQrvn5ny4MhfIthS5cy6+uK1AhDRvxVdW17y3Xdw=="
+  "resolved" "https://registry.npmjs.org/next-transpile-modules/-/next-transpile-modules-10.0.0.tgz"
+  "version" "10.0.0"
+  dependencies:
+    "enhanced-resolve" "^5.10.0"
+
 "next@^13.1.6", "next@>= 6.0.0":
   "integrity" "sha512-hHlbhKPj9pW+Cymvfzc15lvhaOZ54l+8sXDXJWm3OBNBzgrVj6hwGPmqqsXg40xO1Leq+kXpllzRPuncpC0Phw=="
   "resolved" "https://registry.npmjs.org/next/-/next-13.1.6.tgz"

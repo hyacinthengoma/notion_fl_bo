@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
-
+const webpack = require('webpack');
+//const withTM = require('next-transpile-modules')(['node-fetch']);
 
 const {
   NOTION_TOKEN,
@@ -52,9 +53,15 @@ module.exports = {
   webpack: (cfg, { dev, isServer}) => {
     return cfg
     // only compile build-rss in production server build
-    //if (dev || !isServer) return cfg
+    if (dev || !isServer) return cfg
 
     process.env.USE_CACHE = 'true'
+
+    cfg.resolve.fallback = { fs: false, net: false };
+
+    cfg.plugins.push(new webpack.NormalModuleReplacementPlugin(/node:/, (resource) => {
+      resource.request = resource.request.replace(/^node:/, '');
+    }));
 
     const originalEntry = cfg.entry
 
@@ -64,7 +71,7 @@ module.exports = {
       return entries
     }
 
-
+    return cfg
   }
 
 }
