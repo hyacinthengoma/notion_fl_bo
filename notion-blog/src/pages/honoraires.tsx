@@ -4,6 +4,7 @@ import Link from "next/link";
 import Recommendation from "../components/recommendation";
 import React from "react";
 import getHonoraireIndex from "../lib/notion/getHonoraireIndex";
+import Head from "next/head";
 
 export async function getStaticProps({ preview }) {
     const honorairesTable = await getHonoraireIndex();
@@ -28,6 +29,9 @@ export async function getStaticProps({ preview }) {
 export default function Honoraires({honoraires}) {
     return (
         <>
+            <Head>
+                <title>Honoraires</title>
+            </Head>
             <div className={"relative w-full"}>
                 <div className={"absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>HONORAIRES</h1>

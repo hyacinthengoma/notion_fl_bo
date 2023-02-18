@@ -70,6 +70,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
         <>
             <Head>
                 <title>Accueil</title>
+                <meta name={"description"} content={"Cabinet Avocat Bordeaux Florence Babeau spécialisé en droit du Travail, droit Social et droit de la Sécurité Sociale ainsi qu'en droit de la Famille."}/>
             </Head>
             <div className={"relative h-[90vh] w-full"}>
                 <div className={"w-5/6 absolute z-50 top-1/4 lg:left-36"}>
@@ -146,13 +147,6 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         <div className={"w-full lg:w-1/2"}>
                             <h2 className={"text-center text-black text-2xl font-bold"}>Droit du travail</h2>
                             <p className={"mt-2 text-base"}>{ accueil.droit_travail.description }</p>
-                            {/**competencesTravail.map((currentCompetences) => {
-                                return(
-                                    <p className={"text-black my-5 text-lg"}>
-                                        - {currentCompetences.description}
-                                    </p>
-                                );
-                            })*/}
                             <div className={"flex justify-center mt-20"}>
                                 <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit du travail</Link>
                             </div>
@@ -160,13 +154,6 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         <div className={"w-full lg:w-1/2"}>
                             <h2 className={"text-center text-black text-2xl font-bold"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-base"}>{ accueil.droit_social.description }</p>
-                            {/**competencesSocial.map((currentCompetences) => {
-                                return(
-                                    <p className={"text-black my-5 text-lg"}>
-                                        - {currentCompetences.description}
-                                    </p>
-                                );
-                            })*/}
                             <div className={"flex justify-center mt-20"}>
                                 <Link href={"/Expertise/Droit-securite-sociale"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit de la sécurité sociale</Link>
                             </div>
@@ -210,8 +197,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                                                     className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                                             :
                                                 <img
-                                                    src={"https://placeimg.com/400/225/arch"}
-                                                    loading="lazy" alt="Photo by Lorenzo Herrera"
+                                                    src={"/images/defaultBlog.png"}
+                                                    loading="lazy" alt="default"
                                                     className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                                         }
 

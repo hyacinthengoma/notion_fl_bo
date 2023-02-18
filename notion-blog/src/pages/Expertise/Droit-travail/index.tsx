@@ -2,11 +2,12 @@ import BesoinAvocat from "../../../components/Besoin-avocat";
 import Image from "next/image";
 import getDroitTravailIndex from "../../../lib/notion/getDroitTravailIndex";
 import getPageData from "../../../lib/notion/getPageData";
+import Head from "next/head";
+import React from "react";
 
 export async function getStaticProps({ preview }) {
     const droitTravailTable = await getDroitTravailIndex();
     const pageContent = await getPageData('Droit-du-travail-81fa40a15a3d47d494a993f849fd0e00');
-    console.log(pageContent);
 
     const droitTravail: any[] = Object.keys(droitTravailTable)
         .map((slug) => {
@@ -31,6 +32,9 @@ function capitalizeFirstLetter(string) {
 export default function HomeDroitTravail({ droitTravail }) {
     return (
         <>
+            <Head>
+                <title>Expertise Droit du Travail</title>
+            </Head>
             <div className={"relative w-full"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>DROIT DU TRAVAIL</h1>

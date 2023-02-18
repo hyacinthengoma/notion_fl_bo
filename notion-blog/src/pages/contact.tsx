@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import Image from "next/image";
 
@@ -8,6 +8,7 @@ import Envelope from '../components/svgs/envelope'
 import LinkedIn from '../components/svgs/linkedin'
 import {subtle} from "crypto";
 import Link from "next/link";
+import Head from "next/head";
 //import fetch from "node-fetch";
 
 let sentMessage = false
@@ -58,10 +59,6 @@ export default function Contact() {
 
   const [formValid, setFormValid] = useState(false)
 
-  function validateForm(){
-
-  }
-
   const handleSubmit = async (e) => {
 
     e.preventDefault();
@@ -78,7 +75,6 @@ export default function Contact() {
       },
       body: JSON.stringify(data)
     }).then((res) => {
-      console.log('lol')
       if(res.status === 200){
         setNom('')
         setPrenom('')
@@ -93,7 +89,7 @@ export default function Contact() {
         setSubmitted(2)
       }
     }).catch(error => {
-      console.log(error)
+      console.log('erreur')
     })
 
   }
@@ -105,37 +101,47 @@ export default function Contact() {
     buttonSubmit.disabled = true;
 
     checkbox.addEventListener('click', function(element){
-      var validFields = true;
+      var allFieldsValid = true
       if(checkbox.checked){
-        //On regarde si tout les champs requis sont valides
-       /* document.querySelectorAll('[required]').forEach(function(currentField){
-          currentField.previousSibling.textContent = "";
-          if(!currentField.value){
-            validFields = false;
-            currentField.previousSibling.textContent = "Ce champs est requis"
+        document.querySelectorAll('[required]').forEach(function(currentField){
+          currentField.checkValidity()
+          if(currentField.reportValidity() !== true){
+            currentField.reportValidity()
+            allFieldsValid = false
           }
-        })*/
+        })
 
-        //Si c'est pas valide, on empeche la checkbox d'être validé, sinon on valide
-        if(!validFields){
-          checkbox.checked = false;
-        }else{
+        if(allFieldsValid === true){
           buttonSubmit.disabled = false;
           buttonSubmit.classList.remove('cursor-no-drop')
           buttonSubmit.classList.remove('bg-red-900', 'hover:bg-red-800')
-          buttonSubmit.classList.add('bg-green-600', 'hover:bg-green-500')
+          buttonSubmit.classList.add('bg-green-600', 'hover:bg-green-700')
+        }else{
+          checkbox.checked = false
+          buttonSubmit.classList.add('cursor-no-drop')
+          buttonSubmit.classList.add('bg-red-900', 'hover:bg-red-800')
+          buttonSubmit.classList.remove('bg-green-600', 'hover:bg-green-700')
         }
       }else{
-        buttonSubmit.disabled = true;
-        buttonSubmit.classList.add('cursor-no-drop')
-        buttonSubmit.classList.add('bg-red-900', 'hover:bg-red-800')
-        buttonSubmit.classList.remove('bg-green-600', 'hover:bg-green-500')
+        if (!document.body.classList.contains('cursor-no-drop')) {
+          buttonSubmit.classList.add('cursor-no-drop')
+        }
+        if (!document.body.classList.contains('bg-red-900')) {
+          buttonSubmit.classList.add('bg-red-900')
+        }
+        if (!document.body.classList.contains('hover:bg-red-800')) {
+          buttonSubmit.classList.add('hover:bg-red-800')
+        }
+        buttonSubmit.classList.remove('bg-green-600', 'hover:bg-green-700')
       }
     })
   })
 
   return (
     <>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <div className={"relative w-full"}>
         <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
           <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>CONTACT</h1>
@@ -188,50 +194,58 @@ export default function Contact() {
             <form className={"p-14"}>
               <h2 className={"text-black font-semibold text-2xl"}>Demande de contact</h2>
               <h3 className={"text-gray-600 text-xl"}>Merci de remplir les champs ci-dessous</h3>
+              <h3 className={"text-red-600 text-lg"}>Les champs contenant "*" sont à remplir obligatoirement !</h3>
               <h1 className={"text-white text-2xl md:text-4xl font-bold text-center"}>FORMULAIRE DE CONTACT</h1>
-              <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <div className={"w-full"}>
+              <div className={"flex flex-col lg:flex-row gap-4 justify-center my-3"}>
+                <div className={"w-full flex flex-col"}>
                   <label htmlFor={"Nom"} className={""}>Nom *</label>
+                  <small className={"text-red-500"}></small>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2 peer"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} placeholder={"Nom*"} required={true}/>
                 </div>
-                <div className={"w-full"}>
+                <div className={"w-full flex flex-col"}>
                   <label htmlFor={"Prenom"} className={""}>Prenom *</label>
+                  <small className={"text-red-500"}></small>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} placeholder={"Prenom*"} required={true}/>
                 </div>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <div className={"w-full"}>
+                <div className={"w-full flex flex-col"}>
                   <label htmlFor={"Telephone"} className={""}>Téléphone *</label>
-                  <input type={"number"} maxLength={10} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
+                  <small className={"text-red-500"}></small>
+                  <input type={"tel"} maxLength={10} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} placeholder={"Téléphone*"} required={true}/>
                 </div>
-                <div className={"w-full"}>
+                <div className={"w-full flex flex-col"}>
                   <label htmlFor={"CP"} className={""}>Code Postal *</label>
+                  <small className={"text-red-500"}></small>
                   <input type={"number"} maxLength={5} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} placeholder={"Code postal*"} required={true}/>
                 </div>
               </div>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-5"}>
-                <div className={"w-full"}>
+                <div className={"w-full flex flex-col"}>
                   <label htmlFor={"Email"} className={""}>Email *</label>
+                  <small className={"text-red-500"}></small>
                   <input type={"email"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} placeholder={"Email*"} required={true}/>
                 </div>
-                <div className={"w-full"}>
+                <div className={"w-full flex flex-col"}>
                   <label htmlFor={"RS"} className={""}>Raison sociale</label>
                   <input type={"text"} className={"border-b border-black focus:outline-none focus:border-red-900 p-4 w-full py-2"} onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"} placeholder={"Raison sociale"}/>
                 </div>
               </div>
-              <div className={"flex justify-center my-5"}>
+              <div className={"flex flex-col justify-center my-5"}>
+                <label htmlFor={"SelectTypeService"} className={""}>Type de service *</label>
+                <small className={"text-red-500"}></small>
                 <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border-b focus:outline-none focus:border-red-900 border-black p-4 w-full py-2"} required={true}>
-                  <option value={""}>Type de service*</option>
+                  <option value={""}>Aucun type de service séléctionné</option>
                   <option value={"Droit du travail"}>Droit du travail</option>
                   <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
                 </select>
               </div>
-              <label htmlFor={"RS"} className={"my-5"}>Message :</label>
+              <label htmlFor={"Message"} className={"my-5"}>Message :</label>
               <div className={"flex justify-center my-5"}>
                 <textarea className={"border border-black h-[17vh] focus:outline-none focus:border-red-900 p-4 w-full py-2"} name={"Message"} id={"Message"} onChange={(e) => {setMessage(e.target.value)}} placeholder={"Message..."}></textarea>
               </div>
               <div className={"flex justify-center my-5"}>
-                <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-md bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                <input className="form-check-input checked:bg-blue-600 h-4 w-4 border border-gray-300 rounded-md bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                     type="checkbox" value="" id="rgpd_checkbox"/>
                   <label className="form-check-label text-sm inline-block text-gray-800" htmlFor="rgpd_checkbox">
                     J’accepte la <Link href={""}>politique de confidentialité</Link>

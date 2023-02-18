@@ -4,6 +4,8 @@ import Link from "next/link";
 import Recommendation from "../../../components/recommendation";
 import BesoinAvocat from "../../../components/Besoin-avocat";
 import getDroitSocialIndex from "../../../lib/notion/getDroitSocialIndex";
+import Head from "next/head";
+import React from "react";
 
 export async function getStaticProps({ preview }) {
     const droitSocialTable = await getDroitSocialIndex();
@@ -31,6 +33,9 @@ function capitalizeFirstLetter(string) {
 export default function HomeDroitSecuSociale({ droitSocial }) {
     return (
         <>
+            <Head>
+                <title>Expertise Droit de la sécurité sociale</title>
+            </Head>
             <div className={"relative w-full"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>DROIT DE LA SÉCURITÉ SOCIALE</h1>

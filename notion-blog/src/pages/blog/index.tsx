@@ -5,6 +5,7 @@ import getBlogIndex from '../../lib/notion/getBlogIndex'
 import Image from "next/image";
 import BesoinAvocat from "../../components/Besoin-avocat";
 import React, {useEffect, useState} from "react";
+import Head from "next/head";
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -83,6 +84,9 @@ const Index = ({ posts = [], preview }) => {
     let uniqueTypes = [...new Set(types)];
   return (
     <>
+        <Head>
+            <title>Blog - Actualités sociales</title>
+        </Head>
         <div>
             <div className={"relative w-full"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
@@ -122,7 +126,7 @@ const Index = ({ posts = [], preview }) => {
                                                 className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                                             :
                                             <img
-                                                src={"https://placeimg.com/400/225/arch"}
+                                                src={"/images/defaultBlog.png"}
                                                 loading="lazy" alt="Photo by Lorenzo Herrera"
                                                 className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                                         }

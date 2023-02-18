@@ -21,6 +21,7 @@ import {
   TwitterIcon,
   TwitterShareButton
 } from "react-share";
+import Head from "next/head";
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -117,8 +118,6 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
 
   lastPosts.slice(-3);
 
-  console.log(lastPosts)
-
   const router = useRouter()
 
   let listTagName: string | null = null
@@ -173,6 +172,9 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
   const {asPath} = useRouter();
   return (
     <>
+      <Head>
+        <title>{post.Page}</title>
+      </Head>
       <div className={"relative w-full"}>
         <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
           <h1 className={"text-white text-2xl md:text-4xl font-bold"}>{post.Page || ''}</h1>
@@ -526,7 +528,7 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
                               className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                           :
                           <img
-                              src={"https://placeimg.com/400/225/arch"}
+                              src={"/images/defaultBlog.png"}
                               loading="lazy" alt="Photo by Lorenzo Herrera"
                               className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                       }
