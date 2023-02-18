@@ -1,5 +1,7 @@
 import { ParseError } from 'katex'
-import renderToString from 'katex'
+//import renderToString from 'katex'
+import renderToString from 'katex/contrib/auto-render/auto-render';
+import 'katex/dist/katex.min.css';
 
 function render(expression: string, displayMode: boolean): string {
   let result: string
