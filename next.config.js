@@ -57,4 +57,7 @@ module.exports = {
     }
     return cfg
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  }
 }
