@@ -54,12 +54,7 @@ module.exports = {
     // we're in build mode so enable shared caching for Notion data
     process.env.USE_CACHE = 'true'
 
-    if (!isServer) {
-      // set 'fs' to an empty module on the client to prevent this error on build --> Error: Can't resolve 'fs'
-      cfg.node = {
-        fs: 'empty'
-      }
-    }
+    cfg.resolve.fallback = { fs: false };
 
     const originalEntry = cfg.entry
 
@@ -67,6 +62,12 @@ module.exports = {
       const entries = { ...(await originalEntry()) }
       entries['build-rss.js'] = './src/lib/build-rss.ts'
       return entries
+    }
+
+    if (isServer) {
+      cfg.node = {
+        fs: 'empty'
+      }
     }
 
     return cfg
