@@ -4,7 +4,7 @@ import getDroitSocialIndex from "../../../lib/notion/getDroitSocialIndex";
 import Head from "next/head";
 import React from "react";
 
-export async function getStaticProps({ preview }) {
+export async function getServerSideProps({ preview }) {
     const droitSocialTable = await getDroitSocialIndex();
 
     const droitSocial: any[] = Object.keys(droitSocialTable)

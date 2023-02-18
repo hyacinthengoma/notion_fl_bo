@@ -6,7 +6,7 @@ import React from "react";
 import getHonoraireIndex from "../lib/notion/getHonoraireIndex";
 import Head from "next/head";
 
-export async function getStaticProps({ preview }) {
+export async function getServerSideProps({ preview }) {
     const honorairesTable = await getHonoraireIndex();
 
     const honoraires: any[] = Object.keys(honorairesTable)

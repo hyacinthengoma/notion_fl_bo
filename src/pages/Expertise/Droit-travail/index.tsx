@@ -4,7 +4,7 @@ import getDroitTravailIndex from "../../../lib/notion/getDroitTravailIndex";
 import Head from "next/head";
 import React from "react";
 
-export async function getStaticProps({ preview }) {
+export async function getServerSideProps({ preview }) {
     const droitTravailTable = await getDroitTravailIndex();
 
     const droitTravail: any[] = Object.keys(droitTravailTable)

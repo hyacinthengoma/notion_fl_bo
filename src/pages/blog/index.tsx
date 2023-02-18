@@ -7,7 +7,7 @@ import BesoinAvocat from "../../components/Besoin-avocat";
 import React, {useEffect, useState} from "react";
 import Head from "next/head";
 
-export async function getStaticProps({ preview }) {
+export async function getServerSideProps({ preview }) {
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
