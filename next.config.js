@@ -1,5 +1,7 @@
 const fs = require('fs')
 const path = require('path')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+
 
 const {
   NOTION_TOKEN,
@@ -47,14 +49,12 @@ module.exports = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  webpack(cfg, { dev, isServer }) {
+  webpack: (cfg, { dev, isServer}) => {
+    return cfg
     // only compile build-rss in production server build
-    if (dev || !isServer) return cfg
+    //if (dev || !isServer) return cfg
 
-    // we're in build mode so enable shared caching for Notion data
     process.env.USE_CACHE = 'true'
-
-    cfg.resolve.fallback = { fs: false };
 
     const originalEntry = cfg.entry
 
@@ -64,12 +64,7 @@ module.exports = {
       return entries
     }
 
-    if (isServer) {
-      cfg.node = {
-        fs: 'empty'
-      }
-    }
 
-    return cfg
   }
+
 }

@@ -1,13 +1,11 @@
 import BesoinAvocat from "../../../components/Besoin-avocat";
 import Image from "next/image";
 import getDroitTravailIndex from "../../../lib/notion/getDroitTravailIndex";
-import getPageData from "../../../lib/notion/getPageData";
 import Head from "next/head";
 import React from "react";
 
 export async function getStaticProps({ preview }) {
     const droitTravailTable = await getDroitTravailIndex();
-    const pageContent = await getPageData('Droit-du-travail-81fa40a15a3d47d494a993f849fd0e00');
 
     const droitTravail: any[] = Object.keys(droitTravailTable)
         .map((slug) => {

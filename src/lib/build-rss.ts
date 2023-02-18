@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+/**import { resolve } from 'path'
 import { writeFile } from './fs-helpers'
 import { renderToStaticMarkup } from 'react-dom/server'
 
@@ -110,4 +110,4 @@ async function main() {
   console.log(`Atom feed file generated at \`${outputPath}\``)
 }
 
-main().catch((error) => console.error(error))
+main().catch((error) => console.error(error))*/

@@ -91,7 +91,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
 }
 
 // Return our list of blog posts to prerender
-/**export async function getStaticPaths() {
+export async function getStaticPaths() {
   const postsTable = await getBlogIndex()
   // we fall back for any unpublished posts to save build time
   // for actually published ones
@@ -101,7 +101,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
       .map((slug) => getBlogLink(slug)),
     fallback: true,
   }
-}*/
+}
 
 const listTypes = new Set(['bulleted_list', 'numbered_list'])
 
