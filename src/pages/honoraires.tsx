@@ -36,7 +36,7 @@ export default function Honoraires({honoraires}) {
                 <div className={"absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>HONORAIRES</h1>
                 </div>
-                <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
+                <Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white flex justify-center w-full py-36"}>
                 <div className={"w-5/6"}>

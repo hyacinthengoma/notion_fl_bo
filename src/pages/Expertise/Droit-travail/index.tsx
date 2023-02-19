@@ -37,7 +37,7 @@ export default function HomeDroitTravail({ droitTravail }) {
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>DROIT DU TRAVAIL</h1>
                 </div>
-                <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
+                <Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"w-full justify-center flex py-20 bg-white"}>
                 <div className={"flex w-full lg:w-4/5 justify-center"}>

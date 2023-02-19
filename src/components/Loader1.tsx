@@ -7,7 +7,7 @@ export default function Loader() {
 
             </div>
             <div className={"globalLoader fixed left-0 bg-white flex right-0 w-full h-full justify-center items-center -translate-y-1/2 -translate-x-1/2 z-[1700]"}>
-                <Image src={"/images/logo-babeau2.svg"} alt={""} height={"500"} width={"500"} className={"bg-red-900"}></Image>
+                <Image loading={"eager"} src={"/images/logo-babeau2.svg"} alt={""} height={"500"} width={"500"} className={"bg-red-900"}></Image>
             </div>
         </>
     );
