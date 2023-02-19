@@ -173,12 +173,12 @@ export default function Footer() {
                             </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                href="politique-de-confidentialite"
                                 className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Politique de confidentialité
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

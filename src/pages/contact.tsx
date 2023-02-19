@@ -146,7 +146,7 @@ export default function Contact() {
       </div>
       <div className={"bg-white flex justify-center w-full py-8"}>
         <div className={"w-5/6"}>
-          <div className={"grid grid-cols-2 lg:grid-cols-3 text-center"}>
+          <div className={"grid grid-cols-2 lg:grid-cols-4 text-center"}>
             <div className={"flex flex-col items-center gap-y-5"}>
               <div className={"text-black"}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
@@ -158,6 +158,15 @@ export default function Contact() {
               </div>
               <p className={"text-[1rem] text-black font-bold"}>LOCALISATION</p>
               <p className={"text-[1rem]"}>2 Rue Claude Boucher, 33300 Bordeaux</p>
+            </div>
+            <div className={"flex flex-col items-center gap-y-5"}>
+              <div className={"text-black"}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <p className={"text-[1rem] text-black font-bold"}>EMAIL</p>
+              <p className={"text-[1rem]"}>contact@babeau.fr</p>
             </div>
             <div className={"flex flex-col items-center gap-y-5"}>
               <div>
@@ -244,7 +253,7 @@ export default function Contact() {
                 <input className="form-check-input checked:bg-blue-600 h-4 w-4 border border-gray-300 rounded-md bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                     type="checkbox" value="" id="rgpd_checkbox"/>
                   <label className="form-check-label text-sm inline-block text-gray-800" htmlFor="rgpd_checkbox">
-                    J’accepte la <Link href={""}>politique de confidentialité</Link>
+                    J’accepte la <Link href={"politique-de-confidentialite"}>politique de confidentialité</Link>
                   </label>
               </div>
               <div className={"w-full flex justify-center"}>
