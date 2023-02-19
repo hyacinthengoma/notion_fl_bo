@@ -144,18 +144,33 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Mes expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-8 mt-10"}>
-                        <div className={"w-full lg:w-1/2"}>
-                            <h2 className={"text-center text-black text-2xl font-bold"}>Droit du travail</h2>
-                            <p className={"mt-2 text-base"}>{ accueil.droit_travail.description }</p>
-                            <div className={"flex justify-center mt-10"}>
+                        <div className={"w-full lg:w-1/2 mr-5"}>
+                            <h2 className={"text-start text-black text-2xl font-bold"}>Droit du travail</h2>
+                            <p className={"mt-2 text-justify"}>{ accueil.droit_travail.description }</p>
+                            {/* <div className={"flex justify-center mt-10"}>
                                 <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit du travail</Link>
+                                </div>
+                             */}
+                            <div>
+
+                                <Link href={"/Expertise/Droit-travail"} className={"flex justify-end mt-10 items-center"}>
+                                    <p className={'text-red-900 font-bold text-[1.1rem] underline'}>Droit du travail</p><span className={'text-red-900'}>&rarr;</span>
+                                </Link>
                             </div>
                         </div>
-                        <div className={"w-full lg:w-1/2"}>
-                            <h2 className={"text-center text-black text-2xl font-bold"}>Droit de la sécurité sociale</h2>
-                            <p className={"mt-2 text-base"}>{ accueil.droit_social.description }</p>
+
+                        <div className={"w-full lg:w-1/2 ml-5"}>
+                            <h2 className={"text-start text-black text-2xl font-bold"}>Droit de la sécurité sociale</h2>
+                            <p className={"mt-2 text-justify"}>{ accueil.droit_social.description }</p>
+                            {/*
                             <div className={"flex justify-center mt-10"}>
                                 <Link href={"/Expertise/Droit-securite-sociale"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit de la sécurité sociale</Link>
+                            </div>
+                            */}
+                            <div>
+                                <Link href={"/Expertise/Droit-securite-sociale"} className={"flex justify-end mt-10 items-center"}>
+                                    <p className={'text-red-900 font-bold text-[1.1rem] underline'}>Droit de la sécurité sociale</p><span className={'text-red-900'}>&rarr;</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
