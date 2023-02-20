@@ -143,7 +143,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <div className={"bg-gray-100 flex justify-center w-full pb-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Mes expertises</h2>
-                    <div className={"flex flex-col lg:flex-row w-full gap-8 mt-10"}>
+                    <div className={"flex flex-col lg:flex-row w-full gap-8 mt-10 "}>
                         <div className={"w-full lg:w-1/2"}>
                             <h2 className={"text-start text-black text-2xl font-bold"}>Droit du travail</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_travail.description }</p>
