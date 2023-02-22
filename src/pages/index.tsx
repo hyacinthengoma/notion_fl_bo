@@ -72,15 +72,15 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <title>Accueil</title>
                 <meta name={"description"} content={"Cabinet Avocat Bordeaux Florence Babeau spécialisé en droit du Travail, droit Social et droit de la Sécurité Sociale ainsi qu'en droit de la Famille."}/>
             </Head>
-            <div className={"relative h-[90vh] w-full"}>
+            <div className={"relative h-[100vh] w-full"}>
                 <div className={"absolute z-50 top-1/4 sm:left-20 sm:left-[5vw]"}>
                     <div className={"flex flex-col gap-6"}>
-                        <p className={"text-white text-center sm:text-start text-xl md:text-4xl sm:px-0 italic font-thin mb-16"}>
-                            <span className={""}>"{ accueil.citation.description }"</span>
-                        </p>
                         <div>
-                            <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start"}>MAÎTRE FLORENCE BABEAU</h1>
+                            <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start tracking-wide"}>MAÎTRE FLORENCE BABEAU</h1>
                             <p className={"text-white text-center text-xl md:text-[1.4rem] sm:px-0 pt-2 sm:text-start"}>Avocat en droit du travail et de la sécurité sociale</p>
+                            {/*<p className={"text-white text-center sm:text-start text-xl md:text-4xl sm:px-0 italic font-thin mb-16"}>
+                                <span className={""}>"{ accueil.citation.description }"</span>
+                            </p>*/}
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
                                     <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
@@ -96,14 +96,41 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </div>
                     </div>
                 </div>
-                <div className={"absolute z-50 w-10 h-16 -mt-8 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-white">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-
+                <div className="absolute z-50 py-6 sm:py-8 lg:py-12 top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5/6 lg:w-auto">
+                    <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
+                        <div className="bg-gray-100/50 rounded-lg px-4 py-6 md:py-8 lg:py-12">
+                            <h2 className="text-gray-800 opacity-100 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6 italic">"{ accueil.citation.description }"</h2>
+                        </div>
+                    </div>
+                    <div className={"absolute z-50 w-10 h-16 -mt-8 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-white">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
                 </div>
                 <Image loading={"eager"} className={"brightness-75 h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
+            {/*<div className={"bg-slate-50 flex justify-center w-full py-20 before:bottom-4"}>
+                <div className={"grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6"}>
+                    <div className="flex flex-col justify-center items-center bg-white shadow rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.annee_exercice.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">Années d'exercice</div>
+                    </div>
+                    <div className="flex flex-col justify-center items-center bg-white shadow rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.clients_satisfait.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">de clients satisfait</div>
+                    </div>
+                    <div className="flex flex-col justify-center items-center bg-white shadow rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.domaines_competences.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">Grands domaines de compétences</div>
+                    </div>
+                    <div className="flex flex-col justify-center items-center bg-white shadow rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.dossiers_traites.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">Dossiers traités</div>
+                    </div>
+                </div>
+            </div>
+
             <div className={"bg-gray-100 flex justify-center w-full pt-40 md:pt-60 lg:pt-72 pb-20 pl-4 pr-5"}>
                 <div className={"bg-white border lg:-mt-40 gap-16 grid grid-cols-1 lg:grid-cols-4 shadow-lg p-12 rounded-md sm:-mt-16 mt-0 w-5/6"}>
                     <div className={"flex flex-col"}>
@@ -139,13 +166,34 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </p>
                     </div>
                 </div>
+            </div>*/}
+            <div className={"bg-gray-100 py-20 flex justify-center"}>
+                <div className={"bg-none lg:bg-white lg:border lg:shadow grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8"}>
+                    <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.annee_exercice.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">Années d'exercice</div>
+                    </div>
+                    <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.clients_satisfait.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">de clients satisfait</div>
+                    </div>
+                    <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.domaines_competences.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">Grands domaines de compétences</div>
+                    </div>
+                    <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
+                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.dossiers_traites.description }</div>
+                        <div className="text-sm sm:text-base font-semibold text-center">Dossiers traités</div>
+                    </div>
+                </div>
             </div>
-            <div className={"bg-gray-100 flex justify-center w-full pb-20 pl-4 pr-5"}>
+            <div className={"bg-gray-100 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Mes expertises</h2>
+                    <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Mes expertises</h2>
+                    <hr/>
                     <div className={"flex flex-col lg:flex-row w-full gap-8 mt-10 "}>
                         <div className={"w-full lg:w-1/2"}>
-                            <h2 className={"text-start text-black text-2xl font-bold"}>Droit du travail</h2>
+                            <h2 className={"text-start text-gray-800 text-2xl font-bold"}>Droit du travail</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_travail.description }</p>
                             {/* <div className={"flex justify-center mt-10"}>
                                 <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit du travail</Link>
@@ -178,7 +226,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             </div>
             <div className={"bg-gray-100 flex gap-5 justify-center w-full pb-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-black text-[2rem] uppercase mb-6"}>Qui suis-je ?</h2>
+                    <h2 className={"font-bold text-black text-4xl uppercase mb-6"}>Qui suis-je ?</h2>
+                    <hr/>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"w-full lg:w-1/2"}>
                             <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}></video>
