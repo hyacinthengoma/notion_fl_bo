@@ -83,7 +83,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             </p>*/}
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
-                                    <Link href={"/contact"} className={"bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
+                                    <Link href={"/contact"} className={"bg-red-800 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                             <path strokeLinecap="round" strokeLinejoin="round"
@@ -98,8 +98,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 </div>
                 <div className="absolute z-50 py-6 sm:py-8 lg:py-12 top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5/6 lg:w-auto">
                     <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-                        <div className="bg-gray-100/50 rounded-lg px-4 py-6 md:py-8 lg:py-12">
-                            <h2 className="text-gray-800 opacity-100 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6 italic">"{ accueil.citation.description }"</h2>
+                        <div className="bg-gray-100/50 hover:bg-gray-100 transition-all duration-500 rounded-lg px-4 py-6 md:py-8 lg:py-12">
+                            <h2 className="text-gray-800 opacity-100 text-2xl lg:text-3xl font-medium text-center mb-4 md:mb-6 italic">"{ accueil.citation.description }"</h2>
                         </div>
                     </div>
                     <div className={"absolute z-50 w-10 h-16 -mt-8 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
@@ -167,33 +167,32 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </div>*/}
-            <div className={"bg-gray-100 py-20 flex justify-center"}>
-                <div className={"bg-none lg:bg-white lg:border lg:shadow grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8"}>
+            <div className={"bg-white py-10 lg:py-20 flex justify-center"}>
+                <div className={"bg-none lg:bg-white lg:border lg:shadow-lg grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.annee_exercice.description }</div>
-                        <div className="text-sm sm:text-base font-semibold text-center">Années d'exercice</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.annee_exercice.description }</div>
+                        <div className="text-sm sm:text-base font-medium text-center">Années d'exercice</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.clients_satisfait.description }</div>
-                        <div className="text-sm sm:text-base font-semibold text-center">de clients satisfait</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.clients_satisfait.description }</div>
+                        <div className="text-sm sm:text-base font-medium text-center">de clients satisfait</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.domaines_competences.description }</div>
-                        <div className="text-sm sm:text-base font-semibold text-center">Grands domaines de compétences</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.domaines_competences.description }</div>
+                        <div className="text-sm sm:text-base font-medium text-center">Grands domaines de compétences</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-xl sm:text-2xl md:text-3xl font-bold">{ accueil.dossiers_traites.description }</div>
-                        <div className="text-sm sm:text-base font-semibold text-center">Dossiers traités</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.dossiers_traites.description }</div>
+                        <div className="text-sm sm:text-base font-medium text-center">Dossiers traités</div>
                     </div>
                 </div>
             </div>
-            <div className={"bg-gray-100 flex justify-center w-full py-20 pl-4 pr-5"}>
+            <div className={"bg-white flex justify-center w-full py-20"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Mes expertises</h2>
-                    <hr/>
-                    <div className={"flex flex-col lg:flex-row w-full gap-8 mt-10 "}>
-                        <div className={"w-full lg:w-1/2"}>
-                            <h2 className={"text-start text-gray-800 text-2xl font-bold"}>Droit du travail</h2>
+                    <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
+                        <div className={"w-full lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                            <h2 className={"text-start text-gray-800 text-3xl"}>Droit du travail</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_travail.description }</p>
                             {/* <div className={"flex justify-center mt-10"}>
                                 <Link href={"/Expertise/Droit-travail"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Droit du travail</Link>
@@ -207,8 +206,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             </div>
                         </div>
 
-                        <div className={"w-full lg:w-1/2"}>
-                            <h2 className={"text-start text-black text-2xl font-bold"}>Droit de la sécurité sociale</h2>
+                        <div className={"w-full lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                            <h2 className={"text-start text-gray-800 text-3xl"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_social.description }</p>
                             {/*
                             <div className={"flex justify-center mt-10"}>
@@ -224,21 +223,21 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </div>
-            <div className={"bg-gray-100 flex gap-5 justify-center w-full pb-20 pl-4 pr-5"}>
+            <div className={"bg-white flex gap-5 justify-center w-full pb-20"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-black text-4xl uppercase mb-6"}>Qui suis-je ?</h2>
-                    <hr/>
+                    <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Qui suis-je ?</h2>
+
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
-                        <div className={"w-full lg:w-1/2"}>
+                        <div className={"h-auto w-auto lg:w-1/2"}>
                             <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}></video>
                         </div>
                         <div className={"w-full lg:w-1/2 flex flex-col text-justify"}>
                             <div>
-                                <p className={"font-semibold text-xl text-black"}>Florence Babeau</p>
+                                <p className={"font-medium text-3xl text-gray-800"}>Florence Babeau</p>
                                 <p className={"mt-2 text-base mb-8"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Famille, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
                             </div>
                             <div>
-                                <p className={"font-semibold text-xl text-black"}>Mon parcours</p>
+                                <p className={"font-medium text-3xl text-gray-800"}>Mon parcours</p>
                                 <p className={"mt-2 text-base"}>Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise. C’est cette même tranquillité d’esprit que je souhaite apporter aux personnes qui se séparent, divorcent, réorganisent leur vie familiale en les aidant à trouver les meilleures solutions techniques et humaines à leurs problématiques.</p>
                             </div>
                         </div>

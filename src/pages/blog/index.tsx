@@ -94,7 +94,7 @@ const Index = ({ posts = [], preview }) => {
                 </div>
                 <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/Actualites-sociales/blog-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"bg-gray-100 flex justify-center w-full py-1 pb-10"}>
+            <div className={"bg-white flex justify-center w-full py-1 pb-10 min-h-screen"}>
                 <div className={"w-5/6"}>
                     <div className={"flex flex-row flex-wrap justify-start gap-4 my-10"}>
                         <p className={"text-black text-2xl py-2"}>Trier par : </p>
@@ -113,7 +113,7 @@ const Index = ({ posts = [], preview }) => {
                             );
                         })}
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {posts.map((post) => {
                             return(
                                 <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 article"} key={post.Slug} type={post.Type}>

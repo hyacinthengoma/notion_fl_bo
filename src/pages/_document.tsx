@@ -9,7 +9,7 @@ class MyDocument extends Document {
     }
     render() {
         return (
-            <Html>
+            <Html className={"scroll-smooth"}>
                 <Head/>
                 <head>
                     <meta name="robots" content="noindex, nofollow" />
