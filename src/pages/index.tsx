@@ -250,7 +250,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
                         {lastPosts.map((post) => {
                             return(
-                                <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 article"}>
+                                <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 shadow hover:shadow-lg hover:border-red-500 article"}>
                                     <div
                                        className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
                                         {post.Illustration ?
