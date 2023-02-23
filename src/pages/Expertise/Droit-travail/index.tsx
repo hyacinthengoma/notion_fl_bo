@@ -2,7 +2,7 @@ import BesoinAvocat from "../../../components/Besoin-avocat";
 import Image from "next/image";
 import getDroitTravailIndex from "../../../lib/notion/getDroitTravailIndex";
 import Head from "next/head";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 export async function getStaticProps({ preview }) {
     const droitTravailTable = await getDroitTravailIndex();
@@ -28,11 +28,35 @@ function capitalizeFirstLetter(string) {
 }
 
 export default function HomeDroitTravail({ droitTravail }) {
+    const [detailsCompetence, setDetailsCompetences] = useState('');
+
+    useEffect(() => {
+        let overlay = document.querySelector("#overlay");
+        let skills = document.querySelectorAll('.skill');
+
+    });
+
     return (
-        <>
+        <div className={"relative"}>
             <Head>
                 <title>Expertise Droit du Travail</title>
             </Head>
+                <div className={"left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 fixed bg-black/50 backdrop-blur h-screen w-full z-[99] hidden"} id={"overlay"}>
+                    <div className={"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"}>
+                        <div className={"flex justify-center"}>
+                            <div className="block bg-white h-auto w-4/5 rounded-xl border border-gray-100 p-4 shadow hover:border-red-700 hover:shadow-red-50 hover:shadow-lg hover:scale-105 transition-all duration-500 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring cursor-pointer">
+                                  <span className="inline-block rounded-lg bg-gray-50 p-3">
+                                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                      <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                                    </svg>
+                                  </span>
+                                <h2 className="mt-2 font-thin text-gray-800">{detailsCompetence}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <div className={"relative w-full"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>DROIT DU TRAVAIL</h1>
@@ -94,7 +118,7 @@ export default function HomeDroitTravail({ droitTravail }) {
                     <div className={"grid grid-cols-1 lg:grid-cols-4 gap-8 mt-10"}>
                         {droitTravail.map((currentDroit, index) => {
                             return(
-                                <div className="block rounded-xl border border-gray-100 p-4 shadow hover:border-red-700 hover:shadow-red-50 hover:shadow-lg hover:scale-105 transition-all duration-500 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring cursor-pointer">
+                                <div onClick={(e) => {setDetailsCompetences(currentDroit.Texte)}} className="block rounded-xl border border-gray-100 p-4 shadow hover:border-red-700 hover:shadow-red-50 hover:shadow-lg hover:scale-105 transition-all duration-500 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring cursor-pointer skill">
                                   <span className="inline-block rounded-lg bg-gray-50 p-3">
                                     <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                       <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
@@ -110,6 +134,6 @@ export default function HomeDroitTravail({ droitTravail }) {
                 </div>
             </div>
             <BesoinAvocat></BesoinAvocat>
-        </>
+        </div>
     );
 }
