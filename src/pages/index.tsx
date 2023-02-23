@@ -9,7 +9,7 @@ import Image from "next/image";
 import { getBlogLink, getDateStr, postIsPublished } from '../lib/blog-helpers';
 import getNotionUsers from '../lib/notion/getNotionUsers';
 import getBlogIndex from '../lib/notion/getBlogIndex';
-import React from "react";
+import React, {useEffect} from "react";
 import getAccueilIndex from "../lib/notion/getAccueilIndex";
 import getCompetencesDroitSocialIndex from "../lib/notion/getCompetencesDroitSocialIndex";
 import getCompetencesDroitTravailIndex from "../lib/notion/getCompetencesDroitTravailIndex";
@@ -65,6 +65,32 @@ export async function getStaticProps({ preview }) {
 }
 
 const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) => {
+
+    /**useEffect(() => {
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const annee_exercice = document.getElementById("annee_exercice");
+        const clients_satisfait = document.getElementById("clients_satisfait");
+        const domaines_competences = document.getElementById("domaines_competences");
+        const dossiers_traites = document.getElementById("dossiers_traites");
+
+        animateValue(annee_exercice, 0,  accueil.annee_exercice.description , 1000);
+        animateValue(clients_satisfait, 0,  accueil.clients_satisfait.description , 1000);
+        animateValue(domaines_competences, 0,  accueil.domaines_competences.description , 1000);
+        animateValue(dossiers_traites, 0,  accueil.domaines_competences.description , 1000);
+    });*/
+
     const lastPosts = posts.slice(-3);
     return (
         <>
@@ -170,19 +196,19 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <div className={"bg-white py-10 lg:py-20 flex justify-center"}>
                 <div className={"bg-none lg:bg-white lg:border lg:shadow-lg grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.annee_exercice.description }</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
                         <div className="text-sm sm:text-base font-medium text-center">Années d'exercice</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.clients_satisfait.description }</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"clients_satisfait"}>{ accueil.clients_satisfait.description }%</div>
                         <div className="text-sm sm:text-base font-medium text-center">de clients satisfait</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.domaines_competences.description }</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"domaines_competences"}>{ accueil.domaines_competences.description }</div>
                         <div className="text-sm sm:text-base font-medium text-center">Grands domaines de compétences</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold">{ accueil.dossiers_traites.description }</div>
+                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"dossiers_traites"}>{ accueil.dossiers_traites.description }</div>
                         <div className="text-sm sm:text-base font-medium text-center">Dossiers traités</div>
                     </div>
                 </div>

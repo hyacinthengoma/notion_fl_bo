@@ -116,9 +116,9 @@ const Index = ({ posts = [], preview }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {posts.map((post) => {
                             return(
-                                <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 article"} key={post.Slug} type={post.Type}>
+                                <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border shadow hover:shadow-lg hover:border-red-300 rounded-lg overflow-hidden hover:scale-110 duration-500 article"} key={post.Slug} type={post.Type}>
                                     <div
-                                        className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
+                                        className="group h-48 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
                                         {post.Illustration ?
                                             <img
                                                 src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`}
