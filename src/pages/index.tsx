@@ -225,9 +225,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                                 </div>
                              */}
                             <div>
-
                                 <Link href={"/Expertise/Droit-travail"} className={"flex justify-end mt-10 items-center"}>
-                                    <p className={'text-red-900 font-bold text-[1.1rem] underline'}>Droit du travail</p><span className={'text-red-900'}>&rarr;</span>
+                                    <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition hover:before:scale-100'}>Accéder a la page</p>
                                 </Link>
                             </div>
                         </div>
@@ -242,7 +241,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             */}
                             <div>
                                 <Link href={"/Expertise/Droit-securite-sociale"} className={"flex justify-end mt-10 items-center"}>
-                                    <p className={'text-red-900 font-bold text-[1.1rem] underline'}>Droit de la sécurité sociale</p><span className={'text-red-900'}>&rarr;</span>
+                                    <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition hover:before:scale-100'}>Accéder a la page</p>
                                 </Link>
                             </div>
                         </div>

@@ -97,7 +97,6 @@ const Index = ({ posts = [], preview }) => {
             <div className={"bg-white flex justify-center w-full py-1 pb-10 min-h-screen"}>
                 <div className={"w-5/6"}>
                     <div className={"flex flex-row flex-wrap justify-start gap-4 my-10"}>
-                        <p className={"text-black text-2xl py-2"}>Trier par : </p>
                         {uniqueTypes.map((Type:string) => {
                             return (
                                 <div>
@@ -146,7 +145,7 @@ const Index = ({ posts = [], preview }) => {
                                         )}
 
                                         <div className="flex justify-between items-end mt-auto">
-                                            <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-2 w-3/6">
                                                 <div>
                                                     <span className="block text-red-800">{(post.Type)}</span>
                                                     <span className="block text-gray-400 text-sm">{getDateStr(post.Date)}</span>

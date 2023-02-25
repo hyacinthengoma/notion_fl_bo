@@ -6,6 +6,9 @@ import Envelope from '../components/svgs/envelope'
 import LinkedIn from '../components/svgs/linkedin'
 import Link from "next/link";
 import Head from "next/head";
+import { useSearchParams } from 'next/navigation';
+
+
 
 let sentMessage = false
 
@@ -43,17 +46,41 @@ const contacts = [
 ]
 
 export default function Contact() {
+  const searchParams = useSearchParams();
+  const data = searchParams.get('objet');
+
   const [Nom, setNom] = useState('')
   const [Prenom, setPrenom] = useState('')
   const [Telephone, setTelephone] = useState('')
   const [CP, setCP] = useState('')
   const [Email, setEmail] = useState('')
   const [RS, setRS] = useState('')
-  const [SelectTypeService, setSelectTypeService] = useState('')
+
+  //const [SelectTypeService, setSelectTypeService] = useState('')
+  //On définis l'était de SelectTypeService en fonction du parametre choisis
+  switch (data){
+    case 'demande-rendez-vous-cabinet':
+      var [SelectTypeService, setSelectTypeService] = useState('Demande de rendez-vous au cabinet');
+      break;
+    case 'demande-consultation-telephonique':
+      var [SelectTypeService, setSelectTypeService] = useState('Demande de consultation téléphonique');
+      break;
+    case 'question-simple':
+      var [SelectTypeService, setSelectTypeService] = useState('Question simple');
+      break;
+    case 'consultation-ecrite':
+      var [SelectTypeService, setSelectTypeService] = useState('Consultation écrite');
+      break;
+    default:
+      var [SelectTypeService, setSelectTypeService] = useState('');
+  }
+
+
   const [Message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(0)
-
   const [formValid, setFormValid] = useState(false)
+
+
 
   const handleSubmit = async (e) => {
 
@@ -91,6 +118,7 @@ export default function Contact() {
   }
 
   useEffect(() => {
+
     let checkbox = document.getElementById('rgpd_checkbox');
     let buttonSubmit = document.getElementById('ButtonSubmit');
 
@@ -133,6 +161,7 @@ export default function Contact() {
     })
   })
 
+  // @ts-ignore
   return (
     <>
       <Head>
@@ -200,7 +229,6 @@ export default function Contact() {
               <h2 className={"text-black font-semibold text-2xl"}>Demande de contact</h2>
               <h3 className={"text-gray-600 text-xl"}>Merci de remplir les champs ci-dessous</h3>
               <h3 className={"text-red-600 text-lg"}>Les champs contenant "*" sont à remplir obligatoirement !</h3>
-              <h1 className={"text-white text-2xl md:text-4xl font-bold text-center"}>FORMULAIRE DE CONTACT</h1>
               <div className={"flex flex-col lg:flex-row gap-4 justify-center my-3"}>
                 <div className={"w-full flex flex-col"}>
                   <label htmlFor={"Nom"} className={""}>Nom *</label>
@@ -243,6 +271,32 @@ export default function Contact() {
                   <option value={""}>Aucun type de service séléctionné</option>
                   <option value={"Droit du travail"}>Droit du travail</option>
                   <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
+                  {data === 'demande-rendez-vous-cabinet' ?
+                      <option value={"Demande de rendez-vous au cabinet"} selected={true}>Demande de rendez-vous au cabinet</option>
+                      :
+                      <option value={"Demande de rendez-vous au cabinet"}>Demande de rendez-vous au cabinet</option>
+                  }
+
+                  {data === 'demande-consultation-telephonique' ?
+                      <option value={"Demande de consultation téléphonique"} selected={true}>Demande de consultation téléphonique</option>
+                      :
+                      <option value={"Demande de consultation téléphonique"}>Demande de consultation téléphonique</option>
+                  }
+
+                  {data === 'question-simple' ?
+                      <option value={"Question simple"} selected={true}>Question simple</option>
+                      :
+                      <option value={"Question simple"}>Question simple</option>
+                  }
+                  {data === 'consultation-ecrite' ?
+                      <option value={"Consultation écrite"} selected={true}>Consultation écrite</option>
+                      :
+                      <option value={"Consultation écrite"}>Consultation écrite</option>
+                  }
+                  {/**<option value={"Demande de rendez-vous au cabinet"}>Demande de rendez-vous au cabinet</option>
+                  <option value={"Demande de consultation téléphonique"}>Demande de consultation téléphonique</option>
+                  <option value={"Question simple"}>Question simple</option>
+                  <option value={"Consultation écrite"}>Consultation écrite</option>*/}
                 </select>
               </div>
               <label htmlFor={"Message"} className={"my-5"}>Message :</label>

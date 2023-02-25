@@ -4,7 +4,7 @@ import Link from "next/link";
 import Recommendation from "../components/recommendation";
 import React from "react";
 import getHonoraireIndex from "../lib/notion/getHonoraireIndex";
-import Head from "next/head";
+import Head from "next/head";0
 
 export async function getStaticProps({ preview }) {
     const honorairesTable = await getHonoraireIndex();
@@ -79,7 +79,7 @@ export default function Honoraires({honoraires}) {
                                 <div className={"flex flex-col bg-white border rounded-lg shadow hover:shadow-lg hover:border-red-300 overflow-hidden hover:scale-105 duration-200"}>
                                     <div className="flex flex-col flex-1 p-4 sm:p-6 gap-4">
                                         <h2 className="text-gray-800 mb-2 text-lg font-medium uppercase text-center">
-                                            {currentHonoraire.Slug.replace(/-/g, ' ')}
+                                            {currentHonoraire.titre}
                                         </h2>
                                         <hr/>
                                         <h3 className={"text-center text-gray-600 font-semibold text-4xl"}>{currentHonoraire.prix}€ TTC</h3>
@@ -98,7 +98,7 @@ export default function Honoraires({honoraires}) {
                                         </div>
 
                                         <div className="flex justify-center mt-auto">
-                                            <Link href={"/contact"} className={"group relative overflow-hidden border border-red-800 px-4 py-3 rounded"}>
+                                            <Link href={{ pathname: "/contact", query: { objet: currentHonoraire.type_service } }} className={"group relative overflow-hidden border border-red-800 px-4 py-3 rounded"}>
                                                 <span className="absolute inset-y-0 left-0 w-[0px] bg-red-800 transition-all group-hover:w-full group-active:bg-red-800"></span>
                                                 <span className="relative flex gap-4 text-sm font-medium text-red-700 transition-colors duration-500 group-hover:text-white my-auto">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
