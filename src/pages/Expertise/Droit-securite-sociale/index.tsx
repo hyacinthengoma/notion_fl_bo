@@ -93,7 +93,7 @@ export default function HomeDroitSecuSociale({ droitSocial }) {
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Mes compténces</h2>
                     <hr/>
-                    {/**<div className={"flex w-full justify-center mt-10"}>
+                    <div className={"flex w-full justify-center mt-10"}>
                         <div className={"flex flex-col items-center gap-y-10"}>
                             {droitSocial.map((currentDroit, index) => {
                                 if(index === 0){
@@ -140,8 +140,8 @@ export default function HomeDroitSecuSociale({ droitSocial }) {
                                 }
                             })}
                         </div>
-                    </div>*/}
-                    <div className={"grid grid-cols-1 lg:grid-cols-4 gap-8 mt-10"}>
+                    </div>
+                    {/**<div className={"grid grid-cols-1 lg:grid-cols-4 gap-8 mt-10"}>
                         {droitSocial.map((currentDroit, index) => {
                             return(
                                 <div onClick={(e) => {setDetailsCompetencesSocial(currentDroit.Texte); setTitreCompetenceSocial(capitalizeFirstLetter(currentDroit.Slug.replace(/-/g, ' ')))}} className="block bg-white rounded-xl border border-gray-100 p-4 shadow hover:border-red-700 hover:shadow-red-50 hover:shadow-lg hover:scale-105 transition-all duration-500 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring cursor-pointer skill">
@@ -156,7 +156,7 @@ export default function HomeDroitSecuSociale({ droitSocial }) {
                                 </div>
                             );
                         })}
-                    </div>
+                    </div>*/}
                 </div>
             </div>
             <BesoinAvocat></BesoinAvocat>
