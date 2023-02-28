@@ -102,11 +102,11 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <div className={"absolute z-50 top-1/4 sm:left-20 sm:left-[5vw]"}>
                     <div className={"flex flex-col gap-6"}>
                         <div>
+                            <blockquote className={"mb-8"}>
+                                <p className={"text-gray-50 opacity-100 text-2xl lg:text-4xl font-thin text-center"}>"{ accueil.citation.description }"</p>
+                            </blockquote>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start tracking-wide"}>MAÎTRE FLORENCE BABEAU</h1>
-                            <p className={"text-white text-center text-xl md:text-[1.4rem] sm:px-0 pt-2 sm:text-start"}>Avocat en droit du travail et de la sécurité sociale</p>
-                            {/*<p className={"text-white text-center sm:text-start text-xl md:text-4xl sm:px-0 italic font-thin mb-16"}>
-                                <span className={""}>"{ accueil.citation.description }"</span>
-                            </p>*/}
+                            <p className={"text-white text-center text-xl md:text-2xl sm:px-0 pt-2 sm:text-start"}>Avocat en droit du travail et de la sécurité sociale</p>
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
                                     <Link href={"/contact"} className={"bg-red-800 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500"}>
@@ -123,18 +123,18 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
                 <div className="absolute z-50 py-6 sm:py-8 lg:py-12 top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5/6 lg:w-auto">
-                    <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
+                    {/**<div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
                         <div className="bg-gray-100/50 hover:bg-gray-100 transition-all duration-500 rounded-lg px-4 py-6 md:py-8 lg:py-12">
-                            <h2 className="text-gray-800 opacity-100 text-2xl lg:text-3xl font-medium text-center mb-4 md:mb-6 italic">"{ accueil.citation.description }"</h2>
+                            <h2 className="text-white opacity-100 text-2xl lg:text-4xl font-medium text-center italic">"{ accueil.citation.description }"</h2>
                         </div>
-                    </div>
-                    <div className={"absolute z-50 w-10 h-16 -mt-8 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-white">
+                    </div>*/}
+                    <div className={"absolute z-50 w-10 h-16 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-gray-100">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                 </div>
-                <Image loading={"eager"} className={"brightness-75 h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
+                <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white py-10 lg:py-20 flex justify-center"}>
                 <div className={"bg-none lg:bg-white lg:border lg:shadow-lg grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8 rounded-lg"}>
