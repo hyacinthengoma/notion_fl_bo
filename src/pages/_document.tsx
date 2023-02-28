@@ -1,7 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import Loader from '../components/loader';
 import Image from "next/image";
-import { CssBaseline } from '@nextui-org/react';
+import {CssBaseline} from "@nextui-org/react";
+
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx);
@@ -10,9 +11,7 @@ class MyDocument extends Document {
     render() {
         return (
             <Html className={"scroll-smooth"}>
-                <Head>
-                    {CssBaseline.flush()}
-                </Head>
+                <Head></Head>
                 <head>
                     <meta name="robots" content="noindex, nofollow" />
                     <meta httpEquiv="X-Robots-Tag" content="noindex, nofollow" />
