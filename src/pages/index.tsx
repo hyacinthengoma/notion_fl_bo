@@ -196,19 +196,19 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <div className={"bg-white py-10 lg:py-20 flex justify-center"}>
                 <div className={"bg-none lg:bg-white lg:border lg:shadow-lg grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
+                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
                         <div className="text-sm sm:text-base font-medium text-center">Années d'exercice</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"clients_satisfait"}>{ accueil.clients_satisfait.description }%</div>
+                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"clients_satisfait"}>{ accueil.clients_satisfait.description }%</div>
                         <div className="text-sm sm:text-base font-medium text-center">de clients satisfait</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"domaines_competences"}>{ accueil.domaines_competences.description }</div>
+                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"domaines_competences"}>{ accueil.domaines_competences.description }</div>
                         <div className="text-sm sm:text-base font-medium text-center">Grands domaines de compétences</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-red-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"dossiers_traites"}>{ accueil.dossiers_traites.description }</div>
+                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"dossiers_traites"}>{ accueil.dossiers_traites.description }</div>
                         <div className="text-sm sm:text-base font-medium text-center">Dossiers traités</div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Mes expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
-                        <div className={"w-full lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                        <Link href={"/Expertise/Droit-travail"} className={"w-full group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-3xl"}>Droit du travail</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_travail.description }</p>
                             {/* <div className={"flex justify-center mt-10"}>
@@ -226,12 +226,12 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                              */}
                             <div>
                                 <Link href={"/Expertise/Droit-travail"} className={"flex justify-end mt-10 items-center"}>
-                                    <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition hover:before:scale-100'}>Accéder a la page</p>
+                                    <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-600'}>Accéder a la page</p>
                                 </Link>
                             </div>
-                        </div>
+                        </Link>
 
-                        <div className={"w-full lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                        <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-3xl"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_social.description }</p>
                             {/*
@@ -240,11 +240,11 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             </div>
                             */}
                             <div>
-                                <Link href={"/Expertise/Droit-securite-sociale"} className={"flex justify-end mt-10 items-center"}>
-                                    <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition hover:before:scale-100'}>Accéder a la page</p>
+                                <Link href={"/Expertise/Droit-securite-sociale"} className={"flex justify-end mt-10 items-center peer"}>
+                                    <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-600'}>Accéder a la page</p>
                                 </Link>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>
