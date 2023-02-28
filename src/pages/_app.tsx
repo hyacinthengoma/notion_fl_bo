@@ -54,17 +54,16 @@ export default function MyApp({ Component, pageProps }) {
                 }, 1500);
         }
     }, []);
+
     return (
         <>
-
-                <NextNProgress height={6} color="#4338C9"></NextNProgress>
-                <Header></Header>
-                <NextUIProvider>
-                    <Component {...pageProps} />
-                </NextUIProvider>
-                <BackToTop></BackToTop>
-                <Footer />
-
+            <NextNProgress height={6} color="#4338C9"></NextNProgress>
+            <Header></Header>
+            <NextUIProvider disableBaseline={true}>
+                <Component {...pageProps} />
+            </NextUIProvider>
+            <BackToTop></BackToTop>
+            <Footer />
         </>
       )
 }
