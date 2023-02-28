@@ -4,44 +4,6 @@ import React, {useEffect} from "react";
 import Script from "next/script";
 import Image from "next/image";
 export default function Header() {
-    /*useEffect(() => {
-        const burger = document.querySelectorAll('.navbar-burger');
-        const menu = document.querySelectorAll('.navbar-menu');
-
-        if (burger.length && menu.length) {
-            for (var i = 0; i < burger.length; i++) {
-                burger[i].addEventListener('click', function() {
-                    for (var j = 0; j < menu.length; j++) {
-                        menu[j].classList.toggle('hidden');
-                    }
-                });
-            }
-        }
-
-        //TODO : Revoir les dropdown expertise
-        const close = document.querySelectorAll('.navbar-close');
-        const backdrop = document.querySelectorAll('.navbar-backdrop');
-
-        if (close.length) {
-            for (var i = 0; i < close.length; i++) {
-                close[i].addEventListener('click', function() {
-                    for (var j = 0; j < menu.length; j++) {
-                        menu[j].classList.toggle('hidden');
-                    }
-                });
-            }
-        }
-
-        if (backdrop.length) {
-            for (var i = 0; i < backdrop.length; i++) {
-                backdrop[i].addEventListener('click', function() {
-                    for (var j = 0; j < menu.length; j++) {
-                        menu[j].classList.toggle('hidden');
-                    }
-                });
-            }
-        }
-    });*/
     // @ts-ignore
     return (
         <header className={"relative"}>
@@ -56,11 +18,11 @@ export default function Header() {
             </Head>
             <div className={""}>
                 <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-[#1B110F]/10 flex justify-between w-full items-center fixed z-[100] shadow-lg transition-all duration-500" id={"navbar"}>
-                    <Link className="text-3xl font-bold leading-none" href="/">
+                    <Link className="text-3xl font-medium leading-none" href="/">
                         <Image loading={"eager"} src={'/images/logo-babeau2.svg'} width={'210'} height={'50'} alt={'logo-florence-babeau'}></Image>
                     </Link>
                     <div className="lg:hidden">
-                        <button className="navbar-burger flex items-center text-white p-3">
+                        <button className="flex items-center text-white p-3" id={"navbar-burger"}>
                             <svg className="block h-8 w-8 fill-current" viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <title>Mobile menu</title>
@@ -70,23 +32,23 @@ export default function Header() {
                     </div>
                     <ul className="hidden lg:flex lg:flex lg:items-center lg:w-auto lg:space-x-12">
                         <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/">ACCUEIL</Link>
+                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/">ACCUEIL</Link>
                         </li>
                         <li className={"group"}>
                             <Link
-                                className="text-sm text-white font-semibold hover:text-gray-300 mb-64 drop pointer-events-none"
+                                className="text-sm text-white font-medium hover:text-gray-300 mb-64 drop pointer-events-none"
                                 href={""}>EXPERTISES</Link>
                             <ul className="absolute hidden backdrop-filter-none text-gray-700 pt-10 pb-1 group-hover:block" id={"navhover"}>
                                 <li className="">
                                     <Link
-                                        className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-semibold whitespace-no-wrap bg-[#1b110f0d] -mt-[0.9rem]"
+                                        className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-medium whitespace-no-wrap bg-[#1b110f0d] -mt-[0.9rem]"
                                         href="/Expertise/Droit-travail"
                                     >Droit du travail</Link
                                     >
                                 </li>
                                 <li className="">
                                     <Link
-                                        className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-semibold whitespace-no-wrap bg-[#1b110f0d]"
+                                        className="hover:bg-red-800 text-sm py-2 px-4 text-white block hover:text-gray-300 font-medium whitespace-no-wrap bg-[#1b110f0d]"
                                         href="/Expertise/Droit-securite-sociale"
                                     >Droit de la sécurité sociale</Link
                                     >
@@ -94,16 +56,16 @@ export default function Header() {
                             </ul>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
+                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/blog">ACTUALITÉS SOCIALES</Link>
+                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/blog">ACTUALITÉS SOCIALES</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/florence-babeau">FLORENCE BABEAU</Link>
+                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/florence-babeau">FLORENCE BABEAU</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-semibold hover:text-gray-300" href="/contact">CONTACT</Link>
+                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/contact">CONTACT</Link>
                         </li>
                         <li >
                             <Link href={"https://www.linkedin.com/in/florence-babeau-1a7b07166/"} >
@@ -113,57 +75,54 @@ export default function Header() {
                     </ul>
                 </nav>
             </div>
-            <div className="navbar-menu relative z-[100] hidden">
-                <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+            <div className="relative z-[100] hidden" id={"navbar-menu"}>
+                <div className="fixed inset-0 bg-gray-800 opacity-25" id={"navbar-backdrop"}></div>
                 <nav
-                    className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-900 overflow-y-auto">
+                    className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-900 overflow-y-auto" id={"sidemenu"}>
                     <div className="flex items-center mb-8">
-                        <Link className="mr-auto text-3xl font-bold leading-none" href="/">
+                        <Link className="mr-auto text-3xl font-medium leading-none" href="/">
                             <img src="/images/logo-babeau.png" className="h-16" alt="waw-logo"/>
                         </Link>
-                        <button className="navbar-close">
-                            <svg className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
-                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                      d="M6 18L18 6M6 6l12 12"></path>
+                        <button id="navbar-close">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
                     <div>
                         <ul>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/">
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300" href="/">
                                     ACCUEIL
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/Expertise/Droit-travail">
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300 uppercase" href="/Expertise/Droit-travail">
                                     Expertise - Droit du travail
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/Expertise/Droit-securite-sociale">
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300 uppercase" href="/Expertise/Droit-securite-sociale">
                                     Expertise - Droit de la sécurité sociale
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300"
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300"
                                       href="/honoraires">HONORAIRES
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/blog">
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300" href="/blog">
                                     ACTUALITÉS SOCIALES
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/florence-babeau">
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300" href="/florence-babeau">
                                     FLORENCE BABEAU
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-bold text-white hover:text-gray-300" href="/contact">
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300" href="/contact">
                                     CONTACT
                                 </Link>
                             </li>
@@ -172,9 +131,6 @@ export default function Header() {
                     <div className="mt-auto">
                         <div className="pt-6">
                         </div>
-                        <p className="my-4 text-xs text-center text-gray-400">
-                            <span>Copyright © 2021</span>
-                        </p>
                     </div>
                 </nav>
             </div>
