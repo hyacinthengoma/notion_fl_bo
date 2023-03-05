@@ -13,6 +13,7 @@ import React, {useEffect} from "react";
 import getAccueilIndex from "../lib/notion/getAccueilIndex";
 import getCompetencesDroitSocialIndex from "../lib/notion/getCompetencesDroitSocialIndex";
 import getCompetencesDroitTravailIndex from "../lib/notion/getCompetencesDroitTravailIndex";
+import ArticleCard from "../components/ArticleCard";
 
 export async function getStaticProps({ preview }) {
     const postsTable = await getBlogIndex();
@@ -122,21 +123,21 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </div>
                     </div>
                 </div>
-                <div className="absolute z-50 py-6 sm:py-8 lg:py-12 top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5/6 lg:w-auto">
+                <div className="absolute z-50 py-6 sm:py-8 lg:py-12 top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/4 w-5/6 lg:w-auto">
                     {/**<div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
                         <div className="bg-gray-100/50 hover:bg-gray-100 transition-all duration-500 rounded-lg px-4 py-6 md:py-8 lg:py-12">
                             <h2 className="text-white opacity-100 text-2xl lg:text-4xl font-medium text-center italic">"{ accueil.citation.description }"</h2>
                         </div>
                     </div>*/}
-                    <div className={"absolute z-50 w-10 h-16 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
+                    <Link href={"#section-bandeau"} className={"absolute z-50 w-10 h-16 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-gray-100">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                    </div>
+                    </Link>
                 </div>
                 <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"bg-white py-10 lg:py-20 flex justify-center"}>
+            <div className={"bg-white py-10 lg:py-20 flex justify-center"} id={"section-bandeau"}>
                 <div className={"bg-none lg:bg-white lg:border lg:shadow-lg grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
                         <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
@@ -164,14 +165,14 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             <h2 className={"text-start text-gray-800 text-3xl"}>Droit du travail</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_travail.description }</p>
                             <div className={"flex justify-end mt-10 items-center"}>
-                                <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-600'}>Accéder a la page</p>
+                                <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder a la page</p>
                             </div>
                         </Link>
                         <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-3xl"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-justify"}>{ accueil.droit_social.description }</p>
                             <div className={"flex justify-end mt-10 items-center peer"}>
-                                <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-600'}>Accéder a la page</p>
+                                <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder a la page</p>
                             </div>
                         </Link>
                     </div>
@@ -204,47 +205,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
                         {lastPosts.map((post) => {
                             return(
-                                <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 shadow hover:shadow-lg hover:border-red-500 article"}>
-                                    <div
-                                        className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
-                                        {post.Illustration ?
-                                            <img
-                                                src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`}
-                                                loading="lazy" alt="Photo by Lorenzo Herrera"
-                                                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
-                                            :
-                                            <img
-                                                src={"/images/defaultBlog.png"}
-                                                loading="lazy" alt="default"
-                                                className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
-                                        }
-
-                                    </div>
-
-                                    <div className="flex flex-col flex-1 p-4 sm:p-6">
-                                        <h2 className="text-gray-800 text-lg font-semibold mb-2">
-                                            <div
-                                                className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">{post.Page}</div>
-                                        </h2>
-
-                                        {(!post.Preview || post.Preview.length === 0) &&
-                                            <p className={"text-gray-500 mb-8"}>Pas de résumé disponible</p>}
-                                        {(post.Preview) && (
-                                            <p className={"text-gray-500 mb-8"}>{(post.Preview)}</p>
-                                        )}
-                                        <div className="flex justify-between items-end mt-auto">
-                                            <div className="flex items-center gap-2">
-                                                <div>
-                                                    <span className="block text-red-800">{(post.Type)}</span>
-                                                    <span className="block text-gray-400 text-sm">{getDateStr(post.Date)}</span>
-                                                </div>
-                                            </div>
-
-                                            <span
-                                                className="text-black text-sm border border-red-900 rounded px-2 py-1">Lire l'article</span>
-                                        </div>
-                                    </div>
-                                </Link>
+                                <ArticleCard Id={post.id} Slug={post.Slug} Illustration={post.Illustration} Page={post.Page} Preview={post.Preview} Type={post.Type} Date={post.Date}/>
                             )
                         })}
                     </div>

@@ -21,6 +21,7 @@ import {
   TwitterShareButton
 } from "react-share";
 import Head from "next/head";
+import ArticleCard from "../../components/ArticleCard";
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -80,11 +81,23 @@ export async function getStaticProps({ params: { slug }, preview }) {
   const { users } = await getNotionUsers(post.Authors || [])
   post.Authors = Object.keys(users).map((id) => users[id].full_name)
 
+  let lastPosts = [];
+
+  posts.map((currentPost) => {
+    if(currentPost.Type === post.Type){
+      lastPosts.push(currentPost);
+      lastPosts.push(currentPost);
+    }
+  })
+
+  lastPosts = lastPosts.slice(-3);
+
   return {
     props: {
       post,
       preview: preview || false,
       posts,
+      lastPosts,
     },
     revalidate: 10,
   }
@@ -105,19 +118,7 @@ export async function getStaticPaths() {
 
 const listTypes = new Set(['bulleted_list', 'numbered_list'])
 
-const RenderPost = ({ post, redirect, preview, posts }) => {
-
-  let lastPosts = [];
-
-  /**posts.map((currentPost) => {
-    if(currentPost.Type === post.Type){
-      lastPosts.push(currentPost);
-      lastPosts.push(currentPost);
-    }
-  })*/
-
-  lastPosts.slice(-3);
-
+const RenderPost = ({ post, redirect, preview, posts, lastPosts }) => {
   const router = useRouter()
 
   let listTagName: string | null = null
@@ -520,47 +521,7 @@ const RenderPost = ({ post, redirect, preview, posts }) => {
           <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
             {lastPosts.map((post) => {
               return(
-                  <Link href={"/blog/[slug]"} as={getBlogLink(post.Slug)} className={"flex flex-col bg-white border rounded-lg overflow-hidden hover:scale-110 duration-500 article"}>
-                    <div
-                        className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
-                      {post.Illustration ?
-                          <img
-                              src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`}
-                              loading="lazy" alt="Photo by Lorenzo Herrera"
-                              className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
-                          :
-                          <img
-                              src={"/images/defaultBlog.png"}
-                              loading="lazy" alt="Photo by Lorenzo Herrera"
-                              className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
-                      }
-
-                    </div>
-
-                    <div className="flex flex-col flex-1 p-4 sm:p-6">
-                      <h2 className="text-gray-800 text-lg font-semibold mb-2">
-                        <div
-                            className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">{post.Page}</div>
-                      </h2>
-
-                      {(!post.Preview || post.Preview.length === 0) &&
-                          <p className={"text-gray-500 mb-8"}>Pas de résumé disponible</p>}
-                      {(post.Preview) && (
-                          <p className={"text-gray-500 mb-8"}>{(post.Preview)}</p>
-                      )}
-                      <div className="flex justify-between items-end mt-auto">
-                        <div className="flex items-center gap-2">
-                          <div>
-                            <span className="block text-red-800">{(post.Type)}</span>
-                            <span className="block text-gray-400 text-sm">{getDateStr(post.Date)}</span>
-                          </div>
-                        </div>
-
-                        <span
-                            className="text-black text-sm border border-red-900 rounded px-2 py-1">Lire l'article</span>
-                      </div>
-                    </div>
-                  </Link>
+                  <ArticleCard Id={post.id} Slug={post.Slug} Illustration={post.Illustration} Page={post.Page} Preview={post.Preview} Type={post.Type} Date={post.Date}/>
               )
             })}
           </div>
