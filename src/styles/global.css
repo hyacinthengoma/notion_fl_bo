@@ -28,6 +28,10 @@ html{
   scroll-behavior:smooth !important
 }
 
+#blog-article a {
+  color: #0070f3 !important;
+}
+
 html,
 body {
   padding: 0;
