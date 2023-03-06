@@ -7,7 +7,7 @@ import LinkedIn from '../components/svgs/linkedin'
 import Link from "next/link";
 import Head from "next/head";
 import { useSearchParams } from 'next/navigation';
-import {Input} from "@nextui-org/react";
+import {Input, Textarea} from "@nextui-org/react";
 
 
 
@@ -285,9 +285,9 @@ export default function Contact() {
                                      <option value={"Consultation écrite"}>Consultation écrite</option>*/}
                                 </select>
                             </div>
-                            <label htmlFor={"Message"} className={"my-5"}>Message :</label>
-                            <div className={"flex justify-center my-5"}>
-                                <textarea className={"border border-black h-[17vh] focus:outline-none focus:border-red-900 p-4 w-full py-2"} name={"Message"} id={"Message"} onChange={(e) => {setMessage(e.target.value)}} placeholder={"Message..."}></textarea>
+                            {/**<label htmlFor={"Message"} className={"my-5"}>Message :</label>*/}
+                            <div className={"w-full flex flex-col my-8"}>
+                                <Textarea underlined name={"Message"} id={"Message"} labelPlaceholder={"Message"} onChange={(e) => {setMessage(e.target.value)}} placeholder={"Message..."}></Textarea>
                             </div>
                             <div className={"flex justify-center my-5"}>
                                 <input className="form-check-input checked:bg-blue-600 h-4 w-4 border border-gray-300 rounded-md bg-white focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
