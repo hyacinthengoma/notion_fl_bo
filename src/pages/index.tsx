@@ -100,10 +100,10 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <meta name={"description"} content={"Cabinet Avocat Bordeaux Florence Babeau spécialisé en droit du Travail, droit Social et droit de la Sécurité Sociale ainsi qu'en droit de la Famille."}/>
             </Head>
             <div className={"relative h-[100vh] w-full"}>
-                <div className={"absolute z-50 top-1/4 sm:left-20 sm:left-[5vw]"}>
+                <div className={"absolute z-50 top-1/3 sm:left-20 sm:left-[5vw]"}>
                     <div className={"flex flex-col gap-6"}>
                         <div>
-                            <blockquote className={"mb-8"}>
+                            <blockquote className={"mb-16"}>
                                 <p className={"text-gray-50 opacity-100 text-2xl lg:text-4xl font-thin text-center"}>"{ accueil.citation.description }"</p>
                             </blockquote>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start tracking-wide"}>MAÎTRE FLORENCE BABEAU</h1>
@@ -124,11 +124,11 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
                 <div className="absolute z-50 py-6 sm:py-8 lg:py-12 top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/4 w-5/6 lg:w-auto">
-                    {/**<div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-                        <div className="bg-gray-100/50 hover:bg-gray-100 transition-all duration-500 rounded-lg px-4 py-6 md:py-8 lg:py-12">
-                            <h2 className="text-white opacity-100 text-2xl lg:text-4xl font-medium text-center italic">"{ accueil.citation.description }"</h2>
-                        </div>
-                    </div>*/}
+                    <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
+                        {/**<div className="bg-gray-100/50 hover:bg-gray-100 transition-all duration-500 rounded-lg px-4 py-6 md:py-8 lg:py-12">
+                            <h2 className="text-gray-800 opacity-100 text-2xl lg:text-4xl font-medium text-center italic">"{ accueil.citation.description }"</h2>
+                        </div>*/}
+                    </div>
                     <Link href={"#section-bandeau"} className={"absolute z-50 w-10 h-16 border-lg translate-y-full -translate-x-1/2 left-1/2 top-full"}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 animate-bounce text-gray-100">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
