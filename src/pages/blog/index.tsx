@@ -91,10 +91,11 @@ const Index = ({ posts = [], preview }) => {
             </div>
             <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/Actualites-sociales/blog-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
         </div>
-        <div className={"bg-white flex justify-center w-full py-1 pb-10 min-h-screen py-10"}>
+        <div className={"bg-white flex justify-center w-full py-1 pb-10 min-h-screen py-20"}>
             <div className={"w-5/6"}>
+                <h2 className={"text-center text-gray-800 font-bold text-3xl mb-8 pt-10"}>Vous retrouverez ici mes dernières actualités</h2>
                 <div className={"flex flex-col gap-4"}>
-                    <div className={"w-1/4"}>
+                    <div className={"w-full lg:w-2/5"}>
                         <Collapse bordered title="Filtres" subtitle="Selectionner le type d'articles a afficher">
                             <Checkbox.Group color="secondary">
                                 {uniqueTypes.map((Type:string) => {
