@@ -14,7 +14,7 @@ interface ArticleCard {
 
 const ArticleCard: React.FC<ArticleCard> = ({Id, Slug, Illustration, Page, Preview, Type, Date}) => {
     return(
-        <Link href={"/blog/[slug]"} as={getBlogLink(Slug)} className={"flex flex-col shadow hover:shadow-lg bg-white border group rounded-lg overflow-hidden hover:scale-110 duration-500 article"} key={Slug} type={Type}>
+        <Link href={"/blog/[slug]"} as={getBlogLink(Slug)} className={"flex flex-col shadow hover:shadow-lg bg-white border group rounded-lg overflow-hidden hover:scale-110 duration-500 transition-all article"} key={Slug} type={Type}>
             <div className="group h-48 block bg-gray-100 overflow-hidden relative m-2 rounded-lg">
                 {Illustration
                     ?
