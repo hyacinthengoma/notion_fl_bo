@@ -519,11 +519,11 @@ const RenderPost = ({ post, redirect, preview, posts, lastPosts }) => {
         <div className={"w-5/6"}>
           <h2 className={"font-bold text-white text-[2rem] uppercase mb-6"}>Ces articles pourrait vous intéresser</h2>
           <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
-            {/**lastPosts.map((post) => {
+            lastPosts.map((post) => {
               return(
                   <ArticleCard Id={post.id} Slug={post.Slug} Illustration={post.Illustration} Page={post.Page} Preview={post.Preview} Type={post.Type} Date={post.Date}/>
               )
-            })*/}
+            })
           </div>
           <div className={"flex justify-center mt-20"}>
             <Link href={"/blog"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
