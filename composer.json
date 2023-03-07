@@ -1,0 +1,15 @@
+{
+    "name": "hyacinthengoma/notion_fl_bo",
+    "autoload": {
+        "psr-4": {
+            "Hyacinthengoma\\NotionFlBo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hyacinthe N'Goma",
+            "email": "hyacinthengoma@gmail.com"
+        }
+    ],
+    "require": {}
+}

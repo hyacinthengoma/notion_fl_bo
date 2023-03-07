@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import Link from "next/link";
 export default function Recommendation() {
     {/**constante d'affichage du texte*/}
         const [showText, setShowText] = useState(false);
@@ -41,10 +42,11 @@ export default function Recommendation() {
                                         </div>
                                     </div>
                                     <div className="text-center mt-2 ">
-                                        <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1">Violaine Hubert</h3>
-                                        <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+                                        <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1">Le comptoir des nouveaux fromagers<br /> (Violaine Hubert)</h3>
+                                        {/*<div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
                                             <i className="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Il y a un 1 an
                                         </div>
+                                        */}
                                     </div>
                                     <div className="mt-6 py-6 border-t border-slate-200 text-center h-auto ">
                                         <div className="flex flex-wrap justify-center">
@@ -91,10 +93,11 @@ export default function Recommendation() {
                                         </div>
                                     </div>
                                     <div className="text-center mt-2">
-                                        <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1">Nicolas Duburch</h3>
-                                        <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+                                        <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1">GFF Expertise <br />Audit <br />(Nicolas Duburch)</h3>
+                                        {/*<div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
                                             <i className="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Il y a un 1 an
                                         </div>
+                                        */}
                                     </div>
                                     <div className="mt-6 py-6 border-t border-slate-200 text-center h-auto">
                                         <div className="flex flex-wrap justify-center">
@@ -140,10 +143,11 @@ export default function Recommendation() {
                                         </div>
                                     </div>
                                     <div className="text-center mt-2">
-                                        <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1">Pierre Garnier</h3>
-                                        <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
-                                            <i className="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Il y a 1 an
+                                        <h3 className="text-2xl text-slate-700 font-bold leading-normal mb-1">SAPL de <br />la hé <br />(Pierre Garnier)</h3>
+                                        {/*<div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+                                            <i className="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Il y a un 1 an
                                         </div>
+                                        */}
                                     </div>
                                     <div className="mt-6 py-6 border-t border-slate-200 text-center h-auto">
                                         <div className="flex flex-wrap justify-center">
@@ -164,6 +168,9 @@ export default function Recommendation() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className={"flex justify-center mt-20"}>
+                        <Link href={"https://www.google.com/search?q=les+avis+v%C3%A9rifi%C3%A9s+de+florence+babeau&rlz=1C5CHFA_enFR964FR965&sxsrf=AJOqlzWVmGDmEmBCX28HPUI2coHTXUvhRA%3A1678223462842&ei=ZqgHZJSMM4ylkdUP6byy-A0&ved=0ahUKEwiU1-zK3cr9AhWMUqQEHWmeDN8Q4dUDCA8&uact=5&oq=les+avis+v%C3%A9rifi%C3%A9s+de+florence+babeau&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzoHCCMQsAMQJzoHCCMQsAIQJzoECCMQJzoLCAAQgAQQsQMQgwE6EQguEIAEELEDEIMBEMcBENEDOgsILhCABBCxAxCDAToOCC4QgAQQsQMQxwEQ0QM6CggAELEDEIMBEEM6EAguELEDEIMBEMcBENEDEEM6BQgAEIAEOggIABCxAxCDAToECC4QQzoKCC4QxwEQrwEQQzoECAAQAzoICC4QgAQQsQM6CAguELEDEIMBOgsILhCABBDHARCvAToICAAQgAQQsQM6DgguEIAEELEDEMcBEK8BOgsILhCABBCxAxDUAjoKCAAQgAQQFBCHAjoFCC4QgAQ6CAguEIAEENQCOgYIABAWEB46CAgAEBYQHhAPOgUIIRCgAToICCEQFhAeEB06BwghEKABEApKBAhBGAFQjwhYm2Rg9WVoAnAAeACAAZUCiAHSG5IBBjMyLjcuMZgBAKABAcgBAsABAQ&sclient=gws-wiz-serp"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter mes avis vérifiés</Link>
                     </div>
                 </div>
             </div>

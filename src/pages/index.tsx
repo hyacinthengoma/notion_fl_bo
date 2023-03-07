@@ -118,7 +118,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                                 </div>
                             </div>
                             <blockquote className={"mt-16"}>
-                                <p className={"text-gray-50 opacity-100 text-2xl lg:text-4xl font-thin text-center"}>"{ accueil.citation.description }"</p>
+                                <p className={"text-gray-50 opacity-100 text-2xl lg:text-4xl font-thin text-center"}><i>"{ accueil.citation.description }"</i></p>
                             </blockquote>
                         </div>
                     </div>
@@ -161,14 +161,14 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit du travail</h2>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_travail.description }</p>
                             <div className={"flex justify-end mt-10 items-center"}>
-                                <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder a la page</p>
+                                <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
                             </div>
                         </Link>
                         <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_social.description }</p>
                             <div className={"flex justify-end mt-10 items-center peer"}>
-                                <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder a la page</p>
+                                <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
                             </div>
                         </Link>
                     </div>
@@ -177,21 +177,26 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <div className={"bg-white flex gap-5 justify-center w-full py-20"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Le cabinet</h2>
-                    <h3 className={"font-medium text-xl lg:text-3xl text-gray-800"}>ADN DE L'ENTREPRISE</h3>
+                    {/*<h3 className={"font-medium text-xl lg:text-3xl text-gray-800"}>ADN DE L'ENTREPRISE</h3>
                     <p className={"mt-2 text-sm lg:text-base mb-8"}>
                         L’ADN du cabinet c’est son approche holistique de chaque affaire, qui est appréhendée dans sa globalité et en prenant en considération ses différentes dimensions économiques, sociales et humaines.
                     </p>
                     <p className={"text-sm lg:text-base mb-8"}>
                         La complémentarité entres les activités en conseil et de contentieux permet de faire un juste diagnostic du dossier, une bonne évaluation des risques et de proposer les solutions les plus adaptées.
                     </p>
+                    */}
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
-                        <div className={"h-auto w-auto lg:w-1/2 order-2"}>
+                        <div className={"h-auto w-auto flex items-center lg:w-1/2 order-2"}>
                             <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}></video>
                         </div>
                         <div className={"w-full lg:w-1/2 flex flex-col text-justify order-1"}>
                             <div>
+                                <p className={"font-medium text-xl lg:text-3xl text-gray-800"}>ADN de l'entreprise</p>
+                                <p className={"mt-2 text-sm lg:text-base mb-8"}>L’ADN du cabinet c’est son approche holistique de chaque affaire, qui est appréhendée dans sa globalité et en prenant en considération ses différentes dimensions économiques, sociales et humaines. La complémentarité entres les activités en conseil et de contentieux permet de faire un juste diagnostic du dossier, une bonne évaluation des risques et de proposer les solutions les plus adaptées.</p>
+                            </div>
+                            <div>
                                 <p className={"font-medium text-xl lg:text-3xl text-gray-800"}>Florence Babeau</p>
-                                <p className={"mt-2 text-sm lg:text-base mb-8"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Sécurité Sociale, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
+                                <p className={"mt-2 text-sm lg:text-base mb-8"}>Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Sécurité Sociale, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse. </p>
                             </div>
                             <div>
                                 <p className={"font-medium text-xl lg:text-3xl text-gray-800"}>Mon parcours</p>
@@ -212,7 +217,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         })}
                     </div>
                     <div className={"flex justify-center mt-20"}>
-                        <Link href={"/blog"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
+                        <Link href={"/blog"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
                     </div>
                 </div>
             </div>
