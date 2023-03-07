@@ -16,7 +16,7 @@ export default function Footer() {
                     referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>*/}
-        <footer aria-label="Site Footer" className={"bg-black"}>
+        <footer aria-label="Site Footer" className={"bg-white"}>
             <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="sm:col-span-2 text-start">
@@ -59,50 +59,50 @@ export default function Footer() {
             </span>
                         </a>
                         <div className="mt-6 lg:max-w-sm">
-                            <p className="text-sm text-white">
+                            <p className="text-sm text-black">
                                 2 Rue Claude Boucher<br/>
                                 33300 Bordeaux<br/>
                                 <a
                                     href="tel:05 57 10 28 24">05 57 10 28 24</a><br/>
 
                             </p>
-                            <p className="mt-4 text-sm text-white">
+                            <p className="mt-4 text-sm text-black">
                                 Lun – Ven 09:00-17:00
                             </p>
                         </div>
                     </div>
                     <div className="space-y-2 text-sm text-start">
-                        <p className="text-base font-bold tracking-wide text-white">
+                        <p className="text-base font-bold tracking-wide text-black">
                             <u>Pages</u>
                         </p>
                         <div className="flex mt-5">
-                            <Link href={"/"} className="mr-1 text-white">Accueil</Link>
+                            <Link href={"/"} className="mr-1 text-black">Accueil</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/Expertise/Droit-travail"} className="mr-1 text-white">Expertises - Droit du travail</Link>
+                            <Link href={"/Expertise/Droit-travail"} className="mr-1 text-black">Expertises - Droit du travail</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/Expertise/Droit-securite-sociale"} className="mr-1 text-white">Expertises - Droit de la sécurité sociale</Link>
+                            <Link href={"/Expertise/Droit-securite-sociale"} className="mr-1 text-black">Expertises - Droit de la sécurité sociale</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/honoraires"} className="mr-1 text-white">Honoraires</Link>
+                            <Link href={"/honoraires"} className="mr-1 text-black">Honoraires</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/blog"} className="mr-1 text-white">Actualités sociales</Link>
+                            <Link href={"/blog"} className="mr-1 text-black">Actualités sociales</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/florence-babeau"} className="mr-1 text-white">Florence Babeau</Link>
+                            <Link href={"/florence-babeau"} className="mr-1 text-black">Florence Babeau</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/contact"} className="mr-1 text-white">Contact</Link>
+                            <Link href={"/contact"} className="mr-1 text-black">Contact</Link>
                         </div>
 
                     </div>
                     <div className={"text-start"}>
-          <span className="text-base font-bold tracking-wide text-white">
+          <span className="text-base font-bold tracking-wide text-black">
               <u>Réseau social</u>
           </span>
-                        <p className="mt-4 text-sm text-white">
+                        <p className="mt-4 text-sm text-black">
                             Vous pouvez également me suivre sur LinkedIn
                         </p>
                         <div className="flex items-center mt-1 space-x-3 mt-5">
@@ -152,14 +152,14 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
-                    <p className="text-sm text-white    ">
+                    <p className="text-sm text-black    ">
                         © Copyright 2023 Lorem Inc. All rights reserved.
                     </p>
                     <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
                         <li>
                             <a
                                 href="blog/index"
-                                className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
+                                className="text-sm text-black transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Blog
                             </a>
@@ -167,7 +167,7 @@ export default function Footer() {
                         <li>
                             <Link
                                 href="mention_legales"
-                                className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
+                                className="text-sm text-black transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Mentions légales
                             </Link>
@@ -175,7 +175,7 @@ export default function Footer() {
                         <li>
                             <Link
                                 href="politique-de-confidentialite"
-                                className="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400"
+                                className="text-sm text-black transition-colors duration-300 hover:text-deep-purple-accent-400"
                             >
                                 Politique de confidentialité
                             </Link>
