@@ -218,7 +218,7 @@ export default function Contact() {
                                 </svg>
                             </div>
                             <p className={"text-[1rem] text-black font-bold"}>HORAIRES</p>
-                            <p className={"text-[1rem]"}>Lun - Ven 09:00 - 17:00</p>
+                            <p className={"text-[1rem]"}>Lun - Ven 09:00 - 18:00</p>
                         </div>
                     </div>
                 </div>
@@ -232,22 +232,22 @@ export default function Contact() {
                             <h3 className={"text-red-600 text-lg"}>Les champs contenant "*" sont à remplir obligatoirement !</h3>
                             <div className={"grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 mt-8"}>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input clearable underlined labelPlaceholder={"Nom*"} type={"text"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} required={true}/>
+                                    <Input css={{ /**$$inputBorderColor: "#9ca3af",*/ $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Nom*"} type={"text"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input clearable underlined labelPlaceholder={"Prenom*"} type={"text"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} required={true}/>
+                                    <Input css={{ /**$$inputBorderColor: "#9ca3af",*/ $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Prenom*"} type={"text"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input clearable underlined labelPlaceholder={"Téléphone*"} type={"tel"} maxLength={10} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} required={true}/>
+                                    <Input css={{ /**$$inputBorderColor: "#9ca3af",*/ $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Téléphone*"} type={"tel"} maxLength={10} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input clearable underlined type={"number"} labelPlaceholder={"Code postal*"} maxLength={5} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} required={true}/>
+                                    <Input css={{ /**$$inputBorderColor: "#9ca3af",*/ $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined type={"number"} labelPlaceholder={"Code postal*"} maxLength={5} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input clearable underlined labelPlaceholder={"Email*"} type={"email"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} required={true}/>
+                                    <Input css={{ /**$$inputBorderColor: "#9ca3af",*/ $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Email*"} type={"email"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input clearable underlined labelPlaceholder={"Raison sociale"} type={"text"}  onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"}/>
+                                    <Input css={{ /**$$inputBorderColor: "#9ca3af",*/ $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Raison sociale"} type={"text"}  onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"}/>
                                 </div>
                             </div>
                             <div className={"flex flex-col justify-center my-5"}>
