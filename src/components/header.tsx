@@ -77,8 +77,7 @@ export default function Header() {
             </div>
             <div className="relative z-[100] hidden" id={"navbar-menu"}>
                 <div className="fixed inset-0 bg-gray-800 opacity-25" id={"navbar-backdrop"}></div>
-                <nav
-                    className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-900 overflow-y-auto" id={"sidemenu"}>
+                <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-800 overflow-y-auto" id={"sidemenu"}>
                     <div className="flex items-center mb-8">
                         <Link className="mr-auto text-3xl font-medium leading-none" href="/">
                             <img src="/images/logo-babeau.png" className="h-16" alt="waw-logo"/>
