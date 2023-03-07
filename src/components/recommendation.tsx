@@ -14,7 +14,7 @@ export default function Recommendation() {
    <div className={"bg-gray-50 py-16"}>
             <div className={"flex justify-center w-full"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-black text-[2rem] uppercase mb-16"}>ILS RECOMMANDENT LE CABINET</h2>
+                    <h2 className={"font-bold text-black text-xl lg:text-3xl uppercase mb-16"}>ILS RECOMMANDENT LE CABINET</h2>
                     <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-32"}>
                         <div>
                             <div
