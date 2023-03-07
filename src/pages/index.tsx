@@ -103,9 +103,6 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <div className={"absolute z-50 top-1/3 sm:left-20 sm:left-[5vw]"}>
                     <div className={"flex flex-col gap-6"}>
                         <div>
-                            <blockquote className={"mb-16"}>
-                                <p className={"text-gray-50 opacity-100 text-2xl lg:text-4xl font-thin text-center"}>"{ accueil.citation.description }"</p>
-                            </blockquote>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start tracking-wide"}>MAÎTRE FLORENCE BABEAU</h1>
                             <p className={"text-white text-center text-xl md:text-2xl sm:px-0 pt-2 sm:text-start"}>Avocat en droit du travail et de la sécurité sociale</p>
                             <div className={"block sm:flex"}>
@@ -120,6 +117,9 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                                     </Link>
                                 </div>
                             </div>
+                            <blockquote className={"mt-16"}>
+                                <p className={"text-gray-50 opacity-100 text-2xl lg:text-4xl font-thin text-center"}>"{ accueil.citation.description }"</p>
+                            </blockquote>
                         </div>
                     </div>
                 </div>
@@ -138,32 +138,28 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white py-10 lg:py-20 flex justify-center"} id={"section-bandeau"}>
-                <div className={"bg-none lg:bg-white lg:border lg:shadow-lg grid grid-cols-2 lg:grid-cols-4 gap-8 w-5/6 lg:p-8 rounded-lg"}>
+                <div className={"bg-white lg:border lg:shadow-lg grid grid-cols-3 lg:grid-cols-3 w-5/6 lg:p-8 gap-4 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
-                        <div className="text-sm sm:text-base font-medium text-center">Années d'exercice</div>
+                        <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
+                        <div className="text-xs sm:text-base font-medium text-center">Années d'exercice</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"clients_satisfait"}>{ accueil.clients_satisfait.description }%</div>
-                        <div className="text-sm sm:text-base font-medium text-center">de clients satisfait</div>
+                        <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"clients_satisfait"}>{ accueil.clients_satisfait.description }%</div>
+                        <div className="text-xs sm:text-base font-medium text-center">de clients satisfait</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"domaines_competences"}>{ accueil.domaines_competences.description }</div>
-                        <div className="text-sm sm:text-base font-medium text-center">Grands domaines de compétences</div>
-                    </div>
-                    <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
-                        <div className="text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold" id={"dossiers_traites"}>{ accueil.dossiers_traites.description }</div>
-                        <div className="text-sm sm:text-base font-medium text-center">Dossiers traités</div>
+                        <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"domaines_competences"}>{ accueil.domaines_competences.description }</div>
+                        <div className="text-xs sm:text-base font-medium text-center">Grands domaines de compétences</div>
                     </div>
                 </div>
             </div>
-            <div className={"bg-white flex justify-center w-full py-20"}>
+            <div className={"bg-white flex justify-center w-full  lg:py-20"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Mes expertises</h2>
+                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Mes expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
                         <Link href={"/Expertise/Droit-travail"} className={"w-full group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
-                            <h2 className={"text-start text-gray-800 text-3xl"}>Droit du travail</h2>
-                            <p className={"mt-2 text-justify"}>{ accueil.droit_travail.description }</p>
+                            <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit du travail</h2>
+                            <p className={"mt-2 text-sm text-justify"}>{ accueil.droit_travail.description }</p>
                             <div className={"flex justify-end mt-10 items-center"}>
                                 <p className={'relative font-semibold text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-300 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder a la page</p>
                             </div>
@@ -178,9 +174,9 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </div>
-            <div className={"bg-white flex gap-5 justify-center w-full pb-20"}>
+            <div className={"bg-white flex gap-5 justify-center w-full py-20"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Qui suis-je ?</h2>
+                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Qui suis-je ?</h2>
 
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"h-auto w-auto lg:w-1/2"}>
