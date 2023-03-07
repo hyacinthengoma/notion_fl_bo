@@ -38,8 +38,14 @@ export default function Honoraires({honoraires}) {
                 </div>
                 <Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/comment-ca-marche/honoraires-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"bg-white flex justify-center w-full py-36"}>
+            <div className={"bg-white flex justify-center w-full py-20"}>
                 <div className={"w-5/6"}>
+                    <div className={"w-full flex flex-col text-justify order-1 w-full"}>
+                        <p className={"mt-2 text-sm lg:text-base mb-14 lg:mx-40"}>
+                            La gestion des ressources humaines constitue pour les entreprises un risque financier non négligeable. Elles doivent être bien accompagnées pour éviter ou minimiser les coûts d’une mauvaise gestion sociale.
+                            Le cabinet Florence Babeau propose ses prestations en conseil et/ou en contentieux pour la base d’une tarification honoraire ou forfaitaire au client, avant le début de la mission, qui fait l’objet d’une convention d’honoraires écrite remise.
+                        </p>
+                    </div>
                     {/**<div className={"flex flex-col gap-4 w-4/5"}>
                         {honoraires.map((currentHonoraire) => {
                             let liste = [];

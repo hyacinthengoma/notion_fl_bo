@@ -93,7 +93,7 @@ export default function HomeDroitTravail({ droitTravail }) {
             </div>
             <div className={"w-full justify-center flex py-20 min-h-screen bg-white"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Mes compténces</h2>
+                    <h2 className={"font-bold text-gray-800 text-4xl uppercase mb-6"}>Mes compétences</h2>
                     <hr className={"mb-5"}/>
                     <div className={"lg:w-2/3 lg:mx-auto"}>
                         <Grid>
