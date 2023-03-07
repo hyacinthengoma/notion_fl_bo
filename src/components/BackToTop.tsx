@@ -13,13 +13,13 @@ export default function BackToTop() {
 
         function scrollNavbarFunction() {
             if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-                navbar.classList.add('bg-red-900');
+                navbar.classList.add('bg-red-800');
                 navbar.classList.remove('bg-[#1B110F]/10');
-                navhover.classList.add('bg-red-900');
+                navhover.classList.add('bg-red-800');
             } else {
-                navbar.classList.remove('bg-red-900');
+                navbar.classList.remove('bg-red-800');
                 navbar.classList.add('bg-[#1B110F]/10');
-                navhover.classList.remove('bg-red-900');
+                navhover.classList.remove('bg-red-800');
             }
         }
 
