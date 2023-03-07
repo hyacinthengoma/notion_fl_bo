@@ -56,13 +56,13 @@ export default function Header() {
                             </ul>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
+                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/le-cabinet">LE CABINET</Link>
                         </li>
                         <li>
                             <Link className="text-sm text-white font-medium hover:text-gray-300" href="/blog">ACTUALITÉS SOCIALES</Link>
                         </li>
                         <li>
-                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/florence-babeau">FLORENCE BABEAU</Link>
+                            <Link className="text-sm text-white font-medium hover:text-gray-300" href="/honoraires">HONORAIRES</Link>
                         </li>
                         <li>
                             <Link className="text-sm text-white font-medium hover:text-gray-300" href="/contact">CONTACT</Link>
@@ -107,8 +107,8 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300"
-                                      href="/honoraires">HONORAIRES
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300" href="/le-cabinet">
+                                    FLORENCE BABEAU
                                 </Link>
                             </li>
                             <li className="mb-1">
@@ -117,8 +117,8 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li className="mb-1">
-                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300" href="/florence-babeau">
-                                    FLORENCE BABEAU
+                                <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300"
+                                      href="/honoraires">HONORAIRES
                                 </Link>
                             </li>
                             <li className="mb-1">
