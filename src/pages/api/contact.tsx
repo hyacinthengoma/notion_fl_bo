@@ -14,7 +14,7 @@ export default function(req, res) {
 
     const mailData = {
         from: `${req.body.Email}`,
-        to: 'alexandre.petit33440@gmail.com',
+        to: process.env.EMAIL_CONTACT,
         subject: `${req.body.SelectTypeService}`,
         text: req.body.Message,
         html: `<div>
