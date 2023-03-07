@@ -186,7 +186,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </p>
                     <div className={"flex flex-col gap-y-8 gap-x-16 lg:flex-row mt-10"}>
                         <div className={"h-auto w-auto lg:w-1/2 order-2"}>
-                            <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/LeCabinet.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}></video>
+                            <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}></video>
                         </div>
                         <div className={"w-full lg:w-1/2 flex flex-col text-justify order-1"}>
                             <div>
