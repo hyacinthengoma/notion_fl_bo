@@ -6,7 +6,7 @@ export default function BesoinAvocat() {
     return (
         <div className={"relative"}>
             <div className={"absolute mt-28 ml-16 z-50"}>
-                <h1 className={"text-white text-2xl md:text-4xl font-bold"}>BESOIN D'UN AVOCAT ?</h1>
+                <h1 className={"text-white text-xl lg:text-3xl md:text-4xl font-bold"}>BESOIN D'UN AVOCAT ?</h1>
             </div>
             <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                 <Link href={"/contact"} className="bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white inline-flex items-center gap-x-5 hover:scale-105 duration-500">
