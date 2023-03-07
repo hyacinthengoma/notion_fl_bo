@@ -99,6 +99,8 @@ export default function HomeDroitTravail({ droitTravail }) {
                         <Grid>
                             <Collapse.Group shadow>
                                 {droitTravail.map((currentDroit, index) => {
+                                    let tableauDeSousChaines = currentDroit.Texte.split("\\n");
+                                    let chaineAvecSautDeLigne = tableauDeSousChaines.join("\n");
                                     if(index === 0) {
                                         return (
                                             <Collapse title={<Text h4>{currentDroit.Titre}</Text>} contentLeft={
@@ -111,7 +113,9 @@ export default function HomeDroitTravail({ droitTravail }) {
                                             </span>
                                             } expanded={true}>
                                                 <Text>
-                                                    {currentDroit.Texte}
+                                                    {tableauDeSousChaines.map((line, index) => (
+                                                        <p key={index}>{line}</p>
+                                                    ))}
                                                 </Text>
                                             </Collapse>
                                         );
@@ -127,7 +131,9 @@ export default function HomeDroitTravail({ droitTravail }) {
                                             </span>
                                             }>
                                                 <Text>
-                                                    {currentDroit.Texte}
+                                                    {tableauDeSousChaines.map((line, index) => (
+                                                        <p key={index}>{line}</p>
+                                                    ))}
                                                 </Text>
                                             </Collapse>
                                         );
