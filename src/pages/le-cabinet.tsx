@@ -33,7 +33,7 @@ export default function LeCabinet() {
                             <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-full h-auto rounded-md"}></video>
                         </div>
                         */}
-                        <Image loading={"eager"} className={" h-[400px] w-1/2 object-cover"} src={"/images/FlorenceBabeau/cabinet-fl.jpg"} alt={"image-banniere-besoin-avocat"} width={"600"} height={"600"}></Image>
+                        <Image loading={"eager"} className={" h-[400px] lg:w-1/2 object-cover rounded-lg shadow-lg"} src={"/images/FlorenceBabeau/cabinet-fl.jpg"} alt={"image-banniere-besoin-avocat"} width={"600"} height={"600"}></Image>
                         <div className={"w-full lg:w-1/2 flex flex-col text-justify order-1"}>
                             <p className={"mt-2 text-sm lg:text-base mb-8"}>
                                 L’ADN du cabinet c’est son approche holistique de chaque affaire, qui est appréhendée dans sa globalité et en prenant en considération ses différentes dimensions économiques, sociales et humaines.
