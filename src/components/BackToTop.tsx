@@ -46,7 +46,7 @@ export default function BackToTop() {
     });
     return (
         <>
-            <button className={"hidden fixed text-white shadow-xl rounded-l-lg top-3/4 z-50 px-5 py-5 bg-red-900 hover:bg-red-800 shadow right-0 transition-all duration-500 scroll-smooth"} id={"backToTop"}>
+            <button className={"hidden fixed text-white shadow-xl rounded-l-lg top-3/4 z-50 px-5 py-5 bg-red-800 hover:bg-red-900 shadow right-0 transition-all duration-500 scroll-smooth"} id={"backToTop"}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
                 </svg>
