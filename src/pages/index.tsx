@@ -14,6 +14,7 @@ import getAccueilIndex from "../lib/notion/getAccueilIndex";
 import getCompetencesDroitSocialIndex from "../lib/notion/getCompetencesDroitSocialIndex";
 import getCompetencesDroitTravailIndex from "../lib/notion/getCompetencesDroitTravailIndex";
 import ArticleCard from "../components/ArticleCard";
+import Partenaires from "../components/Partenaires";
 
 export async function getStaticProps({ preview }) {
     const postsTable = await getBlogIndex();
@@ -137,7 +138,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 </div>
                 <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"bg-white py-10 lg:py-20 flex justify-center"} id={"section-bandeau"}>
+            <div className={"bg-white py-10 lg:py-10 flex justify-center"} id={"section-bandeau"}>
                 <div className={"bg-white lg:border lg:shadow-lg grid grid-cols-3 lg:grid-cols-3 w-5/6 lg:p-8 gap-4 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
                         <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
@@ -153,7 +154,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </div>
-            <div className={"bg-white flex justify-center w-full  lg:py-20"}>
+            <div className={"bg-white flex justify-center w-full lg:py-20"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Mes expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
@@ -174,7 +175,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </div>
-            <div className={"bg-white flex gap-5 justify-center w-full py-20"}>
+            <div className={"bg-white flex gap-5 justify-center w-full pb-20 pt-10"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Le cabinet</h2>
                     {/*<h3 className={"font-medium text-xl lg:text-3xl text-gray-800"}>ADN DE L'ENTREPRISE</h3>
@@ -222,6 +223,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 </div>
             </div>
             <Recommendation></Recommendation>
+            <Partenaires></Partenaires>
             <BesoinAvocat></BesoinAvocat>
         </>
     );
