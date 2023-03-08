@@ -526,7 +526,7 @@ const RenderPost = ({ post, redirect, preview, posts, lastPosts }) => {
             })}
           </div>
           <div className={"flex justify-center mt-20"}>
-            <Link href={"/blog"} className={"bg-red-900 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
+            <Link href={"/blog"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
           </div>
         </div>
       </div>
