@@ -17,7 +17,7 @@ export default function Header() {
                 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
             </Head>
             <div className={""}>
-                <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-[#1B110F]/10 flex justify-between w-full items-center fixed z-[100] shadow-lg transition-all duration-500" id={"navbar"}>
+                <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-[#1B110F]/10 flex justify-between w-full items-center fixed z-[1000] shadow-lg transition-all duration-500" id={"navbar"}>
                     <Link className="text-3xl font-medium leading-none" href="/">
                         <Image loading={"eager"} src={'/images/logo-babeau2.svg'} width={'210'} height={'50'} alt={'logo-florence-babeau'}></Image>
                     </Link>
@@ -75,7 +75,7 @@ export default function Header() {
                     </ul>
                 </nav>
             </div>
-            <div className="relative z-[100] hidden" id={"navbar-menu"}>
+            <div className="relative z-[1000] hidden" id={"navbar-menu"}>
                 <div className="fixed inset-0 bg-gray-800 opacity-25" id={"navbar-backdrop"}></div>
                 <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-red-800 overflow-y-auto" id={"sidemenu"}>
                     <div className="flex items-center mb-8">
@@ -97,17 +97,17 @@ export default function Header() {
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300 uppercase" href="/Expertise/Droit-travail">
-                                    Expertise - Droit du travail
+                                    Droit du travail
                                 </Link>
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300 uppercase" href="/Expertise/Droit-securite-sociale">
-                                    Expertise - Droit de la sécurité sociale
+                                    Droit de la sécurité sociale
                                 </Link>
                             </li>
                             <li className="mb-1">
                                 <Link className="block p-4 text-sm font-medium text-white hover:text-gray-300" href="/le-cabinet">
-                                    FLORENCE BABEAU
+                                    LE CABINET
                                 </Link>
                             </li>
                             <li className="mb-1">
