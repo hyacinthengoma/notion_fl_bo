@@ -91,7 +91,7 @@ export default function HomeDroitTravail({ droitTravail }) {
                 </div>
                 <Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
             </div>
-            <div className={"w-full justify-center flex py-20 min-h-screen bg-white"}>
+            <div className={"w-full justify-center flex py-20 min-h-screen bg-neutral-100"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-xl lg:text-3xl uppercase mb-6"}>Mes compétences</h2>
                     <hr className={"mb-5"}/>

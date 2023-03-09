@@ -7,6 +7,7 @@ import {useEffect} from "react";
 import Header from "../components/header";
 import BackToTop from "../components/BackToTop";
 import { NextUIProvider } from '@nextui-org/react';
+import {ParallaxProvider} from "react-scroll-parallax";
 
 const poppins = Poppins({
     weight: ['400', '700'],
@@ -59,9 +60,11 @@ export default function MyApp({ Component, pageProps }) {
         <>
             <NextNProgress height={6} color="#4338C9"></NextNProgress>
             <Header></Header>
-            <NextUIProvider disableBaseline={true}>
-                <Component {...pageProps} />
-            </NextUIProvider>
+            <ParallaxProvider>
+                <NextUIProvider disableBaseline={true}>
+                    <Component {...pageProps} />
+                </NextUIProvider>
+            </ParallaxProvider>
             <BackToTop></BackToTop>
             <Footer />
         </>
