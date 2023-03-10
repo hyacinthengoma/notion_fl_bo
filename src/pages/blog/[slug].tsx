@@ -84,8 +84,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
   let lastPosts = [];
 
   posts.map((currentPost) => {
-    if(currentPost.Type === post.Type){
-      lastPosts.push(currentPost);
+    if(currentPost.Type === post.Type && currentPost.Page !== post.Page){
       lastPosts.push(currentPost);
     }
   })

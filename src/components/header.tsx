@@ -8,8 +8,8 @@ export default function Header() {
     return (
         <header className={"relative"}>
             <Head>
-                <script src="https://cdn.tailwindcss.com"></script>
-                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.0/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+                {/**<script src="https://cdn.tailwindcss.com"></script>
+                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.0/dist/tailwind.min.css" rel="stylesheet" type="text/css" />*/}
                 <Script src="https://use.fontawesome.com/46cabe336c.js"></Script>
                 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'/>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
