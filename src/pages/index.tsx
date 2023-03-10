@@ -69,31 +69,6 @@ export async function getStaticProps({ preview }) {
 
 const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) => {
 
-    /**useEffect(() => {
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        const annee_exercice = document.getElementById("annee_exercice");
-        const clients_satisfait = document.getElementById("clients_satisfait");
-        const domaines_competences = document.getElementById("domaines_competences");
-        const dossiers_traites = document.getElementById("dossiers_traites");
-
-        animateValue(annee_exercice, 0,  accueil.annee_exercice.description , 1000);
-        animateValue(clients_satisfait, 0,  accueil.clients_satisfait.description , 1000);
-        animateValue(domaines_competences, 0,  accueil.domaines_competences.description , 1000);
-        animateValue(dossiers_traites, 0,  accueil.domaines_competences.description , 1000);
-    });*/
-
     const lastPosts = posts.slice(-3);
     return (
         <>
@@ -107,8 +82,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         <div>
                             <h1 className={"text-white text-center text-2xl md:text-5xl font-bold sm:text-start tracking-wide"}>MAÎTRE FLORENCE BABEAU</h1>
                             <p className={"text-white text-center text-xl md:text-2xl sm:px-0 pt-2 sm:text-start"}>Avocat en droit du travail et de la sécurité sociale</p>
-                            <blockquote className={"mt-16"}>
-                                <p className={"text-gray-50 opacity-100 text-2xl lg:text-4xl font-thin text-center"}><i>"{ accueil.citation.description }"</i></p>
+                            <blockquote className={"my-16"}>
+                                <p className={"text-gray-50 opacity-100 text-2xl font-thin text-center"}><i>“{ accueil.citation.description }”</i></p>
                             </blockquote>
                             <div className={"block sm:flex"}>
                                 <div className={"flex justify-center mt-5"}>
@@ -158,7 +133,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <div className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-20"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Mes expertises</h2>
-                    <Parallax translateX={['-400px', '0px']} easing="easeIn" startScroll={500} endScroll={1000} className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
+                    <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
                         <Link href={"/Expertise/Droit-travail"} className={"w-full bg-white group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit du travail</h2>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_travail.description }</p>
@@ -173,7 +148,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
                             </div>
                         </Link>
-                    </Parallax>
+                    </div>
                 </div>
             </div>
             <div className={"bg-neutral-100 flex gap-5 justify-center w-full pb-20 pt-10"}>
