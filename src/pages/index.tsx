@@ -115,7 +115,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white py-10 lg:py-10 flex justify-center"} id={"section-bandeau"}>
-                <Parallax translateX={['-400px', '0px']} easing="easeIn" startScroll={100} endScroll={500} className={"bg-white lg:border lg:shadow-lg grid grid-cols-3 lg:grid-cols-3 w-5/6 lg:p-8 gap-4 rounded-lg"}>
+                <div className={"bg-white lg:border lg:shadow-lg grid grid-cols-3 lg:grid-cols-3 w-5/6 lg:p-8 gap-4 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
                         <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
                         <div className="text-xs sm:text-base font-medium text-center">Années d'exercice</div>
@@ -128,7 +128,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"domaines_competences"}>{ accueil.domaines_competences.description }</div>
                         <div className="text-xs sm:text-base font-medium text-center">Grands domaines de compétences</div>
                     </div>
-                </Parallax>
+                </div>
             </div>
             <div className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-10"}>
                 <div className={"w-5/6"}>
@@ -182,7 +182,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <div className={"bg-neutral-600 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-xl lg:text-3xl uppercase mb-10"}>Mes dernières actualités</h2>
-                    <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 w-5/6 mx-auto"}>
+                    <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
                         {lastPosts.map((post) => {
                             return(
                                 <ArticleCard Id={post.id} Slug={post.Slug} Illustration={post.Illustration} Page={post.Page} Preview={post.Preview} Type={post.Type} Date={post.Date}/>
