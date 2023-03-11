@@ -134,17 +134,17 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Mes expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
-                        <Link href={"/Expertise/Droit-travail"} className={"w-full bg-white group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                        <Link href={"/Expertise/Droit-travail"} className={"w-full flex flex-col bg-white group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit du travail</h2>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_travail.description }</p>
-                            <div className={"flex justify-end mt-10 items-center"}>
+                            <div className={"flex justify-end mt-auto items-center"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
                             </div>
                         </Link>
-                        <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full bg-white group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                        <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full flex flex-col bg-white group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_social.description }</p>
-                            <div className={"flex justify-end mt-10 items-center peer"}>
+                            <div className={"flex justify-end mt-auto items-center peer"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
                             </div>
                         </Link>
