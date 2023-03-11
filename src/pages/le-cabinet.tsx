@@ -26,22 +26,29 @@ export default function LeCabinet() {
                                 </div>
                             </div>
 
-                            <div className="md:pt-6">
-                                <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">Adn du cabinet</h1>
+                            <div className="md:my-auto">
+                                <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">L’expertise du cabinet</h1>
                                 <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
-                                    L’ADN du cabinet c’est son approche holistique de chaque affaire, qui est appréhendée dans sa globalité et en prenant en considération ses différentes dimensions économiques, sociales et humaines.<br/><br/>
-                                    La complémentarité entres les activités en conseil et de contentieux permet de faire un juste diagnostic du dossier, une bonne évaluation des risques et de proposer les solutions les plus adaptées.
+                                    Le cabinet intervient en droit du Travail et en droit de la Sécurité Sociale. Une parfaite connaissance actualisée en permanence des textes réglementaires et conventionnels, des obligations sociales des entreprises et des apports jurisprudentiels permettent d’accompagner efficacement votre activité et votre développement, en sécurité, tant en conseil qu’en contentieux.
                                 </p>
-                                <p className="text-red-800 font-bold text-center md:text-left">Qui suis-je ?</p>
-                                <h2 className="text-gray-800 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Florence Babeau</h2>
-                                <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Sécurité Sociale, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
-                                <h2 className="text-gray-800 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Mon parcours</h2>
-                                <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise.</p>
+                                <h2 className="text-gray-800 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Nos engagements envers vous</h2>
+                                <ul>
+                                    <li>
+                                        <p className="text-gray-500 sm:text-lg mb-6">- Un partenariat privilégié pour identifier vos besoins et y répondre</p>
+                                    </li>
+                                    <li>
+                                        <p className="text-gray-500 sm:text-lg mb-6">- Une approche pédagogique qui prend le temps d’expliquer et de valider avec vous chaque étape importante du dossier</p>
+                                    </li>
+                                    <li>
+                                        <p className="text-gray-500 sm:text-lg mb-6">- Une réelle joignabilité pour œuvrer efficacement ensemble</p>
+                                    </li>
+                                    <li>
+                                        <p className="text-gray-500 sm:text-lg mb-6">- Une relation humaine basée sur la communication et le respect</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center mt-4 mb-4 md:mb-6">Vous voulez en savoir plus ?</h1>
-                    <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-4/5 md:w-2/4 mx-auto rounded-md"}></video>
                 </div>
             </div>
             <BesoinAvocat></BesoinAvocat>

@@ -112,7 +112,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </svg>
                     </Link>
                 </div>
-                <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover object-right sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
+                <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
             </div>
             <div className={"bg-white py-10 lg:py-10 flex justify-center"} id={"section-bandeau"}>
                 <Parallax translateX={['-400px', '0px']} easing="easeIn" startScroll={100} endScroll={500} className={"bg-white lg:border lg:shadow-lg grid grid-cols-3 lg:grid-cols-3 w-5/6 lg:p-8 gap-4 rounded-lg"}>
@@ -130,7 +130,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </Parallax>
             </div>
-            <div className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-20"}>
+            <div className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-10"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Mes expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
@@ -151,41 +151,38 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </div>
-            <div className={"bg-neutral-100 flex gap-5 justify-center w-full pb-20 pt-10"}>
+            <div className={"bg-neutral-100 flex gap-5 justify-center w-full py-10"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Le cabinet</h2>
-                    <div className="py-6 sm:py-8 lg:py-12">
-                        <div className="max-w-screen-xl px-4 md:px-4 mx-auto">
+                    <div className="">
+                        <div className="max-w-screen-2xl px-4 md:px-4 mx-auto">
                             <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
-                                <div>
-                                    <div className="h-64 md:h-auto bg-gray-100 overflow-hidden rounded-lg shadow-lg">
-                                        <img src="/images/FlorenceBabeau/cabinet-fl.jpg" loading="lazy" alt="Cabinet Florence Babeau" className="w-full h-full object-cover object-center shadow"/>
-                                    </div>
-                                </div>
-
                                 <div className="md:pt-6">
-                                    <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">Adn du cabinet</h1>
+                                    <h1 className="text-gray-700 text-2xl sm:text-3xl font-semibold text-center md:text-left mb-4 md:mb-6">Adn du cabinet</h1>
                                     <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
                                         L’ADN du cabinet c’est son approche holistique de chaque affaire, qui est appréhendée dans sa globalité et en prenant en considération ses différentes dimensions économiques, sociales et humaines.<br/><br/>
                                         La complémentarité entres les activités en conseil et de contentieux permet de faire un juste diagnostic du dossier, une bonne évaluation des risques et de proposer les solutions les plus adaptées.
                                     </p>
-                                    <p className="text-red-800 font-bold text-center md:text-left">Qui suis-je ?</p>
-                                    <h2 className="text-gray-800 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Florence Babeau</h2>
+                                    <p className="text-red-800 font-semibold text-center md:text-left">Qui suis-je ?</p>
+                                    <h2 className="text-gray-700 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Florence Babeau</h2>
                                     <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">Très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Sécurité Sociale, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
-                                    <h2 className="text-gray-800 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Mon parcours</h2>
+                                    <h2 className="text-gray-700 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Mon parcours</h2>
                                     <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise.</p>
+                                </div>
+                                <div className={"my-auto"}>
+                                    <div className="h-auto md:h-auto overflow-hidden rounded-lg shadow-lg">
+                                        <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={""}></video>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center mt-4 mb-4 md:mb-6">Vous voulez en savoir plus ?</h1>
-                        <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"w-4/5 md:w-2/4 mx-auto rounded-md"}></video>
                     </div>
                 </div>
             </div>
-            <div className={"bg-gradient-to-b from-neutral-100 to-white flex justify-center w-full py-20 pl-4 pr-5"}>
+            <div className={"bg-neutral-600 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-black text-xl lg:text-3xl uppercase mb-6"}>Mes dernières actualités</h2>
-                    <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
+                    <h2 className={"font-bold text-white text-xl lg:text-3xl uppercase mb-10"}>Mes dernières actualités</h2>
+                    <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 w-5/6 mx-auto"}>
                         {lastPosts.map((post) => {
                             return(
                                 <ArticleCard Id={post.id} Slug={post.Slug} Illustration={post.Illustration} Page={post.Page} Preview={post.Preview} Type={post.Type} Date={post.Date}/>

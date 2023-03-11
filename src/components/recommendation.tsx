@@ -38,6 +38,7 @@ export default function Recommendation() {
                                         <div>
                                             <div className="text-center text-sm font-bold text-gray-800 sm:text-left md:text-base">Violaine Hubert</div>
                                             <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">Le comptoir des nouveaux fromagers</p>
+                                            <p className="text-center text-sm text-yellow-600 sm:text-left md:text-sm">★★★★★</p>
                                         </div>
                                     </div>
                                 </div>
@@ -62,11 +63,12 @@ export default function Recommendation() {
                                         <div>
                                             <div className="text-center text-sm font-bold text-gray-800 sm:text-left md:text-base">Nicolas Duburch</div>
                                             <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">GFF Expertise Audit</p>
+                                            <p className="text-center text-sm text-yellow-600 sm:text-left md:text-sm">★★★★★</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-                                    <div className="text-center text-gray-600">“Très bonne expérience lors de notre collaboration avec Maitre BABEAU.<br/>
+                                    <div className="text-center text-gray-600">“Très bonne expérience lors de notre collaboration avec Maitre BABEAU.
                                         Notre structure ayant fait appel aux services de Maitre BABEAU a plusieurs
                                         <span style={{ display: showThirdText ? "block" : "none" }}>
                                             reprises ces derniers mois, nous pouvons attester de son professionnalisme et de la qualité de ses conseils au travers des différentes situations rencontrées.<br/>
@@ -85,6 +87,7 @@ export default function Recommendation() {
                                         <div>
                                             <div className="text-center text-sm font-bold text-gray-800 sm:text-left md:text-base">Pierre Garnier</div>
                                             <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">SAPL de la hé</p>
+                                            <p className="text-center text-sm text-yellow-600 sm:text-left md:text-sm">★★★★★</p>
                                         </div>
                                     </div>
                                 </div>
