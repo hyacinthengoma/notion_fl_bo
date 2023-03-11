@@ -13,7 +13,7 @@ export default function BesoinAvocat() {
                     PRENDRE CONTACT
                 </Link>
             </div>
-            <Image loading={"eager"} className={"brightness-50 h-[400px] w-full object-center object-cover"} src={"/images/BesoinAvocat/besoin-avocat-banniere.png"} alt={"image-banniere-besoin-avocat"} width={"600"} height={"600"}></Image>
+            <Image loading={"eager"} className={"brightness-50 h-[400px] w-full object-[center_bottom] object-cover"} src={"/images/BesoinAvocat/besoin-avocat-banniere.png"} alt={"image-banniere-besoin-avocat"} width={"600"} height={"600"}></Image>
         </div>
     );
 }
