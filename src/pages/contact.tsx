@@ -297,7 +297,7 @@ export default function Contact() {
                                 </label>
                             </div>
                             <div className={"w-full flex justify-center"}>
-                                <button type={"submit"} id={"ButtonSubmit"} onClick={(e) => {handleSubmit(e)}} className={"cursor-no-drop bg-red-900 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold disabled:hover:bg-red-900"}>ENVOYER LE MESSAGE</button>
+                                <button type={"submit"} id={"ButtonSubmit"} onClick={(e) => {handleSubmit(e)}} className={"cursor-no-drop bg-red-800 text-white py-3 px-8 shadow-lg rounded-md hover:bg-red-800 hover:text-white uppercase font-bold disabled:hover:bg-red-900"}>ENVOYER LE MESSAGE</button>
                             </div>
                             <div className={"mt-2"}>
                                 {submitted == 0 && <p></p>}
