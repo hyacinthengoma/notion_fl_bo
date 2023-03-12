@@ -171,7 +171,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                                 </div>
                                 <div className={"my-auto"}>
                                     <div className="h-auto md:h-auto overflow-hidden rounded-lg shadow-lg">
-                                        <video controls poster="/images/FlorenceBabeau/flofrence_babeau.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={""}></video>
+                                        <video controls poster="/images/FlorenceBabeau/poster.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={""}></video>
                                     </div>
                                 </div>
                             </div>
