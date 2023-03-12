@@ -97,10 +97,10 @@ const Index = ({ posts = [], preview }) => {
                 <div className={"flex flex-col gap-4"}>
                     <div className={"w-full lg:w-2/5"}>
                         <Collapse bordered title="Filtres" subtitle="Trier les articles par catégorie">
-                            <Checkbox.Group color="secondary">
+                            <Checkbox.Group>
                                 {uniqueTypes.map((Type:string) => {
                                     return (
-                                        <Checkbox value={Type} className={"categorie"}><Text>{Type}</Text></Checkbox>
+                                        <Checkbox value={Type} className={"categorie"} css={{ $$transform: "rotateZ(90deg)"}}><Text>{Type}</Text></Checkbox>
                                     );
                                 })}
                             </Checkbox.Group>
