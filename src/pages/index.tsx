@@ -139,6 +139,12 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_travail.description }</p>
                             <div className={"flex justify-end mt-auto items-center"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-red-700 ml-[1rem]">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+
                             </div>
                         </Link>
                         <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full flex flex-col bg-white group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
@@ -146,6 +152,11 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_social.description }</p>
                             <div className={"flex justify-end mt-auto items-center peer"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-red-700 ml-[1rem]">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
                             </div>
                         </Link>
                     </div>
