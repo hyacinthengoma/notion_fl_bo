@@ -68,7 +68,7 @@ export default function Header() {
                             <Link className="text-sm text-white font-medium hover:text-gray-300" href="/contact">CONTACT</Link>
                         </li>
                         <li >
-                            <Link href={"https://www.linkedin.com/in/florence-babeau-1a7b07166/"} >
+                            <Link href={"https://www.linkedin.com/in/florence-babeau-1a7b07166/"} target={"_blank"}>
                                 <Image src={"/images/linkedin_5.png"} alt={"linkedin"} height={"30"} width={"30"}></Image>
                             </Link>
                         </li>
