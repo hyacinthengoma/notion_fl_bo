@@ -49,6 +49,7 @@ export default function PolitiqueDeConfidentialite(){
                     </p>
                 </div>
             </div>
+            <BesoinAvocat></BesoinAvocat>
         </>
     );
 }

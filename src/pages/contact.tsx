@@ -254,7 +254,7 @@ export default function Contact() {
                                 <label htmlFor={"SelectTypeService"} className={""}>Type de service *</label>
                                 <small className={"text-red-500"}></small>
                                 <select name={"SelectTypeService"} id={"SelectTypeService"} onChange={(e) => {setSelectTypeService(e.target.value)}} className={"border-b focus:outline-none focus:border-red-900 border-black p-4 w-full py-2"} required={true}>
-                                    <option value={""}>Aucun type de service séléctionné</option>
+                                    <option value={""}>Aucun type de service sélectionné</option>
                                     <option value={"Droit du travail"}>Droit du travail</option>
                                     <option value={"Droit de la sécurité sociale"}>Droit de la sécurité sociale</option>
                                     {data === 'demande-rendez-vous-cabinet' ?

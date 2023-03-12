@@ -92,13 +92,13 @@ export default function Footer() {
                             <Link href={"/Expertise/Droit-securite-sociale"} className="mr-1 text-black">Expertises - Droit de la sécurité sociale</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/honoraires"} className="mr-1 text-black">Honoraires</Link>
+                            <Link href={"/le-cabinet"} className="mr-1 text-black">Le cabinet</Link>
                         </div>
                         <div className="flex mt-5">
                             <Link href={"/blog"} className="mr-1 text-black">Actualités sociales</Link>
                         </div>
                         <div className="flex mt-5">
-                            <Link href={"/florence-babeau"} className="mr-1 text-black">Florence Babeau</Link>
+                            <Link href={"/honoraires"} className="mr-1 text-black">Honoraires</Link>
                         </div>
                         <div className="flex mt-5">
                             <Link href={"/contact"} className="mr-1 text-black">Contact</Link>
@@ -143,6 +143,7 @@ export default function Footer() {
                             <Link
                                 href="https://www.linkedin.com/in/florence-babeau-1a7b07166/"
                                 className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                                target={"_blank"}
                             >
                                 <img className={"brightness-50 object-cover w-[1.7rem]"} src={"/images/linkedin.png"} alt={"linkedIn"}></img>
 
