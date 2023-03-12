@@ -96,7 +96,7 @@ const Index = ({ posts = [], preview }) => {
                 <h2 className={"text-center text-gray-800 font-bold text-xl lg:text-3xl mb-8 lg:pt-10"}>Vous retrouverez ici mes dernières actualités</h2>
                 <div className={"flex flex-col gap-4"}>
                     <div className={"w-full lg:w-2/5"}>
-                        <Collapse bordered title="Filtres" subtitle="Selectionner le type d'articles a afficher">
+                        <Collapse bordered title="Filtres" subtitle="Trier les articles par catégorie">
                             <Checkbox.Group color="secondary">
                                 {uniqueTypes.map((Type:string) => {
                                     return (
