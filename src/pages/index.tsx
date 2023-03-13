@@ -169,7 +169,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         <div className="max-w-screen-2xl px-4 md:px-4 mx-auto">
                             <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
                                 <div className="md:pt-6">
-                                    <h1 className="text-gray-700 text-2xl sm:text-3xl font-semibold text-center md:text-left mb-4 md:mb-6">Adn du cabinet</h1>
+                                    <h1 className="text-gray-700 text-2xl sm:text-3xl font-semibold text-center md:text-left mb-4 md:mb-6">ADN du cabinet</h1>
                                     <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
                                         L’ADN du cabinet c’est son approche holistique de chaque affaire, qui est appréhendée dans sa globalité et en prenant en considération ses différentes dimensions économiques, sociales et humaines.<br/><br/>
                                         La complémentarité entres les activités en conseil et de contentieux permet de faire un juste diagnostic du dossier, une bonne évaluation des risques et de proposer les solutions les plus adaptées.
