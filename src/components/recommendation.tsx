@@ -19,7 +19,7 @@ export default function Recommendation() {
                     <div className="py-6 sm:py-8 lg:py-12">
                             <div className="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
                                 <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-                                    <div className="text-center text-gray-600">
+                                    <div className="text-gray-600">
                                         Professionnalisme, écoute, réactivité, précision.<br/>
                                         Nous travaillons de manière régulière avec Maître Babeau. <br/>
                                         <span style={{ display: showText ? "block" : "none" }}>
@@ -43,7 +43,7 @@ export default function Recommendation() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-                                    <div className="text-center text-gray-600">
+                                    <div className="text-gray-600">
                                         “Nous travaillons ensemble depuis plus d'une 10aine d'année. Me Babeau a pu nous accompagner sur des dossiers délicats, toujours avec écoute,
                                         <span style={{ display: showSecondText ? "block" : "none" }}>
                                              professionnalisme et réactivité.<br/> Nous n'hésitons pas à recommander son cabinet auprès de nos propres clients.“
@@ -68,7 +68,7 @@ export default function Recommendation() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-                                    <div className="text-center text-gray-600">“Très bonne expérience lors de notre collaboration avec Maitre BABEAU.
+                                    <div className="text-gray-600">“Très bonne expérience lors de notre collaboration avec Maitre BABEAU.
                                         Notre structure ayant fait appel aux services de Maitre BABEAU a plusieurs
                                         <span style={{ display: showThirdText ? "block" : "none" }}>
                                             reprises ces derniers mois, nous pouvons attester de son professionnalisme et de la qualité de ses conseils au travers des différentes situations rencontrées.<br/>
