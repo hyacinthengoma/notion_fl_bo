@@ -140,8 +140,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             <div className={"flex justify-end mt-auto items-center"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-red-700 ml-[1rem]">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                     strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-red-800 ml-[1rem]">
+                                    <path strokeLinecap="round" strokeLinejoin="round"
                                           d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
 
@@ -153,8 +153,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                             <div className={"flex justify-end mt-auto items-center peer"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-red-700 ml-[1rem]">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                     strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-red-800 ml-[1rem]">
+                                    <path strokeLinecap="round" strokeLinejoin="round"
                                           d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                             </div>
@@ -164,22 +164,22 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             </div>
             <div className={"bg-neutral-100 flex gap-5 justify-center w-full py-10"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Le cabinet</h2>
+                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>LE CABINET F. BABEAU</h2>
                     <div className="">
                         <div className="max-w-screen-2xl px-4 md:px-4 mx-auto">
-                            <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-16">
                                 <div className="md:pt-6">
-                                    <h1 className="text-gray-700 text-2xl sm:text-3xl font-semibold text-center md:text-left mb-4 md:mb-6">ADN du cabinet</h1>
-                                    <p className="text-gray-500 sm:text-lg mb-6 md:mb-8 text-justify">
+                                    <h1 className="text-gray-800 text-xl lg:text-3xl font-semibold text-left mb-4 md:mb-6">Son ADN</h1>
+                                    <p className="text-gray-500 text-base lg:text-lg mb-6 md:mb-8 text-justify">
                                         L’ADN du cabinet c’est son approche holistique de chaque affaire, appréhendée dans sa globalité en prenant en considération ses différentes composantes économiques, sociales et humaines.<br/><br/>
                                         La complémentarité d’exercice des activités de conseil et de contentieux permet de faire un diagnostic précis, une évaluation des risques juste et de proposer les solutions les plus adaptées.
                                     </p>
-                                    <p className="text-red-800 font-semibold text-center md:text-left">Qui suis-je ?</p>
-                                    <h2 className="text-gray-700 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Florence Babeau</h2>
-                                    <p className="text-gray-500 sm:text-lg mb-6 md:mb-8 text-justify">Côté perso : grande lectrice, je ne pourrais pas vivre sans écouter de la musique, mes loisirs favoris sont artistiques, j’adore découvrir et partager de bonnes tables et voyager dès que l’occasion se présente …</p>
-                                    <p className="text-gray-500 sm:text-lg mb-6 md:mb-8 text-justify">Côté pro : très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Sécurité Sociale, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
-                                    <h2 className="text-gray-700 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Mon parcours</h2>
-                                    <p className="text-gray-500 sm:text-lg mb-6 md:mb-8 text-justify">Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise.</p>
+                                    <p className="text-red-800 font-semibold text-left">Qui suis-je ?</p>
+                                    <h2 className="text-gray-800 text-xl lg:text-3xl font-semibold text-left mb-4 md:mb-6">Florence Babeau</h2>
+                                    <p className="text-gray-500 text-base lg:text-lg mb-6 md:mb-8 text-justify"><span className={"text-gray-800 font-semibold"}>Côté perso :</span> grande lectrice, je ne pourrais pas vivre sans écouter de la musique, mes loisirs favoris sont artistiques, j’adore découvrir et partager de bonnes tables et voyager dès que l’occasion se présente …</p>
+                                    <p className="text-gray-500 text-base lg:text-lg mb-6 md:mb-8 text-justify"><span className={"text-gray-800 font-semibold"}>Côté pro :</span> très investie dans les dossiers que je gère en Droit du Travail et en Droit de la Sécurité Sociale, j’aime travailler dans une relation de confiance et de proximité qui me paraît indispensable à l’établissement d’une collaboration pérenne et fructueuse.</p>
+                                    <h2 className="text-gray-800 text-xl lg:text-3xl font-semibold text-left mb-4 md:mb-6">Mon parcours</h2>
+                                    <p className="text-gray-500 text-base lg:text-lg mb-6 md:mb-8 text-justify">Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise.</p>
                                 </div>
                                 <div className={"my-auto"}>
                                     <div className="h-auto md:h-auto overflow-hidden rounded-lg shadow-lg">
@@ -191,7 +191,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </div>
-            <div className={"bg-neutral-600 flex justify-center w-full py-20 pl-4 pr-5"}>
+            <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-xl lg:text-3xl uppercase mb-10"}>Nos dernières actualités</h2>
                     <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 text-justify"}>
