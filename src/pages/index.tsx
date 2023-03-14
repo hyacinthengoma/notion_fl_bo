@@ -132,7 +132,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             </div>
             <div className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-10"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Mes expertises</h2>
+                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Nos expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
                         <Link href={"/Expertise/Droit-travail"} className={"w-full flex flex-col bg-white group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
                             <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit du travail</h2>
@@ -192,7 +192,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             </div>
             <div className={"bg-neutral-600 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-white text-xl lg:text-3xl uppercase mb-10"}>Mes dernières actualités</h2>
+                    <h2 className={"font-bold text-white text-xl lg:text-3xl uppercase mb-10"}>Nos dernières actualités</h2>
                     <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"}>
                         {lastPosts.map((post) => {
                             return(
@@ -201,7 +201,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         })}
                     </div>
                     <div className={"flex justify-center mt-20"}>
-                        <Link href={"/blog"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de mes actualités</Link>
+                        <Link href={"/blog"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de nos actualités</Link>
                     </div>
                 </div>
             </div>

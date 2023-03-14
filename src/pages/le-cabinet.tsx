@@ -27,7 +27,7 @@ export default function LeCabinet() {
                             </div>
 
                             <div className="md:my-auto">
-                                <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">L’expertise du cabinet</h1>
+                                <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">L’expertise du Cabinet</h1>
                                 <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
                                     Le cabinet intervient en droit du Travail et en droit de la Sécurité Sociale. Une parfaite connaissance actualisée en permanence des textes réglementaires et conventionnels, des obligations sociales des entreprises et des apports jurisprudentiels permettent d’accompagner efficacement votre activité et votre développement, en sécurité, tant en conseil qu’en contentieux.
                                 </p>
