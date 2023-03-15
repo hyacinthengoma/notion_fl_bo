@@ -70,7 +70,7 @@ export default function Footer() {
                                 2, Rue Claude Boucher<br/>
                                 CS 70021<br/>
                                 33070 BORDEAUX CEDEX<br/>
-                                <a
+                                <a class={"underline"}
                                     href="tel:05 57 10 28 24">05 57 10 28 28</a><br/>
 
                             </p>
@@ -79,29 +79,29 @@ export default function Footer() {
                             </p>
                         </div>
                     </div>
-                    <div className="space-y-2 text-sm text-start">
+                    <div className="space-y-2 text-sm text-start ">
                         <p className="text-base font-bold tracking-wide text-black">
                             <u>Pages</u>
                         </p>
-                        <div className="flex mt-5">
+                        <div className="flex mt-5 hover:underline">
                             <Link href={"/"} className="mr-1 text-black">Accueil</Link>
                         </div>
-                        <div className="flex mt-5">
+                        <div className="flex mt-5 hover:underline">
                             <Link href={"/Expertise/Droit-travail"} className="mr-1 text-black">Expertises - Droit du travail</Link>
                         </div>
-                        <div className="flex mt-5">
+                        <div className="flex mt-5 hover:underline">
                             <Link href={"/Expertise/Droit-securite-sociale"} className="mr-1 text-black">Expertises - Droit de la sécurité sociale</Link>
                         </div>
-                        <div className="flex mt-5">
+                        <div className="flex mt-5 hover:underline">
                             <Link href={"/le-cabinet"} className="mr-1 text-black">Le cabinet</Link>
                         </div>
-                        <div className="flex mt-5">
+                        <div className="flex mt-5 hover:underline">
                             <Link href={"/blog"} className="mr-1 text-black">Actualités sociales</Link>
                         </div>
-                        <div className="flex mt-5">
+                        <div className="flex mt-5 hover:underline">
                             <Link href={"/honoraires"} className="mr-1 text-black">Honoraires</Link>
                         </div>
-                        <div className="flex mt-5">
+                        <div className="flex mt-5 hover:underline">
                             <Link href={"/contact"} className="mr-1 text-black">Contact</Link>
                         </div>
 
