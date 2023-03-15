@@ -67,14 +67,15 @@ export default function Footer() {
                         </a>
                         <div className="mt-6 lg:max-w-sm">
                             <p className="text-sm text-black">
-                                2 Rue Claude Boucher<br/>
-                                33300 Bordeaux<br/>
+                                2, Rue Claude Boucher<br/>
+                                CS 70021<br/>
+                                33070 BORDEAUX CEDEX<br/>
                                 <a
-                                    href="tel:05 57 10 28 24">05 57 10 28 24</a><br/>
+                                    href="tel:05 57 10 28 24">05 57 10 28 28</a><br/>
 
                             </p>
                             <p className="mt-4 text-sm text-black">
-                                Lun – Ven 09:00-17:00
+                                Lun – Ven 09:00-18:00
                             </p>
                         </div>
                     </div>
