@@ -122,7 +122,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
                         <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"clients_satisfait"}>{ accueil.clients_satisfait.description }%</div>
-                        <div className="text-xs sm:text-base font-medium text-center">de clients satisfait</div>
+                        <div className="text-xs sm:text-base font-medium text-center">De clients satisfaits</div>
                     </div>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
                         <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"domaines_competences"}>{ accueil.domaines_competences.description }</div>

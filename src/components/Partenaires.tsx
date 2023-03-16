@@ -8,7 +8,7 @@ export default function Partenaires(){
         <div className={"bg-white flex justify-center pb-16 w-full pl-4 pr-5"}>
             <div className={"w-5/6"}>
         <hr />
-                <h2 className={"font-bold text-black text-xl lg:text-3xl uppercase mb-6 py-16"}>NOS PARTENAIRES</h2>
+                <h2 className={"font-bold text-black text-xl lg:text-3xl uppercase mb-6 py-16"}>ILS NOUS ONT FAIT CONFIANCE ET NOUS LES EN REMERCIONS</h2>
                 <div className={"items-center sm:justify-between flex flex-col lg:flex-row w-full gap-10"}>
                     <Image src={"/images/Partenaires/carsat-aquitaine.png"} className={"w-40"} alt={"Logo carsat aquitaine"} width={1000} height={1000}/>
                     <Image src={"/images/Partenaires/extencia.png"} className={"w-40"} alt={"Logo extencia"} width={500} height={500}/>

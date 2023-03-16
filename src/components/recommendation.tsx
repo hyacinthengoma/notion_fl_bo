@@ -86,7 +86,7 @@ export default function Recommendation() {
 
                                         <div>
                                             <div className="text-center text-sm font-bold text-gray-800 sm:text-left md:text-base">Pierre Garnier</div>
-                                            <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">SAPL de la hé</p>
+                                            <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">SARL de la Hé</p>
                                             <p className="text-center text-sm text-yellow-600 sm:text-left md:text-sm">★★★★★</p>
                                         </div>
                                     </div>
