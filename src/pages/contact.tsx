@@ -274,10 +274,10 @@ export default function Contact() {
                                         :
                                         <option value={"Question simple"}>Question simple</option>
                                     }
-                                    {data === 'consultation-ecrite' ?
-                                        <option value={"Consultation écrite"} selected={true}>Consultation écrite</option>
+                                    {data === 'consultation-juridique' ?
+                                        <option value={"Consultation juridique"} selected={true}>Consultation juridique</option>
                                         :
-                                        <option value={"Consultation écrite"}>Consultation écrite</option>
+                                        <option value={"Consultation juridique"}>Consultation juridique</option>
                                     }
                                     {/**<option value={"Demande de rendez-vous au cabinet"}>Demande de rendez-vous au cabinet</option>
                                      <option value={"Demande de consultation téléphonique"}>Demande de consultation téléphonique</option>

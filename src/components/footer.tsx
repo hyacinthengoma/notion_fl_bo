@@ -70,7 +70,7 @@ export default function Footer() {
                                 2, Rue Claude Boucher<br/>
                                 CS 70021<br/>
                                 33070 BORDEAUX CEDEX<br/>
-                                <a class={"underline"}
+                                <a className={"underline"}
                                     href="tel:05 57 10 28 24">05 57 10 28 28</a><br/>
 
                             </p>

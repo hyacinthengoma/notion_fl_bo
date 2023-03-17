@@ -120,11 +120,11 @@
 
 .post :global(video),
 .post :global(img),
-.post :global(.asset-wrapper) {
+/**.post :global(.asset-wrapper) {
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
   max-width: 100%;
   display: block;
-}
+}*/
 
 .post .asset-wrapper {
   margin-top: 1rem !important;

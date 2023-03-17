@@ -31,7 +31,7 @@ export default function LeCabinet() {
                                 <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
                                     Le cabinet intervient en droit du Travail et en droit de la Sécurité Sociale.<br/><br/> Une parfaite connaissance actualisée en permanence des textes réglementaires et conventionnels, des obligations sociales des entreprises et des apports jurisprudentiels permettent d’accompagner efficacement votre activité et votre développement, en sécurité, tant en conseil qu’en contentieux.
                                 </p>
-                                <h2 className="text-gray-800 text-xl sm:text-2xl font-semibold text-center md:text-left mb-2 md:mb-4">Nos engagements envers vous</h2>
+                                <h2 className="text-gray-800 text-2xl sm:text-3xl font-semibold text-center md:text-left mb-2 md:mb-4">Nos engagements envers vous</h2>
                                 <ul>
                                     <li>
                                         <p className="text-gray-500 sm:text-lg mb-6">- Un partenariat privilégié pour identifier vos besoins et y répondre</p>
