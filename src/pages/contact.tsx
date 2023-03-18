@@ -38,6 +38,18 @@ export default function Contact() {
     const [submitted, setSubmitted] = useState(0);
     const [formValid, setFormValid] = useState(false);
 
+    const escapeHtml = (text) => {
+        var map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+
+        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -203,22 +215,22 @@ export default function Contact() {
                             <h3 className={"text-red-600 font-thin text-base lg:text-lg mb-2"}>Les champs contenant "*" sont à remplir obligatoirement !</h3>
                             <div className={"grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 mt-8"}>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Nom*"} type={"text"} onChange={(e) => {setNom(e.target.value)}} name={"Nom"} id={"Nom"} required={true}/>
+                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Nom*"} type={"text"} onChange={(e) => {setNom(escapeHtml(e.target.value))}} name={"Nom"} id={"Nom"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Prenom*"} type={"text"} onChange={(e) => {setPrenom(e.target.value)}} name={"Prenom"} id={"Prenom"} required={true}/>
+                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Prenom*"} type={"text"} onChange={(e) => {setPrenom(escapeHtml(e.target.value))}} name={"Prenom"} id={"Prenom"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Téléphone*"} type={"tel"} maxLength={10} onChange={(e) => {setTelephone(e.target.value)}} name={"Telephone"} id={"Telephone"} required={true}/>
+                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Téléphone*"} type={"tel"} maxLength={10} onChange={(e) => {setTelephone(escapeHtml(e.target.value))}} name={"Telephone"} id={"Telephone"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined type={"number"} labelPlaceholder={"Code postal*"} maxLength={5} onChange={(e) => {setCP(e.target.value)}} name={"CP"} id={"CP"} required={true}/>
+                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined type={"number"} labelPlaceholder={"Code postal*"} maxLength={5} onChange={(e) => {setCP(escapeHtml(e.target.value))}} name={"CP"} id={"CP"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Email*"} type={"email"} onChange={(e) => {setEmail(e.target.value)}} name={"Email"} id={"Email"} required={true}/>
+                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Email*"} type={"email"} onChange={(e) => {setEmail(escapeHtml(e.target.value))}} name={"Email"} id={"Email"} required={true}/>
                                 </div>
                                 <div className={"w-full flex flex-col"}>
-                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Raison sociale"} type={"text"}  onChange={(e) => {setRS(e.target.value)}} name={"RS"} id={"RS"}/>
+                                    <Input css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} clearable underlined labelPlaceholder={"Raison sociale"} type={"text"}  onChange={(e) => {setRS(escapeHtml(e.target.value))}} name={"RS"} id={"RS"}/>
                                 </div>
                             </div>
                             <div className={"flex flex-col justify-center mt-8"}>
@@ -253,7 +265,7 @@ export default function Contact() {
                                 </select>
                             </div>
                             <div className={"w-full flex flex-col mt-16"}>
-                                <Textarea css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} bordered name={"Message"} id={"Message"} labelPlaceholder={"Message"} onChange={(e) => {setMessage(e.target.value)}} placeholder={"Message..."}></Textarea>
+                                <Textarea css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} bordered name={"Message"} id={"Message"} labelPlaceholder={"Message"} onChange={(e) => {setMessage(escapeHtml(e.target.value))}} placeholder={"Message..."}></Textarea>
                             </div>
                             <div className={"flex flex-col items-center gap-5 my-5"}>
                                 <div className={"flex"}>

@@ -9,7 +9,7 @@ import Image from "next/image";
 import { getBlogLink, getDateStr, postIsPublished } from '../lib/blog-helpers';
 import getNotionUsers from '../lib/notion/getNotionUsers';
 import getBlogIndex from '../lib/notion/getBlogIndex';
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import getAccueilIndex from "../lib/notion/getAccueilIndex";
 import getCompetencesDroitSocialIndex from "../lib/notion/getCompetencesDroitSocialIndex";
 import getCompetencesDroitTravailIndex from "../lib/notion/getCompetencesDroitTravailIndex";
@@ -69,6 +69,18 @@ export async function getStaticProps({ preview }) {
 
 const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) => {
 
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        function handleScroll() {
+            setScrollY(window.scrollY);
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const lastPosts = posts.slice(-3);
     return (
         <>
@@ -76,7 +88,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <title>Accueil</title>
                 <meta name={"description"} content={"Cabinet Avocat Bordeaux Florence Babeau spécialisé en droit du Travail, droit Social et droit de la Sécurité Sociale ainsi qu'en droit de la Famille."}/>
             </Head>
-            <div className={"relative h-[100vh] w-full"}>
+            <ParallaxBanner layers={[{image: '/images/Accueil/banniere-accueil.png', speed: -30}]} className={"h-screen"}>
                 <div className={"absolute z-50 top-1/3 sm:left-20 sm:left-[5vw]"}>
                     <div className={"flex flex-col gap-6"}>
                         <div>
@@ -112,9 +124,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </svg>
                     </Link>
                 </div>
-                <Image loading={"eager"} className={"brightness-[60%] h-[100vh] w-full object-cover sm:object-center"} src={"/images/Accueil/banniere-accueil.png"} alt={"image-banniere-accueil"} width={"1920"} height={"1080"}/>
-            </div>
-            <div className={"bg-white py-10 lg:py-10 flex justify-center"} id={"section-bandeau"}>
+            </ParallaxBanner>
+            <section className={"bg-white py-10 lg:py-10 flex justify-center"} id={"section-bandeau"}>
                 <div className={"bg-white lg:border lg:shadow-lg grid grid-cols-3 lg:grid-cols-3 w-5/6 lg:p-8 gap-4 rounded-lg"}>
                     <div className="flex flex-col justify-center items-center bg-white shadow lg:bg-none lg:shadow-none rounded-lg p-4 md:p-8 h-32">
                         <div className="text-gray-800 text-xl sm:text-3xl md:text-4xl font-bold" id={"annee_exercice"}>{ accueil.annee_exercice.description }</div>
@@ -129,13 +140,13 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         <div className="text-xs sm:text-base font-medium text-center">Grands domaines de compétences</div>
                     </div>
                 </div>
-            </div>
-            <div className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-10"}>
+            </section>
+            <section className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-10"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>Nos expertises</h2>
+                    <h2 className={"font-bold text-gray-800 text-2xl lg:text-3xl uppercase mb-6"}>Nos expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
-                        <Link href={"/Expertise/Droit-travail"} className={"w-full flex flex-col bg-white group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
-                            <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit du travail</h2>
+                        <Link href={"/Expertise/Droit-travail"} className={"w-full gap-5 flex flex-col bg-white group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                            <h2 className={"text-start text-gray-800 text-xl lg:text-2xl"}>Droit du travail</h2>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_travail.description }</p>
                             <div className={"flex justify-end mt-auto items-center"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
@@ -147,8 +158,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
 
                             </div>
                         </Link>
-                        <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full flex flex-col bg-white group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
-                            <h2 className={"text-start text-gray-800 text-xl lg:text-3xl"}>Droit de la sécurité sociale</h2>
+                        <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full gap-5 flex flex-col bg-white group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
+                            <h2 className={"text-start text-gray-800 text-xl lg:text-2xl"}>Droit de la sécurité sociale</h2>
                             <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_social.description }</p>
                             <div className={"flex justify-end mt-auto items-center peer"}>
                                 <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
@@ -161,12 +172,12 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </Link>
                     </div>
                 </div>
-            </div>
-            <div className={"bg-neutral-100 flex gap-5 justify-center w-full py-10"}>
+            </section>
+            <section className={"bg-neutral-100 flex gap-5 justify-center w-full py-10"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>LE CABINET F. BABEAU</h2>
                     <div className="">
-                        <div className="max-w-screen-2xl px-4 md:px-4 mx-auto">
+                        <div className="max-w-screen-2xl md:px-4 mx-auto">
                             <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-16">
                                 <div className="md:pt-6">
                                     <h1 className="text-gray-800 text-xl lg:text-3xl font-semibold text-left mb-4 md:mb-6">Son ADN</h1>
@@ -190,8 +201,8 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
+            </section>
+            <section className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-xl lg:text-3xl uppercase mb-10"}>Nos dernières actualités</h2>
                     <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 text-justify"}>
@@ -205,7 +216,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                         <Link href={"/blog"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Consulter l'ensemble de nos actualités</Link>
                     </div>
                 </div>
-            </div>
+            </section>
             <Recommendation></Recommendation>
             <Partenaires></Partenaires>
             <BesoinAvocat></BesoinAvocat>
