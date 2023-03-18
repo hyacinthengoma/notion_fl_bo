@@ -30,6 +30,7 @@
     "react-scroll-parallax": "^3.3.2",
     "react-share": "^4.4.1",
     "rpc": "^3.3.3",
+    "sweetalert2": "^11.7.3",
     "uuid": "9.0.0"
   },
   "devDependencies": {
