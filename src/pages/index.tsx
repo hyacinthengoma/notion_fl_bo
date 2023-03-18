@@ -202,7 +202,12 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </section>
-            <section className={"bg-gray-800 flex justify-center w-full py-20 pl-4 pr-5"}>
+            <div className={"bg-neutral-100"}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#1f2937" fillOpacity="2" d="M0,128L120,144C240,160,480,192,720,192C960,192,1200,160,1320,144L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+                </svg>
+            </div>
+            <section className={"bg-gray-800 flex justify-center w-full pl-4 pr-5"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-white text-xl lg:text-3xl uppercase mb-10"}>Nos dernières actualités</h2>
                     <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 text-justify"}>
@@ -217,6 +222,9 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </section>
+            <div className={"bg-gray-800"}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fillOpacity="1" d="M0,128L120,133.3C240,139,480,149,720,149.3C960,149,1200,139,1320,133.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+            </div>
             <Recommendation></Recommendation>
             <Partenaires></Partenaires>
             <BesoinAvocat></BesoinAvocat>
