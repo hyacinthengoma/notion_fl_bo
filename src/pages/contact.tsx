@@ -206,7 +206,7 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-            <div className={"flex w-full justify-center bg-gray-100 py-20"}>
+            <div className={"flex w-full justify-center bg-gray-800 py-20"}>
                 <div className={"flex flex-col lg:flex-row w-4/5 justify-center shadow"}>
                     <div className={"w-full lg:w-1/2 bg-white"}>
                         <form className={"p-6 lg:p-14"}>
@@ -265,7 +265,7 @@ export default function Contact() {
                                 </select>
                             </div>
                             <div className={"w-full flex flex-col mt-16"}>
-                                <Textarea css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} bordered name={"Message"} id={"Message"} labelPlaceholder={"Message"} onChange={(e) => {setMessage(escapeHtml(e.target.value))}} placeholder={"Message..."}></Textarea>
+                                <Textarea css={{ $$inputBorderColor: "#9ca3af", $$inputHoverBorderColor: "#7f1d1d" }} bordered name={"Message"} id={"Message"} labelPlaceholder={"Message"} onChange={(e) => {setMessage(escapeHtml(e.target.value))}} placeholder={"Message..."} required={true}></Textarea>
                             </div>
                             <div className={"flex flex-col items-center gap-5 my-5"}>
                                 <div className={"flex"}>
