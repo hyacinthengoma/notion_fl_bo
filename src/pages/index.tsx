@@ -141,7 +141,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </section>
-            <section className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:py-10"}>
+            <section className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:pt-10"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-3xl uppercase mb-6"}>Nos expertises</h2>
                     <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
@@ -173,7 +173,12 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </section>
-            <section className={"bg-neutral-100 flex gap-5 justify-center w-full py-10"}>
+            <div className={"bg-neutral-100"}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="white" fillOpacity="1" d="M0,288L1440,256L1440,320L0,320Z"></path>
+                </svg>
+            </div>
+            <section className={"bg-white flex gap-5 justify-center w-full py-10"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-4xl uppercase mb-6"}>LE CABINET F. BABEAU</h2>
                     <div className="">
@@ -202,7 +207,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                     </div>
                 </div>
             </section>
-            <div className={"bg-neutral-100"}>
+            <div className={"bg-white"}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path fill="#1f2937" fillOpacity="2" d="M0,128L120,144C240,160,480,192,720,192C960,192,1200,160,1320,144L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
                 </svg>
