@@ -12,10 +12,10 @@ export default function Recommendation() {
         const [buttonText3, setButtonText3] = useState("Lire la suite");
         const limit = 100;
     return (
-   <div className={"bg-white py-16"}>
+   <div className={"bg-neutral-100 py-16"}>
             <div className={"flex justify-center w-full"}>
                 <div className={"w-5/6"}>
-                    <h2 className={"font-bold text-black text-xl lg:text-3xl uppercase mb-16"}>ILS RECOMMANDENT LE CABINET</h2>
+                    <h2 className={"font-bold text-gray-900 text-xl lg:text-3xl uppercase mb-16"}>ILS RECOMMANDENT LE CABINET</h2>
                     <div className="py-6 sm:py-8 lg:py-12">
                             <div className="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
                                 <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
