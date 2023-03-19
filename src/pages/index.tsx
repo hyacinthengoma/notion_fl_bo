@@ -144,32 +144,19 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
             <section className={"bg-gradient-to-b from-white to-neutral-100 flex justify-center w-full lg:pt-10"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-2xl lg:text-3xl uppercase mb-6"}>Nos expertises</h2>
-                    <div className={"flex flex-col lg:flex-row w-full gap-10 mt-10 "}>
-                        <Link href={"/Expertise/Droit-travail"} className={"w-full gap-5 flex flex-col bg-white group lg:w-1/2 p-8 border shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
-                            <h2 className={"text-start text-gray-800 text-xl lg:text-2xl"}>Droit du travail</h2>
-                            <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_travail.description }</p>
-                            <div className={"flex justify-end mt-auto items-center"}>
-                                <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-red-800 ml-[1rem]">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                          d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-
-                            </div>
-                        </Link>
-                        <Link href={"/Expertise/Droit-securite-sociale"} className={"w-full gap-5 flex flex-col bg-white group lg:w-1/2 p-8 border border-gray-200 shadow rounded-lg hover:border-red-900 transition-all duration-500 hover:scale-105 hover:shadow-lg"}>
-                            <h2 className={"text-start text-gray-800 text-xl lg:text-2xl"}>Droit de la sécurité sociale</h2>
-                            <p className={"mt-2 text-sm lg:text-base text-justify"}>{ accueil.droit_social.description }</p>
-                            <div className={"flex justify-end mt-auto items-center peer"}>
-                                <p className={'relative font-semibold text-base lg:text-lg text-red-800 before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-red-700 before:transition group-hover:before:scale-100 group-hover:text-red-700'}>Accéder à la page</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-red-800 ml-[1rem]">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                          d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                        </Link>
+                    <div className={"flex flex-col lg:flex-row w-full gap-20 mt-10 justify-center"}>
+                        <div className={"flex flex-col items-center gap-8"}>
+                            <img src={"/svg/publicdebate.svg"} className={"w-1/3"}/>
+                            <h2 className={"text-start text-gray-800 text-xl lg:text-2xl uppercase"}>Droit du travail</h2>
+                            <p className={"mt-2 text-sm lg:text-base text-justify max-w-2xl"}>{ accueil.droit_travail.description }</p>
+                            <Link href={"/blog"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Voir mes compétences</Link>
+                        </div>
+                        <div className={"flex flex-col items-center gap-8"}>
+                            <img src={"/svg/lawbook.svg"} className={"w-1/3"}/>
+                            <h2 className={"text-start text-gray-800 text-xl lg:text-2xl uppercase"}>Droit de la sécurité sociale</h2>
+                            <p className={"mt-2 text-sm lg:text-base text-justify max-w-2xl"}>{ accueil.droit_social.description }</p>
+                            <Link href={"/blog"} className={"bg-red-800 text-white text-center py-3 px-8 shadow-lg rounded-md hover:bg-red-700 hover:text-white uppercase font-bold hover:scale-105 duration-500"}>Voir mes compétences</Link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -198,9 +185,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                                     <p className="text-gray-500 text-base lg:text-lg mb-6 md:mb-8 text-justify">Titulaire d’un DEA de Droit Social et Droit du Travail, c’est tout naturellement que je me suis spécialisée dans l’accompagnement, la formation et la défense des intérêts des employeurs et dirigeants d’entreprise qui ont besoin de se consacrer pleinement et sereinement au développement de leur entreprise.</p>
                                 </div>
                                 <div className={"my-auto"}>
-                                    <div className="h-auto md:h-auto overflow-hidden rounded-lg shadow-lg">
-                                        <video controls poster="/images/FlorenceBabeau/poster.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"hover:cursor-pointer"}></video>
-                                    </div>
+                                    <video controls poster="/images/FlorenceBabeau/poster.png" src={"/video/FlorenceBabeau.mp4"} type={"video/mp4"} className={"hover:cursor-pointer w-full"}></video>
                                 </div>
                             </div>
                         </div>
@@ -208,9 +193,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 </div>
             </section>
             <div className={"bg-white"}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#1f2937" fillOpacity="2" d="M0,128L120,144C240,160,480,192,720,192C960,192,1200,160,1320,144L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1f2937" fillOpacity="1" d="M0,64L1440,160L1440,320L0,320Z"></path></svg>
             </div>
             <section className={"bg-gray-800 flex justify-center w-full pl-4 pr-5"}>
                 <div className={"w-5/6"}>
