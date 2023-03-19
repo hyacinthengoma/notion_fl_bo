@@ -88,7 +88,7 @@ const Index = ({ posts = [], accueil, competencesSocial, competencesTravail}) =>
                 <title>Accueil</title>
                 <meta name={"description"} content={"Cabinet Avocat Bordeaux Florence Babeau spécialisé en droit du Travail, droit Social et droit de la Sécurité Sociale ainsi qu'en droit de la Famille."}/>
             </Head>
-            <ParallaxBanner layers={[{image: '/images/Accueil/banniere-accueil.png', speed: -30}]} className={"h-screen"}>
+            <ParallaxBanner layers={[{image: '/images/Accueil/banniere-accueil.png', speed: -30, className: "w-full h-screen object-cover sm:object-center my-auto"}]} className={"h-screen"}>
                 <div className={"absolute z-50 top-1/3 sm:left-20 sm:left-[5vw]"}>
                     <div className={"flex flex-col gap-6"}>
                         <div>
