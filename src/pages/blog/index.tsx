@@ -9,7 +9,7 @@ import Head from "next/head";
 import ArticleCard from "../../components/ArticleCard";
 import {Checkbox, Collapse, Text} from "@nextui-org/react";
 
-export async function getServerSideProps({ preview }) {
+export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
@@ -39,7 +39,7 @@ export async function getServerSideProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    //revalidate: 10,
+    revalidate: 50,
   }
 }
 
