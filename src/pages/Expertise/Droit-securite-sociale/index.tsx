@@ -4,6 +4,7 @@ import getDroitSocialIndex from "../../../lib/notion/getDroitSocialIndex";
 import Head from "next/head";
 import React, {useEffect, useState} from "react";
 import { Collapse, Text, Grid, Avatar } from "@nextui-org/react";
+import {ParallaxBanner} from "react-scroll-parallax";
 export async function getStaticProps({ preview }) {
     const droitSocialTable = await getDroitSocialIndex();
 
@@ -83,12 +84,12 @@ export default function HomeDroitSecuSociale({ droitSocial }) {
                     </div>
                 </div>
             </div>*/}
-            <div className={"relative w-full"}>
+            <ParallaxBanner layers={[{image: '/images/FlorenceBabeau/banniere.png', speed: -30, className: "brightness-50 h-screen w-full object-cover my-auto"}]} className={"relative w-full h-[40vh]"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>DROIT DE LA SÉCURITÉ SOCIALE</h1>
                 </div>
-                <Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
-            </div>
+                {/**<Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>*/}
+            </ParallaxBanner>
             <div className={"w-full justify-center flex py-20 bg-white min-h-max"}>
                 <div className={"w-5/6"}>
                     <h2 className={"font-bold text-gray-800 text-xl lg:text-3xl uppercase mb-6"}>Nos compétences</h2>

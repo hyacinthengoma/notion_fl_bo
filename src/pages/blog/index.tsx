@@ -8,6 +8,7 @@ import React, {useEffect, useState} from "react";
 import Head from "next/head";
 import ArticleCard from "../../components/ArticleCard";
 import {Checkbox, Collapse, Text} from "@nextui-org/react";
+import {ParallaxBanner} from "react-scroll-parallax";
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -85,12 +86,12 @@ const Index = ({ posts = [], preview }) => {
         <Head>
             <title>Blog - Actualités sociales</title>
         </Head>
-        <div className={"relative w-full"}>
+        <ParallaxBanner layers={[{image: '/images/Actualites-sociales/blog-banniere.png', speed: -30, className: "brightness-50 h-screen w-full my-auto"}]} className={"relative w-full h-[40vh]"}>
             <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                 <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>BLOG</h1>
             </div>
-            <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/Actualites-sociales/blog-banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>
-        </div>
+            {/**<Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>*/}
+        </ParallaxBanner>
         <div className={"bg-white flex justify-center w-full py-1 pb-10 min-h-screen py-20"}>
             <div className={"w-5/6"}>
                 <h2 className={"text-center text-gray-800 font-bold text-xl lg:text-3xl mb-8 lg:pt-10"}>Vous retrouverez ici nos dernières actualités</h2>

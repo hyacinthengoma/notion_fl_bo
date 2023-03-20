@@ -20,7 +20,7 @@ const ArticleCard: React.FC<ArticleCard> = ({Id, Slug, Illustration, Page, Previ
                     ?
                         <img src={`/api/asset?assetUrl=${encodeURIComponent(Illustration)}&blockId=${Id}`} loading="lazy" alt="Photo by Lorenzo Herrera" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                     :
-                        <img src={"/images/defaultBlog.png"} loading="lazy" alt="Photo by Lorenzo Herrera" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
+                        <img src={"/images/defaultBlog.png"} loading="lazy" alt="Image-couverture" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"/>
                 }
             </div>
             <div className="flex flex-col flex-1 p-4 sm:p-6">

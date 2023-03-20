@@ -5,6 +5,7 @@ import {useSearchParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import Swal from 'sweetalert2';
 import Link from "next/link";
+import {ParallaxBanner} from "react-scroll-parallax";
 export default function Contact() {
     const searchParams = useSearchParams();
     const data = searchParams.get('objet');
@@ -153,12 +154,12 @@ export default function Contact() {
             <Head>
                 <title>Contact</title>
             </Head>
-            <div className={"relative w-full"}>
+            <ParallaxBanner layers={[{image: '/images/Contact/banniere.jpg', speed: -30, className: "brightness-50 h-screen w-full object-cover my-auto"}]} className={"relative w-full h-[40vh]"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
-                    <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>CONTACT</h1>
+                    <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>DROIT DE LA SÉCURITÉ SOCIALE</h1>
                 </div>
-                <Image className={"brightness-50 h-[40vh] w-full object-cover"} loading={"eager"} src={"/images/Contact/banniere.jpg"} alt={"image-banniere-contact"} width={"1920"} height={"1080"}/>
-            </div>
+                {/**<Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>*/}
+            </ParallaxBanner>
             <div className={"bg-white flex justify-center w-full py-8"}>
                 <div className={"w-5/6"}>
                     <div className={"grid grid-cols-2 lg:grid-cols-4 text-center gap-8"}>

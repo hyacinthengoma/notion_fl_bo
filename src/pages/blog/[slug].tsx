@@ -22,12 +22,15 @@ import {
 } from "react-share";
 import Head from "next/head";
 import ArticleCard from "../../components/ArticleCard";
+import {ParallaxBanner} from "react-scroll-parallax";
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
   // load the postsTable so that we can get the page's ID
   const postsTable = await getBlogIndex()
   const post = postsTable[slug]
+
+
 
   // if we can't find the post or if it is unpublished and
   // viewed without preview mode then we just redirect to /blog
@@ -37,8 +40,9 @@ export async function getStaticProps({ params: { slug }, preview }) {
       props: {
         redirect: '/blog',
         preview: false,
+        post: null,
       },
-      unstable_revalidate: 5,
+      revalidate: 5,
     }
   }
   const postData = await getPageData(post.id)
@@ -155,35 +159,50 @@ const RenderPost = ({ post, redirect, preview, posts, lastPosts }) => {
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return (
+        <div className={"h-screen bg-white"}>
+          <p className={"text-white my-auto text-center"}>
+            Woops! didn't find that post, redirecting you back to the blog index
+          </p>
+        </div>
+    )
   }
 
   // if you don't have a post at this point, and are not
   // loading one from fallback then  redirect back to the index
+
   if (!post) {
     return (
-      <div className={blogStyles.post}>
-        <p>
-          Woops! didn't find that post, redirecting you back to the blog index
-        </p>
-      </div>
+        <div className={"h-screen bg-white"}>
+          <p className={"text-white my-auto text-center"}>
+            Woops! didn't find that post, redirecting you back to the blog index
+          </p>
+        </div>
     )
   }
+
   const {asPath} = useRouter();
   return (
     <>
       <Head>
         <title>{post.Page}</title>
       </Head>
-      <div className={"relative w-full"}>
-        <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
-          <h1 className={"text-white text-2xl md:text-4xl font-bold"}>{post.Page || ''}</h1>
-        </div>
-        {post.Illustration ?
-            <img className={"brightness-50 h-96 w-full object-cover"} src={`/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`} />
-            : <img className={"brightness-50 h-96 w-full object-cover"} src={"https://placeimg.com/400/225/arch"} />
-        }
-      </div>
+      {post.Illustration ?
+          <ParallaxBanner layers={[{image: `/api/asset?assetUrl=${encodeURIComponent(post.Illustration)}&blockId=${post.id}`, speed: -30, className: "brightness-50 h-screen w-full object-cover my-auto"}]} className={"relative w-full h-96"}>
+            <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
+              <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>{post.Page || ''}</h1>
+            </div>
+            {/**<Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>*/}
+          </ParallaxBanner>
+          :
+          <ParallaxBanner layers={[{image: "/images/defaultBlog.png", speed: -30, className: "brightness-50 h-screen w-full object-cover my-auto"}]} className={"relative w-full h-96"}>
+            <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
+              <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>{post.Page || ''}</h1>
+            </div>
+            {/**<Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>*/}
+          </ParallaxBanner>
+      }
+
       <div className={"w-full flex bg-white justify-center py-20 blog-post " + blogStyles.post} id={"blog-article"}>
         <div className={"w-5/6 justify-center"}>
           {post.content.map((block, blockIdx) => {

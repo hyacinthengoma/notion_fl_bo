@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Head from "next/head";
+import {ParallaxBanner} from "react-scroll-parallax";
 
 export default function LeCabinet() {
     return(
@@ -10,12 +11,12 @@ export default function LeCabinet() {
             <Head>
                 <title>LE CABINET</title>
             </Head>
-            <div className={"relative w-full"}>
+            <ParallaxBanner layers={[{image: '/images/FlorenceBabeau/cab.png', speed: -30, className: "brightness-50 h-screen w-full object-cover my-auto"}]} className={"relative w-full h-[40vh]"}>
                 <div className={"absolute transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 text-center z-50"}>
                     <h1 className={"text-white text-2xl md:text-4xl font-bold translate-y-1/2"}>LE CABINET</h1>
                 </div>
-                <Image className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/cab.png"} alt={"image du cabinet florence Babeau"} width={"1920"} height={"1080"}/>
-            </div>
+                {/**<Image loading={"eager"} className={"brightness-50 h-[40vh] w-full object-cover"} src={"/images/FlorenceBabeau/banniere.png"} alt={"image-banniere"} width={"1920"} height={"1080"}/>*/}
+            </ParallaxBanner>
             <div className={"bg-white flex justify-center w-full lg:py-20"}>
                 <div className="py-6 sm:py-8 lg:py-12">
                     <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
