@@ -14,7 +14,7 @@ const HonoraireCard: React.FC<HonoraireCard> = ({type_rdv, titre, honoraire, des
             <div className="flex flex-col flex-1 p-4 sm:p-6 gap-4">
                 <h2 className="text-gray-800 mb-2 text-lg font-medium uppercase text-center">{titre}</h2>
                 <hr/>
-                <h3 className={"text-center text-gray-600 font-semibold text-4xl"}>{honoraire}€ TTC</h3>
+                <h3 className={"text-center text-gray-600 font-semibold text-4xl"}>{honoraire}€ HT</h3>
                 <div className={"px-2 py-8"}>
                     <p className={"my-2 text-sm"}>{description}</p>
                 </div>

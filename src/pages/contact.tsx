@@ -180,7 +180,7 @@ export default function Contact() {
                                 </svg>
                             </div>
                             <p className={"text-base text-gray-800 font-bold"}>EMAIL</p>
-                            <p className={"text-sm text-gray-600"}>contact@babeau.fr</p>
+                            <p className={"text-sm text-gray-600"}>fl.babeau@gmail.com</p>
                         </div>
                         <div className={"flex flex-col items-center gap-y-5"}>
                             <div className={"text-gray-800"}>
@@ -191,7 +191,7 @@ export default function Contact() {
                                 </svg>
                             </div>
                             <p className={"text-base text-gray-800 font-bold"}>TELEPHONE</p>
-                            <p className={"text-sm text-gray-600"}>05 57 10 28 24</p>
+                            <p className={"text-sm text-gray-600"}>05 57 10 28 28</p>
                         </div>
                         <div className={"flex flex-col items-center gap-y-5"}>
                             <div className={"text-gray-800"}>
