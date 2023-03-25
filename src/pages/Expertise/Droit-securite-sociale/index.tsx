@@ -100,7 +100,7 @@ export default function HomeDroitSecuSociale({ droitSocial }) {
                                     {droitSocial.map((currentDroit, index) => {
                                         if(index === 0) {
                                             return (
-                                                <Collapse title={<p className={"font-thin text-gray-800 sm:text-lg md:text-xl"}>{currentDroit.Titre}</p>} contentLeft={
+                                                <Collapse title={<Text h4>{currentDroit.Titre}</Text>} contentLeft={
                                                     <span className="inline-block rounded-lg bg-red-100 p-3">
                                                 <svg className="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                   <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
