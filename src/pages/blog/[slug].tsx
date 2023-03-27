@@ -23,6 +23,8 @@ import {
 import Head from "next/head";
 import ArticleCard from "../../components/ArticleCard";
 import {ParallaxBanner} from "react-scroll-parallax";
+import {CookieConsent} from "react-cookie-consent";
+import VideoPlayer from "../../components/VideoPlayer";
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -375,12 +377,7 @@ const RenderPost = ({ post, redirect, preview, posts, lastPosts }) => {
                 if (!isImage && !value.file_ids) {
                   // external resource use iframe
                   child = (
-                      <iframe
-                          style={childStyle}
-                          src={display_source}
-                          key={!useWrapper ? id : undefined}
-                          className={!useWrapper ? 'asset-wrapper' : undefined}
-                      />
+                      <VideoPlayer styling={childStyle} source={display_source} key={!useWrapper ? id : undefined} classe={!useWrapper ? 'asset-wrapper' : undefined}/>
                   )
                 } else {
                   // notion resource
