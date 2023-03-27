@@ -162,7 +162,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
                     <p className="text-sm text-black    ">
-                        © Copyright 2023 Lorem Inc. All rights reserved.
+                        © Copyright 2023 Florence Babeau.
                     </p>
                     <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
                         <li>
