@@ -518,13 +518,13 @@ const RenderPost = ({ post, redirect, preview, posts, lastPosts }) => {
           <hr className={"mt-10 border-black"}/>
           <div className={"flex flex-row gap-4"}>
             <p>Partager cet article sur : </p>
-            <LinkedinShareButton url={asPath}>
+            <LinkedinShareButton url={"https://www.avocat-babeau.fr/" + asPath}>
               <LinkedinIcon size={32} round />
             </LinkedinShareButton>
-            <TwitterShareButton url={asPath}>
+            <TwitterShareButton url={"https://www.avocat-babeau.fr/" + asPath}>
               <TwitterIcon size={32} round />
             </TwitterShareButton>
-            <FacebookShareButton url={asPath}>
+            <FacebookShareButton url={"https://www.avocat-babeau.fr/" + asPath}>
               <FacebookIcon size={32} round />
             </FacebookShareButton>
           </div>
