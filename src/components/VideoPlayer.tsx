@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 interface VideoPlayer {
     styling:string,
@@ -36,15 +37,18 @@ const VideoPlayer: React.FC<VideoPlayer> = ({styling, source, key, classe}) => {
     };
 
     return (
-        <div className={"bg-black h-full"}>
+        <div className={"h-full"}>
             {!cookieAccepted && (
-                <div className="cookie-consent bg-black p-4 rounded text-white" style={styling}>
+                <div className="cookie-consent bg-gray-800 p-4 rounded text-white flex flex-col" style={styling}>
                     <p className={"text-white"}>
                         La vidéo que vous essayez de charger contient des cookies tiers qui sont utilisés pour personnaliser le contenu et les publicités, ainsi que pour analyser le trafic.<br/>
                         Avant de pouvoir regarder la vidéo, nous avons besoin de votre consentement.<br/>
                         Veuillez cliquer sur 'Accepter' pour autoriser l'utilisation de ces cookies tiers.
                     </p>
-                    <button className={"bg-blue-600 py-2 px-4 rounded hover:scale-105 duration-500 transition-all hover:bg-blue-500"} onClick={handleAccept}>Accepter</button>
+                    <p className={"text-white"}>
+                        En cliquant sur "Accepter", vous accepter la <Link href="politique-de-confidentialite">politique de confidentialité</Link>
+                    </p>
+                    <button className={"bg-blue-600 py-2 px-4 rounded hover:scale-105 duration-500 transition-all hover:bg-blue-500 mx-auto"} onClick={handleAccept}>Accepter</button>
                 </div>
             )}
             {cookieAccepted && (
