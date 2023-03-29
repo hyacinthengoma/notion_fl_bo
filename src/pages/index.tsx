@@ -22,7 +22,6 @@ export async function getStaticProps({ preview }) {
     const accueilTable = await getAccueilIndex();
     const competencesSocialTable = await getCompetencesDroitSocialIndex();
     const competencesTravailTable = await getCompetencesDroitTravailIndex();
-
     const authorsToGet: Set<string> = new Set()
     const posts: any[] = Object.keys(postsTable)
         .map((slug) => {
