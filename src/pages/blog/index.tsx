@@ -10,7 +10,7 @@ import ArticleCard from "../../components/ArticleCard";
 import {Checkbox, Collapse, Text} from "@nextui-org/react";
 import {ParallaxBanner} from "react-scroll-parallax";
 
-export async function getStaticProps({ preview }) {
+export async function getServerSideProps({ preview }) {
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
@@ -40,7 +40,7 @@ export async function getStaticProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    revalidate: 50,
+    //revalidate: 50,
   }
 }
 
