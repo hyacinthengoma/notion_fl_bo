@@ -49,15 +49,15 @@ export default function Honoraires({honoraires}) {
                         </p>
                     </div>
                     <div className={"grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-4 lg:max-w-full"}>
-                        <HonoraireCard type_rdv={"demande-rendez-vous-cabinet"} titre={"Rendez-vous cabinet"} honoraire={"120"} description={"Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous. Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté."}/>
+                        {/**<HonoraireCard type_rdv={"demande-rendez-vous-cabinet"} titre={"Rendez-vous cabinet"} honoraire={"120"} description={"Maître Babeau vous reçoit à son cabinet pour un 1er rendez-vous. Ce premier rdv de 60 min, sans engagement, permet réciproquement de faire connaissance, de connaître vos droits et la manière de traiter la problématique à laquelle vous êtes confronté."}/>
                         <HonoraireCard type_rdv={"demande-consultation-telephonique"} titre={"Consultation téléphonique"} honoraire={"60"} description={"Maître Babeau vous rappelle pour répondre à vos questions juridiques. Cette consultation téléphonique de 30 min vous permet d'obtenir des éléments de réponse concrets et rapides à la question que vous vous posez."}/>
                         <HonoraireCard type_rdv={"question-simple"} titre={"Question simple"} honoraire={"100"} description={"Maître Babeau répond à votre question simple par écrit. Si vous souhaitez accompagner votre question d'une pièce jointe, la consultation juridique est adaptée, sinon la question simple (moins de 1.000 caractères) répondra parfaitement à votre question de droit."}/>
-                        <HonoraireCard type_rdv={"consultation-juridique"} titre={"Consultation juridique"} honoraire={"150"} description={"Maître Babeau répond à vos questions juridiques par écrit. Si vous souhaitez accompagner votre question d'une pièce jointe, la consultation juridique est adaptée, sinon la question simple (moins de 1.000 caractères) répondra parfaitement à votre question de droit."}/>
-                        {/**honoraires.map((currentHonoraire) => {
+                        <HonoraireCard type_rdv={"consultation-juridique"} titre={"Consultation juridique"} honoraire={"150"} description={"Maître Babeau répond à vos questions juridiques par écrit. Si vous souhaitez accompagner votre question d'une pièce jointe, la consultation juridique est adaptée, sinon la question simple (moins de 1.000 caractères) répondra parfaitement à votre question de droit."}/>*/}
+                        {honoraires.map((currentHonoraire) => {
                             return(
                                 <HonoraireCard type_rdv={currentHonoraire.type_service} titre={currentHonoraire.titre} honoraire={currentHonoraire.prix} description={currentHonoraire.description}/>
                             );
-                        })*/}
+                        })}
                     </div>
                 </div>
             </div>
