@@ -13,8 +13,6 @@ class MyDocument extends Document {
             <Html className={"scroll-smooth"}>
                 <Head></Head>
                 <head>
-                    <meta name="robots" content="noindex, nofollow" />
-                    <meta httpEquiv="X-Robots-Tag" content="noindex, nofollow" />
                     <style>
                         {Loader}
                     </style>
