@@ -19,7 +19,7 @@ export default function Header() {
             <div className={""}>
                 <nav className="px-8 py-4 gap-4 backdrop-blur-md bg-[#1B110F]/10 flex justify-between w-full items-center fixed z-[1000] shadow-lg transition-all duration-500" id={"navbar"}>
                     <Link className="font-medium leading-none" href="/">
-                        <Image loading={"eager"} src={'/images/logo-babeau2.svg'} width={'1000'} height={'50'} className={"w-40"} alt={'florence-babeau'}></Image>
+                        <Image loading={"eager"} src={'/images/logo-babeau2.svg'} width={'1000'} height={'50'} className={"w-40"} alt={'florence babeau'}></Image>
                     </Link>
                     <div className="lg:hidden">
                         <button className="flex items-center text-white p-3" id={"navbar-burger"}>
